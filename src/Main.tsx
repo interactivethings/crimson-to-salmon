@@ -2,6 +2,7 @@ import * as React from 'react';
 import './App.css';
 import logo from './logo.svg';
 import { Intro } from './components/Intro';
+import { Square } from './components/Square';
 
 export class Main extends React.Component {
   public render() {
@@ -17,7 +18,8 @@ export class Main extends React.Component {
         </p>
 
          <Intro/>
-      </div>
+         <Square/>
+         </div>
     );
   }
 }
