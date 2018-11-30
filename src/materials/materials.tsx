@@ -101,12 +101,13 @@ export const ElementSubtitle = styled('div')`
 
 // Initiatives
 
-export const InitiativesTitle = styled('div')`
+export const InitiativesTitle = styled('p')`
     font-family: 'IBM Plex Sans';
     font-weight: 500;
     font-size: 2em;
     color: ${TextColor};
     margin: 1rem 1rem 0 1rem;
+    display: block;
 
 `
 
