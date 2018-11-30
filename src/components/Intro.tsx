@@ -1,11 +1,11 @@
 import * as React from 'react';
 import styled from '@emotion/styled'
-import { IntroHeading, Intro1, Intro2, Intro3, Intro4 } from 'src/materials/materials';
+import { IntroHeading, Intro1, Intro2, Intro3, Intro4, MainRed } from 'src/materials/materials';
 
 export const IntroWrapper = styled('div')`
     width: 100vw;
     height: 100vh;
-    background-color: crimson;
+    background-color: ${MainRed};
     position: relative;
 `
 

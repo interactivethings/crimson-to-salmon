@@ -5,7 +5,7 @@ import { small, medium } from './breakpoints';
 
 export const TextColor = '#322C2C';
 export const LabelColor = '#8B7F7F';
-export const InitiativesColor = '#FF5555';
+export const MainRed = '#FF5555';
 
 // Typography
 
@@ -106,7 +106,8 @@ export const InitiativesTitle = styled('div')`
     font-weight: 500;
     font-size: 2em;
     color: ${TextColor};
-    margin: 1rem 0 0 1rem;
+    margin: 1rem 1rem 0 1rem;
+
 `
 
 // export const InitiativesSubtitle = styled('div')`

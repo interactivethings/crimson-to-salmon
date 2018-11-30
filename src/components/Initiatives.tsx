@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from '@emotion/styled-base';
-import { InitiativesColor, InitiativesTitle } from 'src/materials/materials';
+import { InitiativesTitle, MainRed } from 'src/materials/materials';
 
 export const InitiativesElement = styled('div')`
     display: flex;
@@ -11,7 +11,7 @@ export const InitiativesElement = styled('div')`
 `
 
 export const InitiativesElementLeft = styled('div')`
-    background-color: ${InitiativesColor};
+    background-color: ${MainRed};
     width: 49.6%;
     justify-content: space-between;
     display: flex;
@@ -28,7 +28,7 @@ export const InitiativesElementRight = styled('div')`
 export const InitiativesElementSmall = styled('div')`
     display: flex;
     flex-direction: column;
-    background-color: ${InitiativesColor};
+    background-color: ${MainRed};
     height: 49.6%;
 `
 
