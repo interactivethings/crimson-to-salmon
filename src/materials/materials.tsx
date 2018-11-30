@@ -5,6 +5,7 @@ import { small, medium } from './breakpoints';
 
 export const TextColor = '#322C2C';
 export const LabelColor = '#8B7F7F';
+export const InitiativesColor = '#FF5555';
 
 // Typography
 
@@ -98,3 +99,20 @@ export const ElementSubtitle = styled('div')`
     margin: 0 0 0 0.5rem;
 `
 
+// Initiatives
+
+export const InitiativesTitle = styled('div')`
+    font-family: 'IBM Plex Sans';
+    font-weight: 500;
+    font-size: 2em;
+    color: ${TextColor};
+    margin: 1rem 0 0 1rem;
+`
+
+// export const InitiativesSubtitle = styled('div')`
+//     font-family: 'IBM Plex Sans';
+//     font-weight: 500;
+//     font-size: 2em;
+//     color: ${TextColor};
+//     margin: 0 0 0 1rem;
+// `

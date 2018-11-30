@@ -7,7 +7,6 @@ import { ElementTitle, ElementSubtitle } from 'src/materials/materials';
 // import { min, max } from 'd3-array';
 
 export const SquareWrapper = styled('div')`
-    background-color: green;
     flex-wrap: wrap;
     display: flex;
     max-width: 700px;
@@ -34,7 +33,7 @@ const color = scaleLinear()
     .interpolate(interpolateHcl as any) as any;
 
 
-export class Square extends React.Component{
+export class TwentyCountries extends React.Component{
     render() {
         return(
             <SquareWrapper>
