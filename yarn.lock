@@ -117,6 +117,10 @@
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.2.tgz#63985d3d8b02530e0869962f4da09142ee8e200e"
 
+"@types/d3-array@^1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@types/d3-array/-/d3-array-1.2.4.tgz#7088445c8717ba1fba416a1df7bbd11cc72a3763"
+
 "@types/d3-color@*":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@types/d3-color/-/d3-color-1.2.1.tgz#26141c3c554e320edd40726b793570a3ae57397e"
@@ -2095,6 +2099,10 @@ cyclist@~0.2.2:
 d3-array@^1.2.0:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/d3-array/-/d3-array-1.2.4.tgz#635ce4d5eea759f6f605863dbcfc30edc737f71f"
+
+d3-array@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/d3-array/-/d3-array-2.0.2.tgz#c9a8a203b43403c6ced881ee66828edc6e561c61"
 
 d3-collection@1:
   version "1.0.7"
