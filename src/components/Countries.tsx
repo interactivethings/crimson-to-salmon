@@ -6,6 +6,12 @@ import { ElementTitle, ElementSubtitle } from 'src/materials/materials';
 // import { countries } from 'src';
 // import { min, max } from 'd3-array';
 
+const color = scaleLinear()
+    // .domain([min(countries => c.PM10) as number, max(countries => c.PM10) as number ])
+    .domain([16, 292])
+    .range(["white", "red"] as any)
+    .interpolate(interpolateHcl as any) as any;
+
 export const SquareWrapper = styled('div')`
     flex-wrap: wrap;
     display: flex;
@@ -17,6 +23,13 @@ export const SquareElement = styled('div')`
     height: 175px;
     background-color: yellow;
 `
+// more elegant way of doing it?
+
+// export const LegendScale = styled('div')`
+//     height: 10px;
+//     width: 700px; 
+//     background-color: ${color()};
+// `
 
  interface Countries {  
      name: string;
@@ -26,11 +39,7 @@ export const SquareElement = styled('div')`
 
 const Countries = [{name: 'Switzerland', city: 'Zürich', PM10: 292}, {name: 'Mexico', city: 'Mexico City', PM10: 16}, {name: 'Korea', city: 'Seoul', PM10: 23}, {name: 'France', city: 'Paris', PM10: 86},  {name: 'France', city: 'Paris', PM10: 45},  {name: 'France', city: 'Paris', PM10: 38}];
 
-const color = scaleLinear()
-    // .domain([min(countries => c.PM10) as number, max(countries => c.PM10) as number ])
-    .domain([16, 292])
-    .range(["white", "red"] as any)
-    .interpolate(interpolateHcl as any) as any;
+
 
 
 export class TwentyCountries extends React.Component{
@@ -45,6 +54,7 @@ export class TwentyCountries extends React.Component{
                 </SquareElement>
                 </>
                 )}
+                {/* <LegendScale></LegendScale> */}
             </SquareWrapper>
         );
     }
