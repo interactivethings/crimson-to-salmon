@@ -6,6 +6,7 @@ import { small, medium } from './breakpoints';
 export const TextColor = '#322C2C';
 export const LabelColor = '#8B7F7F';
 export const MainRed = '#FF5555';
+export const AirColor = '#EBEEF2';
 
 // Typography
 
