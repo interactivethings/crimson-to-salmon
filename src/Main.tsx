@@ -1,23 +1,27 @@
 import * as React from 'react';
-import './App.css';
-import logo from './logo.svg';
+import './index.css';
 import { Intro } from './components/Intro';
-
-export class Main extends React.Component {
+import { TwentyCountries } from './components/Countries';
+import { Initiatives } from './components/Initiatives';
+import { AirUndefined, AirDefined, AirComposition } from './components/Air';
+import {Country} from "../src/components/Countries"
+interface Props {
+  data: Array<Country>;
+}
+export class Main extends React.Component<Props> {
   public render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
+      <>
+        <Intro/>
 
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        <AirDefined />
+        <AirComposition />
+        <AirUndefined />
 
-         <Intro/>
-      </div>
+
+        <TwentyCountries countries={this.props.data}/>
+        <Initiatives />
+      </>
     );
   }
 }

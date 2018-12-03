@@ -1,0 +1,102 @@
+[
+ {
+   "Country": "India",
+   "City": "Delhi",
+   "PM10": 292.31
+ },
+ {
+   "Country": "Saudi Arabia",
+   "City": "Riyadh",
+   "PM10": 251
+ },
+ {
+   "Country": "Philippines",
+   "City": "Manila",
+   "PM10": 117.5
+ },
+ {
+   "Country": "China",
+   "City": "Beijing",
+   "PM10": 92
+ },
+ {
+   "Country": "Chile",
+   "City": "Santiago",
+   "PM10": 66.8264
+ },
+ {
+   "Country": "Korea",
+   "City": "Seoul",
+   "PM10": 47.83333333
+ },
+ {
+   "Country": "Mexico",
+   "City": "Mexico City",
+   "PM10": 38.72283956
+ },
+ {
+   "Country": "Montenegro",
+   "City": "Podgorica",
+   "PM10": 38.77102392
+ },
+ {
+   "Country": "Turkey",
+   "City": "Istanbul",
+   "PM10": 38.40281257
+ },
+ {
+   "Country": "Poland",
+   "City": "Warszawa",
+   "PM10": 33.49597962
+ },
+ {
+   "Country": "France",
+   "City": "Paris",
+   "PM10": 28.11770957
+ },
+ {
+   "Country": "Italy",
+   "City": "Roma",
+   "PM10": 27.40050854
+ },
+ {
+   "Country": "Denmark",
+   "City": "Copenhagen",
+   "PM10": 24.18819885
+ },
+ {
+   "Country": "Germany",
+   "City": "Berlin",
+   "PM10": 23.15385713
+ },
+ {
+   "Country": "Great Britain",
+   "City": "London",
+   "PM10": 23.48601273
+ },
+ {
+   "Country": "Spain",
+   "City": "Madrid",
+   "PM10": 19.17604495
+ },
+ {
+   "Country": "Norway",
+   "City": "Oslo",
+   "PM10": 18.16388611
+ },
+ {
+   "Country": "Australia",
+   "City": "Sydney",
+   "PM10": 16.50524016
+ },
+ {
+   "Country": "Iceland",
+   "City": "Reykjavik",
+   "PM10": 15.50907733
+ },
+ {
+   "Country": "Switzerland",
+   "City": "Zurich",
+   "PM10": 16.06241085
+ }
+]
