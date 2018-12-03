@@ -1,7 +1,6 @@
 import * as React from 'react';
 import 'intersection-observer';
-import styled from '@emotion/styled';
-const scrollama = require('scrollama');
+import styled from '@emotion/styled'
 
 export const Scroll = styled('section')`
     position: relative;

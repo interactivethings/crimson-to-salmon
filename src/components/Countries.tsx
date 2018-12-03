@@ -31,26 +31,21 @@ export const SquareElement = styled('div')`
 //     background-color: ${color()};
 // `
 
- interface Countries {  
-     name: string;
-     city: string;
-     PM10: number;
-  }
+export type Country = {Country: string, City: string, PM10: number}
 
-const Countries = [{name: 'Switzerland', city: 'Zürich', PM10: 292}, {name: 'Mexico', city: 'Mexico City', PM10: 16}, {name: 'Korea', city: 'Seoul', PM10: 23}, {name: 'France', city: 'Paris', PM10: 86},  {name: 'France', city: 'Paris', PM10: 45},  {name: 'France', city: 'Paris', PM10: 38}];
+interface Props {
+    countries: Array<Country>
+}
 
-
-
-
-export class TwentyCountries extends React.Component{
+export class TwentyCountries extends React.Component <Props>{
     render() {
         return(
             <SquareWrapper>
-                {Countries.sort((b, a)  => a.PM10 - b.PM10) .map(country => 
+                {this.props.countries.sort((b, a)  => a.PM10 - b.PM10) .map(country => 
                 <>
                 <SquareElement style={{backgroundColor: color(country.PM10)}}>
-                    <ElementTitle>{country.name}</ElementTitle>
-                    <ElementSubtitle>{country.city}</ElementSubtitle> 
+                    <ElementTitle>{country.Country}</ElementTitle>
+                    <ElementSubtitle>{country.City}</ElementSubtitle> 
                 </SquareElement>
                 </>
                 )}
