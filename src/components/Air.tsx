@@ -1,17 +1,36 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
-import { AirColor } from 'src/materials/materials';
+import { AirColor, ElementTitle } from 'src/materials/materials';
 
-export const AirDef = styled('div')`
-    background-color: ${AirColor};
-    width: 700px;
-    height: 700px;
-    // filter: blur(1.5rem);
+// wrapping all into overall div
+
+export const AirWrapper = styled('div')`
+    position: relative;
 `
+
+// image 1: blurry air molecules
 
 export const AirBlur = styled('div')`
     filter: blur(1.5rem);
 `
+
+export class AirUndef extends React.Component {
+    render() {
+        return (
+            <AirBlur>
+                <AirDefined />
+            </AirBlur>
+        );
+    }
+}
+
+export const AirUndefined = styled('div')`
+    position: absolute;
+    top: 0;
+    left: 0;
+`
+
+// image 2: air compounds
 
 export const AirCompounds = styled('div')`
     display: flex;
@@ -19,6 +38,9 @@ export const AirCompounds = styled('div')`
     width: 700px;
     height: 700px;
     justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
 `
 
 export const AirCompoundsLeft = styled('div')`
@@ -33,7 +55,7 @@ export const AirCompoundsRight = styled('div')`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 29%;
+    width: 29.2%;
 `
 
 export const O2 = styled('div')`
@@ -46,52 +68,63 @@ export const AirCompoundsSmall = styled('div')`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 29%;
+    height: 29.2%;
     text-decoration: none;
 `
 
 export const AirCompoundsSuperSmall = styled('div')`
     flex-direction: row;
     background-color: ${AirColor};
-    width: 30%;
+    width: 31.2%;
     text-decoration: none;
 `
 
-export class AirDefined extends React.Component {
-    render() {
-        return (
-            <AirDef />
-        );
-    }
-}
+// image 3: final air square
 
-export class AirUndefined extends React.Component {
-    render() {
-        return (
-            <AirBlur>
-                <AirDef></AirDef>
-            </AirBlur>
-        );
-    }
-}
+export const AirDefined = styled('div')`
+    background-color: ${AirColor};
+    width: 700px;
+    height: 700px;
+    
+`
 
-export class AirComposition extends React.Component {
+export class Air extends React.Component {
     render() {
         return (
-            <div style={{position: "relative"}}>
-            <AirCompounds> 
-                <AirCompoundsLeft>N2</AirCompoundsLeft>
-                <AirCompoundsRight>
-                    <O2>O2</O2>
-                    <AirCompoundsSmall>
-                        <AirCompoundsSuperSmall>Ar</AirCompoundsSuperSmall>
-                        <AirCompoundsSuperSmall>CO2</AirCompoundsSuperSmall>
-                        <AirCompoundsSuperSmall>...</AirCompoundsSuperSmall>
-                    </AirCompoundsSmall>
-                </AirCompoundsRight>
-            </AirCompounds>
-            <AirUndefined />
-            </div>
+            <AirWrapper>
+                {/* image 3 */}
+                <AirDefined />
+
+                {/* image 2 */}
+                <AirCompounds> 
+                    <AirCompoundsLeft>
+                        <ElementTitle>N₂</ElementTitle>
+                    </AirCompoundsLeft>
+                    <AirCompoundsRight>
+                        <O2>
+                            <ElementTitle>
+                            O₂
+                            </ElementTitle>  
+                        </O2>
+                        <AirCompoundsSmall>
+                            <AirCompoundsSuperSmall>
+                                <ElementTitle>Ar</ElementTitle>
+                            </AirCompoundsSuperSmall>
+                            <AirCompoundsSuperSmall>
+                                <ElementTitle>CO₂</ElementTitle>
+                            </AirCompoundsSuperSmall>
+                            <AirCompoundsSuperSmall>
+                                <ElementTitle>...</ElementTitle>
+                            </AirCompoundsSuperSmall>
+                        </AirCompoundsSmall>
+                    </AirCompoundsRight>
+                </AirCompounds>
+
+                {/* image 1 */}
+                <AirUndefined>
+                    <AirUndef />
+                </AirUndefined>
+            </AirWrapper>
         );
     }
 }
