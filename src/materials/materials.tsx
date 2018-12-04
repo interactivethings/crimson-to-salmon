@@ -10,9 +10,17 @@ export const AirColor = '#EBEEF2';
 
 // Typography
 
-export const Text = styled('p')`
+export const Chapter = styled('div')`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+`
+
+export const ParagraphStory = styled('p')`
   line-height: 120%;
   color: ${TextColor};
+  width: 40%;
 //   @media (max-width: ${small}px)  {
 //       font-size: 1rem;
 //   };

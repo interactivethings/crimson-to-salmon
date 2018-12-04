@@ -1,36 +1,58 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
-import { AirColor, ElementTitle } from 'src/materials/materials';
+import { keyframes } from '@emotion/core';
+import { AirColor, ElementTitle, ParagraphStory, Chapter } from 'src/materials/materials';
 
 // wrapping all into overall div
 
 export const AirWrapper = styled('div')`
     position: relative;
+
+    width: 40%;
 `
 
 // image 1: blurry air molecules
 
-export const AirBlur = styled('div')`
-    filter: blur(1.5rem);
-`
+// export const AirBlur = styled('div')`
+//     filter: blur(1.5rem);
+// `
 
-export class AirUndef extends React.Component {
-    render() {
-        return (
-            <AirBlur>
-                <AirDefined />
-            </AirBlur>
-        );
-    }
-}
+const AirImage1 = keyframes`
+  from, 0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+`;
 
 export const AirUndefined = styled('div')`
+    width: 700px;
+    height: 700px;
+    background-color: ${AirColor};
+    filter: blur(1.5rem);
     position: absolute;
     top: 0;
     left: 0;
+    // animation: ${AirImage1} 4s ease;
 `
 
 // image 2: air compounds
+
+const AirImage2 = keyframes`
+  from, 0% {
+    opacity: 0;
+  }
+
+  90% {
+      opactiy: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+`;
 
 export const AirCompounds = styled('div')`
     display: flex;
@@ -38,9 +60,10 @@ export const AirCompounds = styled('div')`
     width: 700px;
     height: 700px;
     justify-content: space-between;
-    position: absolute;
+    position: absolute; 
     top: 0;
     left: 0;
+    animation: ${AirImage2} 2s ease;
 `
 
 export const AirCompoundsLeft = styled('div')`
@@ -81,20 +104,37 @@ export const AirCompoundsSuperSmall = styled('div')`
 
 // image 3: final air square
 
+const AirImage3 = keyframes`
+  from, 0% {
+    opacity: 0;
+  }
+
+  90% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+`;
+
 export const AirDefined = styled('div')`
+    position: absolute;
     background-color: ${AirColor};
     width: 700px;
     height: 700px;
-    
+    animation: ${AirImage3} 4s ease;    
 `
 
 export class Air extends React.Component {
     render() {
         return (
+            
+            <Chapter>
             <AirWrapper>
-                {/* image 3 */}
-                <AirDefined />
-
+                {/* image 1 */}
+                <AirUndefined />
+            
                 {/* image 2 */}
                 <AirCompounds> 
                     <AirCompoundsLeft>
@@ -120,11 +160,15 @@ export class Air extends React.Component {
                     </AirCompoundsRight>
                 </AirCompounds>
 
-                {/* image 1 */}
-                <AirUndefined>
-                    <AirUndef />
-                </AirUndefined>
+                {/* image 3 */}
+                <AirDefined />
             </AirWrapper>
+            
+
+                <ParagraphStory>
+                It is made up of only five gases: Nitrogen (N₂), Oxygen (O₂),  Argon (Ar), and Carbon Dioxide (CO₂). Several other compounds, such as natural Ozone (O₃), are also present.
+                </ParagraphStory>
+            </Chapter>
         );
     }
 }
