@@ -1,56 +1,63 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/core';
-import { AirColor, ElementTitle, ParagraphStory, Chapter } from 'src/materials/materials';
+import { AirColorLight, ParagraphStory, Chapter, ElementTitle, MainRed, TextColor } from 'src/materials/materials';
 
 // wrapping all into overall div
 
 export const AirWrapper = styled('div')`
     position: relative;
-
+    display: flex;
+    flex-direction: column;
     width: 40%;
 `
 
 // image 1: blurry air molecules
 
-// export const AirBlur = styled('div')`
-//     filter: blur(1.5rem);
-// `
-
 const AirImage1 = keyframes`
-  from, 0% {
-    opacity: 1;
-  }
+    from, 33% {
+        opacity: 1;
+    }
 
-  100% {
-    opacity: 0;
-  }
+    50% {
+        opacity: 0;
+
+    51% {
+        opacity: 1;
+
+    100% {
+        opacity: 1;
 `;
 
 export const AirUndefined = styled('div')`
     width: 700px;
     height: 700px;
-    background-color: ${AirColor};
+    background-color: ${AirColorLight};
     filter: blur(1.5rem);
     position: absolute;
     top: 0;
     left: 0;
-    // animation: ${AirImage1} 4s ease;
+    // animation: ${AirImage1} 8s ease infinite;
+    animation-fill-mode: forwards;
 `
 
 // image 2: air compounds
 
 const AirImage2 = keyframes`
-  from, 0% {
+  from, 16% {
     opacity: 0;
   }
 
-  90% {
-      opactiy: 0;
+  50% {
+      opacity: 1
+  }
+
+  60% {
+    opacity: 0;
   }
 
   100% {
-    opacity: 1;
+    opacity: 0;
   }
 `;
 
@@ -63,7 +70,7 @@ export const AirCompounds = styled('div')`
     position: absolute; 
     top: 0;
     left: 0;
-    animation: ${AirImage2} 2s ease;
+    animation: ${AirImage2} 8s infinite;
 `
 
 export const AirCompoundsLeft = styled('div')`
@@ -71,7 +78,7 @@ export const AirCompoundsLeft = styled('div')`
     justify-content: space-between;
     display: flex;
     flex-direction: column;
-    background-color: ${AirColor};
+    background-color: ${MainRed};
 `
 
 export const AirCompoundsRight = styled('div')`
@@ -83,7 +90,7 @@ export const AirCompoundsRight = styled('div')`
 
 export const O2 = styled('div')`
     display: flex;
-    background-color: ${AirColor};
+    background-color: ${MainRed};
     height: 70%;
 `
 
@@ -97,7 +104,7 @@ export const AirCompoundsSmall = styled('div')`
 
 export const AirCompoundsSuperSmall = styled('div')`
     flex-direction: row;
-    background-color: ${AirColor};
+    background-color: ${MainRed};
     width: 31.2%;
     text-decoration: none;
 `
@@ -105,25 +112,29 @@ export const AirCompoundsSuperSmall = styled('div')`
 // image 3: final air square
 
 const AirImage3 = keyframes`
-  from, 0% {
+  from, 33% {
     opacity: 0;
   }
 
-  90% {
+  50% {
+    opacity: 1;
+  }
+
+  60% {
     opacity: 0;
   }
 
   100% {
-    opacity: 1;
+    opacity: 0;
   }
 `;
 
 export const AirDefined = styled('div')`
     position: absolute;
-    background-color: ${AirColor};
+    background-color: ${TextColor};
     width: 700px;
     height: 700px;
-    animation: ${AirImage3} 4s ease;    
+    animation: ${AirImage3} 8s ease infinite;    
 `
 
 export class Air extends React.Component {
