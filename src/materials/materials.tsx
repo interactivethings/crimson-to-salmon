@@ -10,14 +10,24 @@ export const AirBlueLight = '#d7e2ef';
 export const AirBlue = '#3F7397';
 export const AirGreen = '#2FBF62';
 export const AirRed = '#FF5555';
+export const AirRedDark = '#FF2626';
 
-// Typography
+// Layout
 
 export const Chapter = styled('div')`
-display: flex;
-justify-content: center;
-align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
+
+export const VizWrapper = styled('div')`
+    position: relative;
+    width: 700px;
+    height: 700px;
+`
+
+
+// Typography
 
 export const ParagraphStory = styled('p')`
     display: flex;
