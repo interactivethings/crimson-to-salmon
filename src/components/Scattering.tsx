@@ -8,19 +8,19 @@ export const BlueWrapper = styled('div')`
     height: 700px;
 `
 
-export const xPosition = Math.floor(Math.random() * 700) + 1;
-export const yPosition = Math.floor(Math.random() * 700) + 1;
-
+export const xPosition = Math.round(((Math.random() * 700) + 1) / 40) * 40;
+export const yPosition = Math.round(((Math.random() * 700) + 1) / 40) * 40;
+// Math.round(x / 10) * 10
 
 const BlueScatter = keyframes`
   from, 0% {
-    opacity: 0;
+    opacity: 0.9;
     top: 350px;
     left: 350px;
   }
 
   100% {
-      opacity: 100;
+      opacity: 1;
       top: ${xPosition};
       left: ${xPosition};
   }
@@ -33,17 +33,17 @@ export const ScatterElement = styled('div')`
     border-radius: 17.5px;
     background-color: blue;
     position: absolute;
-    animation: ${BlueScatter} ease 10s;
+    animation: ${BlueScatter} ease-out 10s;
 `
 
 export class BlueScattering extends React.Component {
     render() {
         const blueElements = [];
 
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 25; i++) {
             blueElements.push({
-                xPos: Math.floor(Math.random() * 700) + 1,
-                yPos: Math.floor(Math.random() * 700) + 1,
+                xPos: Math.round(((Math.random() * 700) + 1) / 40) * 40,
+                yPos: Math.round(((Math.random() * 700) + 1) / 40) * 40,
             });
         }
 
