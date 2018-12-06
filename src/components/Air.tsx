@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/core';
-import { AirColorLight, ParagraphStory, Chapter, ElementTitle, MainRed, TextColor } from 'src/materials/materials';
+import { AirColorLight, ParagraphStory, Chapter, ElementTitle, AirColorDark } from 'src/materials/materials';
 
 // wrapping all into overall div
 
@@ -15,7 +15,7 @@ export const AirWrapper = styled('div')`
 // image 1: blurry air molecules
 
 const AirImage1 = keyframes`
-    from, 33% {
+    from, 25% {
         opacity: 1;
     }
 
@@ -44,15 +44,15 @@ export const AirUndefined = styled('div')`
 // image 2: air compounds
 
 const AirImage2 = keyframes`
-  from, 16% {
+  from, 0% {
     opacity: 0;
   }
 
-  50% {
+    50% {
       opacity: 1
   }
 
-  60% {
+  85% {
     opacity: 0;
   }
 
@@ -78,7 +78,7 @@ export const AirCompoundsLeft = styled('div')`
     justify-content: space-between;
     display: flex;
     flex-direction: column;
-    background-color: ${MainRed};
+    background-color: ${AirColorDark};
 `
 
 export const AirCompoundsRight = styled('div')`
@@ -90,7 +90,7 @@ export const AirCompoundsRight = styled('div')`
 
 export const O2 = styled('div')`
     display: flex;
-    background-color: ${MainRed};
+    background-color: ${AirColorDark};
     height: 70%;
 `
 
@@ -104,7 +104,7 @@ export const AirCompoundsSmall = styled('div')`
 
 export const AirCompoundsSuperSmall = styled('div')`
     flex-direction: row;
-    background-color: ${MainRed};
+    background-color: ${AirColorDark};
     width: 31.2%;
     text-decoration: none;
 `
@@ -112,15 +112,15 @@ export const AirCompoundsSuperSmall = styled('div')`
 // image 3: final air square
 
 const AirImage3 = keyframes`
-  from, 33% {
+  from, 38% {
     opacity: 0;
   }
 
-  50% {
+  75% {
     opacity: 1;
   }
 
-  60% {
+  85% {
     opacity: 0;
   }
 
@@ -131,7 +131,7 @@ const AirImage3 = keyframes`
 
 export const AirDefined = styled('div')`
     position: absolute;
-    background-color: ${TextColor};
+    background-color: ${AirColorDark};
     width: 700px;
     height: 700px;
     animation: ${AirImage3} 8s ease infinite;    
