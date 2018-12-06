@@ -1,15 +1,12 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/core';
-import { AirColorLight, ParagraphStory, Chapter, ElementTitle, AirColorDark } from 'src/materials/materials';
+import { AirColorLight, ElementTitle, AirColorDark } from 'src/materials/materials';
 
 // wrapping all into overall div
 
 export const AirWrapper = styled('div')`
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 40%;
+    position: relative;  
 `
 
 // image 1: blurry air molecules
@@ -141,7 +138,7 @@ export class Air extends React.Component {
     render() {
         return (
             
-            <Chapter>
+            <>
             <AirWrapper>
                 {/* image 1 */}
                 <AirUndefined />
@@ -174,12 +171,11 @@ export class Air extends React.Component {
                 {/* image 3 */}
                 <AirDefined />
             </AirWrapper>
-            
 
-                <ParagraphStory>
+                {/* <ParagraphStory>
                 It is made up of only five gases: Nitrogen (N₂), Oxygen (O₂),  Argon (Ar), and Carbon Dioxide (CO₂). Several other compounds, such as natural Ozone (O₃), are also present.
-                </ParagraphStory>
-            </Chapter>
+                </ParagraphStory> */}
+            </>
         );
     }
 }
