@@ -32,8 +32,8 @@ export class Intro extends React.Component {
                         30 Years
                     </Intro4>
                 </IntroHeading>
-                <BackgroundVideo loop autoPlay> 
-                    <source src="https://youtu.be/sn9MbcrVVmI" type="video/mp4"/>
+                <BackgroundVideo loop autoPlay muted> 
+                    <source src="./video/tctsity_bg_video.mp4" type="video/mp4"/>
                 </BackgroundVideo>
             </IntroWrapper>
         );
