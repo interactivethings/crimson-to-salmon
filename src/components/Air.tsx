@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/core';
-import { AirColorLight, ElementTitle, AirColorDark } from 'src/materials/materials';
+import { AirBlueLight, ElementTitle, AirBlue } from 'src/materials/materials';
 
 // wrapping all into overall div
 
@@ -29,7 +29,7 @@ const AirImage1 = keyframes`
 export const AirUndefined = styled('div')`
     width: 700px;
     height: 700px;
-    background-color: ${AirColorLight};
+    background-color: ${AirBlueLight};
     filter: blur(1.5rem);
     position: absolute;
     top: 0;
@@ -75,7 +75,7 @@ export const AirCompoundsLeft = styled('div')`
     justify-content: space-between;
     display: flex;
     flex-direction: column;
-    background-color: ${AirColorDark};
+    background-color: ${AirBlue};
 `
 
 export const AirCompoundsRight = styled('div')`
@@ -87,7 +87,7 @@ export const AirCompoundsRight = styled('div')`
 
 export const O2 = styled('div')`
     display: flex;
-    background-color: ${AirColorDark};
+    background-color: ${AirBlue};
     height: 70%;
 `
 
@@ -101,7 +101,7 @@ export const AirCompoundsSmall = styled('div')`
 
 export const AirCompoundsSuperSmall = styled('div')`
     flex-direction: row;
-    background-color: ${AirColorDark};
+    background-color: ${AirBlue};
     width: 31.2%;
     text-decoration: none;
 `
@@ -128,7 +128,7 @@ const AirImage3 = keyframes`
 
 export const AirDefined = styled('div')`
     position: absolute;
-    background-color: ${AirColorDark};
+    background-color: ${AirBlue};
     width: 700px;
     height: 700px;
     animation: ${AirImage3} 8s ease infinite;    
