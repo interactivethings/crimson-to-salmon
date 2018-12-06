@@ -1,12 +1,17 @@
 import * as React from 'react';
 import './index.css';
 import { Intro } from './components/Intro';
-import { TwentyCountries } from './components/Countries';
-import { Initiatives } from './components/Initiatives';
+// import { TwentyCountries } from './components/Countries';
+// import { Initiatives } from './components/Initiatives';
 import { Air } from './components/Air';
-import {Country} from "../src/components/Countries"
+// import {Country} from "../src/components/Countries"
 import styled from '@emotion/styled-base';
+// import { ParagraphStory } from './materials/materials';
+import { BlueScattering } from './components/Scattering';
+import { Country, TwentyCountries } from './components/Countries';
 import { ParagraphStory } from './materials/materials';
+import { Initiatives } from './components/Initiatives';
+
 interface Props {
   data: Array<Country>;
 }
@@ -35,6 +40,15 @@ export class Main extends React.Component<Props> {
             Scientists also refer to this pure and natural gas mixture as «dry air».
         </ParagraphStory>
         <Air/> 
+
+        {/* Scattering */}
+        <ParagraphStory>
+            Air molecules are slightly closer in size to shorter wavelength of violet and blue light than to the long ones of red light.
+            <br></br> 
+            <br></br>
+            Due to that, pure air scatters this blue light three to four times more effectively than it does the longer wavelengths.
+        </ParagraphStory>
+        <BlueScattering />     
 
         {/* Twenty Countries */}
         <ParagraphStory>
