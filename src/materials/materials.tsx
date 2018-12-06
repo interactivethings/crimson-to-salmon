@@ -12,16 +12,23 @@ export const AirColorDark = '#a4b9d2';
 // Typography
 
 export const Chapter = styled('div')`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
 `
 
 export const ParagraphStory = styled('p')`
-  line-height: 120%;
-  color: ${TextColor};
-  width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-item: center;
+    margin: 5vh 0 5vh 0;
+    width: 30%;
+    line-height: 120%;
+    color: ${TextColor};
+    
+    
+  
 //   @media (max-width: ${small}px)  {
 //       font-size: 1rem;
 //   };
