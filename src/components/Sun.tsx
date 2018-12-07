@@ -62,11 +62,30 @@ const StaggeringBlue = keyframes`
   from, 0% {
     opacity: 0;
     left: 350px;
+    background-color: ${SunYellow};
+  }
+
+  33% {
+    opacity: 1;
+    left: 554px;
+    background-color: ${SunBlue};
+    transform: scale(1);
+    transform-origin: center;
+  }
+
+  60% {
+    left: 333px;
+    transform: scale(20);
+    background-color: ${SunYellow};
+    transform-origin: center;
   }
 
   100% {
+    background-color: ${SunYellow};
+    transform: scale(1);
     opacity: 1;
-    left: 554px;
+    top: 333px;
+    left: 333px;
   }
 `;
 
@@ -85,11 +104,30 @@ const StaggeringIndigo = keyframes`
   from, 0% {
     opacity: 0;
     left: 350px;
+    background-color: ${SunYellow};
+  }
+
+  33% {
+    opacity: 1;
+    left: 443px;
+    background-color: ${SunIndigo};
+    transform: scale(1);
+    transform-origin: center;
+  }
+
+  60% {
+    left: 333px;
+    transform: scale(20);
+    background-color: ${SunYellow};
+    transform-origin: center;
   }
 
   100% {
+    background-color: ${SunYellow};
+    transform: scale(1);
     opacity: 1;
-    left: 443px;
+    top: 333px;
+    left: 333px;
   }
 `;
 
@@ -108,11 +146,30 @@ const StaggeringGreen = keyframes`
   from, 0% {
     opacity: 0;
     left: 350px;
+    background-color: ${SunYellow};
+  }
+
+  33% {
+    opacity: 1;
+    left: 332px;
+    background-color: ${SunGreen};
+    transform: scale(1);
+    transform-origin: center;
+  }
+
+  60% {
+    left: 333px;
+    transform: scale(20);
+    background-color: ${SunYellow};
+    transform-origin: center;
   }
 
   100% {
+    background-color: ${SunYellow};
+    transform: scale(1);
     opacity: 1;
-    left: 332px;
+    top: 333px;
+    left: 333px;
   }
 `;
 
@@ -131,11 +188,30 @@ const StaggeringYellow = keyframes`
   from, 0% {
     opacity: 0;
     left: 350px;
+    background-color: ${SunYellow};
+  }
+
+  33% {
+    opacity: 1;
+    left: 221px;
+    background-color: ${SunYellow};
+    transform: scale(1);
+    transform-origin: center;
+  }
+
+  60% {
+    left: 333px;
+    transform: scale(20);
+    background-color: ${SunYellow};
+    transform-origin: center;
   }
 
   100% {
+    background-color: ${SunYellow};
+    transform: scale(1);
     opacity: 1;
-    left: 221px;
+    top: 333px;
+    left: 333px;
   }
 `;
 
@@ -154,11 +230,30 @@ const StaggeringOrange = keyframes`
   from, 0% {
     opacity: 0;
     left: 350px;
+    background-color: ${SunYellow};
+  }
+
+  33% {
+    opacity: 1;
+    left: 111px;
+    background-color: ${SunOrange};
+    transform: scale(1);
+    transform-origin: center;
+  }
+
+  60% {
+    left: 333px;
+    transform: scale(20);
+    background-color: ${SunYellow};
+    transform-origin: center;
   }
 
   100% {
+    background-color: ${SunYellow};
+    transform: scale(1);
     opacity: 1;
-    left: 111px;
+    top: 333px;
+    left: 333px;
   }
 `;
 
@@ -177,11 +272,30 @@ const StaggeringRed = keyframes`
   from, 0% {
     opacity: 0;
     left: 350px;
+    background-color: ${SunYellow};
+  }
+
+  33% {
+    opacity: 1;
+    left: 0px;
+    background-color: ${SunRed};
+    transform: scale(1);
+    transform-origin: center;
+  }
+
+  60% {
+    left: 333px;
+    transform: scale(20);
+    background-color: ${SunYellow};
+    transform-origin: center;
   }
 
   100% {
+    background-color: ${SunYellow};
+    transform: scale(1);
     opacity: 1;
-    left: 0px;
+    top: 333px;
+    left: 333px;
   }
 `;
 
