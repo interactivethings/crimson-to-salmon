@@ -72,12 +72,6 @@ export const LegendLabel = styled('p')`
     color: ${LabelColor}
 `
 
-export const LegendLabelSun = styled('p')`
-    font-size: 1em;
-    line-height: 120%;
-    color: ${LabelColor}
-`
-
 // Intro
 
 export const IntroHeading = styled('div')`
