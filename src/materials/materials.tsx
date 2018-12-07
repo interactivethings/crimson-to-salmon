@@ -1,16 +1,30 @@
 import styled from '@emotion/styled-base';
 import { small, medium } from './breakpoints';
 
-// Colors
+// UI Colors
 
 export const TextColor = '#322C2C';
 export const LabelColor = '#8B7F7F';
 export const MainRed = '#FF5555';
+
+// Air Colors
+
 export const AirBlueLight = '#d7e2ef';
 export const AirBlue = '#3F7397';
 export const AirGreen = '#2FBF62';
 export const AirRed = '#FF5555';
 export const AirRedDark = '#FF2626';
+
+// Sun Colors
+
+export const SunRed = '#D0021B';
+export const SunOrange = '#FF7300';
+export const SunYellow = '#FFBF23';
+export const SunGreen = '#35A535';
+export const SunIndigo= '#4A00E2';
+export const SunBlue = '#4A90E2';
+export const SunPurple = '#BD10E0';
+
 
 // Layout
 
