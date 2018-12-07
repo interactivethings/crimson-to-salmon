@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { VizWrapper, ElementTitle, ElementSubtitle, MainRed } from 'src/materials/materials';
 import { Country } from 'src/components/Countries';
+import ZurichGradientSVG  from '../zh_gradient.svg';
 // import { color } from 'd3-color';
 // import styled from '@emotion/styled-base';
 // import { color } from 'd3-color';
@@ -31,6 +32,17 @@ export class Zurich extends React.Component {
     render() {
         return (
             <VizWrapper style={{backgroundColor: MainRed}}>
+                    <ElementTitle>Switzerland</ElementTitle>
+                    <ElementSubtitle>Zurich</ElementSubtitle> 
+            </VizWrapper>
+        );
+    }
+}
+
+export class ZurichGradient extends React.Component {
+    render() {
+        return (
+            <VizWrapper style={{backgroundImage: "url(" + ZurichGradientSVG + ")"}}>
                     <ElementTitle>Switzerland</ElementTitle>
                     <ElementSubtitle>Zurich</ElementSubtitle> 
             </VizWrapper>

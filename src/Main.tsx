@@ -8,7 +8,7 @@ import { Country, TwentyCountries } from './components/Countries';
 import { ParagraphStory } from './materials/materials';
 import { Initiatives } from './components/Initiatives';
 import { Sun } from './components/Sun';
-import { Zurich } from './components/Zurich';
+import { Zurich, ZurichGradient } from './components/Zurich';
 
 interface Props {
   data: Array<Country>;
@@ -79,6 +79,13 @@ export class Main extends React.Component<Props> {
             These are the top three initiatives to adress climate change I stumbled upon my research for this project.
           </ParagraphStory>
         <Zurich />
+
+        <ParagraphStory>
+            This reduction is essential for every country, as 2050 marks the point of no return for our climate. This means there is no way of reversing or stopping the effects of climate change which brings direct existencial threats to every living being.<br></br>
+            <br></br>
+            These are the top three initiatives to adress climate change I stumbled upon my research for this project.
+          </ParagraphStory>
+        <ZurichGradient />
 
         {/* Initiatives */}
         <ParagraphStory>
