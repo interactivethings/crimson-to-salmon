@@ -3,13 +3,63 @@ import styled from '@emotion/styled-base';
 import { keyframes } from '@emotion/core';
 import { AirBlue, AirRed, AirGreen, VizWrapper, AirRedDark } from 'src/materials/materials';
 
-export const xPositionBlue = Math.round(((Math.random() * 700) + 1) / 40) * 40;
+
+// xPos pushed to this array to have it all in one place?
+
+export const scatterElements = [{blueElement: {width: 35, xPos: 104, yPos: 85 }}, {greenElement: {green: 70}}, {redElement: { red: 105}} ];
+
 export const xPositionGreen = Math.round(((Math.random() * 700) + 1) / 40) * 40;
 export const xPositionRed = Math.round(((Math.random() * 700) + 1) / 40) * 40;
+export const xPositionBlue = Math.round(((Math.random() * 700) + 1) / 40) * 40;
 
-export const yPositionBlue = Math.round(((Math.random() * 700) + 1) / 40) * 40;
+
 export const yPositionGreen = Math.round(((Math.random() * 700) + 1) / 40) * 40;
 export const yPositionRed = Math.round(((Math.random() * 700) + 1) / 40) * 40;
+export const yPositionBlue = Math.round(((Math.random() * 700) + 1) / 40) * 40;
+
+export let xPosition = Math.round(((Math.random() * 600) + 1) / 40) * 40;
+export let yPosition = Math.round(((Math.random() * 600) + 1) / 40) * 40;
+
+
+// export const yPositionBlue = yPosition - 35;
+// export const xPositionBlue = yPosition - 35;
+
+
+    // switch (xPosition) {
+    //     case 'ScatterElementBlue':
+    //         xPosition - 35;
+    //         yPosition - 35;
+    //     case 'ScatterElementGreen':
+    //         xPosition - 35;
+    //         yPosition - 35;
+    //     case 'ScatterElementRed':
+    //         xPosition - 35;
+    //         yPosition - 35;
+    //     default:
+    //         xPosition - 105;
+    //         yPosition - 105;
+    // };
+
+    // export const xPos = xPosition as number  => {
+    //     switch (xPos) {
+    //         case xPositionBlue:
+    //             return xPosition ===  xPosition - 35;
+    //         case 'xPositionGreen':
+    //             return xPosition ===  xPosition - 70;
+    //         case 'xPositionRed':
+    //             return xPosition ===  xPosition - 105;
+    //         default:
+    //             return xPosition ===  xPosition - 105;
+    //     }
+    // };
+
+//     var boxElement = document.getElementById('theIdOfTheBox');
+
+
+// TBD: 
+// 1. create an array with the widths of the elements (also push created positions to this existing array?) and based on that, create the element with the width and the position, maybe also color. 
+// 2. use this element for an if clause which determines the distance needed to relocate the element when crossing the boundaries of VizWrapper (xPosition for every case)
+// 3. also bind perception div to this if-clause
 
 const BlueScatter = keyframes`
   from, 0% {
@@ -27,13 +77,30 @@ const BlueScatter = keyframes`
 `;
 
 export const ScatterElementBlue = styled('div')`
-    width: 35px;
+    width: 35px; 
     height: 35px;
     border-radius: 17.5px;
     background-color: ${AirBlue};
     position: absolute;
     animation: ${BlueScatter} ease-out 3s;
 `
+
+// if (ScatterElementBlue) {
+//         // Calculate and store some of the box coordinates:
+//         const ScatterElementBlueXPos = ScatterElementBlue.offsetLeft,
+//         ScatterElementBlueYPos = ScatterElementBlueXPos + ScatterElementBlue.offsetWidth;
+//         // When right side of the box goes too far - change direction:
+//         if (ScatterElementBlueXPos > VizWrapper) {
+//             xPosition = -35;
+//         }
+//         // When left side of the box goes too far - change direction:
+//         if (ScatterElementBlueYPos < 0) {
+//             yPosition = -35;
+//         }
+//         // Recalculate position:
+//         ScatterElementBlue.style.left = (ScatterElementBlueXPos - xPosition);
+//     };
+
 
 const GreenScatter = keyframes`
   from, 0% {
@@ -44,8 +111,8 @@ const GreenScatter = keyframes`
 
   100% {
       opacity: 1;
-      top: ${xPositionBlue};
-      left: ${xPositionBlue};
+      top: ${xPositionGreen};
+      left: ${xPositionGreen};
   }
 
 `;
@@ -145,6 +212,7 @@ export class BlueScattering extends React.Component {
         const redElements = [];
         const greenElements = [];
 
+        // how to push to scatterElements array to specific position (to object blueElement)?
 
         for (let i = 0; i < 25; i++) {
             blueElements.push({
@@ -169,6 +237,13 @@ export class BlueScattering extends React.Component {
 
         return(
             <VizWrapper>
+
+                {/* call all these values from the giant array to create scatterElement. how to incorporate the boundaries? already calculated when pushing to scatterElement array?
+                 {scatterElements.map( scatterElement =>
+                    <ScatterElementBlue style={{width: scatterElement.blueElement.width, left: scatterElement.blueElement.xPos, top: scatterElement.blueElement.yPos}}/>
+                 )} */}
+
+
                 {blueElements.map( blueElement =>
                 <ScatterElementBlue style={{left: blueElement.xPos, top: blueElement.yPos}}/>
                 )}

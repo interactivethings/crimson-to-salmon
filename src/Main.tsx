@@ -1,12 +1,8 @@
 import * as React from 'react';
 import './index.css';
 import { Intro } from './components/Intro';
-// import { TwentyCountries } from './components/Countries';
-// import { Initiatives } from './components/Initiatives';
 import { Air } from './components/Air';
-// import {Country} from "../src/components/Countries"
 import styled from '@emotion/styled-base';
-// import { ParagraphStory } from './materials/materials';
 import { BlueScattering, RedScattering, RedPollutedScattering } from './components/Scattering';
 import { Country, TwentyCountries } from './components/Countries';
 import { ParagraphStory } from './materials/materials';
