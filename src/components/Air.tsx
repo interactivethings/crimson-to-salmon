@@ -137,8 +137,6 @@ export const AirDefined = styled('div')`
 export class Air extends React.Component {
     render() {
         return (
-            
-            <>
             <AirWrapper>
                 {/* image 1 */}
                 <AirUndefined />
@@ -171,11 +169,6 @@ export class Air extends React.Component {
                 {/* image 3 */}
                 <AirDefined />
             </AirWrapper>
-
-                {/* <ParagraphStory>
-                It is made up of only five gases: Nitrogen (N₂), Oxygen (O₂),  Argon (Ar), and Carbon Dioxide (CO₂). Several other compounds, such as natural Ozone (O₃), are also present.
-                </ParagraphStory> */}
-            </>
         );
     }
 }
