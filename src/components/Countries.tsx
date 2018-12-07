@@ -33,7 +33,7 @@ export const SquareElement = styled('div')`
 
 export type Country = {Country: string, City: string, PM10: number}
 
-interface Props {
+export interface Props {
     countries: Array<Country>
 }
 
