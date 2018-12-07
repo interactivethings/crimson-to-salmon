@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { VizWrapper, SunRed, SunOrange, SunYellow, SunGreen, SunIndigo, SunBlue, SunPurple } from 'src/materials/materials';
+import { VizWrapper, SunRed, SunOrange, SunYellow, SunGreen, SunIndigo, SunBlue, SunPurple, LabelColor } from 'src/materials/materials';
 import styled from '@emotion/styled-base';
 import { keyframes } from '@emotion/core';
 
@@ -16,23 +16,21 @@ export const SunColors = [SunRed, SunOrange, SunYellow, SunGreen, SunIndigo, Sun
 //     align-items: center;
 // `
 
-const StaggeringPurple = keyframes`
+const StaggeringRed = keyframes`
   from, 0% {
-    opacity: 0;
-    left: 350px;
+    left: 333px;
     background-color: ${SunYellow};
   }
 
-  33% {
-    opacity: 1;
+  60% {
     left: 665px;
-    background-color: ${SunPurple};
+    background-color: ${SunRed};
     transform: scale(1);
     transform-origin: center;
 
   }
 
-  60% {
+  80% {
     left: 333px;
     transform: scale(20);
     background-color: ${SunYellow};
@@ -54,26 +52,24 @@ export const SunElement01 = styled('div')`
     width: 35px;
     height: 35px;
     border-radius: 17px;
-    animation: ${StaggeringPurple} ease 3s;
+    animation: ${StaggeringRed} ease 4s;
     animation-fill-mode: forwards;
 `
 
-const StaggeringBlue = keyframes`
+const StaggeringYellow = keyframes`
   from, 0% {
-    opacity: 0;
-    left: 350px;
+    left: 333px;
     background-color: ${SunYellow};
   }
 
-  33% {
-    opacity: 1;
+  60% {
     left: 554px;
-    background-color: ${SunBlue};
+    background-color: ${SunYellow};
     transform: scale(1);
     transform-origin: center;
   }
 
-  60% {
+  80% {
     left: 333px;
     transform: scale(20);
     background-color: ${SunYellow};
@@ -95,27 +91,24 @@ export const SunElement02 = styled('div')`
     width: 35px;
     height: 35px;
     border-radius: 17px;
-    background-color: ${SunBlue};
-    animation: ${StaggeringBlue} ease 3s;
+    animation: ${StaggeringYellow} ease 4s;
     animation-fill-mode: forwards;
 `
 
-const StaggeringIndigo = keyframes`
+const StaggeringOrange = keyframes`
   from, 0% {
-    opacity: 0;
-    left: 350px;
+    left: 333px;
     background-color: ${SunYellow};
   }
 
-  33% {
-    opacity: 1;
+  60% {
     left: 443px;
-    background-color: ${SunIndigo};
+    background-color: ${SunOrange};
     transform: scale(1);
     transform-origin: center;
   }
 
-  60% {
+  80% {
     left: 333px;
     transform: scale(20);
     background-color: ${SunYellow};
@@ -137,27 +130,24 @@ export const SunElement03 = styled('div')`
     width: 35px;
     height: 35px;
     border-radius: 17px;
-    background-color: ${SunIndigo};
-    animation: ${StaggeringIndigo} ease 3s;
+    animation: ${StaggeringOrange} ease 4s;
     animation-fill-mode: forwards;
 `
 
 const StaggeringGreen = keyframes`
   from, 0% {
-    opacity: 0;
-    left: 350px;
+    left: 333px;
     background-color: ${SunYellow};
   }
 
-  33% {
-    opacity: 1;
+  60% {
     left: 332px;
     background-color: ${SunGreen};
     transform: scale(1);
     transform-origin: center;
   }
 
-  60% {
+  80% {
     left: 333px;
     transform: scale(20);
     background-color: ${SunYellow};
@@ -179,27 +169,24 @@ export const SunElement04 = styled('div')`
     width: 35px;
     height: 35px;
     border-radius: 17px;
-    background-color: ${SunGreen};
-    animation: ${StaggeringGreen} ease 3s;
+    animation: ${StaggeringGreen} ease 4s;
     animation-fill-mode: forwards;
 `
 
-const StaggeringYellow = keyframes`
+const StaggeringIndigo = keyframes`
   from, 0% {
-    opacity: 0;
-    left: 350px;
+    left: 333px;
     background-color: ${SunYellow};
   }
 
-  33% {
-    opacity: 1;
+  60% {
     left: 221px;
-    background-color: ${SunYellow};
+    background-color: ${SunIndigo};
     transform: scale(1);
     transform-origin: center;
   }
 
-  60% {
+  80% {
     left: 333px;
     transform: scale(20);
     background-color: ${SunYellow};
@@ -221,27 +208,24 @@ export const SunElement05 = styled('div')`
     width: 35px;
     height: 35px;
     border-radius: 17px;
-    background-color: ${SunYellow};
-    animation: ${StaggeringYellow} ease 3s;
+    animation: ${StaggeringIndigo} ease 4s;
     animation-fill-mode: forwards;
 `
 
-const StaggeringOrange = keyframes`
+const StaggeringBlue = keyframes`
   from, 0% {
-    opacity: 0;
-    left: 350px;
+    left: 333px;
     background-color: ${SunYellow};
   }
 
-  33% {
-    opacity: 1;
+  60% {
     left: 111px;
-    background-color: ${SunOrange};
+    background-color: ${SunBlue};
     transform: scale(1);
     transform-origin: center;
   }
 
-  60% {
+  80% {
     left: 333px;
     transform: scale(20);
     background-color: ${SunYellow};
@@ -263,27 +247,24 @@ export const SunElement06 = styled('div')`
     width: 35px;
     height: 35px;
     border-radius: 17px;
-    background-color: ${SunOrange};
-    animation: ${StaggeringOrange} ease 3s;
+    animation: ${StaggeringBlue} ease 4s;
     animation-fill-mode: forwards;
 `
 
-const StaggeringRed = keyframes`
+const StaggeringPurple = keyframes`
   from, 0% {
-    opacity: 0;
-    left: 350px;
+    left: 333px;
     background-color: ${SunYellow};
   }
 
-  33% {
-    opacity: 1;
+  60% {
     left: 0px;
-    background-color: ${SunRed};
+    background-color: ${SunPurple};
     transform: scale(1);
     transform-origin: center;
   }
 
-  60% {
+  80% {
     left: 333px;
     transform: scale(20);
     background-color: ${SunYellow};
@@ -305,14 +286,67 @@ export const SunElement07 = styled('div')`
     width: 35px;
     height: 35px;
     border-radius: 17px;
-    background-color: ${SunRed};
-    animation: ${StaggeringRed} ease 3s;
+    animation: ${StaggeringPurple} ease 4s;
     animation-fill-mode: forwards;
+`
+
+export const LegendItem = styled('div')`
+    display: flex;
+    width: 700px;
+    justify-content: space-between;
+`
+
+const LegendWLItems = keyframes`
+    from, 0% {
+       opacity: 0;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+`
+
+export const LegendLabelWL = styled('p')`
+    font-size: 1em;
+    line-height: 120%;
+    color: ${LabelColor};
+    animation: ${LegendWLItems} ease 3s;
+    animation-fill-mode: forwards;
+`
+
+export const Legend = styled('div')`
+    display: flex;
+    width: 700px;
+    justify-content: space-between;
+    animation: ${LegendWLItems} ease 3s;
+    animation-fill-mode: forwards;
+`
+
+const LegendSun = keyframes`
+    from, 80% {
+       opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+`
+
+export const LegendLabelSun = styled('p')`
+    font-size: 1em;
+    line-height: 120%;
+    color: ${LabelColor};
+    animation: ${LegendSun} ease 3s;
 `
 
 export class Sun extends React.Component {
     render() {
         return(
+            <>
             <VizWrapper>
                 {/* <SunRoot> */}
                     {/* <SunElements> */}
@@ -329,9 +363,18 @@ export class Sun extends React.Component {
                 <SunElement05 />
                 <SunElement06 />
                 <SunElement07 />
+                
+               
                     {/* </SunElements> */}
                 {/* </SunRoot> */}
             </VizWrapper>
+
+             <LegendItem>
+                <LegendLabelWL>short</LegendLabelWL>
+                <LegendLabelSun>Sun</LegendLabelSun>
+                <LegendLabelWL>long</LegendLabelWL>
+            </LegendItem>
+            </>
         );
     }
 }

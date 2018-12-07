@@ -52,9 +52,7 @@ export const ParagraphStory = styled('p')`
     width: 30%;
     line-height: 120%;
     color: ${TextColor};
-    
-    
-  
+
 //   @media (max-width: ${small}px)  {
 //       font-size: 1rem;
 //   };
@@ -67,6 +65,18 @@ export const ParagraphStory = styled('p')`
 //       font-size: 1.2rem;
 //   };
 `;
+
+export const LegendLabel = styled('p')`
+    font-size: 1em;
+    line-height: 120%;
+    color: ${LabelColor}
+`
+
+export const LegendLabelSun = styled('p')`
+    font-size: 1em;
+    line-height: 120%;
+    color: ${LabelColor}
+`
 
 // Intro
 
