@@ -114,7 +114,6 @@ const GreenScatter = keyframes`
       top: ${xPositionGreen};
       left: ${xPositionGreen};
   }
-
 `;
 
 export const ScatterElementGreen = styled('div')`

@@ -7,6 +7,7 @@ import { BlueScattering, RedScattering, RedPollutedScattering } from './componen
 import { Country, TwentyCountries } from './components/Countries';
 import { ParagraphStory } from './materials/materials';
 import { Initiatives } from './components/Initiatives';
+import { Sun } from './components/Sun';
 
 interface Props {
   data: Array<Country>;
@@ -36,6 +37,12 @@ export class Main extends React.Component<Props> {
             Scientists also refer to this pure and natural gas mixture as «dry air».
         </ParagraphStory>
         <Air/> 
+
+        {/* Sun */}
+        <ParagraphStory>
+            Sunlight, on the contrary, is composed of a whole spectrum of colors, ranging from long wavelengths (~700 nm) which are perceived as red, to shorter wavelengths (~300 nm), perceived as purplish-blue.
+        </ParagraphStory>
+        <Sun/> 
 
         {/* Scattering */}
         <ParagraphStory>
