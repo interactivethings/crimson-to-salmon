@@ -6,13 +6,29 @@ import { small, medium } from './breakpoints';
 export const TextColor = '#322C2C';
 export const LabelColor = '#8B7F7F';
 export const MainRed = '#FF5555';
-export const AirColor = '#EBEEF2';
+export const AirColorLight = '#d7e2ef';
+export const AirColorDark = '#a4b9d2';
 
 // Typography
 
-export const Text = styled('p')`
-  line-height: 120%;
-  color: ${TextColor};
+export const Chapter = styled('div')`
+display: flex;
+justify-content: center;
+align-items: center;
+`
+
+export const ParagraphStory = styled('p')`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-item: center;
+    margin: 5vh 0 5vh 0;
+    width: 30%;
+    line-height: 120%;
+    color: ${TextColor};
+    
+    
+  
 //   @media (max-width: ${small}px)  {
 //       font-size: 1rem;
 //   };

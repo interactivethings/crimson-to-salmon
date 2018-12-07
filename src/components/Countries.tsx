@@ -16,6 +16,7 @@ export const SquareWrapper = styled('div')`
     flex-wrap: wrap;
     display: flex;
     max-width: 700px;
+
 `
 
 export const SquareElement = styled('div')`
