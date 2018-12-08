@@ -25,6 +25,10 @@ export const SunIndigo= '#4A00E2';
 export const SunBlue = '#4A90E2';
 export const SunPurple = '#BD10E0';
 
+// Zurich Colors
+
+export const MaskColor = '#E40000';
+
 
 // Layout
 

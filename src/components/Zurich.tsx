@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { VizWrapper, ElementTitle, ElementSubtitle, MainRed } from 'src/materials/materials';
+import { VizWrapper, ElementTitle, ElementSubtitle, MainRed, MaskColor } from 'src/materials/materials';
 import { Country } from 'src/components/Countries';
 import ZurichGradientSVG  from '../zh_gradient.svg';
 import { GradientBar, GradientLabels } from './Legends';
@@ -51,6 +51,16 @@ export const Visualization = styled('div')`
     flex-direction: column;
 `
 
+export const ValueRange = styled('div')`
+    position: absolute;
+    height: 175px;
+    background-color: ${MaskColor};
+    opacity: 0.8;
+`
+
+// another comp or const which has already masked the four divs (whose l + r values are determined by data) with the GradientBar. position absolute to overlay?
+// map the color range / PM10 range to the width. so if the element would start at ie 48 which would be around 350px etc. how to close it then to make it a container? when absolute positioned set left and with with this! push the values into a
+
 export class ZurichGradient extends React.Component {
     render() {
         return (
@@ -58,12 +68,25 @@ export class ZurichGradient extends React.Component {
                 <GradientLabels />
                 <Visualization>
                     <VizWrapper style={{backgroundImage: "url(" + ZurichGradientSVG + ")"}}>
-                        <ElementTitle>Switzerland</ElementTitle>
-                        <ElementSubtitle>Zurich</ElementSubtitle> 
+                        {/* <ElementTitle>Switzerland</ElementTitle>
+                        <ElementSubtitle>Zurich</ElementSubtitle>  */}
+                        <ValueRange style={{width: 300, top: 0, left: 73}}/>
+                        <ValueRange style={{width: 34, top: 175, left: 305}}/>
+                        <ValueRange style={{width: 543, top: 350, left: 92}}/>
+                        <ValueRange style={{width: 145, top: 525, left: 123}}/>
                     </VizWrapper>
                 <GradientBar />
                 </Visualization>
             </ZurichGradientRoot>
+        );
+    }
+}
+
+export class ZurichDetail extends React.Component {
+    render() {
+        return(
+            <>
+            </>
         );
     }
 }
