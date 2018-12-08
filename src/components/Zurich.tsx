@@ -2,7 +2,7 @@ import * as React from 'react';
 import { VizWrapper, ElementTitle, ElementSubtitle, MainRed, MaskColor } from 'src/materials/materials';
 import { Country } from 'src/components/Countries';
 import ZurichGradientSVG  from '../zh_gradient.svg';
-import { GradientBar, GradientLabels } from './Legends';
+import { GradientLabels, Legend, LegendItem } from './Legends';
 import styled from '@emotion/styled-base';
 // import { color } from 'd3-color';
 // import styled from '@emotion/styled-base';
@@ -59,7 +59,10 @@ export const ValueRange = styled('div')`
 `
 
 // another comp or const which has already masked the four divs (whose l + r values are determined by data) with the GradientBar. position absolute to overlay?
-// map the color range / PM10 range to the width. so if the element would start at ie 48 which would be around 350px etc. how to close it then to make it a container? when absolute positioned set left and with with this! push the values into a
+// map the color range / PM10 range to the width. so if the element would start at ie 48 which would be around 350px etc. how to close it then to make it a     container? when absolute positioned set left and with with this! push the values into an array
+// heubeeribüel: no PM10 data on hand.
+// add annotation that there are days when no data was recorded (NaN).
+// smallest and largest values can be hardcoded but having data on hand calls for using it. attention: current design macht, dass man glaubt, dass die station generell über dem limitwert ist. dabei sind es im falle der stampfenbachstrasse gerade mal 25 tage in 2016. irgendwo vermerken?
 
 export class ZurichGradient extends React.Component {
     render() {
@@ -75,7 +78,11 @@ export class ZurichGradient extends React.Component {
                         <ValueRange style={{width: 543, top: 350, left: 92}}/>
                         <ValueRange style={{width: 145, top: 525, left: 123}}/>
                     </VizWrapper>
-                <GradientBar />
+                    <Legend>
+                        <LegendItem>0</LegendItem>
+                        <LegendItem>⟶ PM 10 per Year (µg / m²)</LegendItem>
+                        <LegendItem>292</LegendItem>
+                    </Legend>                
                 </Visualization>
             </ZurichGradientRoot>
         );

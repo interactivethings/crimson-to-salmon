@@ -50,9 +50,9 @@ export const ParagraphStory = styled('p')`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-item: center;
-    margin: 5vh 0 5vh 0;
-    width: 30%;
+    width: 50%;
+    margin: 15vh 0 15vh 0;
+    font-size: 1.5em;
     line-height: 120%;
     color: ${TextColor};
 
