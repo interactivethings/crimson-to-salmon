@@ -290,12 +290,6 @@ export const SunElement07 = styled('div')`
     animation-fill-mode: forwards;
 `
 
-export const LegendItem = styled('div')`
-    display: flex;
-    width: 700px;
-    justify-content: space-between;
-`
-
 const LegendWLItems = keyframes`
     from, 0% {
        opacity: 0;
@@ -369,11 +363,11 @@ export class Sun extends React.Component {
                 {/* </SunRoot> */}
             </VizWrapper>
 
-             <LegendItem>
+             <Legend>
                 <LegendLabelWL>short</LegendLabelWL>
                 <LegendLabelSun>Sun</LegendLabelSun>
                 <LegendLabelWL>long</LegendLabelWL>
-            </LegendItem>
+            </Legend>
             </>
         );
     }
