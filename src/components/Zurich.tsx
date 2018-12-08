@@ -2,6 +2,8 @@ import * as React from 'react';
 import { VizWrapper, ElementTitle, ElementSubtitle, MainRed } from 'src/materials/materials';
 import { Country } from 'src/components/Countries';
 import ZurichGradientSVG  from '../zh_gradient.svg';
+import { GradientBar, GradientLabels } from './Legends';
+import styled from '@emotion/styled-base';
 // import { color } from 'd3-color';
 // import styled from '@emotion/styled-base';
 // import { color } from 'd3-color';
@@ -39,13 +41,23 @@ export class Zurich extends React.Component {
     }
 }
 
+export const ZurichGradientRoot = styled('div')`
+    display: flex;
+    flex-direction: row;
+`
+
 export class ZurichGradient extends React.Component {
     render() {
         return (
-            <VizWrapper style={{backgroundImage: "url(" + ZurichGradientSVG + ")"}}>
+            <ZurichGradientRoot>
+                <GradientLabels />
+
+                <VizWrapper style={{backgroundImage: "url(" + ZurichGradientSVG + ")"}}>
                     <ElementTitle>Switzerland</ElementTitle>
                     <ElementSubtitle>Zurich</ElementSubtitle> 
-            </VizWrapper>
+                </VizWrapper>
+                <GradientBar />
+            </ZurichGradientRoot>
         );
     }
 }

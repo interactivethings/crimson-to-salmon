@@ -35,3 +35,21 @@ export class GradientBar extends React.Component {
         );
     }
 }
+
+export const LabelRoot = styled('div')`
+    display: flex;
+    height: 700px;
+`
+
+export class GradientLabels extends React.Component {
+    render() {
+        return(
+            <LabelRoot>
+                <LegendItem>Stampfenbachstrasse</LegendItem>
+                <LegendItem>Rosengartenstrasse</LegendItem>
+                <LegendItem>Heubeeribüel</LegendItem>
+                <LegendItem>Schimmelstrasse</LegendItem>
+            </LabelRoot>
+        );
+    }
+}
