@@ -38,6 +38,8 @@ export class GradientBar extends React.Component {
 
 export const LabelRoot = styled('div')`
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     height: 700px;
 `
 

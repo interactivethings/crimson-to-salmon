@@ -46,17 +46,23 @@ export const ZurichGradientRoot = styled('div')`
     flex-direction: row;
 `
 
+export const Visualization = styled('div')`
+    display: flex;
+    flex-direction: column;
+`
+
 export class ZurichGradient extends React.Component {
     render() {
         return (
             <ZurichGradientRoot>
                 <GradientLabels />
-
-                <VizWrapper style={{backgroundImage: "url(" + ZurichGradientSVG + ")"}}>
-                    <ElementTitle>Switzerland</ElementTitle>
-                    <ElementSubtitle>Zurich</ElementSubtitle> 
-                </VizWrapper>
+                <Visualization>
+                    <VizWrapper style={{backgroundImage: "url(" + ZurichGradientSVG + ")"}}>
+                        <ElementTitle>Switzerland</ElementTitle>
+                        <ElementSubtitle>Zurich</ElementSubtitle> 
+                    </VizWrapper>
                 <GradientBar />
+                </Visualization>
             </ZurichGradientRoot>
         );
     }
