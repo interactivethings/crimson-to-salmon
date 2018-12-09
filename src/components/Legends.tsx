@@ -62,10 +62,9 @@ export class GradientLabels extends React.Component {
             <LabelRoot>
                 <LegendItem style={{position: "absolute", top: "-5vh"}}>↑ Checkpoint</LegendItem>
             <Labels>
-                <LegendItem>Stampfenbachstrasse</LegendItem>
                 <LegendItem>Rosengartenstrasse</LegendItem>
-                <LegendItem>Heubeeribüel</LegendItem>
                 <LegendItem>Schimmelstrasse</LegendItem>
+                <LegendItem>Stampfenbachstrasse</LegendItem>
             </Labels>
             </LabelRoot>
         );
