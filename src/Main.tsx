@@ -28,6 +28,10 @@ export const MainRoot = styled('div')`
 //     display: inline;
 // `
 
+
+//TODO: layout is next + incorporating the animation hooks! prepare for workshop with gerhard!
+
+
 export class Main extends React.Component<Props> {
   public render() {
     return (
