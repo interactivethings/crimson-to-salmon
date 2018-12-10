@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { VizWrapper, SunRed, SunOrange, SunYellow, SunGreen, SunIndigo, SunBlue, SunPurple, LabelColor } from 'src/materials/materials';
+import { VizWrapper, SunRed, SunOrange, SunYellow, SunGreen, SunIndigo, SunBlue, SunPurple, LabelColor, SunWhite } from 'src/materials/materials';
 import styled from '@emotion/styled-base';
 import { keyframes } from '@emotion/core';
-import { ScatterElementSmall } from './Scattering';
 
 export const SunColors = [SunRed, SunOrange, SunYellow, SunGreen, SunIndigo, SunBlue, SunPurple]
 
@@ -374,25 +373,59 @@ export class Sun extends React.Component {
     }
 }
 
+export const SunElement = styled('div')`
+  width: 35px; 
+  height: 35px;
+  border-radius: 17.5px;
+  background-color: ${SunYellow};
+`
+
+const FullSun = keyframes`
+  from, 0% {
+    opacity: 1  
+  }
+
+  100% {
+    opacity: 0;  
+  }
+`;
+
+export const SunNegativeElement = styled('div')`
+  width: 35px; 
+  height: 35px;
+  border-radius: 0px;
+  background-color: ${SunWhite};
+  position: absolute;
+  // animation: ${FullSun} ease 3s infinite;
+  // animation-fill-mode: forwards;
+`
+
 export class SunRays extends React.Component {
   render() {
     const sunElements = [];
+    const sunNegativeElements = [];
 
-    // how to push to scatterElements array to specific position (to object blueElement)?
-
-    for (let i = 0; i < 45; i++) {
+    for (let i = 0; i < 400; i++) {
         sunElements.push({
-            xPos: Math.round(((Math.random() * 700) + 1) / 40) * 40,
-            yPos: Math.round(((Math.random() * 700) + 1) / 40) * 40,
         });
     }
+
+    for (let i = 0; i < 300; i++) {
+      sunNegativeElements.push({
+          xPos: Math.round(((Math.random() * 665) + 1) / 35) * 35,
+          yPos: Math.round(((Math.random() * 315) + 350) / 35) * 35,
+      });
+  }
     return(
-      <>
-       {sunElements.map( sunElement =>
-                <ScatterElementSmall style={{left: sunElement.xPos, top: sunElement.yPos}}/>
-                )}
-      </>
+        <>
+          {sunElements.map( sunElement =>
+             <SunElement />
+          )}
+
+          {sunNegativeElements.map( sunNegativeElement =>
+              <SunNegativeElement style={{left: sunNegativeElement.xPos, top: sunNegativeElement.yPos}}/>
+          )}
+        </>
     );
   }
-
 }
