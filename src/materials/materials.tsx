@@ -13,7 +13,7 @@ export const AirBlueLight = '#d7e2ef';
 export const AirBlue = '#3F7397';
 export const AirGreen = '#2FBF62';
 export const AirRed = '#FF5555';
-export const AirRedDark = '#FF2626';
+export const AirRedDark = '#9B0000';
 
 // Sun Colors
 
@@ -24,6 +24,8 @@ export const SunGreen = '#35A535';
 export const SunIndigo= '#4A00E2';
 export const SunBlue = '#4A90E2';
 export const SunPurple = '#BD10E0';
+
+export const SunWhite = '#FFFFFF'
 
 // Zurich Colors
 

@@ -3,7 +3,7 @@ import './index.css';
 import { Intro } from './components/Intro';
 import { Air } from './components/Air';
 import styled from '@emotion/styled-base';
-import { BlueScattering, RedScattering, RedPollutedScattering } from './components/Scattering';
+import { BlueScattering, RedScattering, Scattering } from './components/Scattering';
 import { Country, TwentyCountries } from './components/Countries';
 import { ParagraphStory } from './materials/materials';
 import { Initiatives } from './components/Initiatives';
@@ -21,6 +21,12 @@ export const MainRoot = styled('div')`
     align-items: center;
     position: relative;
 `
+
+// export const TextHighlighters = styled('span')`
+//     background-color: ${AirBlueLight};
+//     padding: 1px 0 1px 0;
+//     display: inline;
+// `
 
 export class Main extends React.Component<Props> {
   public render() {
@@ -49,7 +55,7 @@ export class Main extends React.Component<Props> {
         <ParagraphStory>
             TEST SUN
         </ParagraphStory>
-        <Sun/> 
+        <Scattering /> 
 
         {/* Scattering */}
         <ParagraphStory>
@@ -68,7 +74,7 @@ export class Main extends React.Component<Props> {
         <ParagraphStory>
             The compounds of air vary due to emissions of human kind. As we are constantly burning fossils, this leads to an emission of particularly fine particles (PM10) in very small sizes (~10 µm = 0.01 mm) into the air.
         </ParagraphStory>
-        <RedPollutedScattering />          
+        {/* <RedPollutedScattering />           */}
 
         {/* Twenty Countries */}
         <ParagraphStory>
