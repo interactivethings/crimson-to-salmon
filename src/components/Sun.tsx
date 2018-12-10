@@ -2,6 +2,7 @@ import * as React from 'react';
 import { VizWrapper, SunRed, SunOrange, SunYellow, SunGreen, SunIndigo, SunBlue, SunPurple, LabelColor } from 'src/materials/materials';
 import styled from '@emotion/styled-base';
 import { keyframes } from '@emotion/core';
+import { ScatterElementSmall } from './Scattering';
 
 export const SunColors = [SunRed, SunOrange, SunYellow, SunGreen, SunIndigo, SunBlue, SunPurple]
 
@@ -377,4 +378,27 @@ export class Sun extends React.Component {
             </>
         );
     }
+}
+
+export class SunRays extends React.Component {
+  render() {
+    const sunElements = [];
+
+    // how to push to scatterElements array to specific position (to object blueElement)?
+
+    for (let i = 0; i < 45; i++) {
+        sunElements.push({
+            xPos: Math.round(((Math.random() * 700) + 1) / 40) * 40,
+            yPos: Math.round(((Math.random() * 700) + 1) / 40) * 40,
+        });
+    }
+    return(
+      <>
+       {sunElements.map( sunElement =>
+                <ScatterElementSmall style={{left: sunElement.xPos, top: sunElement.yPos}}/>
+                )}
+      </>
+    );
+  }
+
 }

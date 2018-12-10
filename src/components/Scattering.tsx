@@ -76,7 +76,7 @@ const BlueScatter = keyframes`
 
 `;
 
-export const ScatterElementBlue = styled('div')`
+export const ScatterElementSmall = styled('div')`
     width: 35px; 
     height: 35px;
     border-radius: 17.5px;
@@ -116,7 +116,7 @@ const GreenScatter = keyframes`
   }
 `;
 
-export const ScatterElementGreen = styled('div')`
+export const ScatterElementMiddle = styled('div')`
     width: 70px;
     height: 35px;
     border-radius: 17.5px;
@@ -171,7 +171,7 @@ const ExtremeRedSky = keyframes`
 
 
 
-export const ScatterElementRed = styled('div')`
+export const ScatterElementBig = styled('div')`
     width: 105px;
     height: 35px;
     border-radius: 17.5px;
@@ -244,15 +244,15 @@ export class BlueScattering extends React.Component {
 
 
                 {blueElements.map( blueElement =>
-                <ScatterElementBlue style={{left: blueElement.xPos, top: blueElement.yPos}}/>
+                <ScatterElementSmall style={{left: blueElement.xPos, top: blueElement.yPos}}/>
                 )}
 
                 {redElements.map( redElement =>
-                <ScatterElementGreen style={{left: redElement.xPos, top: redElement.yPos}}/>
+                <ScatterElementMiddle style={{left: redElement.xPos, top: redElement.yPos}}/>
                 )}
 
                 {greenElements.map( greenElement =>
-                <ScatterElementRed style={{left: greenElement.xPos, top: greenElement.yPos}}/>
+                <ScatterElementBig style={{left: greenElement.xPos, top: greenElement.yPos}}/>
                 )}
                 <DaytimeSky />
             </VizWrapper>
@@ -291,15 +291,15 @@ export class RedScattering extends React.Component {
         return(
             <VizWrapper>
                 {blueElements.map( blueElement =>
-                <ScatterElementBlue style={{left: blueElement.xPos, top: blueElement.yPos}}/>
+                <ScatterElementSmall style={{left: blueElement.xPos, top: blueElement.yPos}}/>
                 )}
 
                 {redElements.map( redElement =>
-                <ScatterElementGreen style={{left: redElement.xPos, top: redElement.yPos}}/>
+                <ScatterElementMiddle style={{left: redElement.xPos, top: redElement.yPos}}/>
                 )}
 
                 {greenElements.map( greenElement =>
-                <ScatterElementRed style={{left: greenElement.xPos, top: greenElement.yPos}}/>
+                <ScatterElementBig style={{left: greenElement.xPos, top: greenElement.yPos}}/>
                 )}
 
                 <EveningSky />
@@ -330,11 +330,11 @@ export class RedPollutedScattering extends React.Component {
         return(
             <VizWrapper>
                 {redElements.map( redElement =>
-                <ScatterElementGreen style={{left: redElement.xPos, top: redElement.yPos}}/>
+                <ScatterElementMiddle style={{left: redElement.xPos, top: redElement.yPos}}/>
                 )}
 
                 {greenElements.map( greenElement =>
-                <ScatterElementRed style={{left: greenElement.xPos, top: greenElement.yPos}}/>
+                <ScatterElementBig style={{left: greenElement.xPos, top: greenElement.yPos}}/>
                 )}
                 <PollutedEveningSky />
             </VizWrapper>

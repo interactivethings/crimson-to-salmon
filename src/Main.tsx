@@ -44,6 +44,12 @@ export class Main extends React.Component<Props> {
         </ParagraphStory>
         <Sun/> 
 
+        {/* Sun Rays */}
+        <ParagraphStory>
+            TEST SUN
+        </ParagraphStory>
+        <Sun/> 
+
         {/* Scattering */}
         <ParagraphStory>
             Air molecules are slightly closer in size to shorter wavelength of violet and blue light than to the long ones of red light.
