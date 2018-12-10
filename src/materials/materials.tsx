@@ -25,6 +25,10 @@ export const SunIndigo= '#4A00E2';
 export const SunBlue = '#4A90E2';
 export const SunPurple = '#BD10E0';
 
+// Zurich Colors
+
+export const MaskColor = '#E40000';
+
 
 // Layout
 
@@ -38,8 +42,7 @@ export const VizWrapper = styled('div')`
     position: relative;
     width: 700px;
     height: 700px;
-`
-
+    `
 
 // Typography
 
@@ -47,9 +50,9 @@ export const ParagraphStory = styled('p')`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-item: center;
-    margin: 5vh 0 5vh 0;
-    width: 30%;
+    width: 50%;
+    margin: 15vh 0 15vh 0;
+    font-size: 1.5em;
     line-height: 120%;
     color: ${TextColor};
 
