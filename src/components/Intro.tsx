@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from '@emotion/styled'
 import { IntroHeading, Intro1, Intro2, Intro3, Intro4, MainRed } from 'src/materials/materials';
+// import VideoStill from '../public/tctsity_bg_video.mp4';
 
 export const IntroWrapper = styled('div')`
     width: 100vw;
@@ -9,7 +10,7 @@ export const IntroWrapper = styled('div')`
     position: relative;
 `
 
-export const BackgroundVideo = styled('video')`
+export const BackgroundVideo = styled('img')`
     width: 100vw;
     height: 100vh;
 `
@@ -32,9 +33,8 @@ export class Intro extends React.Component {
                         30 Years
                     </Intro4>
                 </IntroHeading>
-                <BackgroundVideo loop autoPlay muted> 
-                    <video src="http://www.w3schools.com/html/movie.mp4" controls />
-                </BackgroundVideo>
+                {/* <BackgroundVideo src={VideoStill}> 
+                </BackgroundVideo> */}
             </IntroWrapper>
         );
     }
