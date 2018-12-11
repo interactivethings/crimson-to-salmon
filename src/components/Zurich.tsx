@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { VizWrapper, ElementTitle, ElementSubtitle, MainRed, MaskColor } from 'src/materials/materials';
-import { Country } from 'src/components/Countries';
+import { VizWrapper, ElementTitle, ElementSubtitle, MainRed } from 'src/materials/materials';
+import { Country, SquareWrapper } from 'src/components/Countries';
 import ZurichGradientSVG  from '../zh_gradient.svg';
-import { GradientLabels, Legend, LegendItem } from './Legends';
+import { Legend, LegendItem } from './Legends';
 import styled from '@emotion/styled-base';
 import { scaleLinear } from 'd3-scale';
 // import { color } from 'd3-color';
@@ -52,20 +52,9 @@ export class Zurich extends React.Component {
     }
 }
 
-export const ZurichGradientRoot = styled('div')`
-    display: flex;
-    flex-direction: row;
-`
-
-export const Visualization = styled('div')`
-    display: flex;
-    flex-direction: column;
-`
-
 export const ValueRange = styled('div')`
     position: absolute;
     height: 230px;
-    background-color: ${MaskColor};
     opacity: 0.8;
 `
 
@@ -79,7 +68,7 @@ export const ValueRange = styled('div')`
 // use max value of countries data set from 2016. here hardcoded with value 292...
 // on hover show the two values? or number of days how high and low values within 2016? 
 const size = scaleLinear()
-    .domain([0, 292])
+    .domain([0, 100])
     .rangeRound([1, 700] as any)
 
 console.log(size(3))
@@ -87,22 +76,20 @@ console.log(size(3))
 export class ZurichGradient extends React.Component {
     render() {
         return (
-            <ZurichGradientRoot>
-                <GradientLabels />
-                <Visualization>
-                {/* {this.props.details.map(detail =>  */}
-                    <VizWrapper style={{backgroundImage: "url(" + ZurichGradientSVG + ")"}}>
+                <SquareWrapper>
+                    {/* {this.props.details.map(detail =>  */}
+                    <VizWrapper style={{mask: "url(" + ZurichGradientSVG + ")"}}>
                         {/* <ElementTitle>Switzerland</ElementTitle>
                         <ElementSubtitle>Zurich</ElementSubtitle>  */}
-
+                        
                         {/* Rosengartenstrasse */}
-                        <ValueRange style={{top: 0, left: size(3.56), width: size(81.99 - 3.56)}}/>
+                        <ValueRange style={{backgroundImage: "url(" + ZurichGradientSVG + ")", top: 0, left: size(3.56), width: size(81.99 - 3.56)}}/>
 
                         {/* Schimmelstrasse */}
-                        <ValueRange style={{top: 235, left: size(1.94), width: size(66.27 - 1.94)}}/>
+                        <ValueRange style={{backgroundImage: "url(" + ZurichGradientSVG + ")", top: 235, left: size(1.94), width: size(66.27 - 1.94)}}/>
 
                         {/* Stampfenbachstrasse */}
-                        <ValueRange style={{top: 470, left: size(3.38), width: size(56 - 3.38)}}/>
+                        <ValueRange style={{backgroundImage: "url(" + ZurichGradientSVG + ")", top: 470, left: size(3.38), width: size(56 - 3.38)}}/>
                     </VizWrapper>
                     {/* )} */}
 
@@ -111,13 +98,12 @@ export class ZurichGradient extends React.Component {
                         <LegendItem>⟶ PM 10 per Year (µg / m²)</LegendItem>
                         <LegendItem>292</LegendItem>
                     </Legend>                
-                </Visualization>
-            </ZurichGradientRoot>
+                </SquareWrapper>
         );
     }
 }
 
-export class ZurichDetail extends React.Component {
+export class LimitValues extends React.Component {
     render() {
         return(
             <>

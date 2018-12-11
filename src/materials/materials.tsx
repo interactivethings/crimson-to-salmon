@@ -48,28 +48,33 @@ export const VizWrapper = styled('div')`
 
 // Typography
 
-export const ParagraphStory = styled('p')`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 50%;
-    margin: 15vh 0 15vh 0;
-    font-size: 1.5em;
+export const Heading = styled('h1')`
+    font-size: 1.5rem;
+    font-weight: 700;
     line-height: 120%;
     color: ${TextColor};
+    width: 85%;
+    margin: 0 0 1.2rem;
+`
 
-//   @media (max-width: ${small}px)  {
-//       font-size: 1rem;
-//   };
+export const Paragraph = styled('p')`
+    font-size: 1.5rem;
+    line-height: 120%;
+    color: ${TextColor};
+    width: 85%;
 
-//   @media (min-width: ${small}px) and (max-width: ${medium}px) {
-//       font-size: 1.1rem;
-//   };
+    //   @media (max-width: ${small}px)  {
+    //       font-size: 1rem;
+    //   };
 
-//   @media (min-width: ${medium}px) {
-//       font-size: 1.2rem;
-//   };
-`;
+    //   @media (min-width: ${small}px) and (max-width: ${medium}px) {
+    //       font-size: 1.1rem;
+    //   };
+
+    //   @media (min-width: ${medium}px) {
+    //       font-size: 1.2rem;
+    //   };
+`
 
 export const LegendLabel = styled('p')`
     font-size: 1em;

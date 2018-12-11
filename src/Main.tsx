@@ -22,6 +22,12 @@ export const MainRoot = styled('div')`
     position: relative;
 `
 
+export const Chapter = styled('div')`
+    display: flex;
+    flex-direction: row;
+
+`
+
 // export const TextHighlighters = styled('span')`
 //     background-color: ${AirBlueLight};
 //     padding: 1px 0 1px 0;
@@ -38,22 +44,27 @@ export class Main extends React.Component<Props> {
       <>
       <Intro/>
         <MainRoot>
-        {/* Air */}
-        <ParagraphStory>
-            First of all, let us have a closer look on air.<br></br>
-            <br></br>
-            It is made up of only five gases: Nitrogen (N₂), Oxygen (O₂),  Argon (Ar), and Carbon Dioxide (CO₂). Several other compounds, such as natural Ozone (O₃), are also present.
-            <br></br>
-            <br></br>
-            Scientists also refer to this pure and natural gas mixture as «dry air».
-        </ParagraphStory>
-        <Air/> 
-
-        {/* Sun */}
-        <ParagraphStory>
-            Sunlight, on the contrary, is composed of a whole spectrum of colors, ranging from long wavelengths (~700 nm) which are perceived as red, to shorter wavelengths (~300 nm), perceived as purplish-blue.
-        </ParagraphStory>
-        <Sun/> 
+            <Chapter>
+                {/* Air */}
+                <ParagraphStory>
+                    First of all, let us have a closer look on air.<br></br>
+                    <br></br>
+                    It is made up of only five gases: Nitrogen (N₂), Oxygen (O₂),  Argon (Ar), and Carbon Dioxide (CO₂). Several other compounds, such as natural Ozone (O₃), are also present.
+                    <br></br>
+                    <br></br>
+                    Scientists also refer to this pure and natural gas mixture as «dry air».
+                </ParagraphStory>
+                <Air/> 
+            </Chapter>
+            
+            
+            <Chapter>      
+                {/* Sun */}
+                <ParagraphStory>
+                    Sunlight, on the contrary, is composed of a whole spectrum of colors, ranging from long wavelengths (~700 nm) which are perceived as red, to shorter wavelengths (~300 nm), perceived as purplish-blue.
+                </ParagraphStory>
+                <Sun/> 
+            </Chapter>  
 
         {/* Sun Rays */}
         <ParagraphStory>

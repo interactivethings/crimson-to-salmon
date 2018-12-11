@@ -1,15 +1,15 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
 import { scaleLinear } from 'd3-scale';
-import { interpolateHcl } from 'd3-interpolate';
+import { interpolateRgb } from 'd3-interpolate';
 import { ElementTitle, ElementSubtitle } from 'src/materials/materials';
 import { GradientBar } from './Legends';
 
 const color = scaleLinear()
     // .domain([min(detail => c.PM10) as number, max(countries => c.PM10) as number ])
     .domain([16, 292])
-    .range(["white", "red"] as any)
-    .interpolate(interpolateHcl as any) as any;
+    .range(['#d7e2ef', "red"] as any)
+    .interpolate(interpolateRgb as any) as any;
 
 export const SquareWrapper = styled('div')`
     flex-wrap: wrap;

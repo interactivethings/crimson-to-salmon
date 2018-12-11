@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/core';
-import { AirBlueLight, ElementTitle, AirBlue } from 'src/materials/materials';
+import { AirBlueLight, ElementTitle, AirBlue, VizWrapper } from 'src/materials/materials';
 
 // wrapping all into overall div
 
@@ -137,7 +137,7 @@ export const AirDefined = styled('div')`
 export class Air extends React.Component {
     render() {
         return (
-            <AirWrapper>
+            <VizWrapper>
                 {/* image 1 */}
                 <AirUndefined />
             
@@ -168,7 +168,7 @@ export class Air extends React.Component {
 
                 {/* image 3 */}
                 <AirDefined />
-            </AirWrapper>
+            </VizWrapper>
         );
     }
 }

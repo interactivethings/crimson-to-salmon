@@ -5,6 +5,7 @@ import { AirBlue, AirRed, VizWrapper, AirRedDark } from 'src/materials/materials
 import { SquareWrapper } from './Countries';
 import { SunRays } from './Sun';
 import { AirMolecules } from './Air';
+import { ScatteringLegend } from './Legends';
 
 
 // xPos pushed to this array to have it all in one place?
@@ -273,7 +274,7 @@ from, 0% {
 export const ScatterElementPolluted = styled('div')`
     width: 105px;
     height: 35px;
-    border-radius: 17.5px;
+    border-radius: 0px;
     background-color: ${AirRedDark};
     position: absolute;
     animation: ${PollutedScatter} ease 6s;
@@ -334,7 +335,7 @@ export class PollutedScattering extends React.Component {
 export class Scattering extends React.Component {
     render() {
         return(
-            <VizWrapper>
+            <VizWrapper style={{marginBottom: "30vh"}}>
                 <SquareWrapper>
                     <SunRays />
                     <BlueScattering />
@@ -345,6 +346,7 @@ export class Scattering extends React.Component {
                     <EveningSky />
                     <PollutedSky />
                 </SquareWrapper>
+                <ScatteringLegend />
             </VizWrapper>
         );
     }

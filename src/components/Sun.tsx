@@ -2,6 +2,7 @@ import * as React from 'react';
 import { VizWrapper, SunRed, SunOrange, SunYellow, SunGreen, SunIndigo, SunBlue, SunPurple, LabelColor, SunWhite } from 'src/materials/materials';
 import styled from '@emotion/styled-base';
 import { keyframes } from '@emotion/core';
+import { SquareWrapper } from './Countries';
 
 export const SunColors = [SunRed, SunOrange, SunYellow, SunGreen, SunIndigo, SunBlue, SunPurple]
 
@@ -340,7 +341,7 @@ export const LegendLabelSun = styled('p')`
 export class Sun extends React.Component {
     render() {
         return(
-            <>
+            <SquareWrapper>
             <VizWrapper>
                 {/* <SunRoot> */}
                     {/* <SunElements> */}
@@ -368,7 +369,7 @@ export class Sun extends React.Component {
                 <LegendLabelSun>Sun</LegendLabelSun>
                 <LegendLabelWL>long</LegendLabelWL>
             </Legend>
-            </>
+            </SquareWrapper>
         );
     }
 }
@@ -417,15 +418,17 @@ export class SunRays extends React.Component {
       });
   }
     return(
-        <>
-          {sunElements.map( sunElement =>
-             <SunElement />
-          )}
+        <VizWrapper>
+          <SquareWrapper>
+            {sunElements.map( sunElement =>
+              <SunElement />
+            )}
 
-          {sunNegativeElements.map( sunNegativeElement =>
-              <SunNegativeElement style={{left: sunNegativeElement.xPos, top: sunNegativeElement.yPos}}/>
-          )}
-        </>
+            {sunNegativeElements.map( sunNegativeElement =>
+                <SunNegativeElement style={{left: sunNegativeElement.xPos, top: sunNegativeElement.yPos}}/>
+            )}
+            </SquareWrapper>
+          </VizWrapper>
     );
   }
 }
