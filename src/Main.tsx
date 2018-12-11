@@ -10,6 +10,10 @@ import { Sun } from './components/Sun';
 import { Zurich, ZurichGradient } from './components/Zurich';
 import { Paragraph, Heading } from './materials/materials';
 import { ZurichLabels } from './components/Legends';
+// import { useRef } from "react";
+// import { useIntersectionObserver } from "react-hook-intersection-observer";
+// import { useInView } from 'react-intersection-observer'
+
 
 interface Props {
   data: Array<Country>;
@@ -62,15 +66,23 @@ export const LegendArea = styled('div')`
     justify-content: flex-start;
 `
 
-// export const TextHighlighters = styled('span')`
-//     background-color: ${AirBlueLight};
-//     padding: 1px 0 1px 0;
-//     display: inline;
-// `
+// TODO: 
+// implementation of intersection observer
+// highlight text areas with span to make ref to viz clear
+// read color from color function for <Zurich />'s background color
+// check unicode arrows to be the same for x and y axes
 
 
-//TODO: layout is next + incorporating the animation hooks! prepare for workshop with gerhard!
 
+// this is the hook. configuration takes place here. See https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API for further information on how to configure it.
+// Is it necessary to update the react version since we are using hooks which are only available in higher react versions?  
+
+// const Observer = () => {
+//   const ref = useRef()
+//   const inView = useInView(ref, {
+//     /* Optional options */
+//     threshold: 0,
+//   })
 
 export class Main extends React.Component<Props> {
   public render() {

@@ -10,7 +10,7 @@ import { ScatteringLegend } from './Legends';
 
 // xPos pushed to this array to have it all in one place?
 
-export const scatterElements = [{blueElement: {width: 35, xPos: 104, yPos: 85 }}, {greenElement: {green: 70}}, {redElement: { red: 105}} ];
+// export const scatterElements = [{blueElement: {width: 35, xPos: 104, yPos: 85 }}, {greenElement: {green: 70}}, {redElement: { red: 105}} ];
 
 export const xPositionGreen = Math.round(((Math.random() * 700) + 1) / 40) * 40;
 export const xPositionRed = Math.round(((Math.random() * 700) + 1) / 40) * 40;
@@ -56,9 +56,6 @@ export let yPosition = Math.round(((Math.random() * 600) + 1) / 40) * 40;
     //             return xPosition ===  xPosition - 105;
     //     }
     // };
-
-//     var boxElement = document.getElementById('theIdOfTheBox');
-
 
 // TBD: 
 // 1. create an array with the widths of the elements (also push created positions to this existing array?) and based on that, create the element with the width and the position, maybe also color. 

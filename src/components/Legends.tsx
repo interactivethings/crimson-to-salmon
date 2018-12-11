@@ -37,10 +37,6 @@ export class GradientBar extends React.Component {
     }
 }
 
-// wrapper 900px, viz centred, columns with the legends 
-// check unicode arrows to be the same for x and y axiss
-
-
 export const StationLabels = styled('div')`
     display: flex;
     flex-direction: column;
@@ -150,7 +146,6 @@ export class ScatteringLegend extends React.Component {
                     </LegendLabelWrapper>
                 </LegendElement>
             </ScatteringLegendRoot>
-
         );
     }
 }

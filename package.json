@@ -18,6 +18,7 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-hook-intersection-observer": "^0.1.0",
+    "react-intersection-observer": "^6.3.1",
     "react-scripts-ts": "3.1.0",
     "scrollama": "^1.4.4"
   },
