@@ -6,17 +6,6 @@ import { SquareWrapper } from './Countries';
 
 export const SunColors = [SunRed, SunOrange, SunYellow, SunGreen, SunIndigo, SunBlue, SunPurple]
 
-// export const SunRoot = styled('div')`
-//     position: relative;
-    
-// `
-
-// export const SunElements = styled('div')`
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-// `
-
 const StaggeringRed = keyframes`
   from, 0% {
     left: 333px;
@@ -343,14 +332,6 @@ export class Sun extends React.Component {
         return(
             <SquareWrapper>
             <VizWrapper>
-                {/* <SunRoot> */}
-                    {/* <SunElements> */}
-                    {/* {SunColors.map( SunColor =>
-                    <SunElement style={{backgroundColor: SunColor.SunRed }}/>
-                    )} */}
-
-                {/* <SunElement style={{backgroundColor: SunPurple}}/>
-                <SunElement style={{backgroundColor: SunBlue}}/> */}
                 <SunElement01 />
                 <SunElement02 />
                 <SunElement03 />
@@ -358,10 +339,6 @@ export class Sun extends React.Component {
                 <SunElement05 />
                 <SunElement06 />
                 <SunElement07 />
-                
-               
-                    {/* </SunElements> */}
-                {/* </SunRoot> */}
             </VizWrapper>
 
              <Legend>

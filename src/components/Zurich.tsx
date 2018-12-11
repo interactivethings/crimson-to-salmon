@@ -7,6 +7,7 @@ import styled from '@emotion/styled-base';
 import { scaleLinear } from 'd3-scale';
 import { keyframes } from '@emotion/core';
 
+
 export type Detail = {PM10: number}
 
 export interface Props {
@@ -66,15 +67,12 @@ export const ValueRange = styled('div')`
     opacity: 0.8;
 `
 
-// another comp or const which has already masked the four divs (whose l + r values are determined by data) with the GradientBar. position absolute to overlay?
-// map the color range / PM10 range to the width. so if the element would start at ie 48 which would be around 350px etc. how to close it then to make it a     container? when absolute positioned set left and with with this! push the values into an array
-// heubeeribüel: no PM10 data on hand.
 // add annotation that there are days when no data was recorded (NaN).
 // smallest and largest values can be hardcoded but having data on hand calls for using it. attention: current design macht, dass man glaubt, dass die station generell über dem limitwert ist. dabei sind es im falle der stampfenbachstrasse gerade mal 25 tage in 2016. irgendwo vermerken?
 
-
 // use max value of countries data set from 2016. here hardcoded with value 292...
 // on hover show the two values? or number of days how high and low values within 2016? 
+
 const size = scaleLinear()
     .domain([0, 100])
     .rangeRound([1, 700] as any)
