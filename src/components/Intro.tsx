@@ -33,7 +33,7 @@ export class Intro extends React.Component {
                     </Intro4>
                 </IntroHeading>
                 <BackgroundVideo loop autoPlay muted> 
-                    <source src="./video/tctsity_bg_video.mp4" type="video/mp4"/>
+                    <video src="http://www.w3schools.com/html/movie.mp4" controls />
                 </BackgroundVideo>
             </IntroWrapper>
         );

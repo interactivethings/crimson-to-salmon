@@ -33,9 +33,9 @@ export class TwentyCountries extends React.Component <Props>{
     render() {
         return(
             <SquareWrapper>
-                {this.props.countries.sort((b, a)  => a.PM10 - b.PM10) .map(country => 
+                {this.props.countries.sort((b, a)  => a.PM10 - b.PM10) .map((country, i) => 
                 <>
-                <SquareElement style={{backgroundColor: color(country.PM10)}}>
+                <SquareElement key={i} style={{backgroundColor: color(country.PM10)}}>
                     <ElementTitle>{country.Country}</ElementTitle>
                     <ElementSubtitle>{country.City}</ElementSubtitle> 
                 </SquareElement>

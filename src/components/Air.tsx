@@ -193,8 +193,8 @@ export class AirMolecules extends React.Component {
     }
       return(
         <>
-            {airElements.map( airElement =>
-                <AirElement style={{left: airElement.xPos, top: airElement.yPos}}/>
+            {airElements.map((airElement, i) =>
+                <AirElement key={i} style={{left: airElement.xPos, top: airElement.yPos}}/>
             )}
         </>
       );
