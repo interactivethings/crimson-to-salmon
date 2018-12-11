@@ -71,6 +71,7 @@ export const LegendArea = styled('div')`
 // highlight text areas with span to make ref to viz clear
 // read color from color function for <Zurich />'s background color
 // check unicode arrows to be the same for x and y axes
+// read data dynamically for min and max values of Countries color scale
 
 
 
