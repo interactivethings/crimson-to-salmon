@@ -397,12 +397,12 @@ export class SunRays extends React.Component {
     return(
         <VizWrapper>
           <SquareWrapper>
-            {sunElements.map( sunElement =>
-              <SunElement />
+            {sunElements.map(( sunElement, i) =>
+              <SunElement key={i}/>
             )}
 
-            {sunNegativeElements.map( sunNegativeElement =>
-                <SunNegativeElement style={{left: sunNegativeElement.xPos, top: sunNegativeElement.yPos}}/>
+            {sunNegativeElements.map((sunNegativeElement, i) =>
+                <SunNegativeElement key={i} style={{left: sunNegativeElement.xPos, top: sunNegativeElement.yPos}}/>
             )}
             </SquareWrapper>
           </VizWrapper>

@@ -164,8 +164,8 @@ export class BlueScattering extends React.Component {
                  )} */}
 
 
-                {blueElements.map( blueElement =>
-                <ScatterElementBlue style={{left: blueElement.xPos, top: blueElement.yPos}}/>
+                {blueElements.map((blueElement, i) =>
+                <ScatterElementBlue key={i} style={{left: blueElement.xPos, top: blueElement.yPos}}/>
                 )}
             </>
         );
@@ -242,8 +242,8 @@ export class RedScattering extends React.Component {
 
         return(
             <>
-                {redElements.map( redElement =>
-                <ScatterElementRed style={{left: redElement.xPos, top: redElement.yPos}}/>
+                {redElements.map((redElement, i) =>
+                <ScatterElementRed key={i} style={{left: redElement.xPos, top: redElement.yPos}}/>
                 )}
             </>
         );
@@ -319,8 +319,8 @@ export class PollutedScattering extends React.Component {
 
         return(
             <>
-                {pollutedElements.map( pollutedElement =>
-                <ScatterElementPolluted style={{left: pollutedElement.xPos, top: pollutedElement.yPos}}/>
+                {pollutedElements.map((pollutedElement, i) =>
+                <ScatterElementPolluted key={i} style={{left: pollutedElement.xPos, top: pollutedElement.yPos}}/>
                 )}
             </>
         );
