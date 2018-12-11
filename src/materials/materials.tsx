@@ -1,30 +1,86 @@
 import styled from '@emotion/styled-base';
 import { small, medium } from './breakpoints';
 
-// Colors
+// UI Colors
 
 export const TextColor = '#322C2C';
 export const LabelColor = '#8B7F7F';
 export const MainRed = '#FF5555';
-export const AirColor = '#EBEEF2';
+
+// Air Colors
+
+export const AirBlueLight = '#d7e2ef';
+export const AirBlue = '#3F7397';
+export const AirGreen = '#2FBF62';
+export const AirRed = '#FF5555';
+export const AirRedDark = '#9B0000';
+
+// Sun Colors
+
+export const SunRed = '#D0021B';
+export const SunOrange = '#FF7300';
+export const SunYellow = '#FFBF23';
+export const SunGreen = '#35A535';
+export const SunIndigo= '#4A00E2';
+export const SunBlue = '#4A90E2';
+export const SunPurple = '#BD10E0';
+
+export const SunWhite = '#FFFFFF'
+
+// Zurich Colors
+
+export const MaskColor = '#E40000';
+
+
+// Layout
+
+export const Chapter = styled('div')`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
+export const VizWrapper = styled('div')`
+    position: relative;
+    width: 700px;
+    height: 700px;
+    `
 
 // Typography
 
-export const Text = styled('p')`
-  line-height: 120%;
-  color: ${TextColor};
-//   @media (max-width: ${small}px)  {
-//       font-size: 1rem;
-//   };
+export const Heading = styled('h1')`
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 120%;
+    color: ${TextColor};
+    width: 85%;
+    margin: 0 0 1.2rem;
+`
 
-//   @media (min-width: ${small}px) and (max-width: ${medium}px) {
-//       font-size: 1.1rem;
-//   };
+export const Paragraph = styled('p')`
+    font-size: 1.5rem;
+    line-height: 120%;
+    color: ${TextColor};
+    width: 85%;
 
-//   @media (min-width: ${medium}px) {
-//       font-size: 1.2rem;
-//   };
-`;
+    //   @media (max-width: ${small}px)  {
+    //       font-size: 1rem;
+    //   };
+
+    //   @media (min-width: ${small}px) and (max-width: ${medium}px) {
+    //       font-size: 1.1rem;
+    //   };
+
+    //   @media (min-width: ${medium}px) {
+    //       font-size: 1.2rem;
+    //   };
+`
+
+export const LegendLabel = styled('p')`
+    font-size: 1em;
+    line-height: 120%;
+    color: ${LabelColor}
+`
 
 // Intro
 

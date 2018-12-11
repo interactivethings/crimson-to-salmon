@@ -5,7 +5,8 @@ import * as ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
 
 const data = require('./data/countries.json')
-console.log(data)
+// const detail = require('./data/detail.json')
+// console.log(detail)
   
 ReactDOM.render(
   <Main data={data}/>,
