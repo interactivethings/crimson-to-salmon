@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { VizWrapper, ElementTitle, ElementSubtitle, MainRed, AirBlueLight } from 'src/materials/materials';
+import { VizWrapper, ElementTitle, MainRed, AirBlueLight } from 'src/materials/materials';
 import { Country, SquareWrapper } from 'src/components/Countries';
 import ZurichGradientSVG  from '../zh_gradient.svg';
+import DetailGradientSVG from '../detail_gradient.svg'
 import { Legend, LegendItem } from './Legends';
 import styled from '@emotion/styled-base';
 import { scaleLinear } from 'd3-scale';
@@ -18,45 +19,24 @@ export interface Props {
     countries: Array<Country>
 }
 
-export const ZHSquare = styled('div')`
-`
-
-// const ZHSquare = styled('div')(
-// 	{
-// 	borderRadius: 20,
-// 	},
-// 	(props: { backgroundColor: string }) => ({
-// 		backgroundColor: props.color
-//   }),
-//   (props: { width: number }) => ({
-// 		height: props.width
-//   })
-// );
-
-// export class Zurich extends React.Component<Props> {
-//     render() {
-//         return (
-//             <VizWrapper>
-//                 {this.props.countries.map(country => 
-//                 <ZHSquare style={{backgroundColor: color(country[0][16])}}>
-//                     <ElementTitle>{country.Country[19]}</ElementTitle>
-//                     <ElementSubtitle>{country.City[19]}</ElementSubtitle> 
-//                 </ZHSquare>
-//                 )}
-//             </VizWrapper>
-//         );
-//     }
-// }
-
-// how to access array to get index 19 for zurich to use for background color and labels?
-
 export class Zurich extends React.Component {
     render() {
         return (
-            <VizWrapper style={{backgroundColor: MainRed}}>
+            <>
+            <SquareWrapper>
+               
+               
+                <VizWrapper style={{backgroundImage: "url(" + DetailGradientSVG + ")"}}>
                     <ElementTitle>Switzerland</ElementTitle>
-                    <ElementSubtitle>Zurich</ElementSubtitle> 
-            </VizWrapper>
+                </VizWrapper>
+            
+                <Legend>
+                    <LegendItem>Min 6.2</LegendItem>
+                    <LegendItem>⟶ Fine particles in 2016 (µg / m²)</LegendItem>
+                    <LegendItem>Max 24</LegendItem>
+                </Legend>            
+            </SquareWrapper>   
+                </>
         );
     }
 }
@@ -82,12 +62,8 @@ console.log(size(3))
 export class ZurichGradient extends React.Component {
     render() {
         return (
-                <SquareWrapper>
-                    {/* {this.props.details.map(detail =>  */}
-                    <VizWrapper style={{mask: "url(" + ZurichGradientSVG + ")"}}>
-                        {/* <ElementTitle>Switzerland</ElementTitle>
-                        <ElementSubtitle>Zurich</ElementSubtitle>  */}
-                        
+                <SquareWrapper style={{backgroundImage: "url(" + DetailGradientSVG + ")"}}>
+                    <VizWrapper style={{mask: "url(" + ZurichGradientSVG + ")"}}>                
                         {/* Rosengartenstrasse */}
                         <ValueRange style={{backgroundImage: "url(" + ZurichGradientSVG + ")", top: 0, left: size(3.56), width: size(81.99 - 3.56)}}/>
 
@@ -98,8 +74,6 @@ export class ZurichGradient extends React.Component {
                         <ValueRange style={{backgroundImage: "url(" + ZurichGradientSVG + ")", top: 470, left: size(3.38), width: size(56 - 3.38)}}/>
                         <LimitValues />
                     </VizWrapper>
-                    {/* )} */}
-
                     <Legend>
                         <LegendItem>0</LegendItem>
                         <LegendItem>⟶ PM 10 per Year (µg / m²)</LegendItem>

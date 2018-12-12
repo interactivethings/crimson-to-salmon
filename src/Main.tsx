@@ -242,7 +242,7 @@ export class Main extends React.Component<Props> {
                 <ParagraphArea>
                     <Heading>Looking out of my own window</Heading>
                     <Paragraph>
-                    The amount of 16 µg per m² of PM10 led to the creation of this color swatch for the sundown sky of Zurich for the year 2016.
+                    The minimum and maximum amounts of fine particles led to the creation of this color swatch for the sundown sky of Switzerland for the year 2016.
                     </Paragraph>
                 </ParagraphArea>
                 <VisualizationMain>

@@ -9,8 +9,8 @@ export const MainRed = '#FF5555';
 
 // Air Colors
 
-export const AirBlueLight = '#d7e2ef';
-export const AirBlue = '#3F7397';
+export const AirBlueLight = '#B2D5FF';
+export const AirBlue = '#6199DD';
 export const AirGreen = '#2FBF62';
 export const AirRed = '#FF5555';
 export const AirRedDark = '#9B0000';
