@@ -74,7 +74,7 @@ export const ValueRange = styled('div')`
 // on hover show the two values? or number of days how high and low values within 2016? 
 
 const size = scaleLinear()
-    .domain([0, 100])
+    .domain([0, 292])
     .rangeRound([1, 700] as any)
 
 console.log(size(3))
@@ -166,7 +166,7 @@ export class LimitValues extends React.Component {
         return(
             <>
             <LimitAreaLeft style={{width: size(20)}}/>
-            <LimitAreaRight style={{left: size(20), width: size(80)}}/>
+            <LimitAreaRight style={{left: size(20), width: size(272)}}/>
             <LimitIndicator style={{left: size(20)}}/>
             </>
         );
