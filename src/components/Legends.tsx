@@ -92,7 +92,7 @@ export const ScatterElement = styled('div')`
     border-radius: 17.5px;
 `
 
-export class ScatteringLegend extends React.Component {
+export class ScatteringLegendBlue extends React.Component {
     render() {
         return (
             <ScatteringLegendRoot>
@@ -123,6 +123,72 @@ export class ScatteringLegend extends React.Component {
 
                     <LegendLabelWrapper>
                         <LegendItem>short Wavelength</LegendItem>
+                    </LegendLabelWrapper>
+                </LegendElement>
+            </ScatteringLegendRoot>
+        );
+    }
+}
+
+export class ScatteringLegendRed extends React.Component {
+    render() {
+        return (
+            <ScatteringLegendRoot>
+                <LegendElement>
+                    <LegendItemWrapper>
+                        <ScatterElement style={{width: 35, backgroundColor: SunYellow}}></ScatterElement>
+                    </LegendItemWrapper>
+
+                    <LegendLabelWrapper>
+                        <LegendItem>Ray of Sun</LegendItem>
+                    </LegendLabelWrapper>
+                </LegendElement>
+
+                <LegendElement>
+                    <LegendItemWrapper>
+                        <ScatterElement style={{width: 35, borderRadius: 0, backgroundColor: AirBlueLight}}></ScatterElement>
+                    </LegendItemWrapper>
+
+                    <LegendLabelWrapper>
+                        <LegendItem>Air molecule</LegendItem>
+                    </LegendLabelWrapper>
+                </LegendElement>
+
+                <LegendElement>
+                    <LegendItemWrapper>
+                        <ScatterElement style={{width: 105, backgroundColor: SunRed}}></ScatterElement>
+                    </LegendItemWrapper>
+
+                    <LegendLabelWrapper>
+                        <LegendItem>long Wavelength</LegendItem>
+                    </LegendLabelWrapper>
+                </LegendElement>
+            </ScatteringLegendRoot>
+        );
+    }
+}
+
+export class ScatteringLegendPolluted extends React.Component {
+    render() {
+        return (
+            <ScatteringLegendRoot>
+                <LegendElement>
+                    <LegendItemWrapper>
+                        <ScatterElement style={{width: 35, backgroundColor: SunYellow}}></ScatterElement>
+                    </LegendItemWrapper>
+
+                    <LegendLabelWrapper>
+                        <LegendItem>Ray of Sun</LegendItem>
+                    </LegendLabelWrapper>
+                </LegendElement>
+
+                <LegendElement>
+                    <LegendItemWrapper>
+                        <ScatterElement style={{width: 35, borderRadius: 0, backgroundColor: AirBlueLight}}></ScatterElement>
+                    </LegendItemWrapper>
+
+                    <LegendLabelWrapper>
+                        <LegendItem>Air molecule</LegendItem>
                     </LegendLabelWrapper>
                 </LegendElement>
 

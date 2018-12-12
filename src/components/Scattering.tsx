@@ -3,30 +3,17 @@ import styled from '@emotion/styled-base';
 import { keyframes } from '@emotion/core';
 import { AirBlue, AirRed, VizWrapper, AirRedDark } from 'src/materials/materials';
 import { SquareWrapper } from './Countries';
-import { SunRays } from './Sun';
-import { AirMolecules } from './Air';
-import { ScatteringLegend } from './Legends';
+import { SunRayShort, SunRayLong } from './Sun';
+import { AirElement } from './Air';
+import { ScatteringLegendBlue, ScatteringLegendPolluted, ScatteringLegendRed } from './Legends';
 
 
 // xPos pushed to this array to have it all in one place?
 
 // export const scatterElements = [{blueElement: {width: 35, xPos: 104, yPos: 85 }}, {greenElement: {green: 70}}, {redElement: { red: 105}} ];
 
-export const xPositionGreen = Math.round(((Math.random() * 700) + 1) / 40) * 40;
-export const xPositionRed = Math.round(((Math.random() * 700) + 1) / 40) * 40;
-export const xPositionBlue = Math.round(((Math.random() * 700) + 1) / 40) * 40;
-
-
-export const yPositionGreen = Math.round(((Math.random() * 700) + 1) / 40) * 40;
-export const yPositionRed = Math.round(((Math.random() * 700) + 1) / 40) * 40;
-export const yPositionBlue = Math.round(((Math.random() * 700) + 1) / 40) * 40;
-
-export let xPosition = Math.round(((Math.random() * 600) + 1) / 40) * 40;
-export let yPosition = Math.round(((Math.random() * 600) + 1) / 40) * 40;
-
-
-// export const yPositionBlue = yPosition - 35;
-// export const xPositionBlue = yPosition - 35;
+export const xPosition = Math.round(((Math.random() * 700) + 1) / 40) * 40;
+export const yPosition = Math.round(((Math.random() * 700) + 1) / 40) * 40;
 
 
     // switch (xPosition) {
@@ -91,20 +78,22 @@ export let yPosition = Math.round(((Math.random() * 600) + 1) / 40) * 40;
 
 
 const BlueScatter = keyframes`
-  from, 0% {
+  from, 10% {
     opacity: 0;
+    top: 315px;
+    left: 315px;
   }
 
-  30% {
+  70% {
       opacity: 1;
+      top: ${yPosition};
+      left: ${xPosition};
   }
-
-  80% {
-    opacity: 1;
-}
 
   100% {
-    opacity: 0;
+    opacity: 1;
+    top: ${yPosition};
+    left: ${xPosition};
     }
 `;
 
@@ -119,20 +108,12 @@ export const ScatterElementBlue = styled('div')`
 `
 
 const BlueSky = keyframes`
-  from, 50% {
+  from, 80% {
     opacity: 0;
   }
-
-  65% {
-      opacity: 0.5;
-  }
-
-  80% {
-    opacity: 0.5;
-}
 
   100% {
-    opacity: 0;
+    opacity: 0.5;
   }
 `;
 
@@ -141,7 +122,7 @@ export const DaytimeSky = styled('div')`
     width: 700px;
     height: 700px;
     background-color: ${AirBlue};
-    animation: ${BlueSky} ease 6s;
+    animation: ${BlueSky} ease 8s;
     animation-fill-mode: forwards;
 `
 
@@ -149,10 +130,10 @@ export class BlueScattering extends React.Component {
     render() {
         const blueElements = [];
 
-        for (let i = 0; i < 60; i++) {
+        for (let i = 0; i < 200; i++) {
             blueElements.push({
                 xPos: Math.round(((Math.random() * 665) + 1) / 35) * 35,
-                yPos: Math.round(((Math.random() * 350) + 1) / 35) * 35,
+                yPos: Math.round(((Math.random() * 665) + 1) / 35) * 35,
             });
         }
 
@@ -162,11 +143,12 @@ export class BlueScattering extends React.Component {
                  {scatterElements.map( scatterElement =>
                     <ScatterElementBlue style={{width: scatterElement.blueElement.width, left: scatterElement.blueElement.xPos, top: scatterElement.blueElement.yPos}}/>
                  )} */}
-
+                                 
 
                 {blueElements.map((blueElement, i) =>
                 <ScatterElementBlue key={i} style={{left: blueElement.xPos, top: blueElement.yPos}}/>
                 )}
+                <AirElement style={{top: 315, left: 315}}/>
             </>
         );
     }
@@ -175,20 +157,22 @@ export class BlueScattering extends React.Component {
 // Red Scattering
 
 const RedScatter = keyframes`
-from, 0% {
+from, 27% {
     opacity: 0;
+    top: 595px;
+    left: 315px;
   }
 
-  30% {
+  70% {
       opacity: 1;
+      top: ${yPosition};
+      left: ${xPosition};
   }
-
-  80% {
-    opacity: 1;
-}
 
   100% {
-    opacity: 0;
+    opacity: 1;
+    top: ${yPosition};
+    left: ${xPosition};
     }
 `;
 
@@ -200,23 +184,15 @@ export const ScatterElementRed = styled('div')`
     position: absolute;
     animation: ${RedScatter} ease 6s;
     animation-fill-mode: forwards;
-`
+    `
 
 const RedSky = keyframes`
-from, 50% {
+from, 80% {
     opacity: 0;
   }
-
-  65% {
-      opacity: 0.5;
-  }
-
-  80% {
-    opacity: 0.5;
-}
 
   100% {
-    opacity: 0;
+    opacity: 0.5;
   }
 `;
 
@@ -225,7 +201,7 @@ export const EveningSky = styled('div')`
     height: 700px;
     position: absolute;
     background-color: ${AirRed};
-    animation: ${RedSky} ease 6s;
+    animation: ${RedSky} ease 8s;
     animation-fill-mode: forwards;
 `
 
@@ -233,10 +209,10 @@ export class RedScattering extends React.Component {
     render() {
         const redElements = [];
 
-        for (let i = 0; i < 30; i++) {
+        for (let i = 0; i < 80; i++) {
             redElements.push({
                 xPos: Math.round(((Math.random() * 595) + 1) / 35) * 35,
-                yPos: Math.round(((Math.random() * 315) + 350) / 35) * 35,
+                yPos: Math.round(((Math.random() * 665) + 1) / 35) * 35,
             });
         }
 
@@ -245,26 +221,29 @@ export class RedScattering extends React.Component {
                 {redElements.map((redElement, i) =>
                 <ScatterElementRed key={i} style={{left: redElement.xPos, top: redElement.yPos}}/>
                 )}
+                 <AirElement style={{top: 595, left: 315}}/>
             </>
         );
     }
 }
 
 const PollutedScatter = keyframes`
-from, 0% {
-    opacity: 0;
-  }
+    from, 27% {
+        opacity: 0;
+        top: 595px;
+        left: 315px;
+    }
 
-  30% {
-      opacity: 1;
-  }
+    70% {
+        opacity: 1;
+        top: ${yPosition};
+        left: ${xPosition};
+    }
 
-  80% {
-    opacity: 1;
-}
-
-  100% {
-    opacity: 0;
+    100% {
+        opacity: 1;
+        top: ${yPosition};
+        left: ${xPosition};
     }
 `;
 
@@ -279,20 +258,12 @@ export const ScatterElementPolluted = styled('div')`
 ` 
 
 const PollutedRedSky = keyframes`
-    from, 50% {
+    from, 80% {
         opacity: 0;
-    }
-
-    65% {
-        opacity: 0.5;
-    }
-
-    80% {
-        opacity: 0.5;
     }
 
     100% {
-        opacity: 0;
+        opacity: 0.5;
     }
 `;
 
@@ -302,26 +273,38 @@ export const PollutedSky = styled('div')`
     height: 700px;
     background-color: ${AirRedDark};
     opacity: 0.8;
-    animation: ${PollutedRedSky} ease-out 6s;
+    animation: ${PollutedRedSky} ease-out 8s;
     animation-fill-mode: forwards;
 `
 
 export class PollutedScattering extends React.Component {
     render() {
         const pollutedElements = [];
+        const redElements = [];
 
-        for (let i = 0; i < 30; i++) {
+        for (let i = 0; i < 80; i++) {
+            redElements.push({
+                xPos: Math.round(((Math.random() * 595) + 1) / 35) * 35,
+                yPos: Math.round(((Math.random() * 665) + 1) / 35) * 35,
+            });
+        }
+
+        for (let i = 0; i < 80; i++) {
             pollutedElements.push({
                 xPos: Math.round(((Math.random() * 595) + 1) / 35) * 35,
-                yPos: Math.round(((Math.random() * 315) + 350) / 35) * 35,
+                yPos: Math.round(((Math.random() * 665) + 1) / 35) * 35,
             });
         }
 
         return(
-            <>
+            <>  {redElements.map((redElement, i) =>
+                <ScatterElementRed key={i} style={{left: redElement.xPos, top: redElement.yPos}}/>
+                )}
+
                 {pollutedElements.map((pollutedElement, i) =>
                 <ScatterElementPolluted key={i} style={{left: pollutedElement.xPos, top: pollutedElement.yPos}}/>
                 )}
+                <AirElement style={{top: 595, left: 315}}/>
             </>
         );
     }
@@ -329,21 +312,50 @@ export class PollutedScattering extends React.Component {
 
 // full component, consisting of all the scatterings, sky perceptions and sunrays
 
-export class Scattering extends React.Component {
+interface Props {
+	visibility: boolean;
+}
+
+export class ScatteringBlue extends React.Component<Props> {
     render() {
         return(
             <VizWrapper style={{marginBottom: "30vh"}}>
                 <SquareWrapper>
-                    <SunRays />
+                    <SunRayShort show={this.props.visibility}/>
                     <BlueScattering />
-                    <RedScattering />
-                    <PollutedScattering />
-                    <AirMolecules />
                     <DaytimeSky />
+                </SquareWrapper>
+                <ScatteringLegendBlue />
+            </VizWrapper>
+        );
+    }
+}
+
+export class ScatteringRed extends React.Component {
+    render() {
+        return(
+            <VizWrapper style={{marginBottom: "30vh"}}>
+                <SquareWrapper>
+                    <SunRayLong />
+                    <RedScattering />
                     <EveningSky />
+                </SquareWrapper>
+                <ScatteringLegendRed />
+            </VizWrapper>
+        );
+    }
+}
+
+export class ScatteringPolluted extends React.Component {
+    render() {
+        return(
+            <VizWrapper style={{marginBottom: "30vh"}}>
+                <SquareWrapper>
+                    <SunRayLong />
+                    <PollutedScattering />
                     <PollutedSky />
                 </SquareWrapper>
-                <ScatteringLegend />
+                <ScatteringLegendPolluted />
             </VizWrapper>
         );
     }
