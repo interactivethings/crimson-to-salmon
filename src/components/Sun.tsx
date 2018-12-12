@@ -359,7 +359,7 @@ export class Sun extends React.Component {
 
 const Rays = keyframes`
   from, 0% {
-    opacity: 0;
+    opacity: 1;
   }
 
   100% {
@@ -369,11 +369,16 @@ const Rays = keyframes`
 
 export const SunElement = styled('div')`
   position: absolute;
+  opacity: 0;
   width: 35px; 
   height: 35px;
   border-radius: 17.5px;
   background-color: ${SunYellow};
-  animation: ${Rays} ease 3s;
+  animation-name: ${Rays};
+  animation-duration: 3s;
+  animation-transition: ease;
+  animation-delay: ${(props: {delay: number}) => props.delay}ms;
+  animation-fill-mode: forwards;
 `
 
 // export class SunRayShort extends React.Component {
@@ -411,14 +416,13 @@ export class SunRayLong extends React.Component {
     return(
         <VizWrapper>
           {sunElements.map(( sunElement, i) =>
-            <SunElement key={i} style={{top: sunElement.yPos, left: sunElement.xPos}}/>
+            <SunElement delay={i * 100} key={i} style={{top: sunElement.yPos, left: sunElement.xPos}}/>
           )}
         </VizWrapper>
     );
   }
 }
 
-// type PolarHintValue = { radius: number; value: string };
 interface Props {
 	show: boolean;
 }
@@ -454,7 +458,7 @@ export class SunRayShort extends React.Component<Props> {
 		return (
 			<VizWrapper ref={this.sunRayMeta}>
           {sunElements.map(( sunElement, i) =>
-            <SunElement key={i} style={{top: sunElement.yPos, left: sunElement.xPos}}/>
+            <SunElement delay={i * 100} key={i} style={{top: sunElement.yPos, left: sunElement.xPos}}/>
           )}
         </VizWrapper>
 		);
