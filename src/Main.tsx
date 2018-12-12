@@ -3,7 +3,7 @@ import './index.css';
 import { Intro } from './components/Intro';
 import { Air } from './components/Air';
 import styled from '@emotion/styled-base';
-import { Scattering } from './components/Scattering';
+import { ScatteringBlue, ScatteringRed, ScatteringPolluted } from './components/Scattering';
 import { Country, TwentyCountries } from './components/Countries';
 import { Initiatives } from './components/Initiatives';
 import { Sun } from './components/Sun';
@@ -137,9 +137,8 @@ export class Main extends React.Component<Props> {
             </Chapter>  
                 
             <Chapter>
-                {/* Sun Rays */}
+                {/* Daytime Sky */}
                 <ParagraphArea>
-                    {/* Daytime Sky */}
                     <Heading>The evolvement of our daytime sky</Heading>
                     <Paragraph>
                     «Selective scattering», also known as «Rayleigh scattering», is used to describe scattering that varies with the wavelength of the incident light. Particles are good Rayleigh scatterers when they are very small compared to the wavelength of the light.
@@ -151,15 +150,27 @@ export class Main extends React.Component<Props> {
                     <Paragraph style={{marginTop: "1.2rem"}}>
                     This results in the familiar blue of the daytime sky. The other colors exist but scatter less. Most of them are most likely to just pass through the atmosphere. Therefore, they are rarely visible due to the enormous scattering of blue light.
                     </Paragraph> */}
+                </ParagraphArea>
+                <VisualizationMain>
+                    <LegendArea>
+                        {/* <ScatteringLegend /> */}
+                    </LegendArea>
+                    <VisualizationArea>
+                        <ScatteringBlue />
+                    </VisualizationArea>
+                </VisualizationMain>
+            </Chapter>
 
-                    {/* Evening Sky */}
-                    {/*<Heading>Shifting to the evening sky</Heading>
+            <Chapter>
+                {/* Evening Sky */}
+                <ParagraphArea>
+                    <Heading>Shifting to the evening sky</Heading>
                     <Paragraph>
                     At sunrise or sunset, sunlight takes a much longer path through the atmosphere than during the middle part of the day. This lengthened path results in more encounters with air molecules and thus, more scattering events of the blue light which literally gets «scattered out». 
                     </Paragraph> 
                      <Paragraph style={{marginTop: "1.2rem"}}>
                     Although red light scatters poorly, the long distance leads to a greater scattering. Therefore, light that reaches an observer early or late in the day is noticeably reddened. This process is also known as «multiple scattering». 
-                    </Paragraph> */}
+                    </Paragraph>
 
                     {/* Polluted Evening Sky */}
                     {/* <Heading>Toxical color enhancement</Heading>
@@ -172,38 +183,32 @@ export class Main extends React.Component<Props> {
                 </ParagraphArea>
                 <VisualizationMain>
                     <LegendArea>
-                        {/* <ScatteringLegend /> */}
                     </LegendArea>
                     <VisualizationArea>
-                        <Scattering /> 
+                        <ScatteringRed />
                     </VisualizationArea>
                 </VisualizationMain>
             </Chapter>
 
-            {/* <Chapter>
-                // Scattering
+             <Chapter>
+                {/* Polluted Sky */}
                 <ParagraphArea>
-                    Air molecules are slightly closer in size to shorter wavelength of violet and blue light than to the long ones of red light.
-                    <br></br> 
-                    <br></br>
-                    Due to that, pure air scatters this blue light three to four times more effectively than it does the longer wavelengths.
+                    <Heading>Toxical color enhancement</Heading>
+                    <Paragraph>
+                    The compounds of air vary due to emissions of human kind. As we are constantly burning fossils, this leads to an emission of particularly fine particles (PM10) in very small sizes (~10 µm = 0.01 mm) into the air. 
+                    </Paragraph>
+                    <Paragraph style={{marginTop: "1.2rem"}}>
+                    Due to their small molecular size, these various compounds of PM10 scatter the same way as natural Nitrogen and Oxygen would do — they scatter more red light. This leads to an increase of the red shares. 
+                    </Paragraph>
                 </ParagraphArea>
-                <BlueScattering />
-            </Chapter> */}
-
-            {/* <Chapter>
-                <ParagraphArea>
-                    At sunrise or sunset, sunlight takes a much longer path through the atmosphere than during the middle part of the day. This lengthened path results in more encounters with air molecules and thus, more scattering events of the blue light which literally gets «scattered out». 
-                </ParagraphArea>
-                <RedScattering /> 
-            </Chapter> */}
-
-            {/* <Chapter>
-                <ParagraphArea>
-                    The compounds of air vary due to emissions of human kind. As we are constantly burning fossils, this leads to an emission of particularly fine particles (PM10) in very small sizes (~10 µm = 0.01 mm) into the air.
-                </ParagraphArea>
-            </Chapter> */}
-            {/* <RedPollutedScattering /> */}
+                <VisualizationMain>
+                    <LegendArea>
+                    </LegendArea>
+                    <VisualizationArea>
+                        <ScatteringPolluted />
+                    </VisualizationArea>
+                </VisualizationMain>
+            </Chapter>
 
             <Chapter>
                 {/* Twenty Countries */}

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from '@emotion/styled-base';
 import { keyframes } from '@emotion/core';
-import { AirBlue, AirRed, VizWrapper, AirRedDark } from 'src/materials/materials';
+import { AirBlue } from 'src/materials/materials';
 
 export const BlueWrapper = styled('div')`
     position: relative;
@@ -69,12 +69,12 @@ render() {
 
 return(
     <>
-    <BlueWrapper>
         {blueElements.map( blueElement =>
         <ScatterElementBlue style={{left: blueElement.xPos, top: blueElement.yPos}}/>
         )}
-    </BlueWrapper>
-    <DaytimeSky />
+ 
+    {/* <DaytimeSky /> */}
+    
     </>
     );
 }
