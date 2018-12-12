@@ -5,11 +5,12 @@ import { interpolateRgb } from 'd3-interpolate';
 import { ElementTitle, ElementSubtitle } from 'src/materials/materials';
 import { GradientBar } from './Legends';
 
-const color = scaleLinear()
+const colorCountries = scaleLinear()
     // .domain([min(detail => c.PM10) as number, max(countries => c.PM10) as number ])
-    .domain([16, 292])
-    .range(['#d7e2ef', "red"] as any)
+    .domain([0, 292])
+    .range(['#B2D5FF', "red"] as any)
     .interpolate(interpolateRgb as any) as any;
+    console.log(colorCountries(24))
 
 export const SquareWrapper = styled('div')`
     flex-wrap: wrap;
@@ -35,7 +36,7 @@ export class TwentyCountries extends React.Component <Props>{
             <SquareWrapper>
                 {this.props.countries.sort((b, a)  => a.PM10 - b.PM10) .map((country, i) => 
                 <>
-                <SquareElement key={i} style={{backgroundColor: color(country.PM10)}}>
+                <SquareElement key={i} style={{backgroundColor: colorCountries(country.PM10)}}>
                     <ElementTitle>{country.Country}</ElementTitle>
                     <ElementSubtitle>{country.City}</ElementSubtitle> 
                 </SquareElement>
