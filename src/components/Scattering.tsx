@@ -312,12 +312,16 @@ export class PollutedScattering extends React.Component {
 
 // full component, consisting of all the scatterings, sky perceptions and sunrays
 
-export class ScatteringBlue extends React.Component {
+interface Props {
+	visibility: boolean;
+}
+
+export class ScatteringBlue extends React.Component<Props> {
     render() {
         return(
             <VizWrapper style={{marginBottom: "30vh"}}>
                 <SquareWrapper>
-                    <SunRayShort />
+                    <SunRayShort show={this.props.visibility}/>
                     <BlueScattering />
                     <DaytimeSky />
                 </SquareWrapper>

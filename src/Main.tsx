@@ -86,6 +86,11 @@ export const LegendArea = styled('div')`
 //   })
 
 export class Main extends React.Component<Props> {
+    state = { visibility: true}
+
+    toggleAnimation = ()=> {
+        this.setState({visibility: !this.state.visibility})
+    }
   public render() {
     return (
       <>
@@ -151,12 +156,13 @@ export class Main extends React.Component<Props> {
                     This results in the familiar blue of the daytime sky. The other colors exist but scatter less. Most of them are most likely to just pass through the atmosphere. Therefore, they are rarely visible due to the enormous scattering of blue light.
                     </Paragraph> */}
                 </ParagraphArea>
+                    {/* <button onClick={this.toggleAnimation}>click me!</button> */}
                 <VisualizationMain>
                     <LegendArea>
                         {/* <ScatteringLegend /> */}
                     </LegendArea>
                     <VisualizationArea>
-                        <ScatteringBlue />
+                        <ScatteringBlue visibility={this.state.visibility}/>
                     </VisualizationArea>
                 </VisualizationMain>
             </Chapter>
