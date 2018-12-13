@@ -93,6 +93,7 @@ export type Station = {
 
 export interface Props {
     stations: Array<Station>
+    Animation: boolean;
 }
 
 export class ZurichGradient extends React.Component<Props> {
@@ -103,24 +104,24 @@ export class ZurichGradient extends React.Component<Props> {
                         {/* Rosengartenstrasse */}
                             <ValueRange >
                             {this.props.stations.filter(function (i) {return (i.Station === "Rosengartenstrasse")}).map((station, i) => 
-                            <ValueRangeDetail style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: ValueRangeHeight / 12 * i, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}/>
+                            <ValueRangeDetail key={i} style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: ValueRangeHeight / 12 * i, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}/>
                             )}
                             </ValueRange>
 
                         {/* Schimmelstrasse */}
-                        <ValueRange style={{height: ValueRangeHeight, backgroundImage: "url(" + ZurichGradientSVG + ")", top: 235, left: size(1.94), width: size(66.27 - 1.94)}}>
+                        <ValueRange style={{height: ValueRangeHeight, top: 235, left: size(1.94), width: size(66.27 - 1.94)}}>
                             {this.props.stations.filter(function (i) {return (i.Station === "Rosengartenstrasse")}).map((station, i) => 
-                            <ValueRangeDetail style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: ValueRangeHeight / 12 * i, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}/>
+                            <ValueRangeDetail key={i} style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: ValueRangeHeight / 12 * i, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}/>
                             )}
                         </ValueRange>
 
                         {/* Stampfenbachstrasse */}
-                        <ValueRange style={{height: ValueRangeHeight, backgroundImage: "url(" + ZurichGradientSVG + ")", top: 470, left: size(3.38), width: size(56 - 3.38)}}>
+                        <ValueRange style={{height: ValueRangeHeight, top: 470, left: size(3.38), width: size(56 - 3.38)}}>
                             {this.props.stations.filter(function (i) {return (i.Station === "Stampfenbachstrasse")}).map((station, i) => 
-                            <ValueRangeDetail style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: ValueRangeHeight / 12 * i, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}/>
+                            <ValueRangeDetail key={i} style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: ValueRangeHeight / 12 * i, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}/>
                             )}
                         </ValueRange>
-                        {/* <LimitValues /> */}
+                        <LimitValues runAnimation={this.props.Animation}/>
                     </VizWrapper>
                     <Legend>
                         <LegendItem>6.2</LegendItem>
@@ -149,7 +150,7 @@ export const LimitIndicator = styled('div')`
     height: 700px;
     width: 5px;
     background-color: black;
-    animation: ${LimitIndex} 10s;
+    animation: ${LimitIndex} 10s infinite;
     `
 
 const LimitAreas = keyframes`
@@ -170,7 +171,7 @@ export const LimitAreaLeft = styled('div')`
     left: 0;
     background-color: ${AirBlueLight};
     opacity: 0.3;
-    animation: ${LimitAreas} 10s ease;
+    animation: ${LimitAreas} 10s ease infinite;
 `
 
 export const LimitAreaRight = styled('div')`
@@ -180,16 +181,16 @@ export const LimitAreaRight = styled('div')`
     left: 0;
     background-color: ${MainRed};
     opacity: 0.3;
-    animation: ${LimitAreas} 10s ease;
+    animation: ${LimitAreas} 10s ease infinite;
 `
 
-export class LimitValues extends React.Component {
+export class LimitValues extends React.Component<{ runAnimation: boolean }> {
     render() {
         return(
             <>
-            <LimitAreaLeft style={{width: size(20)}}/>
-            <LimitAreaRight style={{left: size(20), width: size(272)}}/>
-            <LimitIndicator style={{left: size(20)}}/>
+            <LimitAreaLeft style={{width: size(20), animationPlayState: this.props.runAnimation ? 'running' : 'paused' }}/>
+            <LimitAreaRight style={{left: size(20), width: size(272), animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
+            <LimitIndicator style={{left: size(20), animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
             </>
         );
     }

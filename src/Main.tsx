@@ -3,27 +3,16 @@ import './index.css';
 import { Intro } from './components/Intro';
 import { Air } from './components/Air';
 import styled from '@emotion/styled-base';
-import { ScatteringBlue, ScatteringRed, ScatteringPolluted } from './components/Scattering';
+import { ScatteringBlue, ScatteringPolluted, ScatteringRed } from './components/Scattering';
 import { Country, TwentyCountries } from './components/Countries';
 import { Initiatives } from './components/Initiatives';
 import { Sun } from './components/Sun';
 import { Zurich, ZurichGradient, Station } from './components/Zurich';
 import { Paragraph, Heading } from './materials/materials';
 import { ZurichLabels } from './components/Legends';
-import { useRef, useState } from "react";
-const { useIntersectionObserver } = require("react-hook-intersection-observer")
-// import { useInView } from 'react-intersection-observer'
+import { useRef } from "react";
+const { useInView } = require("react-intersection-observer")
 
-
-console.log({useRef})
-
-interface Props {
-  data: Array<Country>;
-}
-
-interface Props {
-    detailMonthly: Array<Station>;
-}
 
 export const MainRoot = styled('div')`
     display: flex;
@@ -77,56 +66,108 @@ export const LegendArea = styled('div')`
 // highlight text areas with span to make ref to viz clear
 // read color from color function for <Zurich />'s background color
 // check unicode arrows to be the same for x and y axes
-// read data dynamically for min and max values of Countries color scale
+// read data dynamically for min and max values of Countries color scale 
 
 
 
-// this is the hook. configuration takes place here. See https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API for further information on how to configure it.
-// Is it necessary to update the react version since we are using hooks which are only available in higher react versions?  
 
-// const Observer = () => {
-//   const ref = useRef()
-//   const inView = useInView(ref, {
-//     /* Optional options */
-//     threshold: 0,
-//   })
-
-export class Main extends React.Component<Props> {
-    state = { visibility: true}
-
-    toggleAnimation = ()=> {
-        this.setState({visibility: !this.state.visibility})
-    }
+export class Main extends React.Component<{data: Country[], detailMonthly: Station[]}> {    
   public render() {
     return (
       <>
       <Intro/>
         <MainRoot>
             <Chapter1 />
-                
-            <Chapter>      
-                {/* Sun */}
-                <ParagraphArea>
-                    <Heading>The role of sunlight</Heading>    
-                    <Paragraph>
-                    Sunlight, on the contrary, is composed of a whole spectrum of colors, ranging from long wavelengths (~700 nm) which are perceived as red, to shorter wavelengths (~300 nm), perceived as purplish-blue.
-                    </Paragraph>
-                    {/* <Paragraph style={{marginTop: "1.2rem"}}>
-                        All colors together are perceived as a yellowish white.
-                    </Paragraph> */}
-                </ParagraphArea>
-                <VisualizationMain>
-                    <LegendArea>
+            <Chapter2 />
+            <Chapter3 />
+            <Chapter4 />
+            <Chapter5 />
+            <Chapter6 data={this.props.data}/>
+            <Chapter7 />
+            <Chapter8 detailMonthly={this.props.detailMonthly}/>
+            <Chapter9 />
+        </MainRoot>
+      </>
+    );
+  }
+}
 
-                    </LegendArea>
-                    <VisualizationArea>
-                        <Sun/>
-                    </VisualizationArea>
-                </VisualizationMain>
-            </Chapter>  
-                
-            <Chapter>
-                {/* Daytime Sky */}
+export default Main;
+
+// Air 
+
+const Chapter1 = () => {
+    const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
+    const isThingIntersecting = useInView(target);
+    // const inView = useInView(target, {
+    //     /* Optional options */
+    //     threshold: 0.5,
+    //   })
+
+    console.log(target, isThingIntersecting);
+  
+    return (
+        <Chapter>
+        <ParagraphArea>
+            <Heading>The essential gas mixture</Heading>    
+            <Paragraph>
+            First of all, let us have a closer look on air.
+            </Paragraph>
+            <Paragraph style={{marginTop: "1.2rem"}}>
+            It is made up of only five gases: Nitrogen (N₂), Oxygen (O₂),  Argon (Ar), and Carbon Dioxide (CO₂). Several other compounds, such as natural Ozone (O₃), are also present.
+            </Paragraph>
+            <Paragraph style={{marginTop: "1.2rem"}}>
+            Scientists also refer to this pure and natural gas mixture as «dry air».
+            </Paragraph>
+        </ParagraphArea>
+        <VisualizationMain>
+            <LegendArea>
+
+            </LegendArea>
+            <VisualizationArea ref={target}>
+                <Air runAnimation={isThingIntersecting}/> 
+            </VisualizationArea>
+        </VisualizationMain>
+    </Chapter>
+    );
+  };
+
+
+  // Sun
+
+  const Chapter2 = () => {
+    const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
+    const isThingIntersecting = useInView(target);
+    
+    return (
+        <Chapter>      
+            <ParagraphArea>
+                <Heading>The role of sunlight</Heading>    
+                <Paragraph>
+                Sunlight, on the contrary, is composed of a whole spectrum of colors, ranging from long wavelengths (~700 nm) which are perceived as red, to shorter wavelengths (~300 nm), perceived as purplish-blue.
+                </Paragraph>
+                {/* <Paragraph style={{marginTop: "1.2rem"}}>
+                    All colors together are perceived as a yellowish white.
+                </Paragraph> */}
+            </ParagraphArea>
+            <VisualizationMain>
+                <LegendArea />
+                <VisualizationArea ref={target}>
+                    <Sun runAnimation={isThingIntersecting} />
+                </VisualizationArea>
+            </VisualizationMain>
+        </Chapter>
+    );
+  };
+
+    // Blue Scattering, Daytime Sky
+
+    const Chapter3 = () => {
+        const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
+        const isThingIntersecting = useInView(target);
+
+        return (
+            <Chapter >
                 <ParagraphArea>
                     <Heading>The evolvement of our daytime sky</Heading>
                     <Paragraph>
@@ -145,14 +186,22 @@ export class Main extends React.Component<Props> {
                     <LegendArea>
                         {/* <ScatteringLegend /> */}
                     </LegendArea>
-                    <VisualizationArea>
-                        <ScatteringBlue visibility={this.state.visibility}/>
+                    <VisualizationArea ref={target}>
+                        <ScatteringBlue Animation={isThingIntersecting}/>
                     </VisualizationArea>
                 </VisualizationMain>
             </Chapter>
+        );
+      };
 
-            <Chapter>
-                {/* Evening Sky */}
+// Red Scattering, Evening Sky
+
+const Chapter4 = () => {
+    const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
+    const isThingIntersecting = useInView(target);
+  
+    return (
+        <Chapter>
                 <ParagraphArea>
                     <Heading>Shifting to the evening sky</Heading>
                     <Paragraph>
@@ -174,14 +223,22 @@ export class Main extends React.Component<Props> {
                 <VisualizationMain>
                     <LegendArea>
                     </LegendArea>
-                    <VisualizationArea>
-                        <ScatteringRed />
+                    <VisualizationArea ref={target}>
+                        <ScatteringRed Animation={isThingIntersecting}/>
                     </VisualizationArea>
                 </VisualizationMain>
             </Chapter>
+    );
+  };
 
-             <Chapter>
-                {/* Polluted Sky */}
+  // Polluted Scattering, Polluted Sky
+
+  const Chapter5 = () => {
+    const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
+    const isThingIntersecting = useInView(target);
+  
+    return (
+        <Chapter>
                 <ParagraphArea>
                     <Heading>Toxical color enhancement</Heading>
                     <Paragraph>
@@ -194,14 +251,21 @@ export class Main extends React.Component<Props> {
                 <VisualizationMain>
                     <LegendArea>
                     </LegendArea>
-                    <VisualizationArea>
-                        <ScatteringPolluted />
+                    <VisualizationArea ref={target}>
+                        <ScatteringPolluted Animation={isThingIntersecting}/>
                     </VisualizationArea>
                 </VisualizationMain>
             </Chapter>
+    );
+  };
 
-            <Chapter>
-                {/* Twenty Countries */}
+  // Twenty Countries
+
+  const Chapter6 = (props: {data: Array<Country>; }) => {
+    const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
+  
+    return (
+        <Chapter>
                 <ParagraphArea>
                     <Heading>Global evening skies</Heading>
                     <Paragraph>
@@ -215,14 +279,21 @@ export class Main extends React.Component<Props> {
                     <LegendArea>
 
                     </LegendArea>
-                    <VisualizationArea>
-                        <TwentyCountries countries={this.props.data}/>
+                    <VisualizationArea ref={target}>
+                        <TwentyCountries countries={props.data}/>
                     </VisualizationArea>
                 </VisualizationMain>
             </Chapter>
+    );
+  };
 
-            <Chapter>
-                {/* Zurich */}
+  // Zurich
+
+  const Chapter7 = () => {
+    const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
+  
+    return (
+        <Chapter>
                 <ParagraphArea>
                     <Heading>Looking out of my own window</Heading>
                     <Paragraph>
@@ -231,13 +302,20 @@ export class Main extends React.Component<Props> {
                 </ParagraphArea>
                 <VisualizationMain>
                     <LegendArea></LegendArea>
-                    <VisualizationArea>
+                    <VisualizationArea ref={target}>
                         <Zurich />
                     </VisualizationArea>
                 </VisualizationMain>
             </Chapter>
-            
-            <Chapter>
+    );
+  };
+
+  const Chapter8 = (props: {detailMonthly: Array<Station>; }) => {
+    const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
+    const isThingIntersecting = useInView(target);
+  
+    return (
+        <Chapter>
                 <ParagraphArea>
                     <Heading>Zurich’s three checkpoints …</Heading>
                     <Paragraph>
@@ -260,13 +338,19 @@ export class Main extends React.Component<Props> {
                     <LegendArea>
                         <ZurichLabels />
                     </LegendArea>
-                    <VisualizationArea>
-                        <ZurichGradient stations={this.props.detailMonthly} />
+                    <VisualizationArea ref={target}>
+                        <ZurichGradient Animation={isThingIntersecting} stations={props.detailMonthly} />
                     </VisualizationArea>
                 </VisualizationMain>
             </Chapter>
-            
-            <Chapter>
+    );
+  };
+
+  const Chapter9 = () => {
+    const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
+  
+    return (
+        <Chapter>
                 {/* Initiatives */}
                 <ParagraphArea>
                     <Heading>World’s improvement initiatives</Heading>
@@ -280,61 +364,10 @@ export class Main extends React.Component<Props> {
                 <VisualizationMain>
                     <LegendArea>
                     </LegendArea>
-                    <VisualizationArea>
+                    <VisualizationArea ref={target}>
                         <Initiatives />
                     </VisualizationArea>
                 </VisualizationMain>
             </Chapter>
-      </MainRoot>
-      </>
-    );
-  }
-}
-
-export default Main;
-
-const Chapter1 = () => {
-    const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
-  
-    // Let's use a bit of state.
-    const [isThingIntersecting, setThingIntersecting] = useState(false);
-  
-    // Here's our hook! Let's give it some configuration...
-    useIntersectionObserver({
-      root: { current: null },
-      target,
-  
-      // What do we do when it intersects?
-      // The signature of this callback is (collectionOfIntersections, observerElement).
-      onIntersect: ([{ isIntersecting }]: any) => setThingIntersecting(isIntersecting)
-    });
-
-    console.log({ target, isThingIntersecting })
-  
-    return (
-        <div ref={target}>
-        <Chapter>
-        {/* Air */}
-        <ParagraphArea>
-            <Heading>The essential gas mixture</Heading>    
-            <Paragraph>
-            First of all, let us have a closer look on air.
-            </Paragraph>
-            <Paragraph style={{marginTop: "1.2rem"}}>
-            It is made up of only five gases: Nitrogen (N₂), Oxygen (O₂),  Argon (Ar), and Carbon Dioxide (CO₂). Several other compounds, such as natural Ozone (O₃), are also present.
-            </Paragraph>
-            <Paragraph style={{marginTop: "1.2rem"}}>
-            Scientists also refer to this pure and natural gas mixture as «dry air».
-            </Paragraph>
-        </ParagraphArea>
-        <VisualizationMain>
-            <LegendArea>
-
-            </LegendArea>
-            <VisualizationArea>
-                <Air runAnimation={isThingIntersecting} /> 
-            </VisualizationArea>
-        </VisualizationMain>
-    </Chapter></div>
     );
   };

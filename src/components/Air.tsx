@@ -131,7 +131,7 @@ export const AirDefined = styled('div')`
     background-color: ${AirBlue};
     width: 700px;
     height: 700px;
-    animation: ${AirImage3} 8s ease infinite;    
+    animation: ${AirImage3} 8s ease;    
 `
 
 export class Air extends React.Component<{ runAnimation: boolean }> {

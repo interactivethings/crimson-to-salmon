@@ -26,11 +26,7 @@ export const SquareElement = styled('div')`
 
 export type Country = {Country: string, City: string, PM10: number}
 
-export interface Props {
-    countries: Array<Country>
-}
-
-export class TwentyCountries extends React.Component <Props>{
+export class TwentyCountries extends React.Component <{ countries: Array<Country>}>{
     render() {
         return(
             <SquareWrapper>

@@ -3,7 +3,6 @@ import { VizWrapper, SunRed, SunOrange, SunYellow, SunGreen, SunIndigo, SunBlue,
 import styled from '@emotion/styled-base';
 import { keyframes } from '@emotion/core';
 import { SquareWrapper } from './Countries';
-import { select } from 'd3-selection';
 import 'd3-transition';
 
 export const SunColors = [SunRed, SunOrange, SunYellow, SunGreen, SunIndigo, SunBlue, SunPurple]
@@ -438,26 +437,26 @@ export const SunElement = styled('div')`
   animation: ${Rays} ease 3s;
 `
 
-// export class SunRayShort extends React.Component {
-//   render() {
-//     const sunElements = [];
+export class SunRayShort extends React.Component<{ runAnimation: boolean}> {
+  render() {
+    const sunElements = [];
 
-//     for (let i = 0; i < 9; i++) {
-//         sunElements.push({
-//           xPos: 315,
-//           yPos: (35 * i),
-//         });
-//     }
+    for (let i = 0; i < 9; i++) {
+        sunElements.push({
+          xPos: 315,
+          yPos: (35 * i),
+        });
+    }
 
-//     return(
-//         <VizWrapper>
-//           {sunElements.map(( sunElement, i) =>
-//             <SunElement key={i} style={{top: sunElement.yPos, left: sunElement.xPos}}/>
-//           )}
-//         </VizWrapper>
-//     );
-//   }
-// }
+    return(
+        <VizWrapper>
+          {sunElements.map(( sunElement, i) =>
+            <SunElement key={i} style={{top: sunElement.yPos, left: sunElement.xPos, animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
+          )}
+        </VizWrapper>
+    );
+  }
+}
 
 export class SunRayLong extends React.Component {
   render() {
@@ -481,47 +480,47 @@ export class SunRayLong extends React.Component {
 }
 
 // type PolarHintValue = { radius: number; value: string };
-interface Props {
-	show: boolean;
-}
+// interface Props {
+// 	show: boolean;
+// }
 
-export class SunRayShort extends React.Component<Props> {
-	sunRayMeta: React.RefObject<HTMLDivElement>;
-	constructor(props: Props) {
-		super(props);
-		this.sunRayMeta = React.createRef();
-	}
-	show = (): void => {
-		select(this.sunRayMeta.current).transition().duration(500).attr('opacity', 1);
-	};
-	hide = (): void => {
-		select(this.sunRayMeta.current).transition().duration(500).attr('opacity', 0);
-	};
-	componentDidUpdate() {
-		this.props.show ? this.show() : this.hide();
-	}
-	componentDidMount() {
-		this.hide();
-  }
-	render() {
-    const sunElements = [];
+// export class SunRayShort extends React.Component<Props> {
+// 	sunRayMeta: React.RefObject<HTMLDivElement>;
+// 	constructor(props: Props) {
+// 		super(props);
+// 		this.sunRayMeta = React.createRef();
+// 	}
+// 	show = (): void => {
+// 		select(this.sunRayMeta.current).transition().duration(500).attr('opacity', 1);
+// 	};
+// 	hide = (): void => {
+// 		select(this.sunRayMeta.current).transition().duration(500).attr('opacity', 0);
+// 	};
+// 	componentDidUpdate() {
+// 		this.props.show ? this.show() : this.hide();
+// 	}
+// 	componentDidMount() {
+// 		this.hide();
+//   }
+// 	render() {
+//     const sunElements = [];
 
-    for (let i = 0; i < 9; i++) {
-        sunElements.push({
-          xPos: 315,
-          yPos: (35 * i),
-        });
-    }
+//     for (let i = 0; i < 9; i++) {
+//         sunElements.push({
+//           xPos: 315,
+//           yPos: (35 * i),
+//         });
+//     }
 
-		return (
-			<VizWrapper ref={this.sunRayMeta}>
-          {sunElements.map(( sunElement, i) =>
-            <SunElement key={i} style={{top: sunElement.yPos, left: sunElement.xPos}}/>
-          )}
-        </VizWrapper>
-		);
-	}
-}
+// 		return (
+// 			<VizWrapper ref={this.sunRayMeta}>
+//           {sunElements.map(( sunElement, i) =>
+//             <SunElement key={i} style={{top: sunElement.yPos, left: sunElement.xPos}}/>
+//           )}
+//         </VizWrapper>
+// 		);
+// 	}
+// }
 
 
 // const sunElements = [];
