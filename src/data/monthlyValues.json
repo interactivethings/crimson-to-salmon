@@ -1,0 +1,80 @@
+[
+ {
+   "Station": "Stampfenbachstrasse",
+   "Month": "January",
+   "Min": 3.38,
+   "Max": 56
+ },
+ {
+   "Station": "Stampfenbachstrasse",
+   "Month": "February",
+   "Min": 5.9,
+   "Max": 27.25
+ },
+ {
+   "Station": "Stampfenbachstrasse",
+   "Month": "March",
+   "Min": 8.08,
+   "Max": 51.2
+ },
+ {
+   "Station": "Stampfenbachstrasse",
+   "Month": "April",
+   "Min": 5.05,
+   "Max": 29.5
+ },
+ {
+   "Station": "Stampfenbachstrasse",
+   "Month": "May",
+   "Min": 5.12,
+   "Max": 20.35
+ },
+ {
+   "Station": "Stampfenbachstrasse",
+   "Month": "June",
+   "Min": 3.54,
+   "Max": 20.98
+ },
+ {
+   "Station": "Stampfenbachstrasse",
+   "Month": "July",
+   "Min": 7,
+   "Max": 24.9
+ },
+ {
+   "Station": "Stampfenbachstrasse",
+   "Month": "August",
+   "Min": 7.07,
+   "Max": 35.26
+ },
+ {
+   "Station": "Stampfenbachstrasse",
+   "Month": "September",
+   "Min": 5.22,
+   "Max": 27.35
+ },
+ {
+   "Station": "Stampfenbachstrasse",
+   "Month": "October",
+   "Min": 6.73,
+   "Max": 26.61
+ },
+ {
+   "Station": "Stampfenbachstrasse",
+   "Month": "November",
+   "Min": 5.58,
+   "Max": 34.61
+ },
+ {
+   "Station": "Stampfenbachstrasse",
+   "Month": "Dezember",
+   "Min": 13.61,
+   "Max": 49.63
+ },
+ {
+   "Station": "Rosengartenstrasse",
+   "Month": "January",
+   "Min": 5,
+   "Max": 15
+ }
+]

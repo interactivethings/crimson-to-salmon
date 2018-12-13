@@ -10,7 +10,7 @@ const colorCountries = scaleLinear()
     .domain([0, 292])
     .range(['#B2D5FF', "red"] as any)
     .interpolate(interpolateRgb as any) as any;
-    console.log(colorCountries(24))
+    console.log(colorCountries(56))
 
 export const SquareWrapper = styled('div')`
     flex-wrap: wrap;

@@ -5,11 +5,11 @@ import * as ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
 
 const data = require('./data/countries.json')
-// const detail = require('./data/detail.json')
-// console.log(detail)
+const detailMonthly = require('./data/monthlyValues.json')
+  console.log(detailMonthly)
   
 ReactDOM.render(
-  <Main data={data}/>,
+  <Main data={data} detailMonthly={detailMonthly}/>,
   document.getElementById('root') as HTMLElement
 );
 
