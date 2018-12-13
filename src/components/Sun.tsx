@@ -420,7 +420,7 @@ export class Sun extends React.Component<{ runAnimation: boolean }> {
 
 const Rays = keyframes`
   from, 0% {
-    opacity: 0;
+    opacity: 1;
   }
 
   100% {
@@ -430,11 +430,16 @@ const Rays = keyframes`
 
 export const SunElement = styled('div')`
   position: absolute;
+  opacity: 0;
   width: 35px; 
   height: 35px;
   border-radius: 17.5px;
   background-color: ${SunYellow};
-  animation: ${Rays} ease 3s;
+  animation-name: ${Rays};
+  animation-duration: 3s;
+  animation-transition: ease;
+  animation-delay: ${(props: {delay: number}) => props.delay}ms;
+  animation-fill-mode: forwards;
 `
 
 export class SunRayShort extends React.Component<{ runAnimation: boolean}> {
@@ -451,28 +456,8 @@ export class SunRayShort extends React.Component<{ runAnimation: boolean}> {
     return(
         <VizWrapper>
           {sunElements.map(( sunElement, i) =>
-            <SunElement key={i} style={{top: sunElement.yPos, left: sunElement.xPos, animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
-          )}
-        </VizWrapper>
-    );
-  }
-}
 
-export class SunRayLong extends React.Component {
-  render() {
-    const sunElements = [];
-
-    for (let i = 0; i < 17; i++) {
-        sunElements.push({
-          xPos: 315,
-          yPos: (35 * i),
-        });
-    }
-
-    return(
-        <VizWrapper>
-          {sunElements.map(( sunElement, i) =>
-            <SunElement key={i} style={{top: sunElement.yPos, left: sunElement.xPos}}/>
+            <SunElement delay={i * 100} key={i} style={{top: sunElement.yPos, left: sunElement.xPos, animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
           )}
         </VizWrapper>
     );

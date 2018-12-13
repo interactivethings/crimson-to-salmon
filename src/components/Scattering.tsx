@@ -14,13 +14,13 @@ export const xPosition = Math.round(((Math.random() * 700) + 1) / 40) * 40;
 export const yPosition = Math.round(((Math.random() * 700) + 1) / 40) * 40;
 
 const BlueScatter = keyframes`
-  from, 0% {
-    opacity: 0.5;
+  from, 10% {
+    opacity: 0;
     top: 315px;
     left: 315px;
   }
 
-  30% {
+  70% {
       opacity: 1;
       top: ${yPosition};
       left: ${xPosition};
@@ -44,7 +44,7 @@ export const ScatterElementBlue = styled('div')`
 `
 
 const BlueSky = keyframes`
-  from, 90% {
+  from, 80% {
     opacity: 0;
   }
 
@@ -92,13 +92,13 @@ export class BlueScattering extends React.Component<{ runAnimation: boolean }> {
 // Red Scattering
 
 const RedScatter = keyframes`
-from, 0% {
-    opacity: 0.5;
+from, 27% {
+    opacity: 0;
     top: 595px;
     left: 315px;
   }
 
-  30% {
+  70% {
       opacity: 1;
       top: ${yPosition};
       left: ${xPosition};
@@ -119,10 +119,10 @@ export const ScatterElementRed = styled('div')`
     position: absolute;
     animation: ${RedScatter} ease 6s infinite;
     animation-fill-mode: forwards;
-`
+    `
 
 const RedSky = keyframes`
-from, 90% {
+from, 80% {
     opacity: 0;
   }
 
@@ -163,13 +163,13 @@ export class RedScattering extends React.Component<{ runAnimation: boolean }> {
 }
 
 const PollutedScatter = keyframes`
-    from, 0% {
-        opacity: 0.5;
+    from, 27% {
+        opacity: 0;
         top: 595px;
         left: 315px;
     }
 
-    30% {
+    70% {
         opacity: 1;
         top: ${yPosition};
         left: ${xPosition};
@@ -193,7 +193,7 @@ export const ScatterElementPolluted = styled('div')`
 ` 
 
 const PollutedRedSky = keyframes`
-    from, 90% {
+    from, 80% {
         opacity: 0;
     }
 
