@@ -67,14 +67,188 @@
  },
  {
    "Station": "Stampfenbachstrasse",
-   "Month": "Dezember",
+   "Month": "December",
    "Min": 13.61,
    "Max": 49.63
  },
  {
    "Station": "Rosengartenstrasse",
    "Month": "January",
-   "Min": 5,
-   "Max": 15
+   "Min": 1.94,
+   "Max": 66.27
+ },
+ {
+   "Station": "Schimmelstrasse",
+   "Month": "February",
+   "Min": 4.32,
+   "Max": 29.66
+ },
+ {
+   "Station": "Schimmelstrasse",
+   "Month": "March",
+   "Min": 5.67,
+   "Max": 52.92
+ },
+ {
+   "Station": "Schimmelstrasse",
+   "Month": "April",
+   "Min": 5.57,
+   "Max": 34.61
+ },
+ {
+   "Station": "Schimmelstrasse",
+   "Month": "May",
+   "Min": 2.97,
+   "Max": 23.46
+ },
+ {
+   "Station": "Schimmelstrasse",
+   "Month": "June",
+   "Min": 4.85,
+   "Max": 23.75
+ },
+ {
+   "Station": "Schimmelstrasse",
+   "Month": "July",
+   "Min": 6.9,
+   "Max": 26.32
+ },
+ {
+   "Station": "Schimmelstrasse",
+   "Month": "August",
+   "Min": 7.14,
+   "Max": 29.27
+ },
+ {
+   "Station": "Schimmelstrasse",
+   "Month": "September",
+   "Min": 6.01,
+   "Max": 33.12
+ },
+ {
+   "Station": "Schimmelstrasse",
+   "Month": "October",
+   "Min": 6.34,
+   "Max": 28.09
+ },
+ {
+   "Station": "Schimmelstrasse",
+   "Month": "November",
+   "Min": 5.41,
+   "Max": 40.01
+ },
+ {
+   "Station": "Schimmelstrasse",
+   "Month": "December",
+   "Min": 13.11,
+   "Max": 48.52
+ },
+ {
+   "Station": "Rosengartenstrasse",
+   "Month": "January",
+   "Min": 3.35,
+   "Max": 81.99
+ },
+ {
+   "Station": "Rosengartenstrasse",
+   "Month": "February",
+   "Min": 6.58,
+   "Max": 30.22
+ },
+ {
+   "Station": "Rosengartenstrasse",
+   "Month": "March",
+   "Min": 6.04,
+   "Max": 54.76
+ },
+ {
+   "Station": "Rosengartenstrasse",
+   "Month": "April",
+   "Min": 5.17,
+   "Max": 33.07
+ },
+ {
+   "Station": "Rosengartenstrasse",
+   "Month": "May",
+   "Min": 3.56,
+   "Max": 23.64
+ },
+ {
+   "Station": "Rosengartenstrasse",
+   "Month": "June",
+   "Min": 6.84,
+   "Max": 25.69
+ },
+ {
+   "Station": "Rosengartenstrasse",
+   "Month": "July",
+   "Min": 10.04,
+   "Max": 30.74
+ },
+ {
+   "Station": "Rosengartenstrasse",
+   "Month": "August",
+   "Min": 8.22,
+   "Max": 39.87
+ },
+ {
+   "Station": "Rosengartenstrasse",
+   "Month": "September",
+   "Min": 6.02,
+   "Max": 35.69
+ },
+ {
+   "Station": "Rosengartenstrasse",
+   "Month": "October",
+   "Min": 7.9,
+   "Max": 27.19
+ },
+ {
+   "Station": "Rosengartenstrasse",
+   "Month": "November",
+   "Min": 4.91,
+   "Max": 36.21
+ },
+ {
+   "Station": "Rosengartenstrasse",
+   "Month": "December",
+   "Min": 13.89,
+   "Max": 49.56
+ },
+ {
+   "Station": "",
+   "Month": "",
+   "Min": null,
+   "Max": null
+ },
+ {
+   "Station": "",
+   "Month": "",
+   "Min": null,
+   "Max": null
+ },
+ {
+   "Station": "",
+   "Month": "",
+   "Min": null,
+   "Max": null
+ },
+ {
+   "Station": "",
+   "Month": "",
+   "Min": null,
+   "Max": null
+ },
+ {
+   "Station": "",
+   "Month": "",
+   "Min": null,
+   "Max": null
+ },
+ {
+   "Station": "",
+   "Month": "",
+   "Min": null,
+   "Max": null
  }
 ]
