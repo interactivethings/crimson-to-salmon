@@ -3,8 +3,6 @@ import { VizWrapper, SunRed, SunOrange, SunYellow, SunGreen, SunIndigo, SunBlue,
 import styled from '@emotion/styled-base';
 import { keyframes } from '@emotion/core';
 import { SquareWrapper } from './Countries';
-// import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import { select } from 'd3-selection';
 import 'd3-transition';
 
 export const SunColors = [SunRed, SunOrange, SunYellow, SunGreen, SunIndigo, SunBlue, SunPurple]
@@ -15,7 +13,7 @@ const StaggeringRed = keyframes`
     background-color: ${SunYellow};
   }
 
-  60% {
+  50% {
     left: 665px;
     background-color: ${SunRed};
     transform: scale(1);
@@ -23,11 +21,19 @@ const StaggeringRed = keyframes`
 
   }
 
-  80% {
+  65% {
     left: 333px;
     transform: scale(20);
     background-color: ${SunYellow};
     transform-origin: center;
+  }
+
+  80% {
+    background-color: ${SunYellow};
+    transform: scale(1);
+    opacity: 1;
+    top: 333px;
+    left: 333px;
   }
 
   100% {
@@ -45,7 +51,7 @@ export const SunElement01 = styled('div')`
     width: 35px;
     height: 35px;
     border-radius: 17px;
-    animation: ${StaggeringRed} ease 4s;
+    animation: ${StaggeringRed} ease 8s infinite;
     animation-fill-mode: forwards;
 `
 
@@ -55,18 +61,26 @@ const StaggeringYellow = keyframes`
     background-color: ${SunYellow};
   }
 
-  60% {
+  50% {
     left: 554px;
     background-color: ${SunYellow};
     transform: scale(1);
     transform-origin: center;
   }
 
-  80% {
+  65% {
     left: 333px;
     transform: scale(20);
     background-color: ${SunYellow};
     transform-origin: center;
+  }
+
+  80% {
+    background-color: ${SunYellow};
+    transform: scale(1);
+    opacity: 1;
+    top: 333px;
+    left: 333px;
   }
 
   100% {
@@ -84,7 +98,7 @@ export const SunElement02 = styled('div')`
     width: 35px;
     height: 35px;
     border-radius: 17px;
-    animation: ${StaggeringYellow} ease 4s;
+    animation: ${StaggeringYellow} ease 8s infinite;
     animation-fill-mode: forwards;
 `
 
@@ -94,18 +108,26 @@ const StaggeringOrange = keyframes`
     background-color: ${SunYellow};
   }
 
-  60% {
+  50% {
     left: 443px;
     background-color: ${SunOrange};
     transform: scale(1);
     transform-origin: center;
   }
 
-  80% {
+  65% {
     left: 333px;
     transform: scale(20);
     background-color: ${SunYellow};
     transform-origin: center;
+  }
+
+  80% {
+    background-color: ${SunYellow};
+    transform: scale(1);
+    opacity: 1;
+    top: 333px;
+    left: 333px;
   }
 
   100% {
@@ -123,7 +145,7 @@ export const SunElement03 = styled('div')`
     width: 35px;
     height: 35px;
     border-radius: 17px;
-    animation: ${StaggeringOrange} ease 4s;
+    animation: ${StaggeringOrange} ease 8s infinite;
     animation-fill-mode: forwards;
 `
 
@@ -133,18 +155,26 @@ const StaggeringGreen = keyframes`
     background-color: ${SunYellow};
   }
 
-  60% {
+  50% {
     left: 332px;
     background-color: ${SunGreen};
     transform: scale(1);
     transform-origin: center;
   }
 
-  80% {
+  65% {
     left: 333px;
     transform: scale(20);
     background-color: ${SunYellow};
     transform-origin: center;
+  }
+
+  80% {
+    background-color: ${SunYellow};
+    transform: scale(1);
+    opacity: 1;
+    top: 333px;
+    left: 333px;
   }
 
   100% {
@@ -162,7 +192,7 @@ export const SunElement04 = styled('div')`
     width: 35px;
     height: 35px;
     border-radius: 17px;
-    animation: ${StaggeringGreen} ease 4s;
+    animation: ${StaggeringGreen} ease 8s infinite;
     animation-fill-mode: forwards;
 `
 
@@ -172,18 +202,26 @@ const StaggeringIndigo = keyframes`
     background-color: ${SunYellow};
   }
 
-  60% {
+  50% {
     left: 221px;
     background-color: ${SunIndigo};
     transform: scale(1);
     transform-origin: center;
   }
 
-  80% {
+  65% {
     left: 333px;
     transform: scale(20);
     background-color: ${SunYellow};
     transform-origin: center;
+  }
+
+  80% {
+    background-color: ${SunYellow};
+    transform: scale(1);
+    opacity: 1;
+    top: 333px;
+    left: 333px;
   }
 
   100% {
@@ -201,7 +239,7 @@ export const SunElement05 = styled('div')`
     width: 35px;
     height: 35px;
     border-radius: 17px;
-    animation: ${StaggeringIndigo} ease 4s;
+    animation: ${StaggeringIndigo} ease 8s infinite;
     animation-fill-mode: forwards;
 `
 
@@ -211,18 +249,26 @@ const StaggeringBlue = keyframes`
     background-color: ${SunYellow};
   }
 
-  60% {
+  50% {
     left: 111px;
     background-color: ${SunBlue};
     transform: scale(1);
     transform-origin: center;
   }
 
-  80% {
+  65% {
     left: 333px;
     transform: scale(20);
     background-color: ${SunYellow};
     transform-origin: center;
+  }
+
+  80% {
+    background-color: ${SunYellow};
+    transform: scale(1);
+    opacity: 1;
+    top: 333px;
+    left: 333px;
   }
 
   100% {
@@ -240,7 +286,7 @@ export const SunElement06 = styled('div')`
     width: 35px;
     height: 35px;
     border-radius: 17px;
-    animation: ${StaggeringBlue} ease 4s;
+    animation: ${StaggeringBlue} ease 8s infinite;
     animation-fill-mode: forwards;
 `
 
@@ -250,18 +296,26 @@ const StaggeringPurple = keyframes`
     background-color: ${SunYellow};
   }
 
-  60% {
+  50% {
     left: 0px;
     background-color: ${SunPurple};
     transform: scale(1);
     transform-origin: center;
   }
 
-  80% {
+  65% {
     left: 333px;
     transform: scale(20);
     background-color: ${SunYellow};
     transform-origin: center;
+  }
+
+  80% {
+    background-color: ${SunYellow};
+    transform: scale(1);
+    opacity: 1;
+    top: 333px;
+    left: 333px;
   }
 
   100% {
@@ -279,7 +333,7 @@ export const SunElement07 = styled('div')`
     width: 35px;
     height: 35px;
     border-radius: 17px;
-    animation: ${StaggeringPurple} ease 4s;
+    animation: ${StaggeringPurple} ease 8s infinite;
     animation-fill-mode: forwards;
 `
 
@@ -288,20 +342,24 @@ const LegendWLItems = keyframes`
        opacity: 0;
     }
 
-    80% {
+    50% {
         opacity: 1;
     }
 
-    100% {
+    70% {
         opacity: 0;
     }
+
+    100% {
+      opacity: 0;
+  }
 `
 
 export const LegendLabelWL = styled('p')`
     font-size: 1em;
     line-height: 120%;
     color: ${LabelColor};
-    animation: ${LegendWLItems} ease 3s;
+    animation: ${LegendWLItems} ease 8s infinite;
     animation-fill-mode: forwards;
 `
 
@@ -309,45 +367,48 @@ export const Legend = styled('div')`
     display: flex;
     width: 700px;
     justify-content: space-between;
-    animation: ${LegendWLItems} ease 3s;
-    animation-fill-mode: forwards;
+   
 `
 
 const LegendSun = keyframes`
-    from, 80% {
+    from, 50% {
        opacity: 0;
     }
 
+     80% {
+      opacity: 1;
+   }
+
     100% {
-        opacity: 1;
+        opacity: 0;
     }
 `
 
 export const LegendLabelSun = styled('p')`
+opacity: 0;
     font-size: 1em;
     line-height: 120%;
     color: ${LabelColor};
-    animation: ${LegendSun} ease 3s;
+    animation: ${LegendSun} ease 8s;
 `
 
-export class Sun extends React.Component {
+export class Sun extends React.Component<{ runAnimation: boolean }> {
     render() {
         return(
-            <SquareWrapper>
+            <SquareWrapper >
             <VizWrapper>
-                <SunElement01 />
-                <SunElement02 />
-                <SunElement03 />
-                <SunElement04 />
-                <SunElement05 />
-                <SunElement06 />
-                <SunElement07 />
+                <SunElement01 style={{ animationPlayState: this.props.runAnimation ? 'running' : 'paused'}} />
+                <SunElement02 style={{ animationPlayState: this.props.runAnimation ? 'running' : 'paused'}} />
+                <SunElement03 style={{ animationPlayState: this.props.runAnimation ? 'running' : 'paused'}} />
+                <SunElement04 style={{ animationPlayState: this.props.runAnimation ? 'running' : 'paused'}} />
+                <SunElement05 style={{ animationPlayState: this.props.runAnimation ? 'running' : 'paused'}} />
+                <SunElement06 style={{ animationPlayState: this.props.runAnimation ? 'running' : 'paused'}} />
+                <SunElement07 style={{ animationPlayState: this.props.runAnimation ? 'running' : 'paused'}} />
             </VizWrapper>
-
              <Legend>
-                <LegendLabelWL>short</LegendLabelWL>
-                <LegendLabelSun>Sun</LegendLabelSun>
-                <LegendLabelWL>long</LegendLabelWL>
+                <LegendLabelWL style={{ animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}>short</LegendLabelWL>
+                <LegendLabelSun style={{ animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}>Sun</LegendLabelSun>
+                <LegendLabelWL style={{ animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}>long</LegendLabelWL>
             </Legend>
             </SquareWrapper>
         );
@@ -381,71 +442,8 @@ export const SunElement = styled('div')`
   animation-fill-mode: forwards;
 `
 
-// export class SunRayShort extends React.Component {
-//   render() {
-//     const sunElements = [];
-
-//     for (let i = 0; i < 9; i++) {
-//         sunElements.push({
-//           xPos: 315,
-//           yPos: (35 * i),
-//         });
-//     }
-
-//     return(
-//         <VizWrapper>
-//           {sunElements.map(( sunElement, i) =>
-//             <SunElement key={i} style={{top: sunElement.yPos, left: sunElement.xPos}}/>
-//           )}
-//         </VizWrapper>
-//     );
-//   }
-// }
-
-export class SunRayLong extends React.Component {
+export class SunRayShort extends React.Component<{ runAnimation: boolean}> {
   render() {
-    const sunElements = [];
-
-    for (let i = 0; i < 17; i++) {
-        sunElements.push({
-          xPos: 315,
-          yPos: (35 * i),
-        });
-    }
-
-    return(
-        <VizWrapper>
-          {sunElements.map(( sunElement, i) =>
-            <SunElement delay={i * 100} key={i} style={{top: sunElement.yPos, left: sunElement.xPos}}/>
-          )}
-        </VizWrapper>
-    );
-  }
-}
-
-interface Props {
-	show: boolean;
-}
-
-export class SunRayShort extends React.Component<Props> {
-	sunRayMeta: React.RefObject<HTMLDivElement>;
-	constructor(props: Props) {
-		super(props);
-		this.sunRayMeta = React.createRef();
-	}
-	show = (): void => {
-		select(this.sunRayMeta.current).transition().duration(500).attr('opacity', 1);
-	};
-	hide = (): void => {
-		select(this.sunRayMeta.current).transition().duration(500).attr('opacity', 0);
-	};
-	componentDidUpdate() {
-		this.props.show ? this.show() : this.hide();
-	}
-	componentDidMount() {
-		this.hide();
-  }
-	render() {
     const sunElements = [];
 
     for (let i = 0; i < 9; i++) {
@@ -455,15 +453,59 @@ export class SunRayShort extends React.Component<Props> {
         });
     }
 
-		return (
-			<VizWrapper ref={this.sunRayMeta}>
+    return(
+        <VizWrapper>
           {sunElements.map(( sunElement, i) =>
-            <SunElement delay={i * 100} key={i} style={{top: sunElement.yPos, left: sunElement.xPos}}/>
+
+            <SunElement delay={i * 100} key={i} style={{top: sunElement.yPos, left: sunElement.xPos, animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
           )}
         </VizWrapper>
-		);
-	}
+    );
+  }
 }
+
+// type PolarHintValue = { radius: number; value: string };
+// interface Props {
+// 	show: boolean;
+// }
+
+// export class SunRayShort extends React.Component<Props> {
+// 	sunRayMeta: React.RefObject<HTMLDivElement>;
+// 	constructor(props: Props) {
+// 		super(props);
+// 		this.sunRayMeta = React.createRef();
+// 	}
+// 	show = (): void => {
+// 		select(this.sunRayMeta.current).transition().duration(500).attr('opacity', 1);
+// 	};
+// 	hide = (): void => {
+// 		select(this.sunRayMeta.current).transition().duration(500).attr('opacity', 0);
+// 	};
+// 	componentDidUpdate() {
+// 		this.props.show ? this.show() : this.hide();
+// 	}
+// 	componentDidMount() {
+// 		this.hide();
+//   }
+// 	render() {
+//     const sunElements = [];
+
+//     for (let i = 0; i < 9; i++) {
+//         sunElements.push({
+//           xPos: 315,
+//           yPos: (35 * i),
+//         });
+//     }
+
+// 		return (
+// 			<VizWrapper ref={this.sunRayMeta}>
+//           {sunElements.map(( sunElement, i) =>
+//             <SunElement key={i} style={{top: sunElement.yPos, left: sunElement.xPos}}/>
+//           )}
+//         </VizWrapper>
+// 		);
+// 	}
+// }
 
 
 // const sunElements = [];

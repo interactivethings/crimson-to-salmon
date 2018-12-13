@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { VizWrapper, ElementTitle, MainRed, AirBlueLight } from 'src/materials/materials';
-import { Country, SquareWrapper } from 'src/components/Countries';
+import { SquareWrapper } from 'src/components/Countries';
 import ZurichGradientSVG  from '../zh_gradient.svg';
 import DetailGradientSVG from '../detail_gradient.svg'
 import { Legend, LegendItem } from './Legends';
@@ -8,16 +8,6 @@ import styled from '@emotion/styled-base';
 import { scaleLinear } from 'd3-scale';
 import { keyframes } from '@emotion/core';
 
-
-export type Detail = {PM10: number}
-
-export interface Props {
-    details: Array<Detail>
-}
-
-export interface Props {
-    countries: Array<Country>
-}
 
 export class Zurich extends React.Component {
     render() {
@@ -31,9 +21,9 @@ export class Zurich extends React.Component {
                 </VizWrapper>
             
                 <Legend>
-                    <LegendItem>Min 6.2</LegendItem>
+                    <LegendItem>6.2</LegendItem>
                     <LegendItem>⟶ Fine particles in 2016 (µg / m²)</LegendItem>
-                    <LegendItem>Max 24</LegendItem>
+                    <LegendItem>24</LegendItem>
                 </Legend>            
             </SquareWrapper>   
                 </>
@@ -42,8 +32,9 @@ export class Zurich extends React.Component {
 }
 
 export const ValueRange = styled('div')`
+    display: flex;
+    align-items: space-between;
     position: absolute;
-    height: 230px;
     opacity: 0.8;
 `
 
@@ -57,27 +48,85 @@ const size = scaleLinear()
     .domain([0, 292])
     .rangeRound([1, 700] as any)
 
-console.log(size(3))
 
-export class ZurichGradient extends React.Component {
+// export class ZurichGradient extends React.Component {
+//     render() {
+//         return (
+//                 <SquareWrapper>
+//                     <VizWrapper style={{mask: "url(" + ZurichGradientSVG + ")"}}>                
+//                         {/* Rosengartenstrasse */}
+//                         <ValueRange style={{backgroundImage: "url(" + ZurichGradientSVG + ")", top: 0, left: size(3.56), width: size(81.99 - 3.56)}}/>
+
+//                         {/* Schimmelstrasse */}
+//                         <ValueRange style={{backgroundImage: "url(" + ZurichGradientSVG + ")", top: 235, left: size(1.94), width: size(66.27 - 1.94)}}/>
+
+//                         {/* Stampfenbachstrasse */}
+//                         <ValueRange style={{backgroundImage: "url(" + ZurichGradientSVG + ")", top: 470, left: size(3.38), width: size(56 - 3.38)}}/>
+//                         <LimitValues />
+//                     </VizWrapper>
+//                     <Legend>
+//                         <LegendItem>0</LegendItem>
+//                         <LegendItem>⟶ PM 10 per Year (µg / m²)</LegendItem>
+//                         <LegendItem>292</LegendItem>
+//                     </Legend>                
+//                 </SquareWrapper>
+//         );
+//     }
+// }
+
+const ValueRangeHeight = 230;
+
+export const ValueRangeDetail= styled('div')`
+    position: absolute;
+    background-color: ${MainRed};
+`
+const sizeMonthly = scaleLinear()
+    .domain([0, 56])
+    .rangeRound([1, 700] as any)
+
+export type Station = {
+    Station: string, 
+    Month: string,
+    Max: number,
+    Min: number,
+}
+
+export interface Props {
+    stations: Array<Station>
+    Animation: boolean;
+}
+
+export class ZurichGradient extends React.Component<Props> {
     render() {
         return (
-                <SquareWrapper style={{backgroundImage: "url(" + DetailGradientSVG + ")"}}>
-                    <VizWrapper style={{mask: "url(" + ZurichGradientSVG + ")"}}>                
+                <SquareWrapper>
+                    <VizWrapper >                
                         {/* Rosengartenstrasse */}
-                        <ValueRange style={{backgroundImage: "url(" + ZurichGradientSVG + ")", top: 0, left: size(3.56), width: size(81.99 - 3.56)}}/>
+                            <ValueRange >
+                            {this.props.stations.filter(function (i) {return (i.Station === "Rosengartenstrasse")}).map((station, i) => 
+                            <ValueRangeDetail key={i} style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: ValueRangeHeight / 12 * i, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}/>
+                            )}
+                            </ValueRange>
 
                         {/* Schimmelstrasse */}
-                        <ValueRange style={{backgroundImage: "url(" + ZurichGradientSVG + ")", top: 235, left: size(1.94), width: size(66.27 - 1.94)}}/>
+                        <ValueRange style={{height: ValueRangeHeight, top: 235, left: size(1.94), width: size(66.27 - 1.94)}}>
+                            {this.props.stations.filter(function (i) {return (i.Station === "Rosengartenstrasse")}).map((station, i) => 
+                            <ValueRangeDetail key={i} style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: ValueRangeHeight / 12 * i, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}/>
+                            )}
+                        </ValueRange>
 
                         {/* Stampfenbachstrasse */}
-                        <ValueRange style={{backgroundImage: "url(" + ZurichGradientSVG + ")", top: 470, left: size(3.38), width: size(56 - 3.38)}}/>
-                        <LimitValues />
+                        <ValueRange style={{height: ValueRangeHeight, top: 470, left: size(3.38), width: size(56 - 3.38)}}>
+                            {this.props.stations.filter(function (i) {return (i.Station === "Stampfenbachstrasse")}).map((station, i) => 
+                            <ValueRangeDetail key={i} style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: ValueRangeHeight / 12 * i, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}/>
+                            )}
+                        </ValueRange>
+                        <LimitValues runAnimation={this.props.Animation}/>
                     </VizWrapper>
                     <Legend>
-                        <LegendItem>0</LegendItem>
-                        <LegendItem>⟶ PM 10 per Year (µg / m²)</LegendItem>
-                        <LegendItem>292</LegendItem>
+                        <LegendItem>6.2</LegendItem>
+                        <LegendItem>⟶ Fine particles in 2016 (µg / m²)</LegendItem>
+                        <LegendItem>24</LegendItem>
                     </Legend>                
                 </SquareWrapper>
         );
@@ -101,7 +150,7 @@ export const LimitIndicator = styled('div')`
     height: 700px;
     width: 5px;
     background-color: black;
-    animation: ${LimitIndex} 10s;
+    animation: ${LimitIndex} 10s infinite;
     `
 
 const LimitAreas = keyframes`
@@ -122,7 +171,7 @@ export const LimitAreaLeft = styled('div')`
     left: 0;
     background-color: ${AirBlueLight};
     opacity: 0.3;
-    animation: ${LimitAreas} 10s ease;
+    animation: ${LimitAreas} 10s ease infinite;
 `
 
 export const LimitAreaRight = styled('div')`
@@ -132,16 +181,16 @@ export const LimitAreaRight = styled('div')`
     left: 0;
     background-color: ${MainRed};
     opacity: 0.3;
-    animation: ${LimitAreas} 10s ease;
+    animation: ${LimitAreas} 10s ease infinite;
 `
 
-export class LimitValues extends React.Component {
+export class LimitValues extends React.Component<{ runAnimation: boolean }> {
     render() {
         return(
             <>
-            <LimitAreaLeft style={{width: size(20)}}/>
-            <LimitAreaRight style={{left: size(20), width: size(272)}}/>
-            <LimitIndicator style={{left: size(20)}}/>
+            <LimitAreaLeft style={{width: size(20), animationPlayState: this.props.runAnimation ? 'running' : 'paused' }}/>
+            <LimitAreaRight style={{left: size(20), width: size(272), animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
+            <LimitIndicator style={{left: size(20), animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
             </>
         );
     }

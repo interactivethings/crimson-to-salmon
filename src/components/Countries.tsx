@@ -10,7 +10,7 @@ const colorCountries = scaleLinear()
     .domain([0, 292])
     .range(['#B2D5FF', "red"] as any)
     .interpolate(interpolateRgb as any) as any;
-    console.log(colorCountries(24))
+    console.log(colorCountries(56))
 
 export const SquareWrapper = styled('div')`
     flex-wrap: wrap;
@@ -26,11 +26,7 @@ export const SquareElement = styled('div')`
 
 export type Country = {Country: string, City: string, PM10: number}
 
-export interface Props {
-    countries: Array<Country>
-}
-
-export class TwentyCountries extends React.Component <Props>{
+export class TwentyCountries extends React.Component <{ countries: Array<Country>}>{
     render() {
         return(
             <SquareWrapper>

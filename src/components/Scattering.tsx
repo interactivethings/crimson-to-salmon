@@ -10,72 +10,8 @@ import { ScatteringLegendBlue, ScatteringLegendPolluted, ScatteringLegendRed } f
 
 // xPos pushed to this array to have it all in one place?
 
-// export const scatterElements = [{blueElement: {width: 35, xPos: 104, yPos: 85 }}, {greenElement: {green: 70}}, {redElement: { red: 105}} ];
-
 export const xPosition = Math.round(((Math.random() * 700) + 1) / 40) * 40;
 export const yPosition = Math.round(((Math.random() * 700) + 1) / 40) * 40;
-
-
-    // switch (xPosition) {
-    //     case 'ScatterElementBlue':
-    //         xPosition - 35;
-    //         yPosition - 35;
-    //     case 'ScatterElementGreen':
-    //         xPosition - 35;
-    //         yPosition - 35;
-    //     case 'ScatterElementRed':
-    //         xPosition - 35;
-    //         yPosition - 35;
-    //     default:
-    //         xPosition - 105;
-    //         yPosition - 105;
-    // };
-
-    // export const xPos = xPosition as number  => {
-    //     switch (xPos) {
-    //         case xPositionBlue:
-    //             return xPosition ===  xPosition - 35;
-    //         case 'xPositionGreen':
-    //             return xPosition ===  xPosition - 70;
-    //         case 'xPositionRed':
-    //             return xPosition ===  xPosition - 105;
-    //         default:
-    //             return xPosition ===  xPosition - 105;
-    //     }
-    // };
-
-// TBD: 
-// 1. create an array with the widths of the elements (also push created positions to this existing array?) and based on that, create the element with the width and the position, maybe also color. 
-// 2. use this element for an if clause which determines the distance needed to relocate the element when crossing the boundaries of VizWrapper (xPosition for every case)
-// 3. also bind perception div to this if-clause
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// export const ScatterElementPolluted = styled('div')`
-//     width: 105px;
-//     height: 35px;
-//     border-radius: 17.5px;
-//     background-color: ${AirRed};
-//     position: absolute;
-//     // animation: ${RedScatter} ease-out 3s;
-// `
-
-
-
-
-
-
 
 const BlueScatter = keyframes`
   from, 10% {
@@ -103,7 +39,7 @@ export const ScatterElementBlue = styled('div')`
     border-radius: 17.5px;
     background-color: ${AirBlue};
     position: absolute;
-    animation: ${BlueScatter} ease 6s;
+    animation: ${BlueScatter} ease 6s infinite;
     animation-fill-mode: forwards;
 `
 
@@ -122,11 +58,11 @@ export const DaytimeSky = styled('div')`
     width: 700px;
     height: 700px;
     background-color: ${AirBlue};
-    animation: ${BlueSky} ease 8s;
+    animation: ${BlueSky} ease 8s infinite;
     animation-fill-mode: forwards;
 `
 
-export class BlueScattering extends React.Component {
+export class BlueScattering extends React.Component<{ runAnimation: boolean }> {
     render() {
         const blueElements = [];
 
@@ -143,12 +79,11 @@ export class BlueScattering extends React.Component {
                  {scatterElements.map( scatterElement =>
                     <ScatterElementBlue style={{width: scatterElement.blueElement.width, left: scatterElement.blueElement.xPos, top: scatterElement.blueElement.yPos}}/>
                  )} */}
-                                 
-
                 {blueElements.map((blueElement, i) =>
-                <ScatterElementBlue key={i} style={{left: blueElement.xPos, top: blueElement.yPos}}/>
+                <ScatterElementBlue key={i} style={{left: blueElement.xPos, top: blueElement.yPos, animationPlayState: this.props.runAnimation ? 'running' : 'paused' }}/>
                 )}
                 <AirElement style={{top: 315, left: 315}}/>
+                
             </>
         );
     }
@@ -182,7 +117,7 @@ export const ScatterElementRed = styled('div')`
     border-radius: 17.5px;
     background-color: ${AirRed};
     position: absolute;
-    animation: ${RedScatter} ease 6s;
+    animation: ${RedScatter} ease 6s infinite;
     animation-fill-mode: forwards;
     `
 
@@ -201,11 +136,11 @@ export const EveningSky = styled('div')`
     height: 700px;
     position: absolute;
     background-color: ${AirRed};
-    animation: ${RedSky} ease 8s;
+    animation: ${RedSky} ease 8s infinite;
     animation-fill-mode: forwards;
 `
 
-export class RedScattering extends React.Component {
+export class RedScattering extends React.Component<{ runAnimation: boolean }> {
     render() {
         const redElements = [];
 
@@ -219,7 +154,7 @@ export class RedScattering extends React.Component {
         return(
             <>
                 {redElements.map((redElement, i) =>
-                <ScatterElementRed key={i} style={{left: redElement.xPos, top: redElement.yPos}}/>
+                <ScatterElementRed key={i} style={{left: redElement.xPos, top: redElement.yPos, animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
                 )}
                  <AirElement style={{top: 595, left: 315}}/>
             </>
@@ -253,7 +188,7 @@ export const ScatterElementPolluted = styled('div')`
     border-radius: 0px;
     background-color: ${AirRedDark};
     position: absolute;
-    animation: ${PollutedScatter} ease 6s;
+    animation: ${PollutedScatter} ease 6s infinite;
     animation-fill-mode: forwards;
 ` 
 
@@ -273,11 +208,11 @@ export const PollutedSky = styled('div')`
     height: 700px;
     background-color: ${AirRedDark};
     opacity: 0.8;
-    animation: ${PollutedRedSky} ease-out 8s;
+    animation: ${PollutedRedSky} ease-out 8s infinite;
     animation-fill-mode: forwards;
 `
 
-export class PollutedScattering extends React.Component {
+export class PollutedScattering extends React.Component<{ runAnimation: boolean}> {
     render() {
         const pollutedElements = [];
         const redElements = [];
@@ -298,11 +233,11 @@ export class PollutedScattering extends React.Component {
 
         return(
             <>  {redElements.map((redElement, i) =>
-                <ScatterElementRed key={i} style={{left: redElement.xPos, top: redElement.yPos}}/>
+                <ScatterElementRed key={i} style={{left: redElement.xPos, top: redElement.yPos, animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
                 )}
 
                 {pollutedElements.map((pollutedElement, i) =>
-                <ScatterElementPolluted key={i} style={{left: pollutedElement.xPos, top: pollutedElement.yPos}}/>
+                <ScatterElementPolluted key={i} style={{left: pollutedElement.xPos, top: pollutedElement.yPos, animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
                 )}
                 <AirElement style={{top: 595, left: 315}}/>
             </>
@@ -313,7 +248,7 @@ export class PollutedScattering extends React.Component {
 // full component, consisting of all the scatterings, sky perceptions and sunrays
 
 interface Props {
-	visibility: boolean;
+	Animation: boolean;
 }
 
 export class ScatteringBlue extends React.Component<Props> {
@@ -321,8 +256,8 @@ export class ScatteringBlue extends React.Component<Props> {
         return(
             <VizWrapper style={{marginBottom: "30vh"}}>
                 <SquareWrapper>
-                    <SunRayShort show={this.props.visibility}/>
-                    <BlueScattering />
+                    <SunRayShort runAnimation={this.props.Animation}/>
+                    <BlueScattering runAnimation={this.props.Animation}/>
                     <DaytimeSky />
                 </SquareWrapper>
                 <ScatteringLegendBlue />
@@ -331,13 +266,13 @@ export class ScatteringBlue extends React.Component<Props> {
     }
 }
 
-export class ScatteringRed extends React.Component {
+export class ScatteringRed extends React.Component<Props> {
     render() {
         return(
             <VizWrapper style={{marginBottom: "30vh"}}>
                 <SquareWrapper>
                     <SunRayLong />
-                    <RedScattering />
+                    <RedScattering runAnimation={this.props.Animation}/>
                     <EveningSky />
                 </SquareWrapper>
                 <ScatteringLegendRed />
@@ -346,13 +281,13 @@ export class ScatteringRed extends React.Component {
     }
 }
 
-export class ScatteringPolluted extends React.Component {
+export class ScatteringPolluted extends React.Component<Props> {
     render() {
         return(
             <VizWrapper style={{marginBottom: "30vh"}}>
                 <SquareWrapper>
                     <SunRayLong />
-                    <PollutedScattering />
+                    <PollutedScattering runAnimation={this.props.Animation}/>
                     <PollutedSky />
                 </SquareWrapper>
                 <ScatteringLegendPolluted />

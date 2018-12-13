@@ -3,13 +3,16 @@ import './index.css';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
+import { Country } from './components/Countries';
+import { Station } from './components/Zurich';
 
-const data = require('./data/countries.json')
-// const detail = require('./data/detail.json')
-// console.log(detail)
+// DANGER ZONE: types may not match
+const data: Country[] = require('./data/countries.json')
+const detailMonthly: Station[] = require('./data/monthlyValues.json')
+  console.log(detailMonthly)
   
 ReactDOM.render(
-  <Main data={data}/>,
+  <Main data={data} detailMonthly={detailMonthly}/>,
   document.getElementById('root') as HTMLElement
 );
 

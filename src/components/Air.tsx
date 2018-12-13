@@ -131,18 +131,18 @@ export const AirDefined = styled('div')`
     background-color: ${AirBlue};
     width: 700px;
     height: 700px;
-    animation: ${AirImage3} 8s ease infinite;    
+    animation: ${AirImage3} 8s ease;    
 `
 
-export class Air extends React.Component {
+export class Air extends React.Component<{ runAnimation: boolean }> {
     render() {
         return (
             <VizWrapper>
                 {/* image 1 */}
-                <AirUndefined />
+                <AirUndefined style={{ animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
             
                 {/* image 2 */}
-                <AirCompounds> 
+                <AirCompounds style={{ animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}>
                     <AirCompoundsLeft>
                         <ElementTitle>N₂</ElementTitle>
                     </AirCompoundsLeft>
@@ -165,9 +165,8 @@ export class Air extends React.Component {
                         </AirCompoundsSmall>
                     </AirCompoundsRight>
                 </AirCompounds>
-
                 {/* image 3 */}
-                <AirDefined />
+                <AirDefined style={{ animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
             </VizWrapper>
         );
     }
