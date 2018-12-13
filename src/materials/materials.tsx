@@ -87,13 +87,14 @@ export const LegendLabel = styled('p')`
 export const IntroHeading = styled('div')`
     font-family: 'IBM Plex Sans';
     font-weight: 700;
-    font-size: 3em;
+    font-size: 5em;
     color: ${TextColor};
 `
 
 export const Intro1 = styled('h1')`
     position: absolute;
     top: 10vh;
+    line-height: 120%;
 
     @media (max-width: ${small}px)  {
         left: 10vw;   
@@ -110,6 +111,7 @@ export const Intro1 = styled('h1')`
 
 export const Intro2 = styled('h1')`
     position: absolute;
+    line-height: 120%;
     top: 40vh;
     left: 40vw;
 

@@ -1,7 +1,13 @@
 import * as React from 'react';
 import styled from '@emotion/styled'
+<<<<<<< HEAD
 import { IntroHeading, Intro1, Intro2, Intro3, Intro4, MainRed } from 'src/materials/materials';
 import VideoStill from '../video_still.png';
+=======
+import { IntroHeading, Intro1, Intro2, MainRed } from 'src/materials/materials';
+import { small, medium } from 'src/materials/breakpoints';
+// import VideoStill from '../public/tctsity_bg_video.mp4';
+>>>>>>> intro
 
 export const IntroWrapper = styled('div')`
     width: 100vw;
@@ -15,6 +21,26 @@ export const BackgroundVideo = styled('img')`
     height: 100vh;
 `
 
+export const IntroGradient = styled('div')`
+    position: absolute;
+    top: 20vh;
+    width: 10px;
+    height: 20vh;
+    background-color: black;
+
+    @media (max-width: ${small}px)  {
+        left: 30vw;   
+    };
+        
+    @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        left: 50vw;
+    };
+
+    @media (min-width: ${medium}px) {
+        left: 60vh;
+    };
+`
+
 export class Intro extends React.Component {
     render() {
         return(
@@ -23,15 +49,19 @@ export class Intro extends React.Component {
                     <Intro1>
                         From Crimson
                     </Intro1>
+                    <IntroGradient />
+
                     <Intro2>
-                        To Salmon
+                        To Salmon<br></br>
+                        In<br></br>
+                        30 Years
                     </Intro2> 
-                    <Intro3>
+                    {/* <Intro3>
                         In
                     </Intro3>
                     <Intro4>
                         30 Years
-                    </Intro4>
+                    </Intro4> */}
                 </IntroHeading>
                 <BackgroundVideo src={VideoStill}> 
                 </BackgroundVideo>
