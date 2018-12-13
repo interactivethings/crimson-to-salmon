@@ -1,13 +1,7 @@
 import * as React from 'react';
 import styled from '@emotion/styled'
-<<<<<<< HEAD
-import { IntroHeading, Intro1, Intro2, Intro3, Intro4, MainRed } from 'src/materials/materials';
-import VideoStill from '../video_still.png';
-=======
 import { IntroHeading, Intro1, Intro2, MainRed } from 'src/materials/materials';
-import { small, medium } from 'src/materials/breakpoints';
-// import VideoStill from '../public/tctsity_bg_video.mp4';
->>>>>>> intro
+import VideoStill from '../video_still.png';
 
 export const IntroWrapper = styled('div')`
     width: 100vw;
@@ -56,12 +50,6 @@ export class Intro extends React.Component {
                         In<br></br>
                         30 Years
                     </Intro2> 
-                    {/* <Intro3>
-                        In
-                    </Intro3>
-                    <Intro4>
-                        30 Years
-                    </Intro4> */}
                 </IntroHeading>
                 <BackgroundVideo src={VideoStill}> 
                 </BackgroundVideo>
