@@ -134,7 +134,7 @@ export const AirDefined = styled('div')`
     animation: ${AirImage3} 8s ease infinite;    
 `
 
-export class Air extends React.Component {
+export class Air extends React.Component<{ runAnimation: boolean }> {
     render() {
         return (
             <VizWrapper>
@@ -167,7 +167,7 @@ export class Air extends React.Component {
                 </AirCompounds>
 
                 {/* image 3 */}
-                <AirDefined />
+                <AirDefined style={{ animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
             </VizWrapper>
         );
     }

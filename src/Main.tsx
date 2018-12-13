@@ -7,16 +7,22 @@ import { ScatteringBlue, ScatteringRed, ScatteringPolluted } from './components/
 import { Country, TwentyCountries } from './components/Countries';
 import { Initiatives } from './components/Initiatives';
 import { Sun } from './components/Sun';
-import { Zurich, ZurichGradient } from './components/Zurich';
+import { Zurich, ZurichGradient, Station } from './components/Zurich';
 import { Paragraph, Heading } from './materials/materials';
 import { ZurichLabels } from './components/Legends';
-// import { useRef } from "react";
-// import { useIntersectionObserver } from "react-hook-intersection-observer";
+import { useRef, useState } from "react";
+const { useIntersectionObserver } = require("react-hook-intersection-observer")
 // import { useInView } from 'react-intersection-observer'
 
 
+console.log({useRef})
+
 interface Props {
   data: Array<Country>;
+}
+
+interface Props {
+    detailMonthly: Array<Station>;
 }
 
 export const MainRoot = styled('div')`
@@ -96,29 +102,7 @@ export class Main extends React.Component<Props> {
       <>
       <Intro/>
         <MainRoot>
-            <Chapter>
-                {/* Air */}
-                <ParagraphArea>
-                    <Heading>The essential gas mixture</Heading>    
-                    <Paragraph>
-                    First of all, let us have a closer look on air.
-                    </Paragraph>
-                    <Paragraph style={{marginTop: "1.2rem"}}>
-                    It is made up of only five gases: Nitrogen (N₂), Oxygen (O₂),  Argon (Ar), and Carbon Dioxide (CO₂). Several other compounds, such as natural Ozone (O₃), are also present.
-                    </Paragraph>
-                    <Paragraph style={{marginTop: "1.2rem"}}>
-                    Scientists also refer to this pure and natural gas mixture as «dry air».
-                    </Paragraph>
-                </ParagraphArea>
-                <VisualizationMain>
-                    <LegendArea>
-
-                    </LegendArea>
-                    <VisualizationArea>
-                        <Air/> 
-                    </VisualizationArea>
-                </VisualizationMain>
-            </Chapter>
+            <Chapter1 />
                 
             <Chapter>      
                 {/* Sun */}
@@ -277,7 +261,7 @@ export class Main extends React.Component<Props> {
                         <ZurichLabels />
                     </LegendArea>
                     <VisualizationArea>
-                        <ZurichGradient />
+                        <ZurichGradient stations={this.props.detailMonthly} />
                     </VisualizationArea>
                 </VisualizationMain>
             </Chapter>
@@ -308,3 +292,49 @@ export class Main extends React.Component<Props> {
 }
 
 export default Main;
+
+const Chapter1 = () => {
+    const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
+  
+    // Let's use a bit of state.
+    const [isThingIntersecting, setThingIntersecting] = useState(false);
+  
+    // Here's our hook! Let's give it some configuration...
+    useIntersectionObserver({
+      root: { current: null },
+      target,
+  
+      // What do we do when it intersects?
+      // The signature of this callback is (collectionOfIntersections, observerElement).
+      onIntersect: ([{ isIntersecting }]: any) => setThingIntersecting(isIntersecting)
+    });
+
+    console.log({ target, isThingIntersecting })
+  
+    return (
+        <div ref={target}>
+        <Chapter>
+        {/* Air */}
+        <ParagraphArea>
+            <Heading>The essential gas mixture</Heading>    
+            <Paragraph>
+            First of all, let us have a closer look on air.
+            </Paragraph>
+            <Paragraph style={{marginTop: "1.2rem"}}>
+            It is made up of only five gases: Nitrogen (N₂), Oxygen (O₂),  Argon (Ar), and Carbon Dioxide (CO₂). Several other compounds, such as natural Ozone (O₃), are also present.
+            </Paragraph>
+            <Paragraph style={{marginTop: "1.2rem"}}>
+            Scientists also refer to this pure and natural gas mixture as «dry air».
+            </Paragraph>
+        </ParagraphArea>
+        <VisualizationMain>
+            <LegendArea>
+
+            </LegendArea>
+            <VisualizationArea>
+                <Air runAnimation={isThingIntersecting} /> 
+            </VisualizationArea>
+        </VisualizationMain>
+    </Chapter></div>
+    );
+  };
