@@ -72,7 +72,7 @@
    "Max": 49.63
  },
  {
-   "Station": "Rosengartenstrasse",
+   "Station": "Schimmelstrasse",
    "Month": "January",
    "Min": 1.94,
    "Max": 66.27
@@ -214,41 +214,5 @@
    "Month": "December",
    "Min": 13.89,
    "Max": 49.56
- },
- {
-   "Station": "",
-   "Month": "",
-   "Min": null,
-   "Max": null
- },
- {
-   "Station": "",
-   "Month": "",
-   "Min": null,
-   "Max": null
- },
- {
-   "Station": "",
-   "Month": "",
-   "Min": null,
-   "Max": null
- },
- {
-   "Station": "",
-   "Month": "",
-   "Min": null,
-   "Max": null
- },
- {
-   "Station": "",
-   "Month": "",
-   "Min": null,
-   "Max": null
- },
- {
-   "Station": "",
-   "Month": "",
-   "Min": null,
-   "Max": null
  }
 ]

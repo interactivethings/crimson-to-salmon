@@ -313,6 +313,8 @@ const Chapter4 = () => {
   const Chapter8 = (props: {detailMonthly: Array<Station>; }) => {
     const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
     const isThingIntersecting = useInView(target);
+
+    console.log(target, isThingIntersecting)
   
     return (
         <Chapter>
