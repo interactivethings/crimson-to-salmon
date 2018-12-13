@@ -419,7 +419,7 @@ export class Sun extends React.Component<{ runAnimation: boolean }> {
 
 const Rays = keyframes`
   from, 0% {
-    opacity: 0;
+    opacity: 0.7;
   }
 
   100% {
@@ -431,9 +431,14 @@ export const SunElement = styled('div')`
   position: absolute;
   width: 35px; 
   height: 35px;
+  opacity: 0;
   border-radius: 17.5px;
   background-color: ${SunYellow};
-  animation: ${Rays} ease 3s;
+  animation-name: ${Rays};
+  animation-duration: 3s;
+  animation-transition: ease;
+  animation-delay: ${(props: {delay: number}) => props.delay}ms;
+  animation-fill-mode: forwards;
 `
 
 export class SunRayShort extends React.Component <{ runAnimation: boolean }> {
@@ -450,14 +455,14 @@ export class SunRayShort extends React.Component <{ runAnimation: boolean }> {
     return(
         <VizWrapper>
           {sunElements.map(( sunElement, i) =>
-            <SunElement key={i} style={{top: sunElement.yPos, left: sunElement.xPos, animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
+            <SunElement delay={i * 100} key={i} style={{top: sunElement.yPos, left: sunElement.xPos, animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
           )}
         </VizWrapper>
     );
   }
 }
 
-export class SunRayLong extends React.Component {
+export class SunRayLong extends React.Component<{ runAnimation: boolean }> {
   render() {
     const sunElements = [];
 
@@ -471,127 +476,9 @@ export class SunRayLong extends React.Component {
     return(
         <VizWrapper>
           {sunElements.map(( sunElement, i) =>
-            <SunElement key={i} style={{top: sunElement.yPos, left: sunElement.xPos}}/>
+            <SunElement delay={i * 100}key={i} style={{top: sunElement.yPos, left: sunElement.xPos, animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
           )}
         </VizWrapper>
     );
   }
 }
-
-// // type PolarHintValue = { radius: number; value: string };
-// interface Props {
-// 	show: boolean;
-// }
-
-// export class SunRayShort extends React.Component<Props> {
-// 	sunRayMeta: React.RefObject<HTMLDivElement>;
-// 	constructor(props: Props) {
-// 		super(props);
-// 		this.sunRayMeta = React.createRef();
-// 	}
-// 	show = (): void => {
-// 		select(this.sunRayMeta.current).transition().duration(500).attr('opacity', 1);
-// 	};
-// 	hide = (): void => {
-// 		select(this.sunRayMeta.current).transition().duration(500).attr('opacity', 0);
-// 	};
-// 	componentDidUpdate() {
-// 		this.props.show ? this.show() : this.hide();
-// 	}
-// 	componentDidMount() {
-// 		this.hide();
-//   }
-// 	render() {
-//     const sunElements = [];
-
-//     for (let i = 0; i < 9; i++) {
-//         sunElements.push({
-//           xPos: 315,
-//           yPos: (35 * i),
-//         });
-//     }
-
-// 		return (
-// 			<VizWrapper ref={this.sunRayMeta}>
-//           {sunElements.map(( sunElement, i) =>
-//             <SunElement key={i} style={{top: sunElement.yPos, left: sunElement.xPos}}/>
-//           )}
-//         </VizWrapper>
-// 		);
-// 	}
-// }
-
-
-// const sunElements = [];
-//     for (let i = 0; i < 9; i++) {
-//         sunElements.push({
-//           xPos: 315,
-//           yPos: (35 * i),
-//         });
-//     }
-
-//     export const SunRayy = ({sunElements}) => {
-//       return (
-//         <>
-//           <ReactCSSTransitionGroup transitionName="sunRay" transitionEnterTimeout={700} transitionLeaveTimeout={700}>
-//               {sunElements.map(( sunElement, i) =>
-//             <SunElement key={i} style={{top: sunElement.yPos, left: sunElement.xPos}}/>
-//             )}
-//           </ReactCSSTransitionGroup>
-//         </>
-//       );
-//     };
-    
-
-// const FullSun = keyframes`
-//   from, 0% {
-//     opacity: 1  
-//   }
-
-//   100% {
-//     opacity: 0;  
-//   }
-// `;
-
-// export const SunNegativeElement = styled('div')`
-//   width: 35px; 
-//   height: 35px;
-//   border-radius: 0px;
-//   background-color: ${SunWhite};
-//   position: absolute;
-//   // animation: ${FullSun} ease 3s infinite;
-//   // animation-fill-mode: forwards;
-// `
-
-// export class SunRays extends React.Component {
-//   render() {
-//     const sunElements = [];
-//     const sunNegativeElements = [];
-
-//     for (let i = 0; i < 400; i++) {
-//         sunElements.push({
-//         });
-//     }
-
-//     for (let i = 0; i < 300; i++) {
-//       sunNegativeElements.push({
-//           xPos: Math.round(((Math.random() * 665) + 1) / 35) * 35,
-//           yPos: Math.round(((Math.random() * 315) + 350) / 35) * 35,
-//       });
-//   }
-//     return(
-//         <VizWrapper>
-//           <SquareWrapper>
-//             {sunElements.map(( sunElement, i) =>
-//               <SunElement key={i}/>
-//             )}
-
-//             {sunNegativeElements.map((sunNegativeElement, i) =>
-//                 <SunNegativeElement key={i} style={{left: sunNegativeElement.xPos, top: sunNegativeElement.yPos}}/>
-//             )}
-//             </SquareWrapper>
-//           </VizWrapper>
-//     );
-//   }
-// }
-

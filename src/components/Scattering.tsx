@@ -14,13 +14,13 @@ export const xPosition = Math.round(((Math.random() * 700) + 1) / 40) * 40;
 export const yPosition = Math.round(((Math.random() * 700) + 1) / 40) * 40;
 
 const BlueScatter = keyframes`
-  from, 0% {
-    opacity: 0.5;
+  from, 10% {
+    opacity: 0;
     top: 315px;
     left: 315px;
   }
 
-  30% {
+  50% {
       opacity: 1;
       top: ${yPosition};
       left: ${xPosition};
@@ -39,13 +39,17 @@ export const ScatterElementBlue = styled('div')`
     border-radius: 17.5px;
     background-color: ${AirBlue};
     position: absolute;
-    animation: ${BlueScatter} ease 6s infinite;
+    animation: ${BlueScatter} ease 8s infinite;
     animation-fill-mode: forwards;
 `
 
 const BlueSky = keyframes`
-  from, 90% {
+  from, 70% {
     opacity: 0;
+  }
+
+  90% {
+    opacity: 0.5;
   }
 
   100% {
@@ -60,6 +64,7 @@ export const DaytimeSky = styled('div')`
     background-color: ${AirBlue};
     animation: ${BlueSky} ease 8s infinite;
     animation-fill-mode: forwards;
+    animation-play-state: ${(props: {runAnimation: boolean}) => props.runAnimation ? 'running' : 'paused'};
 `
 
 export class BlueScattering extends React.Component<{ runAnimation: boolean }> {
@@ -92,23 +97,23 @@ export class BlueScattering extends React.Component<{ runAnimation: boolean }> {
 // Red Scattering
 
 const RedScatter = keyframes`
-from, 0% {
-    opacity: 0.5;
-    top: 595px;
-    left: 315px;
-  }
-
-  30% {
-      opacity: 1;
-      top: ${yPosition};
-      left: ${xPosition};
-  }
-
-  100% {
-    opacity: 1;
-    top: ${yPosition};
-    left: ${xPosition};
-    }
+    from, 18% {
+        opacity: 0;
+        top: 595px;
+        left: 315px;
+      }
+    
+      50% {
+          opacity: 1;
+          top: ${yPosition};
+          left: ${xPosition};
+      }
+    
+      100% {
+        opacity: 1;
+        top: ${yPosition};
+        left: ${xPosition};
+        }
 `;
 
 export const ScatterElementRed = styled('div')`
@@ -117,13 +122,17 @@ export const ScatterElementRed = styled('div')`
     border-radius: 17.5px;
     background-color: ${AirRed};
     position: absolute;
-    animation: ${RedScatter} ease 6s infinite;
+    animation: ${RedScatter} ease 8s infinite;
     animation-fill-mode: forwards;
 `
 
 const RedSky = keyframes`
-from, 90% {
+from, 72% {
     opacity: 0;
+  }
+
+  90% {
+    opacity: 0.5;
   }
 
   100% {
@@ -138,6 +147,7 @@ export const EveningSky = styled('div')`
     background-color: ${AirRed};
     animation: ${RedSky} ease 8s infinite;
     animation-fill-mode: forwards;
+    animation-play-state: ${(props: {runAnimation: boolean}) => props.runAnimation ? 'running' : 'paused'};
 `
 
 export class RedScattering extends React.Component<{ runAnimation: boolean }> {
@@ -163,13 +173,13 @@ export class RedScattering extends React.Component<{ runAnimation: boolean }> {
 }
 
 const PollutedScatter = keyframes`
-    from, 0% {
-        opacity: 0.5;
+    from, 18% {
+        opacity: 0;
         top: 595px;
         left: 315px;
     }
 
-    30% {
+    50% {
         opacity: 1;
         top: ${yPosition};
         left: ${xPosition};
@@ -179,7 +189,7 @@ const PollutedScatter = keyframes`
         opacity: 1;
         top: ${yPosition};
         left: ${xPosition};
-    }
+        }
 `;
 
 export const ScatterElementPolluted = styled('div')`
@@ -188,18 +198,22 @@ export const ScatterElementPolluted = styled('div')`
     border-radius: 0px;
     background-color: ${AirRedDark};
     position: absolute;
-    animation: ${PollutedScatter} ease 6s infinite;
+    animation: ${PollutedScatter} ease 8s infinite;
     animation-fill-mode: forwards;
 ` 
 
 const PollutedRedSky = keyframes`
-    from, 90% {
-        opacity: 0;
-    }
+from, 72% {
+    opacity: 0;
+  }
 
-    100% {
-        opacity: 0.5;
-    }
+  90% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
 `;
 
 export const PollutedSky = styled('div')`
@@ -208,8 +222,9 @@ export const PollutedSky = styled('div')`
     height: 700px;
     background-color: ${AirRedDark};
     opacity: 0.8;
-    animation: ${PollutedRedSky} ease-out 8s infinite;
+    animation: ${PollutedRedSky} ease 8s infinite;
     animation-fill-mode: forwards;
+    animation-play-state: ${(props: {runAnimation: boolean}) => props.runAnimation ? 'running' : 'paused'};
 `
 
 export class PollutedScattering extends React.Component<{ runAnimation: boolean}> {
@@ -258,7 +273,7 @@ export class ScatteringBlue extends React.Component<Props> {
                 <SquareWrapper>
                     <SunRayShort runAnimation={this.props.Animation}/>
                     <BlueScattering runAnimation={this.props.Animation}/>
-                    <DaytimeSky />
+                    <DaytimeSky runAnimation={this.props.Animation}/>
                 </SquareWrapper>
                 <ScatteringLegendBlue />
             </VizWrapper>
@@ -271,9 +286,9 @@ export class ScatteringRed extends React.Component<Props> {
         return(
             <VizWrapper style={{marginBottom: "30vh"}}>
                 <SquareWrapper>
-                    <SunRayLong />
+                    <SunRayLong runAnimation={this.props.Animation}/>
                     <RedScattering runAnimation={this.props.Animation}/>
-                    <EveningSky />
+                    <EveningSky runAnimation={this.props.Animation}/>
                 </SquareWrapper>
                 <ScatteringLegendRed />
             </VizWrapper>
@@ -286,9 +301,9 @@ export class ScatteringPolluted extends React.Component<Props> {
         return(
             <VizWrapper style={{marginBottom: "30vh"}}>
                 <SquareWrapper>
-                    <SunRayLong />
+                    <SunRayLong runAnimation={this.props.Animation}/>
                     <PollutedScattering runAnimation={this.props.Animation}/>
-                    <PollutedSky />
+                    <PollutedSky runAnimation={this.props.Animation}/>
                 </SquareWrapper>
                 <ScatteringLegendPolluted />
             </VizWrapper>

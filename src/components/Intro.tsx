@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from '@emotion/styled'
 import { IntroHeading, Intro1, Intro2, MainRed } from 'src/materials/materials';
 import VideoStill from '../video_still.png';
+import { small, medium } from 'src/materials/breakpoints';
 
 export const IntroWrapper = styled('div')`
     width: 100vw;
