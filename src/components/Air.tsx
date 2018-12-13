@@ -139,10 +139,10 @@ export class Air extends React.Component<{ runAnimation: boolean }> {
         return (
             <VizWrapper>
                 {/* image 1 */}
-                <AirUndefined />
+                <AirUndefined style={{ animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
             
                 {/* image 2 */}
-                <AirCompounds> 
+                <AirCompounds style={{ animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}>
                     <AirCompoundsLeft>
                         <ElementTitle>N₂</ElementTitle>
                     </AirCompoundsLeft>
@@ -165,7 +165,6 @@ export class Air extends React.Component<{ runAnimation: boolean }> {
                         </AirCompoundsSmall>
                     </AirCompoundsRight>
                 </AirCompounds>
-
                 {/* image 3 */}
                 <AirDefined style={{ animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
             </VizWrapper>
