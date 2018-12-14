@@ -443,7 +443,7 @@ export const SunElement = styled('div')`
 
 export class SunRayShort extends React.Component <{ runAnimation: boolean }> {
   render() {
-    const sunElements = [];
+    const sunElements = [] as any[];
 
     for (let i = 0; i < 9; i++) {
         sunElements.push({
@@ -464,7 +464,7 @@ export class SunRayShort extends React.Component <{ runAnimation: boolean }> {
 
 export class SunRayLong extends React.Component<{ runAnimation: boolean }> {
   render() {
-    const sunElements = [];
+    const sunElements = [] as any[];
 
     for (let i = 0; i < 17; i++) {
         sunElements.push({

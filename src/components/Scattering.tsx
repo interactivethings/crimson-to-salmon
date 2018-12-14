@@ -69,7 +69,7 @@ export const DaytimeSky = styled('div')`
 
 export class BlueScattering extends React.Component<{ runAnimation: boolean }> {
     render() {
-        const blueElements = [];
+        var blueElements = [] as any[];
 
         for (let i = 0; i < 200; i++) {
             blueElements.push({
@@ -152,7 +152,7 @@ export const EveningSky = styled('div')`
 
 export class RedScattering extends React.Component<{ runAnimation: boolean }> {
     render() {
-        const redElements = [];
+        const redElements = [] as any[];
 
         for (let i = 0; i < 80; i++) {
             redElements.push({
@@ -229,8 +229,8 @@ export const PollutedSky = styled('div')`
 
 export class PollutedScattering extends React.Component<{ runAnimation: boolean}> {
     render() {
-        const pollutedElements = [];
-        const redElements = [];
+        const pollutedElements = [] as any[];
+        const redElements = [] as any[];
 
         for (let i = 0; i < 80; i++) {
             redElements.push({
