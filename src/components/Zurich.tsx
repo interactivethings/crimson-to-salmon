@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { VizWrapper, ElementTitle, MainRed, AirBlueLight } from 'src/materials/materials';
+import { VizWrapper, ElementTitle, MainRed, AirBlueLight, VizItemSmall, LegendItem, VizItem } from 'src/materials/materials';
 import { SquareWrapper } from 'src/components/Countries';
 import ZurichGradientSVG  from '../zh_gradient.svg';
 import DetailGradientSVG from '../detail_gradient.svg'
-import { Legend, LegendItem } from './Legends';
+import { Legend } from './Legends';
 import styled from '@emotion/styled-base';
 import { scaleLinear } from 'd3-scale';
 import { keyframes } from '@emotion/core';
@@ -22,7 +22,7 @@ export class Switzerland extends React.Component {
             
                 <Legend>
                     <LegendItem>6.2</LegendItem>
-                    <LegendItem>⟶ Fine particles in 2016 (µg / m²)</LegendItem>
+                    <LegendItem>⟶ Fine particle emission in 2016 (µg / m²)</LegendItem>
                     <LegendItem>24</LegendItem>
                 </Legend>            
             </SquareWrapper>   
@@ -78,12 +78,30 @@ export const ValueRange = styled('div')`
 
 const ValueRangeHeight = 209;
 
-export const ValueRangeDetail= styled('div')`
-    position: absolute;
-`
+
 const sizeMonthly = scaleLinear()
     .domain([0, 81.99])
     .rangeRound([1, 700] as any)
+
+
+const ValueRangeBars = (width: number) => keyframes`
+    from, 0% {
+        width: 0;
+    }
+
+    100% {
+        width: ${width}px;
+    }
+`
+
+export const ValueRangeDetail= styled('div')`
+    position: absolute;
+    animation: ${(props: { bars: number }) => ValueRangeBars(props.bars)} 2s ease;
+    `
+
+export const ValueRangeLimit= styled('div')`
+    position: absolute;
+`
 
 export type Station = {
     Station: string, 
@@ -107,38 +125,90 @@ export class Zurich extends React.Component<Props> {
                             <LegendItem style={{position: "absolute", top: "-5vh"}}>↑ Checkpoint over time</LegendItem>            
                         {/* Rosengartenstrasse */}
                             <ValueRange >
-                            <LegendItem>Rosengartenstrasse</LegendItem>
+                            <VizItem>Rosengartenstrasse</VizItem>
                             {this.props.stations.filter(function (i) {return (i.Station === "Rosengartenstrasse")}).map((station, i) => 
-                            <ValueRangeDetail key={i} style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: (ValueRangeHeight / 12 * i) + 20, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}>
-                            <LegendItem>{station.Month}</LegendItem>
+                            <ValueRangeDetail key={i} bars={sizeMonthly((station.Max - station.Min))} style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: (ValueRangeHeight / 12 * i) + 20, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}>
+                            <VizItemSmall>{station.Month}</VizItemSmall>
                             </ValueRangeDetail>
                             )}
                             </ValueRange>
 
                         {/* Schimmelstrasse */}
                         <ValueRange style={{height: ValueRangeHeight, top: 235}}>
-                            <LegendItem>Schimmelstrasse</LegendItem>
+                            <VizItem>Schimmelstrasse</VizItem>
                             {this.props.stations.filter(function (i) {return (i.Station === "Schimmelstrasse")}).map((station, i) => 
-                            <ValueRangeDetail key={i} style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: (ValueRangeHeight / 12 * i) + 20, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}>
-                            <LegendItem>{station.Month}</LegendItem>
+                            <ValueRangeDetail bars={sizeMonthly((station.Max - station.Min))} key={i} style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: (ValueRangeHeight / 12 * i) + 20, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}>
+                            <VizItemSmall>{station.Month}</VizItemSmall>
                             </ValueRangeDetail>
                             )}
                         </ValueRange>
 
                         {/* Stampfenbachstrasse */}
                         <ValueRange style={{height: 230, top: 470}}>
-                            <LegendItem>Stampfenbachstrasse</LegendItem>
+                            <VizItem>Stampfenbachstrasse</VizItem>
                             {this.props.stations.filter(function (i) {return (i.Station === "Stampfenbachstrasse")}).map((station, i) => 
-                            <ValueRangeDetail key={i} style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: (ValueRangeHeight / 12 * i) + 20, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}>
-                            <LegendItem>{station.Month}</LegendItem>
+                            <ValueRangeDetail bars={sizeMonthly((station.Max - station.Min))} key={i} style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: (ValueRangeHeight / 12 * i) + 20, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}>
+                            <VizItemSmall>{station.Month}</VizItemSmall>
                             </ValueRangeDetail>
+                            )}
+                        </ValueRange>
+                    </VizWrapper>
+                    <Legend>
+                        <LegendItem>0</LegendItem>
+                        <LegendItem>⟶ Fine particle emission in 2016 (µg / m²)</LegendItem>
+                        <LegendItem>81.99</LegendItem>
+                    </Legend>                
+                </SquareWrapper>
+        );
+    }
+}
+
+export class Limits extends React.Component<Props> {
+    render() {
+        return (
+                <SquareWrapper>
+                    <VizWrapper >    
+                            <LegendItem style={{position: "absolute", top: "-5vh"}}>↑ Checkpoint over time</LegendItem>            
+                        {/* Rosengartenstrasse */}
+                            <ValueRange >
+                            <VizItem>Rosengartenstrasse</VizItem>
+                            {this.props.stations.filter(function (i) {return (i.Station === "Rosengartenstrasse")}).map((station, i) => 
+                            <ValueRangeLimit
+                                key={i}
+                                style={{
+                                    backgroundImage: "url(" + DetailGradientSVG + ")",
+                                    mask: "url(" + ZurichGradientSVG + ")",
+                                    height: ValueRangeHeight / 12, top: (ValueRangeHeight / 12 * i) + 20, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}
+                            >
+                                <VizItemSmall>{station.Month}</VizItemSmall>
+                            </ValueRangeLimit>
+                            )}
+                            </ValueRange>
+
+                        {/* Schimmelstrasse */}
+                        <ValueRange style={{height: ValueRangeHeight, top: 235}}>
+                            <VizItem>Schimmelstrasse</VizItem>
+                            {this.props.stations.filter(function (i) {return (i.Station === "Schimmelstrasse")}).map((station, i) => 
+                            <ValueRangeLimit key={i} style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: (ValueRangeHeight / 12 * i) + 20, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}>
+                            <VizItemSmall>{station.Month}</VizItemSmall>
+                            </ValueRangeLimit>
+                            )}
+                        </ValueRange>
+
+                        {/* Stampfenbachstrasse */}
+                        <ValueRange style={{height: 230, top: 470}}>
+                            <VizItem>Stampfenbachstrasse</VizItem>
+                            {this.props.stations.filter(function (i) {return (i.Station === "Stampfenbachstrasse")}).map((station, i) => 
+                            <ValueRangeLimit key={i} style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: (ValueRangeHeight / 12 * i) + 20, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}>
+                            <VizItemSmall>{station.Month}</VizItemSmall>
+                            </ValueRangeLimit>
                             )}
                         </ValueRange>
                         <LimitValues runAnimation={this.props.Animation}/>
                     </VizWrapper>
                     <Legend>
-                        <LegendItem>6.2</LegendItem>
-                        <LegendItem>⟶ Fine particles in 2016 (µg / m²)</LegendItem>
+                        <LegendItem>0</LegendItem>
+                        <LegendItem>⟶ Fine particle emission in 2016 (µg / m²)</LegendItem>
                         <LegendItem>81.99</LegendItem>
                     </Legend>                
                 </SquareWrapper>

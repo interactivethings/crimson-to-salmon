@@ -4,20 +4,21 @@ import { small, medium } from './breakpoints';
 // UI Colors
 
 export const TextColor = '#322C2C';
-export const LabelColor = '#8B7F7F';
+export const LegendLabelColor = '#8B7F7F';
+export const VizLabelColor = '#242020';
 export const MainRed = '#FF5555';
 
 // Air Colors
 
-export const AirBlueLight = '#B2D5FF';
-export const AirBlue = '#6199DD';
+export const AirBlueLight = '#D1E6FF';
+export const AirBlue = '#B2D5FF';
 export const AirGreen = '#2FBF62';
 export const AirRed = '#FF5555';
 export const AirRedDark = '#9B0000';
 
 // Sun Colors
 
-export const SunRed = '#D0021B';
+export const SunRed = MainRed;
 export const SunOrange = '#FF7300';
 export const SunYellow = '#FFBF23';
 export const SunGreen = '#35A535';
@@ -44,6 +45,8 @@ export const VizWrapper = styled('div')`
     position: relative;
     width: 700px;
     height: 700px;
+    position: sticky;
+    top: 150px;
     `
 
 // Typography
@@ -77,7 +80,32 @@ export const Paragraph = styled('p')`
 export const LegendLabel = styled('p')`
     font-size: 1em;
     line-height: 120%;
-    color: ${LabelColor}
+    color: ${LegendLabelColor}
+`
+
+export const LegendItem = styled('p')`
+    font-size: 1em;
+    line-height: 120%;
+    color: ${LegendLabelColor};
+`
+
+export const VizItem = styled('p')`
+    font-size: 1em;
+    line-height: 120%;
+    color: ${VizLabelColor};
+`
+
+export const LegendItemSmall = styled('p')`
+    font-size: 0.8em;
+    line-height: 120%;
+    color: ${LegendLabelColor};
+`
+
+export const VizItemSmall = styled('p')`
+    font-size: 0.8em;
+    line-height: 120%;
+    color: ${VizLabelColor};
+    margin: 0 0 0 0.2rem;
 `
 
 // Intro

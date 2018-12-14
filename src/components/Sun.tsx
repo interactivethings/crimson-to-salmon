@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { VizWrapper, SunRed, SunOrange, SunYellow, SunGreen, SunIndigo, SunBlue, SunPurple, LabelColor } from 'src/materials/materials';
+import { VizWrapper, SunRed, SunOrange, SunYellow, SunGreen, SunIndigo, SunBlue, SunPurple, LegendLabelColor } from 'src/materials/materials';
 import styled from '@emotion/styled-base';
 import { keyframes } from '@emotion/core';
 import { SquareWrapper } from './Countries';
@@ -251,7 +251,7 @@ const StaggeringBlue = keyframes`
 
   50% {
     left: 111px;
-    background-color: ${SunBlue};
+    background-color: ${SunPurple};
     transform: scale(1);
     transform-origin: center;
   }
@@ -298,7 +298,7 @@ const StaggeringPurple = keyframes`
 
   50% {
     left: 0px;
-    background-color: ${SunPurple};
+    background-color: ${SunBlue};
     transform: scale(1);
     transform-origin: center;
   }
@@ -358,7 +358,7 @@ const LegendWLItems = keyframes`
 export const LegendLabelWL = styled('p')`
     font-size: 1em;
     line-height: 120%;
-    color: ${LabelColor};
+    color: ${LegendLabelColor};
     animation: ${LegendWLItems} ease 8s infinite;
     animation-fill-mode: forwards;
 `
@@ -387,7 +387,7 @@ export const LegendLabelSun = styled('p')`
 opacity: 0;
     font-size: 1em;
     line-height: 120%;
-    color: ${LabelColor};
+    color: ${LegendLabelColor};
     animation: ${LegendSun} ease 8s;
 `
 
@@ -435,7 +435,7 @@ export const SunElement = styled('div')`
   border-radius: 17.5px;
   background-color: ${SunYellow};
   animation-name: ${Rays};
-  animation-duration: 3s;
+  animation-duration: 3s infinite;
   animation-transition: ease;
   animation-delay: ${(props: {delay: number}) => props.delay}ms;
   animation-fill-mode: forwards;

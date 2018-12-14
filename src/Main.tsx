@@ -10,7 +10,6 @@ import { Sun } from './components/Sun';
 import { Station, Switzerland, Zurich, Limits } from './components/Zurich';
 import { Paragraph, Heading, AirBlue, SunRed, SunYellow, AirBlueLight, SunBlue, AirRedDark } from './materials/materials';
 import { useRef } from "react";
-import { keyframes } from '@emotion/core';
 const { useInView } = require("react-intersection-observer")
 
 
@@ -34,33 +33,24 @@ export const Chapter = styled('section')`
 export const ParagraphArea = styled('div')`
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     width: 35%;
     margin: 0 0 15vh 0;
     max-height: 700px;
+    min-height: 150vh;
+    background-color: red;
 `;
 
 export const VisualizationMain = styled('div')`
     display: flex;
     flex-wrap: no-wrap;
     justify-content: flex-start;
-
-`
-
-const VizFading = keyframes`
-    from, 30% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
 `
 
 export const VisualizationArea = styled('div')`
     display: flex;
-    animation: ${VizFading} 1s;
-    animation-delay: 500ms;
+    width: 700px;
+    max-width: 700px;
 `
 
 export const LegendArea = styled('div')`
@@ -77,19 +67,6 @@ export const TextHighlighters = styled('span')`
     border-radius: 5px;
     padding: 0 2px 0 2px;
 `
-
-// TODO: 
-// highlight text areas with span to make ref to viz clear
-// read color from color function for <Zurich />'s background color
-// check unicode arrows to be the same for x and y axes
-// read data dynamically for min and max values of Countries color scale 
-// repsonsiveness
-// different colors for viz-labels and legend-labels
-// legend in a row
-// conclusion + sources
-// background styling
-// distance labels for scattering
-
 
 export class Main extends React.Component<{data: Country[], detailMonthly: Station[]}> {    
   public render() {
@@ -140,9 +117,6 @@ const Chapter1 = () => {
             </Paragraph>
         </ParagraphArea>
         <VisualizationMain>
-            {/* <LegendArea>
-
-            </LegendArea> */}
             <VisualizationArea ref={target}>
             {isThingIntersecting && <Air runAnimation={isThingIntersecting}/> }
             </VisualizationArea>
@@ -267,8 +241,6 @@ const Chapter4 = () => {
   };
 
   // Twenty Countries
-  //maybe animate the countries to fade in or to transition from white to their color etc.?
-  // update with pollted scattering red. 
 
   const Chapter6 = (props: {data: Array<Country>; }) => {
     const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
@@ -296,7 +268,6 @@ const Chapter4 = () => {
   };
 
   // Switzerland
-//maybe animate the gradient to fade in etc.?
 
   const Chapter7 = () => {
     const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
@@ -311,7 +282,6 @@ const Chapter4 = () => {
                     </Paragraph>
                 </ParagraphArea>
                 <VisualizationMain>
-                    {/* <LegendArea></LegendArea> */}
                     <VisualizationArea ref={target}>
                         <Switzerland />
                     </VisualizationArea>
@@ -398,8 +368,6 @@ const Chapter9 = (props: {detailMonthly: Array<Station>; }) => {
                     </Paragraph>
                 </ParagraphArea>
                 <VisualizationMain>
-                    {/* <LegendArea>
-                    </LegendArea> */}
                     <VisualizationArea ref={target}>
                         <Initiatives />
                     </VisualizationArea>

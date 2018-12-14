@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/core';
-import { AirBlueLight, ElementTitle, AirBlue, VizWrapper } from 'src/materials/materials';
+import { AirBlueLight, ElementTitle, VizWrapper, AirBlue } from 'src/materials/materials';
 
 // wrapping all into overall div
 
@@ -176,7 +176,7 @@ export const AirElement = styled('div')`
     width: 35px; 
     height: 35px;
     border-radius: 0px;
-    background-color: ${AirBlueLight};
+    background-color: ${AirBlue};
     position: absolute;
 `
 
