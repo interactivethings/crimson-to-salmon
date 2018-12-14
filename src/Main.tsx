@@ -7,8 +7,8 @@ import { ScatteringBlue, ScatteringPolluted, ScatteringRed } from './components/
 import { Country, TwentyCountries } from './components/Countries';
 import { Initiatives } from './components/Initiatives';
 import { Sun } from './components/Sun';
-import { Station, Switzerland, Zurich } from './components/Zurich';
-import { Paragraph, Heading } from './materials/materials';
+import { Station, Switzerland, Zurich, Limits } from './components/Zurich';
+import { Paragraph, Heading, AirBlue, SunRed, SunYellow, AirBlueLight, SunBlue, AirRedDark } from './materials/materials';
 import { useRef } from "react";
 import { keyframes } from '@emotion/core';
 const { useInView } = require("react-intersection-observer")
@@ -73,13 +73,22 @@ export const LegendArea = styled('div')`
     justify-content: flex-start;
 `
 
+export const TextHighlighters = styled('span')`
+    border-radius: 5px;
+    padding: 0 2px 0 2px;
+`
+
 // TODO: 
 // highlight text areas with span to make ref to viz clear
 // read color from color function for <Zurich />'s background color
 // check unicode arrows to be the same for x and y axes
 // read data dynamically for min and max values of Countries color scale 
-
-
+// repsonsiveness
+// different colors for viz-labels and legend-labels
+// legend in a row
+// conclusion + sources
+// background styling
+// distance labels for scattering
 
 
 export class Main extends React.Component<{data: Country[], detailMonthly: Station[]}> {    
@@ -96,7 +105,8 @@ export class Main extends React.Component<{data: Country[], detailMonthly: Stati
             <Chapter6 data={this.props.data}/>
             <Chapter7 />
             <Chapter8 detailMonthly={this.props.detailMonthly}/>
-            <Chapter9 />
+            <Chapter9 detailMonthly={this.props.detailMonthly}/>
+            <Chapter10 />
         </MainRoot>
       </>
     );
@@ -123,13 +133,10 @@ const Chapter1 = () => {
         <Chapter>
         <ParagraphArea>
             <Paragraph>
-            First of all, let us have a closer look on air.
+            Air is made up of only five gases: Nitrogen (N₂), Oxygen (O₂),  Argon (Ar), and Carbon Dioxide (CO₂). Several other compounds, such as natural Ozone (O₃), are also present.
             </Paragraph>
             <Paragraph style={{marginTop: "1.2rem"}}>
-            It is made up of only five gases: Nitrogen (N₂), Oxygen (O₂),  Argon (Ar), and Carbon Dioxide (CO₂). Several other compounds, such as natural Ozone (O₃), are also present.
-            </Paragraph>
-            <Paragraph style={{marginTop: "1.2rem"}}>
-            Scientists also refer to this pure and natural gas mixture as «dry air».
+            Scientists also refer to this pure and natural gas mixture as <TextHighlighters style={{backgroundColor: AirBlue}}>«dry air».</TextHighlighters> 
             </Paragraph>
         </ParagraphArea>
         <VisualizationMain>
@@ -158,14 +165,13 @@ const Chapter1 = () => {
         <Chapter>      
             <ParagraphArea>
                 <Paragraph>
-                Sunlight, on the contrary, is composed of a whole spectrum of colors, ranging from long wavelengths (~700 nm) which are perceived as red, to shorter wavelengths (~300 nm), perceived as purplish-blue.
+                <TextHighlighters style={{backgroundColor: SunYellow}}>Sunlight</TextHighlighters>, on the contrary, is composed of a spectrum of colors, ranging from <TextHighlighters style={{backgroundColor: SunBlue}}>short</TextHighlighters> wavelengths (~300 nm) which are perceived as purplish-blue, to <TextHighlighters style={{backgroundColor: SunRed}}>longer</TextHighlighters>  wavelengths (~700 nm), perceived as red.
                 </Paragraph>
                 <Paragraph style={{marginTop: "1.2rem"}}>
                     All colors together are perceived as a yellowish white.
                 </Paragraph>
             </ParagraphArea>
             <VisualizationMain>
-                {/* <LegendArea /> */}
                 <VisualizationArea ref={target}>
                     {isThingIntersecting && <Sun runAnimation={isThingIntersecting}/>}
                 </VisualizationArea>
@@ -187,21 +193,14 @@ const Chapter1 = () => {
             <Chapter >
                 <ParagraphArea>
                     <Paragraph>
-                    «Selective scattering», also known as «Rayleigh scattering», is used to describe scattering that varies with the wavelength of the incident light. Particles are good Rayleigh scatterers when they are very small compared to the wavelength of the light.
-                    </Paragraph> 
-                    {/* <Paragraph style={{marginTop: "1.2rem"}}>
-                    Air molecules are slightly closer in size to shorter wavelength of violet and blue light than to that of red light. 
-                    Due to that, pure air scatters this blue light three to four times more effectively than it does the longer wavelengths. 
+                    Selective scattering, also «Rayleigh scattering», describes scattering that varies with the wavelength of the incident light. This works best with very small particles compared to the wavelength of the light.
                     </Paragraph> 
                     <Paragraph style={{marginTop: "1.2rem"}}>
-                    This results in the familiar blue of the daytime sky. The other colors exist but scatter less. Most of them are most likely to just pass through the atmosphere. Therefore, they are rarely visible due to the enormous scattering of blue light.
-                    </Paragraph> */}
+                    <TextHighlighters style={{backgroundColor: AirBlueLight}}>Air molecules</TextHighlighters> are closer in size to <TextHighlighters style={{backgroundColor: SunBlue}}>short</TextHighlighters> wavelengths of violet and blue light. 
+                    Therefore, pure air scatters blue light three times more effectively than it does <TextHighlighters style={{backgroundColor: SunRed}}>red light</TextHighlighters>. This results in the blue of the daytime sky.
+                    </Paragraph> 
                 </ParagraphArea>
-                    {/* <button onClick={this.toggleAnimation}>click me!</button> */}
                 <VisualizationMain>
-                    {/* <LegendArea>
-                        {/* <ScatteringLegend /> 
-                    </LegendArea> */}
                     <VisualizationArea ref={target}>
                         {isThingIntersecting && <ScatteringBlue Animation={isThingIntersecting}/>}
                     </VisualizationArea>
@@ -223,24 +222,13 @@ const Chapter4 = () => {
         <Chapter>
                 <ParagraphArea>
                     <Paragraph>
-                    At sunrise or sunset, sunlight takes a much longer path through the atmosphere than during the middle part of the day. This lengthened path results in more encounters with air molecules and thus, more scattering events of the blue light which literally gets «scattered out». 
+                    At sunset, <TextHighlighters style={{backgroundColor: SunYellow}}>sunlight</TextHighlighters> takes a much longer path through the atmosphere. This results in more encounters with <TextHighlighters style={{backgroundColor: AirBlueLight}}>air molecules</TextHighlighters> and thus, more scattering events of the <TextHighlighters style={{backgroundColor: SunBlue}}>blue</TextHighlighters> light. It literally gets «scattered out». 
                     </Paragraph> 
                      <Paragraph style={{marginTop: "1.2rem"}}>
-                    Although red light scatters poorly, the long distance leads to a greater scattering. Therefore, light that reaches an observer early or late in the day is noticeably reddened. This process is also known as «multiple scattering». 
+                    Due to that, evening light that reaches an observer is noticeably reddened. This process is also known as «multiple scattering». 
                     </Paragraph>
-
-                    {/* Polluted Evening Sky */}
-                    {/* <Heading>Toxical color enhancement</Heading>
-                    <Paragraph>
-                    The compounds of air vary due to emissions of human kind. As we are constantly burning fossils, this leads to an emission of particularly fine particles (PM10) in very small sizes (~10 µm = 0.01 mm) into the air. 
-                    </Paragraph>
-                    <Paragraph style={{marginTop: "1.2rem"}}>
-                    Due to their small molecular size, these various compounds of PM10 scatter the same way as natural Nitrogen and Oxygen would do — they scatter more red light. This leads to an increase of the red shares. 
-                    </Paragraph> */}
                 </ParagraphArea>
                 <VisualizationMain>
-                    {/* <LegendArea>
-                    </LegendArea> */}
                     <VisualizationArea ref={target}>
                         {isThingIntersecting && <ScatteringRed Animation={isThingIntersecting}/>}
                     </VisualizationArea>
@@ -262,15 +250,13 @@ const Chapter4 = () => {
         <Chapter>
                 <ParagraphArea>
                     <Paragraph>
-                    The compounds of air vary due to emissions of human kind. As we are constantly burning fossils, this leads to an emission of particularly fine particles (PM10) in very small sizes (~10 µm = 0.01 mm) into the air. 
+                    The compounds of air vary due constantly burning fossils by human kind. This leads to an increased emission of particularly <TextHighlighters style={{backgroundColor: AirRedDark}}>fine particles</TextHighlighters> (PM10) in very small sizes (~10 µm = 0.01 mm) into the air. 
                     </Paragraph>
                     <Paragraph style={{marginTop: "1.2rem"}}>
-                    Due to their small molecular size, these various compounds of PM10 scatter the same way as natural Nitrogen and Oxygen would do — they scatter more red light. This leads to an increase of the red shares. 
+                    Due to their size, the various compounds of PM10 scatter the same way as natural <TextHighlighters style={{backgroundColor: AirBlue}}>Nitrogen</TextHighlighters> and <TextHighlighters style={{backgroundColor: AirBlue}}>Oxygen</TextHighlighters> would do — they scatter more red light. This leads to an increased red evening sky. 
                     </Paragraph>
                 </ParagraphArea>
                 <VisualizationMain>
-                    {/* <LegendArea>
-                    </LegendArea> */}
                     <VisualizationArea ref={target}>
                         {isThingIntersecting && <ScatteringPolluted Animation={isThingIntersecting}/>}
                     </VisualizationArea>
@@ -282,6 +268,7 @@ const Chapter4 = () => {
 
   // Twenty Countries
   //maybe animate the countries to fade in or to transition from white to their color etc.?
+  // update with pollted scattering red. 
 
   const Chapter6 = (props: {data: Array<Country>; }) => {
     const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
@@ -292,16 +279,13 @@ const Chapter4 = () => {
         <Chapter>
                 <ParagraphArea>
                     <Paragraph>
-                    Let’s see how the global color swatch with these 20 countries looks like. It is composed of the mean value of PM10 measured in their large economic areas in 2016.
+                    Globally seen, the color swatch for these 20 countries looks like this. It is composed of the mean value of <TextHighlighters style={{backgroundColor: AirRedDark}}>PM10</TextHighlighters> measured in their large economic areas in 2016.
                     </Paragraph>
                     <Paragraph style={{marginTop: "1.2rem"}}>
                     Seems like Switzerland is doing pretty good, right?
                     </Paragraph>
                 </ParagraphArea>
                 <VisualizationMain>
-                    {/* <LegendArea>
-
-                    </LegendArea> */}
                     <VisualizationArea ref={target}>
                         <TwentyCountries countries={props.data}/>
                     </VisualizationArea>
@@ -323,7 +307,7 @@ const Chapter4 = () => {
         <Chapter>
                 <ParagraphArea>
                     <Paragraph>
-                    The minimum and maximum amounts of fine particles led to the creation of this color swatch for the sundown sky of Switzerland for the year 2016.
+                    More in detail, the minimum and maximum amounts of <TextHighlighters style={{backgroundColor: AirRedDark}}>fine particles</TextHighlighters> measured all over the country create this pollution gradient for the sundown sky for Switzerland for the year 2016.
                     </Paragraph>
                 </ParagraphArea>
                 <VisualizationMain>
@@ -352,25 +336,10 @@ const Chapter4 = () => {
         <Chapter>
                 <ParagraphArea>
                     <Paragraph>
-                    By splitting this swatch into the three main measuring stations of PM10 of the Zurich, the composition the different shares are visible.
+                    By splitting this swatch into the three main measuring stations of <TextHighlighters style={{backgroundColor: AirRedDark}}>fine particles</TextHighlighters> of the city of Zurich, these amounts are quickly exceeded.
                     </Paragraph>
-                    <Paragraph style={{marginTop: "1.2rem"}}>
-                    All of this deep red does look pretty unsettling, right?
-                    </Paragraph>
-
-                    {/* Limit Values */}
-                    {/* <Heading>… call to action!</Heading>
-                    <Paragraph>
-                    Considering that the limit value for fine particles (PM10) is 20 µg / m3 per year, it looks even more unsettling.
-                    </Paragraph>
-                    <Paragraph>
-                    Switzerland has to still reduce their emissions to reach the regulatory limit values as defined by the WHO. Reaching this value, nevertheless, does not mean we are off the responsibility. As it defines a limit of exposure, it by no means states no emission at all.
-                    </Paragraph> */}
                 </ParagraphArea>
                 <VisualizationMain>
-                    {/* <LegendArea>
-                        {/* <ZurichLabels />
-                    </LegendArea> */}
                     <VisualizationArea ref={target}>
                         {isThingIntersecting && <Zurich Animation={isThingIntersecting} stations={props.detailMonthly} />}
                     </VisualizationArea>
@@ -381,9 +350,39 @@ const Chapter4 = () => {
   };
 
 
+// Limit Values
+
+const Chapter9 = (props: {detailMonthly: Array<Station>; }) => {
+    const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
+    const isThingIntersecting = useInView(target);
+
+    console.log(target, isThingIntersecting)
+  
+    return (
+        <>
+        <Heading>… call to action!</Heading>
+        <Chapter>
+                <ParagraphArea>
+                    <Paragraph>
+                    The limit value for  <TextHighlighters style={{backgroundColor: AirRedDark}}>fine particles</TextHighlighters> (PM10) being 20 µg / m3 per year, Switzerland is more <TextHighlighters style={{backgroundColor: AirRedDark}}>crimson</TextHighlighters> than average data shows.
+                    </Paragraph>
+                    {/* <Paragraph  style={{marginTop: "1.2rem"}}>
+                    It has to still reduce their emissions to reach the regulatory limit values defined by the WHO. Nevertheless, this does not mean we are off the responsibility as this value by no means states no emission at all.
+                    </Paragraph> */}
+                </ParagraphArea>
+                <VisualizationMain>
+                    <VisualizationArea ref={target}>
+                        {isThingIntersecting && <Limits Animation={isThingIntersecting} stations={props.detailMonthly} />}
+                    </VisualizationArea>
+                </VisualizationMain>
+            </Chapter>
+            </>
+    );
+  };
+
   // Initiatives
 
-  const Chapter9 = () => {
+  const Chapter10 = () => {
     const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
   
     return (
