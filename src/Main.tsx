@@ -9,8 +9,8 @@ import { Initiatives } from './components/Initiatives';
 import { Sun } from './components/Sun';
 import { Station, Switzerland, Zurich } from './components/Zurich';
 import { Paragraph, Heading } from './materials/materials';
-import { ZurichLabels } from './components/Legends';
 import { useRef } from "react";
+import { keyframes } from '@emotion/core';
 const { useInView } = require("react-intersection-observer")
 
 
@@ -25,9 +25,9 @@ export const MainRoot = styled('div')`
 export const Chapter = styled('section')`
     display: flex;
     flex-direction: row;
-    width: 90%;
+    width: 70%;
     justify-content: space-between;
-    margin: 15vh 0 15vh 0;
+    margin: 15vh 0 20vh 0;
     flex-wrap: wrap;
 `
 
@@ -35,8 +35,8 @@ export const ParagraphArea = styled('div')`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    width: 40%;
-    height: 700px;
+    width: 35%;
+    margin: 0 0 15vh 0;
     max-height: 700px;
 `;
 
@@ -47,22 +47,33 @@ export const VisualizationMain = styled('div')`
 
 `
 
+const VizFading = keyframes`
+    from, 30% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+`
+
 export const VisualizationArea = styled('div')`
     display: flex;
+    animation: ${VizFading} 1s;
+    animation-delay: 500ms;
 `
 
 export const LegendArea = styled('div')`
     display: flex;
-    width: 30%;
+    width: 20%;
     height: 700px;
     max-height: 700px;
-    max-width: 30%;
+    max-width: 20%;
     position: relative;
     justify-content: flex-start;
 `
 
 // TODO: 
-// implementation of intersection observer
 // highlight text areas with span to make ref to viz clear
 // read color from color function for <Zurich />'s background color
 // check unicode arrows to be the same for x and y axes
@@ -107,9 +118,10 @@ const Chapter1 = () => {
     console.log(target, isThingIntersecting);
   
     return (
+        <>
+        <Heading>The essential gas mixture</Heading>
         <Chapter>
         <ParagraphArea>
-            <Heading>The essential gas mixture</Heading>    
             <Paragraph>
             First of all, let us have a closer look on air.
             </Paragraph>
@@ -121,14 +133,15 @@ const Chapter1 = () => {
             </Paragraph>
         </ParagraphArea>
         <VisualizationMain>
-            <LegendArea>
+            {/* <LegendArea>
 
-            </LegendArea>
+            </LegendArea> */}
             <VisualizationArea ref={target}>
             {isThingIntersecting && <Air runAnimation={isThingIntersecting}/> }
             </VisualizationArea>
         </VisualizationMain>
     </Chapter>
+    </>
     );
   };
 
@@ -140,23 +153,25 @@ const Chapter1 = () => {
     const isThingIntersecting = useInView(target);
     
     return (
+        <>
+        <Heading>The role of sunlight</Heading>    
         <Chapter>      
             <ParagraphArea>
-                <Heading>The role of sunlight</Heading>    
                 <Paragraph>
                 Sunlight, on the contrary, is composed of a whole spectrum of colors, ranging from long wavelengths (~700 nm) which are perceived as red, to shorter wavelengths (~300 nm), perceived as purplish-blue.
                 </Paragraph>
-                {/* <Paragraph style={{marginTop: "1.2rem"}}>
+                <Paragraph style={{marginTop: "1.2rem"}}>
                     All colors together are perceived as a yellowish white.
-                </Paragraph> */}
+                </Paragraph>
             </ParagraphArea>
             <VisualizationMain>
-                <LegendArea />
+                {/* <LegendArea /> */}
                 <VisualizationArea ref={target}>
                     {isThingIntersecting && <Sun runAnimation={isThingIntersecting}/>}
                 </VisualizationArea>
             </VisualizationMain>
         </Chapter>
+        </>
     );
   };
 
@@ -167,9 +182,10 @@ const Chapter1 = () => {
         const isThingIntersecting = useInView(target);
 
         return (
+            <>
+            <Heading>The evolvement of our daytime sky</Heading>
             <Chapter >
                 <ParagraphArea>
-                    <Heading>The evolvement of our daytime sky</Heading>
                     <Paragraph>
                     «Selective scattering», also known as «Rayleigh scattering», is used to describe scattering that varies with the wavelength of the incident light. Particles are good Rayleigh scatterers when they are very small compared to the wavelength of the light.
                     </Paragraph> 
@@ -183,14 +199,15 @@ const Chapter1 = () => {
                 </ParagraphArea>
                     {/* <button onClick={this.toggleAnimation}>click me!</button> */}
                 <VisualizationMain>
-                    <LegendArea>
-                        {/* <ScatteringLegend /> */}
-                    </LegendArea>
+                    {/* <LegendArea>
+                        {/* <ScatteringLegend /> 
+                    </LegendArea> */}
                     <VisualizationArea ref={target}>
                         {isThingIntersecting && <ScatteringBlue Animation={isThingIntersecting}/>}
                     </VisualizationArea>
                 </VisualizationMain>
             </Chapter>
+            </>
         );
       };
 
@@ -201,9 +218,10 @@ const Chapter4 = () => {
     const isThingIntersecting = useInView(target);
   
     return (
+        <>
+        <Heading>Shifting to the evening sky</Heading>
         <Chapter>
                 <ParagraphArea>
-                    <Heading>Shifting to the evening sky</Heading>
                     <Paragraph>
                     At sunrise or sunset, sunlight takes a much longer path through the atmosphere than during the middle part of the day. This lengthened path results in more encounters with air molecules and thus, more scattering events of the blue light which literally gets «scattered out». 
                     </Paragraph> 
@@ -221,13 +239,14 @@ const Chapter4 = () => {
                     </Paragraph> */}
                 </ParagraphArea>
                 <VisualizationMain>
-                    <LegendArea>
-                    </LegendArea>
+                    {/* <LegendArea>
+                    </LegendArea> */}
                     <VisualizationArea ref={target}>
                         {isThingIntersecting && <ScatteringRed Animation={isThingIntersecting}/>}
                     </VisualizationArea>
                 </VisualizationMain>
             </Chapter>
+            </>
     );
   };
 
@@ -238,9 +257,10 @@ const Chapter4 = () => {
     const isThingIntersecting = useInView(target);
   
     return (
+        <>
+        <Heading>Toxical color enhancement</Heading>
         <Chapter>
                 <ParagraphArea>
-                    <Heading>Toxical color enhancement</Heading>
                     <Paragraph>
                     The compounds of air vary due to emissions of human kind. As we are constantly burning fossils, this leads to an emission of particularly fine particles (PM10) in very small sizes (~10 µm = 0.01 mm) into the air. 
                     </Paragraph>
@@ -249,13 +269,14 @@ const Chapter4 = () => {
                     </Paragraph>
                 </ParagraphArea>
                 <VisualizationMain>
-                    <LegendArea>
-                    </LegendArea>
+                    {/* <LegendArea>
+                    </LegendArea> */}
                     <VisualizationArea ref={target}>
                         {isThingIntersecting && <ScatteringPolluted Animation={isThingIntersecting}/>}
                     </VisualizationArea>
                 </VisualizationMain>
             </Chapter>
+            </>
     );
   };
 
@@ -266,9 +287,10 @@ const Chapter4 = () => {
     const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
   
     return (
+        <>
+        <Heading>Global evening skies</Heading>
         <Chapter>
                 <ParagraphArea>
-                    <Heading>Global evening skies</Heading>
                     <Paragraph>
                     Let’s see how the global color swatch with these 20 countries looks like. It is composed of the mean value of PM10 measured in their large economic areas in 2016.
                     </Paragraph>
@@ -277,14 +299,15 @@ const Chapter4 = () => {
                     </Paragraph>
                 </ParagraphArea>
                 <VisualizationMain>
-                    <LegendArea>
+                    {/* <LegendArea>
 
-                    </LegendArea>
+                    </LegendArea> */}
                     <VisualizationArea ref={target}>
                         <TwentyCountries countries={props.data}/>
                     </VisualizationArea>
                 </VisualizationMain>
             </Chapter>
+            </>
     );
   };
 
@@ -295,20 +318,22 @@ const Chapter4 = () => {
     const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
   
     return (
+        <>
+        <Heading>Looking out of my own window</Heading>
         <Chapter>
                 <ParagraphArea>
-                    <Heading>Looking out of my own window</Heading>
                     <Paragraph>
                     The minimum and maximum amounts of fine particles led to the creation of this color swatch for the sundown sky of Switzerland for the year 2016.
                     </Paragraph>
                 </ParagraphArea>
                 <VisualizationMain>
-                    <LegendArea></LegendArea>
+                    {/* <LegendArea></LegendArea> */}
                     <VisualizationArea ref={target}>
                         <Switzerland />
                     </VisualizationArea>
                 </VisualizationMain>
             </Chapter>
+        </>
     );
   };
 
@@ -322,9 +347,10 @@ const Chapter4 = () => {
     console.log(target, isThingIntersecting)
   
     return (
+        <>
+        <Heading>Zurich’s three checkpoints …</Heading>
         <Chapter>
                 <ParagraphArea>
-                    <Heading>Zurich’s three checkpoints …</Heading>
                     <Paragraph>
                     By splitting this swatch into the three main measuring stations of PM10 of the Zurich, the composition the different shares are visible.
                     </Paragraph>
@@ -342,14 +368,15 @@ const Chapter4 = () => {
                     </Paragraph> */}
                 </ParagraphArea>
                 <VisualizationMain>
-                    <LegendArea>
-                        <ZurichLabels />
-                    </LegendArea>
+                    {/* <LegendArea>
+                        {/* <ZurichLabels />
+                    </LegendArea> */}
                     <VisualizationArea ref={target}>
                         {isThingIntersecting && <Zurich Animation={isThingIntersecting} stations={props.detailMonthly} />}
                     </VisualizationArea>
                 </VisualizationMain>
             </Chapter>
+            </>
     );
   };
 
@@ -360,9 +387,10 @@ const Chapter4 = () => {
     const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
   
     return (
+        <>
+        <Heading>World’s improvement initiatives</Heading>
         <Chapter>
                 <ParagraphArea>
-                    <Heading>World’s improvement initiatives</Heading>
                     <Paragraph>
                     This reduction is essential for all of us, as 2050 marks the point of no return for our climate. This means there is no way of reversing or stopping the effects of climate change which brings direct existencial threats to every living being.
                     </Paragraph>
@@ -371,12 +399,13 @@ const Chapter4 = () => {
                     </Paragraph>
                 </ParagraphArea>
                 <VisualizationMain>
-                    <LegendArea>
-                    </LegendArea>
+                    {/* <LegendArea>
+                    </LegendArea> */}
                     <VisualizationArea ref={target}>
                         <Initiatives />
                     </VisualizationArea>
                 </VisualizationMain>
             </Chapter>
+            </>
     );
   };

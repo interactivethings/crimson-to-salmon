@@ -180,3 +180,23 @@ export const AirElement = styled('div')`
     position: absolute;
 `
 
+// export class AirMolecules extends React.Component {
+//     render() {
+//       const airElements = [] as any[];
+  
+//       for (let i = 0; i < 50; i++) {
+//         airElements.push({
+//             xPos: Math.round(((Math.random() * 665) + 1) / 35) * 35,
+//             yPos: Math.round(((Math.random() * 665) + 1) / 35) * 35,
+//         });
+//     }
+//       return(
+//         <>
+//             {airElements.map((airElement, i) =>
+//                 <AirElement key={i} style={{left: airElement.xPos, top: airElement.yPos}}/>
+//             )}
+//         </>
+//       );
+//     }
+//   }
+

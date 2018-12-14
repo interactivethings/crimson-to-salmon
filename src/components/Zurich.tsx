@@ -36,6 +36,8 @@ export const ValueRange = styled('div')`
     align-items: space-between;
     position: absolute;
     opacity: 0.8;
+    width: 700px;
+    left: 0;
 `
 
 // add annotation that there are days when no data was recorded (NaN).
@@ -44,9 +46,9 @@ export const ValueRange = styled('div')`
 // use max value of countries data set from 2016. here hardcoded with value 292...
 // on hover show the two values? or number of days how high and low values within 2016? 
 
-const size = scaleLinear()
-    .domain([0, 292])
-    .rangeRound([1, 700] as any)
+// const size = scaleLinear()
+//     .domain([0, 292])
+//     .rangeRound([1, 700] as any)
 
 
 // export class ZurichGradient extends React.Component {
@@ -74,11 +76,10 @@ const size = scaleLinear()
 //     }
 // }
 
-const ValueRangeHeight = 230;
+const ValueRangeHeight = 209;
 
 export const ValueRangeDetail= styled('div')`
     position: absolute;
-    background-color: ${MainRed};
 `
 const sizeMonthly = scaleLinear()
     .domain([0, 81.99])
@@ -102,30 +103,34 @@ export class Zurich extends React.Component<Props> {
     render() {
         return (
                 <SquareWrapper>
-                    <VizWrapper >                
+                    <VizWrapper >    
+                            <LegendItem style={{position: "absolute", top: "-5vh"}}>↑ Checkpoint over time</LegendItem>            
                         {/* Rosengartenstrasse */}
                             <ValueRange >
+                            <LegendItem>Rosengartenstrasse</LegendItem>
                             {this.props.stations.filter(function (i) {return (i.Station === "Rosengartenstrasse")}).map((station, i) => 
-                            <ValueRangeDetail key={i} style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: ValueRangeHeight / 12 * i, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}>
-                            {station.Month}
+                            <ValueRangeDetail key={i} style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: (ValueRangeHeight / 12 * i) + 20, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}>
+                            <LegendItem>{station.Month}</LegendItem>
                             </ValueRangeDetail>
                             )}
                             </ValueRange>
 
                         {/* Schimmelstrasse */}
-                        <ValueRange style={{height: ValueRangeHeight, top: 235, left: size(1.94), width: size(66.27 - 1.94)}}>
+                        <ValueRange style={{height: ValueRangeHeight, top: 235}}>
+                            <LegendItem>Schimmelstrasse</LegendItem>
                             {this.props.stations.filter(function (i) {return (i.Station === "Schimmelstrasse")}).map((station, i) => 
-                            <ValueRangeDetail key={i} style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: ValueRangeHeight / 12 * i, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}>
-                            {station.Month}
+                            <ValueRangeDetail key={i} style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: (ValueRangeHeight / 12 * i) + 20, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}>
+                            <LegendItem>{station.Month}</LegendItem>
                             </ValueRangeDetail>
                             )}
                         </ValueRange>
 
                         {/* Stampfenbachstrasse */}
-                        <ValueRange style={{height: ValueRangeHeight, top: 470, left: size(3.38), width: size(56 - 3.38)}}>
+                        <ValueRange style={{height: 230, top: 470}}>
+                            <LegendItem>Stampfenbachstrasse</LegendItem>
                             {this.props.stations.filter(function (i) {return (i.Station === "Stampfenbachstrasse")}).map((station, i) => 
-                            <ValueRangeDetail key={i} style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: ValueRangeHeight / 12 * i, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}>
-                            {station.Month}
+                            <ValueRangeDetail key={i} style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: (ValueRangeHeight / 12 * i) + 20, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}>
+                            <LegendItem>{station.Month}</LegendItem>
                             </ValueRangeDetail>
                             )}
                         </ValueRange>

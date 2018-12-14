@@ -49,19 +49,17 @@ export const VizWrapper = styled('div')`
 // Typography
 
 export const Heading = styled('h1')`
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-weight: 700;
     line-height: 120%;
     color: ${TextColor};
-    width: 85%;
-    margin: 0 0 1.2rem;
+    margin: 15vh 0 0 0;
 `
 
 export const Paragraph = styled('p')`
     font-size: 1.5rem;
     line-height: 120%;
     color: ${TextColor};
-    width: 85%;
 
     //   @media (max-width: ${small}px)  {
     //       font-size: 1rem;
