@@ -8,9 +8,9 @@ import { GradientBar } from './Legends';
 const colorCountries = scaleLinear()
     // .domain([min(detail => c.PM10) as number, max(countries => c.PM10) as number ])
     .domain([0, 292])
-    .range(['#B2D5FF', "red"] as any)
+    .range(['#B2D5FF', '#9B0000'] as any)
     .interpolate(interpolateRgb as any) as any;
-    console.log(colorCountries(81.99))
+    console.log(colorCountries(0))
 
 export const SquareWrapper = styled('div')`
     flex-wrap: wrap;
@@ -30,13 +30,11 @@ export class TwentyCountries extends React.Component <{ countries: Array<Country
     render() {
         return(
             <SquareWrapper>
-                {this.props.countries.sort((b, a)  => a.PM10 - b.PM10) .map((country, i) => 
-                <>
+                {this.props.countries.sort((b, a)  => a.PM10 - b.PM10) .map((country, i) =>
                 <SquareElement key={i} style={{backgroundColor: colorCountries(country.PM10)}}>
                     <ElementTitle>{country.Country}</ElementTitle>
                     <ElementSubtitle>{country.City}</ElementSubtitle> 
                 </SquareElement>
-                </>
                 )}
                 <GradientBar />
             </SquareWrapper>

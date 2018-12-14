@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/core';
-import { AirBlueLight, ElementTitle, AirBlue, VizWrapper } from 'src/materials/materials';
+import { AirBlueLight, ElementTitle, VizWrapper, AirBlue } from 'src/materials/materials';
 
 // wrapping all into overall div
 
@@ -176,7 +176,27 @@ export const AirElement = styled('div')`
     width: 35px; 
     height: 35px;
     border-radius: 0px;
-    background-color: ${AirBlueLight};
+    background-color: ${AirBlue};
     position: absolute;
 `
+
+// export class AirMolecules extends React.Component {
+//     render() {
+//       const airElements = [] as any[];
+  
+//       for (let i = 0; i < 50; i++) {
+//         airElements.push({
+//             xPos: Math.round(((Math.random() * 665) + 1) / 35) * 35,
+//             yPos: Math.round(((Math.random() * 665) + 1) / 35) * 35,
+//         });
+//     }
+//       return(
+//         <>
+//             {airElements.map((airElement, i) =>
+//                 <AirElement key={i} style={{left: airElement.xPos, top: airElement.yPos}}/>
+//             )}
+//         </>
+//       );
+//     }
+//   }
 
