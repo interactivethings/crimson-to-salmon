@@ -7,7 +7,7 @@ import { ScatteringBlue, ScatteringPolluted, ScatteringRed } from './components/
 import { Country, TwentyCountries } from './components/Countries';
 import { Initiatives } from './components/Initiatives';
 import { Sun } from './components/Sun';
-import { Zurich, ZurichGradient, Station } from './components/Zurich';
+import { Station, Switzerland, Zurich } from './components/Zurich';
 import { Paragraph, Heading } from './materials/materials';
 import { ZurichLabels } from './components/Legends';
 import { useRef } from "react";
@@ -125,7 +125,7 @@ const Chapter1 = () => {
 
             </LegendArea>
             <VisualizationArea ref={target}>
-                <Air runAnimation={isThingIntersecting}/> 
+            {isThingIntersecting && <Air runAnimation={isThingIntersecting}/> }
             </VisualizationArea>
         </VisualizationMain>
     </Chapter>
@@ -153,7 +153,7 @@ const Chapter1 = () => {
             <VisualizationMain>
                 <LegendArea />
                 <VisualizationArea ref={target}>
-                    <Sun runAnimation={isThingIntersecting} />
+                    {isThingIntersecting && <Sun runAnimation={isThingIntersecting}/>}
                 </VisualizationArea>
             </VisualizationMain>
         </Chapter>
@@ -187,7 +187,7 @@ const Chapter1 = () => {
                         {/* <ScatteringLegend /> */}
                     </LegendArea>
                     <VisualizationArea ref={target}>
-                        <ScatteringBlue Animation={isThingIntersecting}/>
+                        {isThingIntersecting && <ScatteringBlue Animation={isThingIntersecting}/>}
                     </VisualizationArea>
                 </VisualizationMain>
             </Chapter>
@@ -224,7 +224,7 @@ const Chapter4 = () => {
                     <LegendArea>
                     </LegendArea>
                     <VisualizationArea ref={target}>
-                        <ScatteringRed Animation={isThingIntersecting}/>
+                        {isThingIntersecting && <ScatteringRed Animation={isThingIntersecting}/>}
                     </VisualizationArea>
                 </VisualizationMain>
             </Chapter>
@@ -252,7 +252,7 @@ const Chapter4 = () => {
                     <LegendArea>
                     </LegendArea>
                     <VisualizationArea ref={target}>
-                        <ScatteringPolluted Animation={isThingIntersecting}/>
+                        {isThingIntersecting && <ScatteringPolluted Animation={isThingIntersecting}/>}
                     </VisualizationArea>
                 </VisualizationMain>
             </Chapter>
@@ -260,6 +260,7 @@ const Chapter4 = () => {
   };
 
   // Twenty Countries
+  //maybe animate the countries to fade in or to transition from white to their color etc.?
 
   const Chapter6 = (props: {data: Array<Country>; }) => {
     const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
@@ -287,7 +288,8 @@ const Chapter4 = () => {
     );
   };
 
-  // Zurich
+  // Switzerland
+//maybe animate the gradient to fade in etc.?
 
   const Chapter7 = () => {
     const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
@@ -303,12 +305,15 @@ const Chapter4 = () => {
                 <VisualizationMain>
                     <LegendArea></LegendArea>
                     <VisualizationArea ref={target}>
-                        <Zurich />
+                        <Switzerland />
                     </VisualizationArea>
                 </VisualizationMain>
             </Chapter>
     );
   };
+
+
+  // Zurich
 
   const Chapter8 = (props: {detailMonthly: Array<Station>; }) => {
     const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
@@ -341,19 +346,21 @@ const Chapter4 = () => {
                         <ZurichLabels />
                     </LegendArea>
                     <VisualizationArea ref={target}>
-                        <ZurichGradient Animation={isThingIntersecting} stations={props.detailMonthly} />
+                        {isThingIntersecting && <Zurich Animation={isThingIntersecting} stations={props.detailMonthly} />}
                     </VisualizationArea>
                 </VisualizationMain>
             </Chapter>
     );
   };
 
+
+  // Initiatives
+
   const Chapter9 = () => {
     const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
   
     return (
         <Chapter>
-                {/* Initiatives */}
                 <ParagraphArea>
                     <Heading>World’s improvement initiatives</Heading>
                     <Paragraph>

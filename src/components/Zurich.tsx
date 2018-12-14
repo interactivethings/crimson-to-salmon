@@ -9,7 +9,7 @@ import { scaleLinear } from 'd3-scale';
 import { keyframes } from '@emotion/core';
 
 
-export class Zurich extends React.Component {
+export class Switzerland extends React.Component {
     render() {
         return (
             <>
@@ -98,7 +98,7 @@ export interface Props {
 
 // max ZH value: 81.99 results in color value of 200, 153, 183 in range of world countries
 
-export class ZurichGradient extends React.Component<Props> {
+export class Zurich extends React.Component<Props> {
     render() {
         return (
                 <SquareWrapper>
