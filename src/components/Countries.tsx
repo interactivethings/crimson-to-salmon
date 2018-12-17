@@ -29,7 +29,7 @@ export type Country = {Country: string, City: string, PM10: number}
 export class TwentyCountries extends React.Component <{ countries: Array<Country>}>{
     render() {
         return(
-            <SquareWrapper>
+            <SquareWrapper >
                 {this.props.countries.sort((b, a)  => a.PM10 - b.PM10) .map((country, i) =>
                 <SquareElement key={i} style={{backgroundColor: colorCountries(country.PM10)}}>
                     <ElementTitle>{country.Country}</ElementTitle>

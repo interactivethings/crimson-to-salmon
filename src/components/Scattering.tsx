@@ -128,8 +128,8 @@ export class BlueScattering extends React.Component<{ runAnimation: boolean }> {
 
                 {blueElements.map((blueElement, i) =>
                 <ScatterElementBlue key={i} style={{
-                    animationDelay: i * 0.05 + "s",
-                    animationDuration: 8 + ((blueElements.length -i) * 0.05) + "s", 
+                    // animationDelay: i * 0.05 + "s",
+                    // animationDuration: 8 + ((blueElements.length -i) * 0.05) + "s", 
                     left: blueElement.xPos, top: blueElement.yPos, animationPlayState: this.props.runAnimation ? 'running' : 'paused' }}/>
                 )}
 
@@ -359,7 +359,7 @@ interface Props {
 export class ScatteringBlue extends React.Component<Props> {
     render() {
         return(
-            <VizWrapper style={{marginBottom: "30vh"}}>
+            <VizWrapper style={{marginBottom: "30vh"}}>  
                 <SquareWrapper>
                     <BlueScattering runAnimation={this.props.Animation}/>
                     <SunRayShort runAnimation={this.props.Animation}/>
