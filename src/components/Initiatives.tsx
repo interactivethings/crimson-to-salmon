@@ -42,7 +42,7 @@ export const InitiativesElementSmall = styled('a')`
 export class Initiatives extends React.Component {
     render() {
         return (
-                <InitiativesElement>
+                <InitiativesElement >
                     <InitiativesElementLeft href="https://the-hundert.com/startups/green-city-solutions/">
                         <InitiativesTitle>01<br></br>Concrete Tree</InitiativesTitle>
                     </InitiativesElementLeft>

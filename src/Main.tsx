@@ -26,6 +26,7 @@ export const Chapter = styled('section')`
     flex-direction: row;
     width: 70%;
     justify-content: space-between;
+    align-items: flex-start;
     margin: 15vh 0 20vh 0;
     flex-wrap: wrap;
 `
@@ -35,16 +36,16 @@ export const ParagraphArea = styled('div')`
     flex-direction: column;
     justify-content: flex-start;
     width: 35%;
-    margin: 0 0 15vh 0;
+    margin: 0 10vh 15vh 0;
     max-height: 700px;
-    min-height: 150vh;
-    background-color: red;
 `;
 
 export const VisualizationMain = styled('div')`
     display: flex;
     flex-wrap: no-wrap;
     justify-content: flex-start;
+    position: sticky;
+    top: 20vh;
 `
 
 export const VisualizationArea = styled('div')`
@@ -84,6 +85,7 @@ export class Main extends React.Component<{data: Country[], detailMonthly: Stati
             <Chapter8 detailMonthly={this.props.detailMonthly}/>
             <Chapter9 detailMonthly={this.props.detailMonthly}/>
             <Chapter10 />
+            <Chapter11 />
         </MainRoot>
       </>
     );
@@ -108,11 +110,11 @@ const Chapter1 = () => {
         <>
         <Heading>The essential gas mixture</Heading>
         <Chapter>
-        <ParagraphArea>
+        <ParagraphArea style={{ minHeight: "150vh"}}>
             <Paragraph>
             Air is made up of only five gases: Nitrogen (N₂), Oxygen (O₂),  Argon (Ar), and Carbon Dioxide (CO₂). Several other compounds, such as natural Ozone (O₃), are also present.
             </Paragraph>
-            <Paragraph style={{marginTop: "90vh"}}>
+            <Paragraph style={{marginTop: "102vh"}}>
             Scientists also refer to this pure and natural gas mixture as <TextHighlighters style={{backgroundColor: AirBlue}}>«dry air».</TextHighlighters> 
             </Paragraph>
         </ParagraphArea>
@@ -141,7 +143,7 @@ const Chapter1 = () => {
                 <Paragraph>
                 <TextHighlighters style={{backgroundColor: SunYellow}}>Sunlight</TextHighlighters>, on the contrary, is composed of a spectrum of colors, ranging from <TextHighlighters style={{backgroundColor: SunBlue}}>short</TextHighlighters> wavelengths (~300 nm) which are perceived as purplish-blue, to <TextHighlighters style={{backgroundColor: SunRed}}>longer</TextHighlighters>  wavelengths (~700 nm), perceived as red.
                 </Paragraph>
-                <Paragraph style={{marginTop: "90vh"}}>
+                <Paragraph style={{marginTop: "1.2rem"}}>
                     All colors together are perceived as a yellowish white.
                 </Paragraph>
             </ParagraphArea>
@@ -165,11 +167,11 @@ const Chapter1 = () => {
             <>
             <Heading>The evolvement of our daytime sky</Heading>
             <Chapter >
-                <ParagraphArea>
+                <ParagraphArea style={{minHeight: "182vh"}}>
                     <Paragraph>
                     Selective scattering, also «Rayleigh scattering», describes scattering that varies with the wavelength of the incident light. This works best with very small particles compared to the wavelength of the light.
                     </Paragraph> 
-                    <Paragraph style={{marginTop: "1.2rem"}}>
+                    <Paragraph style={{marginTop: "102vh"}}>
                     <TextHighlighters style={{backgroundColor: AirBlueLight}}>Air molecules</TextHighlighters> are closer in size to <TextHighlighters style={{backgroundColor: SunBlue}}>short</TextHighlighters> wavelengths of violet and blue light. 
                     Therefore, pure air scatters blue light three times more effectively than it does <TextHighlighters style={{backgroundColor: SunRed}}>red light</TextHighlighters>. This results in the blue of the daytime sky.
                     </Paragraph> 
@@ -194,11 +196,11 @@ const Chapter4 = () => {
         <>
         <Heading>Shifting to the evening sky</Heading>
         <Chapter>
-                <ParagraphArea>
+                <ParagraphArea style={{minHeight: "182vh"}}>
                     <Paragraph>
                     At sunset, <TextHighlighters style={{backgroundColor: SunYellow}}>sunlight</TextHighlighters> takes a much longer path through the atmosphere. This results in more encounters with <TextHighlighters style={{backgroundColor: AirBlueLight}}>air molecules</TextHighlighters> and thus, more scattering events of the <TextHighlighters style={{backgroundColor: SunBlue}}>blue</TextHighlighters> light. It literally gets «scattered out». 
                     </Paragraph> 
-                     <Paragraph style={{marginTop: "1.2rem"}}>
+                     <Paragraph style={{marginTop: "102vh"}}>
                     Due to that, evening light that reaches an observer is noticeably reddened. This process is also known as «multiple scattering». 
                     </Paragraph>
                 </ParagraphArea>
@@ -222,11 +224,11 @@ const Chapter4 = () => {
         <>
         <Heading>Toxical color enhancement</Heading>
         <Chapter>
-                <ParagraphArea>
+                <ParagraphArea style={{minHeight: "182vh"}}>
                     <Paragraph>
                     The compounds of air vary due constantly burning fossils by human kind. This leads to an increased emission of particularly <TextHighlighters style={{backgroundColor: AirRedDark}}>fine particles</TextHighlighters> (PM10) in very small sizes (~10 µm = 0.01 mm) into the air. 
                     </Paragraph>
-                    <Paragraph style={{marginTop: "1.2rem"}}>
+                    <Paragraph style={{marginTop: "102vh"}}>
                     Due to their size, the various compounds of PM10 scatter the same way as natural <TextHighlighters style={{backgroundColor: AirBlue}}>Nitrogen</TextHighlighters> and <TextHighlighters style={{backgroundColor: AirBlue}}>Oxygen</TextHighlighters> would do — they scatter more red light. This leads to an increased red evening sky. 
                     </Paragraph>
                 </ParagraphArea>
@@ -249,16 +251,16 @@ const Chapter4 = () => {
         <>
         <Heading>Global evening skies</Heading>
         <Chapter>
-                <ParagraphArea>
+                <ParagraphArea style={{minHeight: "158vh"}}>
                     <Paragraph>
                     Globally seen, the color swatch for these 20 countries looks like this. It is composed of the mean value of <TextHighlighters style={{backgroundColor: AirRedDark}}>PM10</TextHighlighters> measured in their large economic areas in 2016.
                     </Paragraph>
-                    <Paragraph style={{marginTop: "1.2rem"}}>
+                    <Paragraph style={{marginTop: "102vh"}}>
                     Seems like Switzerland is doing pretty good, right?
                     </Paragraph>
                 </ParagraphArea>
                 <VisualizationMain>
-                    <VisualizationArea ref={target}>
+                    <VisualizationArea  ref={target}>
                         <TwentyCountries countries={props.data}/>
                     </VisualizationArea>
                 </VisualizationMain>
@@ -359,19 +361,38 @@ const Chapter9 = (props: {detailMonthly: Array<Station>; }) => {
         <>
         <Heading>World’s improvement initiatives</Heading>
         <Chapter>
-                <ParagraphArea>
+                <ParagraphArea style={{minHeight: "120vh"}}>
                     <Paragraph>
                     This reduction is essential for all of us, as 2050 marks the point of no return for our climate. This means there is no way of reversing or stopping the effects of climate change which brings direct existencial threats to every living being.
                     </Paragraph>
-                    <Paragraph style={{marginTop: "1.2rem"}}>
+                    <Paragraph style={{marginTop: "68vh"}}>
                     These are the top three initiatives I stumbled upon my research for this project which are adressing climate change very straightforward.
                     </Paragraph>
                 </ParagraphArea>
-                <VisualizationMain>
+                <VisualizationMain >
                     <VisualizationArea ref={target}>
                         <Initiatives />
                     </VisualizationArea>
                 </VisualizationMain>
+            </Chapter>
+            </>
+    );
+  };
+
+  const Chapter11 = () => {
+    const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
+  
+    return (
+        <>
+        <Heading>Methodology</Heading>
+        <Chapter ref={target}>
+                    <Paragraph>
+                    Sources / Methodology
+                    This reduction is essential for all of us, as 2050 marks the point of no return for our climate. This means there is no way of reversing or stopping the effects of climate change which brings direct existencial threats to every living being.
+                    </Paragraph>
+                    <Paragraph >
+                    These are the top three initiatives I stumbled upon my research for this project which are adressing climate change very straightforward.
+                    </Paragraph>
             </Chapter>
             </>
     );
