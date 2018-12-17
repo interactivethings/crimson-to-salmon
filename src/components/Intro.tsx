@@ -18,7 +18,7 @@ export const BackgroundVideo = styled('video')`
 
 export const ColorSwatch = styled('div')`
     width: 5vw;
-    height: 5vh;
+    height: 10vh;
     position: absolute;
 `
 
@@ -27,9 +27,9 @@ export class Intro extends React.Component {
         return(
             <IntroWrapper>
                 <IntroHeading>
-                    <ColorSwatch style={{top: "50vh", left: "50vw", backgroundColor: AirBlueLight}}/>
-                    <ColorSwatch style={{top: "30vh", left: "10vw", backgroundColor: SunRed}}/>
-                    <ColorSwatch style={{top: "25vh", left: "70vw", backgroundColor: AirRedDark}}/>
+                    <ColorSwatch style={{top: "75vh", left: "40vw", backgroundColor: AirBlueLight}}/>
+                    <ColorSwatch style={{top: "40vh", left: "10vw", backgroundColor: SunRed}}/>
+                    <ColorSwatch style={{top: "10vh", right: "10vw", backgroundColor: AirRedDark}}/>
                     <Intro1>
                         From <TextHighlighters style={{backgroundColor: AirRedDark}}>Crimson</TextHighlighters>
                     </Intro1>
