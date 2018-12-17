@@ -108,7 +108,7 @@ const Chapter1 = () => {
   
     return (
         <>
-        <Heading>The essential gas mixture</Heading>
+        <Heading>Composition of our air</Heading>
         <Chapter>
         <ParagraphArea style={{ minHeight: "150vh"}}>
             <Paragraph>
@@ -165,15 +165,14 @@ const Chapter1 = () => {
 
         return (
             <>
-            <Heading>The evolvement of our daytime sky</Heading>
+            <Heading>Color of our daytime sky</Heading>
             <Chapter >
                 <ParagraphArea style={{minHeight: "182vh"}}>
                     <Paragraph>
-                    Selective scattering, also «Rayleigh scattering», describes scattering that varies with the wavelength of the incident light. This works best with very small particles compared to the wavelength of the light.
+                    «Rayleigh scattering» describes the behaviour of moleclues in the atmosphere when interacting with  incident light. This works better for smaller particles compared to the wavelength of the light, as <TextHighlighters style={{backgroundColor: SunBlue}}>shorter</TextHighlighters> wavelengths scatter more effectively than <TextHighlighters style={{backgroundColor: SunRed}}>longer</TextHighlighters> wavelengths.
                     </Paragraph> 
                     <Paragraph style={{marginTop: "102vh"}}>
-                    <TextHighlighters style={{backgroundColor: AirBlueLight}}>Air molecules</TextHighlighters> are closer in size to <TextHighlighters style={{backgroundColor: SunBlue}}>short</TextHighlighters> wavelengths of violet and blue light. 
-                    Therefore, pure air scatters blue light three times more effectively than it does <TextHighlighters style={{backgroundColor: SunRed}}>red light</TextHighlighters>. This results in the blue of the daytime sky.
+                    <TextHighlighters style={{backgroundColor: AirBlueLight}}>Air molecules</TextHighlighters> are closer in size to <TextHighlighters style={{backgroundColor: SunBlue}}>short</TextHighlighters> wavelengths of violet and blue light. Therefore, pure air scatters them three times more effectively than it does <TextHighlighters style={{backgroundColor: SunRed}}>red light</TextHighlighters>. This results in the <TextHighlighters style={{backgroundColor: AirBlue}}>blue</TextHighlighters> of the daytime sky.
                     </Paragraph> 
                 </ParagraphArea>
                 <VisualizationMain>
@@ -194,14 +193,14 @@ const Chapter4 = () => {
   
     return (
         <>
-        <Heading>Shifting to the evening sky</Heading>
+        <Heading>Color shift of the evening sky</Heading>
         <Chapter>
                 <ParagraphArea style={{minHeight: "182vh"}}>
                     <Paragraph>
                     At sunset, <TextHighlighters style={{backgroundColor: SunYellow}}>sunlight</TextHighlighters> takes a much longer path through the atmosphere. This results in more encounters with <TextHighlighters style={{backgroundColor: AirBlueLight}}>air molecules</TextHighlighters> and thus, more scattering events of the <TextHighlighters style={{backgroundColor: SunBlue}}>blue</TextHighlighters> light. It literally gets «scattered out». 
                     </Paragraph> 
                      <Paragraph style={{marginTop: "102vh"}}>
-                    Due to that, evening light that reaches an observer is noticeably reddened. This process is also known as «multiple scattering». 
+                     Although red light scatters poorly, this long distance leads to its scattering. Due to that, evening light that reaches an observer is noticeably <TextHighlighters style={{backgroundColor: SunRed}}>salmon</TextHighlighters>.
                     </Paragraph>
                 </ParagraphArea>
                 <VisualizationMain>
@@ -226,10 +225,10 @@ const Chapter4 = () => {
         <Chapter>
                 <ParagraphArea style={{minHeight: "182vh"}}>
                     <Paragraph>
-                    The compounds of air vary due constantly burning fossils by human kind. This leads to an increased emission of particularly <TextHighlighters style={{backgroundColor: AirRedDark}}>fine particles</TextHighlighters> (PM10) in very small sizes (~10 µm = 0.01 mm) into the air. 
+                    The compounds of air vary due to the constant burning of fossils by human kind. This leads to an increased emission of <TextHighlighters style={{backgroundColor: AirRedDark}}>fine particles</TextHighlighters> (PM10) in very small sizes (~10 µm = 0.01 mm) into the air. 
                     </Paragraph>
                     <Paragraph style={{marginTop: "102vh"}}>
-                    Due to their size, the various compounds of PM10 scatter the same way as natural <TextHighlighters style={{backgroundColor: AirBlue}}>Nitrogen</TextHighlighters> and <TextHighlighters style={{backgroundColor: AirBlue}}>Oxygen</TextHighlighters> would do — they scatter more red light. This leads to an increased red evening sky. 
+                    Due to their size an composition, fine particles scatter the same way as natural <TextHighlighters style={{backgroundColor: AirBlue}}>Nitrogen</TextHighlighters> and <TextHighlighters style={{backgroundColor: AirBlue}}>Oxygen</TextHighlighters> would do — they scatter more red light. This leads to an intense <TextHighlighters style={{backgroundColor: AirRedDark}}>crimson</TextHighlighters> evening sky. 
                     </Paragraph>
                 </ParagraphArea>
                 <VisualizationMain>
@@ -253,7 +252,7 @@ const Chapter4 = () => {
         <Chapter>
                 <ParagraphArea style={{minHeight: "158vh"}}>
                     <Paragraph>
-                    Globally seen, the color swatch for these 20 countries looks like this. It is composed of the mean value of <TextHighlighters style={{backgroundColor: AirRedDark}}>PM10</TextHighlighters> measured in their large economic areas in 2016.
+                    Worldwide, the color of the evening sky can look quite different. Here you can see an approximation of that color for 20 different countries around the world. The color is based on the average value of <TextHighlighters style={{backgroundColor: AirRedDark}}>PM10</TextHighlighters> measured in their large economic areas in 2016.
                     </Paragraph>
                     <Paragraph style={{marginTop: "102vh"}}>
                     Seems like Switzerland is doing pretty good, right?
@@ -276,11 +275,11 @@ const Chapter4 = () => {
   
     return (
         <>
-        <Heading>Looking out of my own window</Heading>
+        <Heading>Looking at Switzerland</Heading>
         <Chapter>
                 <ParagraphArea>
                     <Paragraph>
-                    More in detail, the minimum and maximum amounts of <TextHighlighters style={{backgroundColor: AirRedDark}}>fine particles</TextHighlighters> measured all over the country create this pollution gradient for the sundown sky for Switzerland for the year 2016.
+                    More in detail, the minimum and maximum amounts of <TextHighlighters style={{backgroundColor: AirRedDark}}>fine particles</TextHighlighters> measured all across Switzerland creates a gradient of the different colored evening skies for the year 2016.
                     </Paragraph>
                 </ParagraphArea>
                 <VisualizationMain>
@@ -308,7 +307,7 @@ const Chapter4 = () => {
         <Chapter>
                 <ParagraphArea>
                     <Paragraph>
-                    By splitting this swatch into the three main measuring stations of <TextHighlighters style={{backgroundColor: AirRedDark}}>fine particles</TextHighlighters> of the city of Zurich, these amounts are quickly exceeded.
+                    When applying this gradient to the monthly values of the three main measuring stations for <TextHighlighters style={{backgroundColor: AirRedDark}}>fine particles</TextHighlighters> of the city of Zurich, the official limit values are quickly exceeded.
                     </Paragraph>
                 </ParagraphArea>
                 <VisualizationMain>
@@ -336,11 +335,8 @@ const Chapter9 = (props: {detailMonthly: Array<Station>; }) => {
         <Chapter>
                 <ParagraphArea>
                     <Paragraph>
-                    The limit value for  <TextHighlighters style={{backgroundColor: AirRedDark}}>fine particles</TextHighlighters> (PM10) being 20 µg / m3 per year, Switzerland is more <TextHighlighters style={{backgroundColor: AirRedDark}}>crimson</TextHighlighters> than average data shows.
+                    With the limit value for <TextHighlighters style={{backgroundColor: AirRedDark}}>fine particles</TextHighlighters> (PM10) being 20 µg / m3 per year, this plot of the monthly values show, that Zurich’s evening skies can actually be more <TextHighlighters style={{backgroundColor: AirRedDark}}>«crimson»</TextHighlighters> than average data might suggest.
                     </Paragraph>
-                    {/* <Paragraph  style={{marginTop: "1.2rem"}}>
-                    It has to still reduce their emissions to reach the regulatory limit values defined by the WHO. Nevertheless, this does not mean we are off the responsibility as this value by no means states no emission at all.
-                    </Paragraph> */}
                 </ParagraphArea>
                 <VisualizationMain>
                     <VisualizationArea ref={target}>
@@ -359,14 +355,17 @@ const Chapter9 = (props: {detailMonthly: Array<Station>; }) => {
   
     return (
         <>
-        <Heading>World’s improvement initiatives</Heading>
+        <Heading>Improvement initiatives</Heading>
         <Chapter>
-                <ParagraphArea style={{minHeight: "120vh"}}>
+                <ParagraphArea style={{minHeight: "180vh"}}>
                     <Paragraph>
-                    This reduction is essential for all of us, as 2050 marks the point of no return for our climate. This means there is no way of reversing or stopping the effects of climate change which brings direct existencial threats to every living being.
+                    The reduction of fine particle emissions is essential for all of us, as the year 2050 marks a point of no return for our climate. This means there is no way of reversing or stopping the effects of climate change, which will bring direct existential threats to every living being.
                     </Paragraph>
-                    <Paragraph style={{marginTop: "68vh"}}>
-                    These are the top three initiatives I stumbled upon my research for this project which are adressing climate change very straightforward.
+                    <Paragraph style={{marginTop: "90vh"}}>
+                    But not all hope is lost…
+                    </Paragraph>
+                    <Paragraph style={{marginTop: "50vh"}}>
+                    These are three promising initiatives that are addressing the issue of air pollution and climate change in a straightforward way to reduce air pollution from <TextHighlighters style={{backgroundColor: AirRedDark}}>crimson</TextHighlighters> to <TextHighlighters style={{backgroundColor: SunRed}}>salmon</TextHighlighters> in 30 years.
                     </Paragraph>
                 </ParagraphArea>
                 <VisualizationMain >
