@@ -1,19 +1,19 @@
 import * as React from 'react';
 import styled from '@emotion/styled'
-import { IntroHeading, Intro1, Intro2, MainRed } from 'src/materials/materials';
-import VideoStill from '../video_still.png';
+import { IntroHeading, Intro1, Intro2 } from 'src/materials/materials';
 import { small, medium } from 'src/materials/breakpoints';
 
 export const IntroWrapper = styled('div')`
     width: 100vw;
     height: 100vh;
-    background-color: ${MainRed};
     position: relative;
 `
 
-export const BackgroundVideo = styled('img')`
+export const BackgroundVideo = styled('video')`
     width: 100vw;
     height: 100vh;
+    object-fit: cover;
+    overflow-x: hidden;
 `
 
 export const IntroGradient = styled('div')`
@@ -52,7 +52,8 @@ export class Intro extends React.Component {
                         30 Years
                     </Intro2> 
                 </IntroHeading>
-                <BackgroundVideo src={VideoStill}> 
+                <BackgroundVideo autoPlay loop>
+                   <source src="/tctsity_bg_video.mp4"></source>
                 </BackgroundVideo>
             </IntroWrapper>
         );
