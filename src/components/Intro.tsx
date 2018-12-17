@@ -33,7 +33,6 @@ export class Intro extends React.Component {
                     <Intro1>
                         From <TextHighlighters style={{backgroundColor: AirRedDark}}>Crimson</TextHighlighters>
                     </Intro1>
-
                     <Intro2>
                         To <TextHighlighters style={{backgroundColor: SunRed}}>Salmon</TextHighlighters><br></br>
                         In<br></br>
