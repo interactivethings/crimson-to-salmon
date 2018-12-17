@@ -229,7 +229,7 @@ export const EveningSky = styled('div')`
 export class RedScattering extends React.Component<{ runAnimation: boolean }> {
     render() {
         const redElements = [] as any[];
-        var blueElements = [] as any[];
+        const blueElements = [] as any[];
 
 
         for (let i = 0; i < 5; i++) {
@@ -320,6 +320,15 @@ export class PollutedScattering extends React.Component<{ runAnimation: boolean}
     render() {
         const pollutedElements = [] as any[];
         const redElements = [] as any[];
+        const blueElements = [] as any[];
+
+
+        for (let i = 0; i < 5; i++) {
+            blueElements.push({
+                xPos: Math.round(((Math.random() * 665) + 1) / 35) * 35,
+                yPos: Math.round(((Math.random() * 665) + 1) / 35) * 35,
+            });
+        }
 
         for (let i = 0; i < 80; i++) {
             redElements.push({
@@ -336,7 +345,12 @@ export class PollutedScattering extends React.Component<{ runAnimation: boolean}
         }
 
         return(
-            <>  {redElements.map((redElement, i) =>
+            <>  
+                {blueElements.map((blueElement, i) =>
+                <ScatterElementBlueForRed key={i} style={{left: blueElement.xPos, top: blueElement.yPos, animationPlayState: this.props.runAnimation ? 'running' : 'paused' }}/>
+                )}
+
+                {redElements.map((redElement, i) =>
                 <ScatterElementRed key={i} style={{left: redElement.xPos, top: redElement.yPos, animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
                 )}
 
