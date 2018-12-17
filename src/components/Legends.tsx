@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from '@emotion/styled-base';
-import { SunBlue, SunRed, SunYellow, LegendItem, AirBlue, AirRedDark } from 'src/materials/materials';
+import { SunBlue, SunRed, SunYellow, LegendItem, AirBlue, AirRedDark, TextColor } from 'src/materials/materials';
 import GradientSVG from '../zh_gradient.svg';
 
 export const Legend = styled('div')`
@@ -67,6 +67,14 @@ export const LegendElement = styled('div')`
     display: flex;
     flex-direction: row;
     align-items: center;
+`
+
+export const DistanceLegendElement = styled('div')`
+    position: absolute;
+    left: -5vw;
+    font-size: 1em;
+    line-height: 120%;
+    color: ${TextColor};
 `
 
 export const ScatterElement = styled('div')`
@@ -146,7 +154,7 @@ export class ScatteringLegendPolluted extends React.Component {
                 </LegendElement>
 
                 <LegendElement>
-                        <ScatterElement style={{width: 105 / 2, backgroundColor: AirRedDark}}></ScatterElement>
+                        <ScatterElement style={{width: 105 / 2, backgroundColor: AirRedDark, borderRadius: 0}}></ScatterElement>
                         <LegendItem>Fine particle</LegendItem>
                 </LegendElement>
 

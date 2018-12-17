@@ -36,7 +36,7 @@ export const ParagraphArea = styled('div')`
     flex-direction: column;
     justify-content: flex-start;
     width: 35%;
-    margin: 0 0 15vh 0;
+    margin: 0 10vh 15vh 0;
     max-height: 700px;
 `;
 
@@ -44,6 +44,8 @@ export const VisualizationMain = styled('div')`
     display: flex;
     flex-wrap: no-wrap;
     justify-content: flex-start;
+    position: sticky;
+    top: 20vh;
 `
 
 export const VisualizationArea = styled('div')`
@@ -116,7 +118,7 @@ const Chapter1 = () => {
             Scientists also refer to this pure and natural gas mixture as <TextHighlighters style={{backgroundColor: AirBlue}}>«dry air».</TextHighlighters> 
             </Paragraph>
         </ParagraphArea>
-        <VisualizationMain style={{position: "sticky", top: 150}}>
+        <VisualizationMain>
             <VisualizationArea ref={target}>
             {isThingIntersecting && <Air runAnimation={isThingIntersecting}/> }
             </VisualizationArea>
@@ -145,7 +147,7 @@ const Chapter1 = () => {
                     All colors together are perceived as a yellowish white.
                 </Paragraph>
             </ParagraphArea>
-            <VisualizationMain style={{position: "sticky", top: 150}}>
+            <VisualizationMain>
                 <VisualizationArea ref={target}>
                     {isThingIntersecting && <Sun runAnimation={isThingIntersecting}/>}
                 </VisualizationArea>
@@ -174,7 +176,7 @@ const Chapter1 = () => {
                     Therefore, pure air scatters blue light three times more effectively than it does <TextHighlighters style={{backgroundColor: SunRed}}>red light</TextHighlighters>. This results in the blue of the daytime sky.
                     </Paragraph> 
                 </ParagraphArea>
-                <VisualizationMain style={{position: "sticky", top: 150}}>
+                <VisualizationMain>
                     <VisualizationArea ref={target}>
                         {isThingIntersecting && <ScatteringBlue Animation={isThingIntersecting}/>}
                     </VisualizationArea>
@@ -202,7 +204,7 @@ const Chapter4 = () => {
                     Due to that, evening light that reaches an observer is noticeably reddened. This process is also known as «multiple scattering». 
                     </Paragraph>
                 </ParagraphArea>
-                <VisualizationMain style={{position: "sticky", top: 150}}>
+                <VisualizationMain>
                     <VisualizationArea ref={target}>
                         {isThingIntersecting && <ScatteringRed Animation={isThingIntersecting}/>}
                     </VisualizationArea>
@@ -230,7 +232,7 @@ const Chapter4 = () => {
                     Due to their size, the various compounds of PM10 scatter the same way as natural <TextHighlighters style={{backgroundColor: AirBlue}}>Nitrogen</TextHighlighters> and <TextHighlighters style={{backgroundColor: AirBlue}}>Oxygen</TextHighlighters> would do — they scatter more red light. This leads to an increased red evening sky. 
                     </Paragraph>
                 </ParagraphArea>
-                <VisualizationMain style={{position: "sticky", top: 150}}>
+                <VisualizationMain>
                     <VisualizationArea ref={target}>
                         {isThingIntersecting && <ScatteringPolluted Animation={isThingIntersecting}/>}
                     </VisualizationArea>
@@ -257,7 +259,7 @@ const Chapter4 = () => {
                     Seems like Switzerland is doing pretty good, right?
                     </Paragraph>
                 </ParagraphArea>
-                <VisualizationMain style={{position: "sticky", top: 150}}>
+                <VisualizationMain>
                     <VisualizationArea  ref={target}>
                         <TwentyCountries countries={props.data}/>
                     </VisualizationArea>
@@ -367,7 +369,7 @@ const Chapter9 = (props: {detailMonthly: Array<Station>; }) => {
                     These are the top three initiatives I stumbled upon my research for this project which are adressing climate change very straightforward.
                     </Paragraph>
                 </ParagraphArea>
-                <VisualizationMain style={{position: "sticky", top: 150}}>
+                <VisualizationMain >
                     <VisualizationArea ref={target}>
                         <Initiatives />
                     </VisualizationArea>
