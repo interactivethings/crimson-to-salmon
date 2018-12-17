@@ -4,6 +4,8 @@ import styled from '@emotion/styled-base';
 import { keyframes } from '@emotion/core';
 import { SquareWrapper } from './Countries';
 import 'd3-transition';
+import { scaleLinear } from 'd3-scale';
+import { interpolateRgb } from 'd3-interpolate';
 
 export const SunColors = [SunRed, SunOrange, SunYellow, SunGreen, SunIndigo, SunBlue, SunPurple]
 
@@ -441,6 +443,11 @@ export const SunElement = styled('div')`
   animation-fill-mode: forwards;
 `
 
+const colorSunRay = scaleLinear()
+    .domain([0, 9, 17])
+    .range([SunYellow, SunBlue, SunRed] as any)
+    .interpolate(interpolateRgb as any) as any;
+
 export class SunRayShort extends React.Component <{ runAnimation: boolean }> {
   render() {
     const sunElements = [] as any[];
@@ -455,7 +462,7 @@ export class SunRayShort extends React.Component <{ runAnimation: boolean }> {
     return(
         <VizWrapper>
           {sunElements.map(( sunElement, i) =>
-            <SunElement delay={i * 100} key={i} style={{top: sunElement.yPos, left: sunElement.xPos, animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
+            <SunElement delay={i * 100} key={i} style={{top: sunElement.yPos, left: sunElement.xPos, backgroundColor: colorSunRay(i), animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
           )}
         </VizWrapper>
     );
@@ -473,10 +480,12 @@ export class SunRayLong extends React.Component<{ runAnimation: boolean }> {
         });
     }
 
+    // <SquareElement key={i} style={{backgroundColor: colorCountries(country.PM10)}}>
+
     return(
         <VizWrapper>
           {sunElements.map(( sunElement, i) =>
-            <SunElement delay={i * 100}key={i} style={{top: sunElement.yPos, left: sunElement.xPos, animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
+            <SunElement delay={i * 100} key={i} style={{top: sunElement.yPos, left: sunElement.xPos, backgroundColor: colorSunRay(i), animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
           )}
         </VizWrapper>
     );
