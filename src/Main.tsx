@@ -33,7 +33,7 @@ export const Chapter = styled('section')`
 export const ParagraphArea = styled('div')`
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 35%;
     margin: 0 0 15vh 0;
     max-height: 700px;
@@ -112,7 +112,7 @@ const Chapter1 = () => {
             <Paragraph>
             Air is made up of only five gases: Nitrogen (N₂), Oxygen (O₂),  Argon (Ar), and Carbon Dioxide (CO₂). Several other compounds, such as natural Ozone (O₃), are also present.
             </Paragraph>
-            <Paragraph style={{marginTop: "1.2rem"}}>
+            <Paragraph style={{marginTop: "90vh"}}>
             Scientists also refer to this pure and natural gas mixture as <TextHighlighters style={{backgroundColor: AirBlue}}>«dry air».</TextHighlighters> 
             </Paragraph>
         </ParagraphArea>
@@ -141,7 +141,7 @@ const Chapter1 = () => {
                 <Paragraph>
                 <TextHighlighters style={{backgroundColor: SunYellow}}>Sunlight</TextHighlighters>, on the contrary, is composed of a spectrum of colors, ranging from <TextHighlighters style={{backgroundColor: SunBlue}}>short</TextHighlighters> wavelengths (~300 nm) which are perceived as purplish-blue, to <TextHighlighters style={{backgroundColor: SunRed}}>longer</TextHighlighters>  wavelengths (~700 nm), perceived as red.
                 </Paragraph>
-                <Paragraph style={{marginTop: "1.2rem"}}>
+                <Paragraph style={{marginTop: "90vh"}}>
                     All colors together are perceived as a yellowish white.
                 </Paragraph>
             </ParagraphArea>

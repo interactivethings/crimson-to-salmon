@@ -137,7 +137,7 @@ export const AirDefined = styled('div')`
 export class Air extends React.Component<{ runAnimation: boolean }> {
     render() {
         return (
-            <VizWrapper>
+            <VizWrapper style={{position: "sticky", top: "150px"}}>
                 {/* image 1 */}
                 <AirUndefined style={{ animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
             

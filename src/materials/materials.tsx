@@ -45,8 +45,6 @@ export const VizWrapper = styled('div')`
     position: relative;
     width: 700px;
     height: 700px;
-    position: sticky;
-    top: 150px;
     `
 
 // Typography
