@@ -108,7 +108,7 @@ export class BlueScattering extends React.Component<{ runAnimation: boolean }> {
             });
         }
 
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 5; i++) {
             redElements.push({
                 xPos: Math.round(((Math.random() * 595) + 1) / 35) * 35,
                 yPos: Math.round(((Math.random() * 665) + 1) / 35) * 35,

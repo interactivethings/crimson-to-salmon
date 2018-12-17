@@ -394,7 +394,7 @@ opacity: 0;
 export class Sun extends React.Component<{ runAnimation: boolean }> {
     render() {
         return(
-            <SquareWrapper >
+            <SquareWrapper>
             <VizWrapper>
                 <SunElement01 style={{ animationPlayState: this.props.runAnimation ? 'running' : 'paused'}} />
                 <SunElement02 style={{ animationPlayState: this.props.runAnimation ? 'running' : 'paused'}} />
