@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from '@emotion/styled-base';
-import { SunBlue, SunRed, SunYellow, LegendItem, AirBlue, AirRedDark, TextColor } from 'src/materials/materials';
+import { SunBlue, SunRed, SunYellow, LegendItem, AirBlue, AirRedDark, LegendLabelColor } from 'src/materials/materials';
 import GradientSVG from '../zh_gradient.svg';
 
 export const Legend = styled('div')`
@@ -74,7 +74,7 @@ export const DistanceLegendElement = styled('div')`
     left: -5vw;
     font-size: 1em;
     line-height: 120%;
-    color: ${TextColor};
+    color: ${LegendLabelColor};
 `
 
 export const ScatterElement = styled('div')`

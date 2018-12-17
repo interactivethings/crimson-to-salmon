@@ -377,8 +377,8 @@ export class ScatteringBlue extends React.Component<Props> {
                     <BlueScattering runAnimation={this.props.Animation}/>
                     <SunRayShort runAnimation={this.props.Animation}/>
                     <DaytimeSky runAnimation={this.props.Animation}/>
-                    <DistanceLegendElement style={{top: "-5vh", color: LegendLabelColor}}>Travel distance<br></br>of Sun rays<br></br>↓</DistanceLegendElement>
-                    <DistanceLegendElement style={{top: 315}}>12.00 AM:<br></br>short distance</DistanceLegendElement>
+                    <DistanceLegendElement style={{top: "-5vh"}}>Travel distance<br></br>of Sun rays<br></br>↓</DistanceLegendElement>
+                    <DistanceLegendElement style={{top: 315, color: SunBlue}}>12.00 AM:<br></br>short distance</DistanceLegendElement>
                 </SquareWrapper>
                 <ScatteringLegendBlue />
             </VizWrapper>
@@ -394,9 +394,9 @@ export class ScatteringRed extends React.Component<Props> {
                     <RedScattering runAnimation={this.props.Animation}/>
                     <SunRayLong runAnimation={this.props.Animation}/>
                     <EveningSky runAnimation={this.props.Animation}/>
-                    <DistanceLegendElement style={{top: "-5vh", color: LegendLabelColor}}>Travel distance<br></br>of Sun rays<br></br>↓</DistanceLegendElement>
-                    <DistanceLegendElement style={{top: 315, color: LegendLabelColor}}>12.00 AM:<br></br>short distance</DistanceLegendElement>
-                    <DistanceLegendElement style={{top: 595}}>06.00 PM:<br></br>long distance</DistanceLegendElement>
+                    <DistanceLegendElement style={{top: "-5vh"}}>Travel distance<br></br>of Sun rays<br></br>↓</DistanceLegendElement>
+                    <DistanceLegendElement style={{top: 315}}>12.00 AM:<br></br>short distance</DistanceLegendElement>
+                    <DistanceLegendElement style={{top: 595, color: SunRed}}>06.00 PM:<br></br>long distance</DistanceLegendElement>
                 </SquareWrapper>
                 <ScatteringLegendRed />
             </VizWrapper>
@@ -413,8 +413,8 @@ export class ScatteringPolluted extends React.Component<Props> {
                     <SunRayLong runAnimation={this.props.Animation}/>
                     <PollutedSky runAnimation={this.props.Animation}/>
                     <DistanceLegendElement style={{top: "-5vh", color: LegendLabelColor}}>Travel distance<br></br>of Sun rays<br></br>↓</DistanceLegendElement>
-                    <DistanceLegendElement style={{top: 315, color: LegendLabelColor}}>12.00 AM:<br></br>short distance</DistanceLegendElement>
-                    <DistanceLegendElement style={{top: 595}}>06.00 PM:<br></br>long distance</DistanceLegendElement>
+                    <DistanceLegendElement style={{top: 315 }}>12.00 AM:<br></br>short distance</DistanceLegendElement>
+                    <DistanceLegendElement style={{top: 595, color: SunRed}}>06.00 PM:<br></br>long distance</DistanceLegendElement>
                 </SquareWrapper>
                 <ScatteringLegendPolluted />
             </VizWrapper>
