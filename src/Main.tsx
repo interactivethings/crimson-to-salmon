@@ -316,7 +316,7 @@ const Chapter4 = () => {
                 <VisualizationMain>
                     <VisualizationArea ref={target}>
                         {isThingIntersecting && <Zurich Animation={isThingIntersecting} stations={props.detailMonthly} />}
-                        <Limits triggerAnimation={isThingIntersecting} stations={props.detailMonthly} />
+                        {isThingIntersecting && <Limits triggerAnimation={isThingIntersecting} stations={props.detailMonthly} />}
                     </VisualizationArea>
                 </VisualizationMain>
             </Chapter>

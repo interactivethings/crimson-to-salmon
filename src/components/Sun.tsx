@@ -10,38 +10,23 @@ import { interpolateRgb } from 'd3-interpolate';
 export const SunColors = [SunRed, SunOrange, SunYellow, SunGreen, SunIndigo, SunBlue, SunPurple]
 
 const StaggeringRed = keyframes`
-  from, 0% {
+  from, 30% {
     left: 333px;
     background-color: ${SunYellow};
-  }
-
-  50% {
-    left: 665px;
-    background-color: ${SunRed};
-    transform: scale(1);
-    transform-origin: center;
-
   }
 
   65% {
-    left: 333px;
-    transform: scale(20);
-    background-color: ${SunYellow};
-    transform-origin: center;
+    left: 665px;
+    background-color: ${SunRed};
   }
 
   80% {
-    background-color: ${SunYellow};
-    transform: scale(1);
-    opacity: 1;
-    top: 333px;
-    left: 333px;
+    left: 665px;
+    background-color: ${SunRed};
   }
 
   100% {
     background-color: ${SunYellow};
-    transform: scale(1);
-    opacity: 1;
     top: 333px;
     left: 333px;
   }
@@ -58,37 +43,23 @@ export const SunElement01 = styled('div')`
 `
 
 const StaggeringYellow = keyframes`
-  from, 0% {
+  from, 30% {
     left: 333px;
     background-color: ${SunYellow};
-  }
-
-  50% {
-    left: 554px;
-    background-color: ${SunYellow};
-    transform: scale(1);
-    transform-origin: center;
   }
 
   65% {
-    left: 333px;
-    transform: scale(20);
+    left: 554px;
     background-color: ${SunYellow};
-    transform-origin: center;
   }
 
   80% {
+    left: 554px;
     background-color: ${SunYellow};
-    transform: scale(1);
-    opacity: 1;
-    top: 333px;
-    left: 333px;
   }
 
   100% {
     background-color: ${SunYellow};
-    transform: scale(1);
-    opacity: 1;
     top: 333px;
     left: 333px;
   }
@@ -105,37 +76,23 @@ export const SunElement02 = styled('div')`
 `
 
 const StaggeringOrange = keyframes`
-  from, 0% {
+  from, 30% {
     left: 333px;
     background-color: ${SunYellow};
-  }
-
-  50% {
-    left: 443px;
-    background-color: ${SunOrange};
-    transform: scale(1);
-    transform-origin: center;
   }
 
   65% {
-    left: 333px;
-    transform: scale(20);
-    background-color: ${SunYellow};
-    transform-origin: center;
+    left: 443px;
+    background-color: ${SunOrange};
   }
 
   80% {
-    background-color: ${SunYellow};
-    transform: scale(1);
-    opacity: 1;
-    top: 333px;
-    left: 333px;
+    left: 443px;
+    background-color: ${SunOrange};
   }
 
   100% {
     background-color: ${SunYellow};
-    transform: scale(1);
-    opacity: 1;
     top: 333px;
     left: 333px;
   }
@@ -152,37 +109,23 @@ export const SunElement03 = styled('div')`
 `
 
 const StaggeringGreen = keyframes`
-  from, 0% {
+  from, 30% {
     left: 333px;
     background-color: ${SunYellow};
-  }
-
-  50% {
-    left: 332px;
-    background-color: ${SunGreen};
-    transform: scale(1);
-    transform-origin: center;
   }
 
   65% {
-    left: 333px;
-    transform: scale(20);
-    background-color: ${SunYellow};
-    transform-origin: center;
+    left: 332px;
+    background-color: ${SunGreen};
   }
 
   80% {
-    background-color: ${SunYellow};
-    transform: scale(1);
-    opacity: 1;
-    top: 333px;
-    left: 333px;
+    left: 332px;
+    background-color: ${SunGreen};
   }
 
   100% {
     background-color: ${SunYellow};
-    transform: scale(1);
-    opacity: 1;
     top: 333px;
     left: 333px;
   }
@@ -199,37 +142,23 @@ export const SunElement04 = styled('div')`
 `
 
 const StaggeringIndigo = keyframes`
-  from, 0% {
+  from, 30% {
     left: 333px;
     background-color: ${SunYellow};
-  }
-
-  50% {
-    left: 221px;
-    background-color: ${SunIndigo};
-    transform: scale(1);
-    transform-origin: center;
   }
 
   65% {
-    left: 333px;
-    transform: scale(20);
-    background-color: ${SunYellow};
-    transform-origin: center;
+    left: 221px;
+    background-color: ${SunIndigo};
   }
 
   80% {
-    background-color: ${SunYellow};
-    transform: scale(1);
-    opacity: 1;
-    top: 333px;
-    left: 333px;
+    left: 221px;
+    background-color: ${SunIndigo};
   }
 
   100% {
     background-color: ${SunYellow};
-    transform: scale(1);
-    opacity: 1;
     top: 333px;
     left: 333px;
   }
@@ -246,37 +175,23 @@ export const SunElement05 = styled('div')`
 `
 
 const StaggeringBlue = keyframes`
-  from, 0% {
+  from, 30% {
     left: 333px;
     background-color: ${SunYellow};
-  }
-
-  50% {
-    left: 111px;
-    background-color: ${SunPurple};
-    transform: scale(1);
-    transform-origin: center;
   }
 
   65% {
-    left: 333px;
-    transform: scale(20);
-    background-color: ${SunYellow};
-    transform-origin: center;
+    left: 111px;
+    background-color: ${SunPurple};
   }
 
   80% {
-    background-color: ${SunYellow};
-    transform: scale(1);
-    opacity: 1;
-    top: 333px;
-    left: 333px;
+    left: 111px;
+    background-color: ${SunPurple};
   }
 
   100% {
     background-color: ${SunYellow};
-    transform: scale(1);
-    opacity: 1;
     top: 333px;
     left: 333px;
   }
@@ -293,37 +208,23 @@ export const SunElement06 = styled('div')`
 `
 
 const StaggeringPurple = keyframes`
-  from, 0% {
+  from, 30% {
     left: 333px;
     background-color: ${SunYellow};
-  }
-
-  50% {
-    left: 0px;
-    background-color: ${SunBlue};
-    transform: scale(1);
-    transform-origin: center;
   }
 
   65% {
-    left: 333px;
-    transform: scale(20);
-    background-color: ${SunYellow};
-    transform-origin: center;
+    left: 0px;
+    background-color: ${SunBlue};
   }
 
   80% {
-    background-color: ${SunYellow};
-    transform: scale(1);
-    opacity: 1;
-    top: 333px;
-    left: 333px;
+    left: 0px;
+    background-color: ${SunBlue};
   }
 
   100% {
     background-color: ${SunYellow};
-    transform: scale(1);
-    opacity: 1;
     top: 333px;
     left: 333px;
   }
@@ -340,16 +241,16 @@ export const SunElement07 = styled('div')`
 `
 
 const LegendWLItems = keyframes`
-    from, 0% {
+    from, 30% {
        opacity: 0;
     }
 
-    50% {
+    65% {
         opacity: 1;
     }
 
-    70% {
-        opacity: 0;
+    80% {
+        opacity: 1;
     }
 
     100% {
@@ -372,25 +273,28 @@ export const Legend = styled('div')`
 `
 
 const LegendSun = keyframes`
-    from, 55% {
-       opacity: 0;
-    }
+  from, 30% {
+    opacity: 1;
+  }
 
-     90% {
-      opacity: 1;
-   }
+  65% {
+    opacity: 0;
+  }
 
-    100% {
-        opacity: 0;
-    }
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 `
 
 export const LegendLabelSun = styled('p')`
-opacity: 0;
     font-size: 1em;
     line-height: 120%;
     color: ${LegendLabelColor};
-    animation: ${LegendSun} ease 8s;
+    animation: ${LegendSun} ease 8s infinite;
 `
 
 export class Sun extends React.Component<{ runAnimation: boolean }> {
