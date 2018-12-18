@@ -155,7 +155,7 @@ const Chapter1 = () => {
     //     threshold: 0.5,
     //   })
 
-    console.log(target, isThingIntersecting);
+    // console.log(target, isThingIntersecting);
   
     return (
         <>
@@ -348,9 +348,12 @@ const Chapter4 = () => {
 
   const Chapter8 = (props: {detailMonthly: Array<Station>; }) => {
     const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
+    const limitTarget = useRef(null);  // We need a ref to our "target" or our child-to-watch,
     const isThingIntersecting = useInView(target);
+    const limitThingIntersecting = useInView(limitTarget);
 
-    console.log(target, isThingIntersecting)
+
+    console.log(limitTarget, limitThingIntersecting)
   
     return (
         <>
@@ -360,14 +363,14 @@ const Chapter4 = () => {
                     <Paragraph>
                     When applying this gradient to the monthly values of the three main measuring stations for <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>fine particles</TextHighlighters> of the city of Zurich, the official limit values are quickly exceeded.
                     </Paragraph>
-                    <Paragraph style={{marginTop: "118vh"}} ref={target}>
+                    <Paragraph style={{marginTop: "118vh"}} ref={limitTarget}>
                     With the limit value for <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>fine particles</TextHighlighters> (PM10) being 20 µg / m3 per year, this plot of the monthly values show, that Zurich’s evening skies can actually be more <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>«crimson»</TextHighlighters> than average data might suggest.
                     </Paragraph>
                 </ParagraphArea>
                 <VisualizationMain>
                     <VisualizationArea ref={target}>
                         {isThingIntersecting && <Zurich Animation={isThingIntersecting} stations={props.detailMonthly} />}
-                        {isThingIntersecting && <Limits triggerAnimation={isThingIntersecting} stations={props.detailMonthly} />}
+                        {limitThingIntersecting && <Limits triggerAnimation={limitThingIntersecting} stations={props.detailMonthly} />}
                     </VisualizationArea>
                 </VisualizationMain>
             </Chapter>
