@@ -157,6 +157,7 @@ export class Zurich extends React.Component<Props> {
                             </ValueRangeDetail>
                             )}
                         </ValueRange>
+                        <LimitValues runAnimation={this.props.Animation}/>
                     </VizWrapper>
                     <Legend>
                         <LegendItem>0</LegendItem>
@@ -250,7 +251,9 @@ export const LimitIndicator = styled('div')`
     height: 700px;
     width: 5px;
     background-color: black;
-    animation: ${LimitIndex} 10s infinite;
+    animation-name: ${LimitIndex};
+    animation-duration: 10s;
+    animation-delay: ${(props: {delay: number}) => props.delay}ms;
     `
 
 const LimitAreas = keyframes`
@@ -272,6 +275,7 @@ export const LimitAreaLeft = styled('div')`
     background-color: ${AirBlueLight};
     opacity: 0.3;
     animation: ${LimitAreas} 10s ease infinite;
+    animation-delay: ${(props: {delay: number}) => props.delay}ms;
 `
 
 export const LimitAreaRight = styled('div')`
@@ -282,15 +286,16 @@ export const LimitAreaRight = styled('div')`
     background-color: ${MainRed};
     opacity: 0.3;
     animation: ${LimitAreas} 10s ease infinite;
+    // animation-delay: ${(props: {delay: number}) => props.delay};
 `
 
 export class LimitValues extends React.Component<{ runAnimation: boolean }> {
     render() {
         return(
             <>
-            <LimitAreaLeft style={{width: sizeMonthly(20), animationPlayState: this.props.runAnimation ? 'running' : 'paused' }}/>
-            <LimitAreaRight style={{left: sizeMonthly(20), width: sizeMonthly(61.99), animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
-            <LimitIndicator style={{left: sizeMonthly(20), animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
+            <LimitAreaLeft delay={500} style={{width: sizeMonthly(20), animationPlayState: this.props.runAnimation ? 'running' : 'paused' }}/>
+            <LimitAreaRight delay={500} style={{left: sizeMonthly(20), width: sizeMonthly(61.99), animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
+            <LimitIndicator  delay={500} style={{left: sizeMonthly(20), animationDelay: "500ms", animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
             </>
         );
     }
