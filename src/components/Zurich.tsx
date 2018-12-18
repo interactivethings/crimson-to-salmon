@@ -115,13 +115,18 @@ export interface Props {
     Animation: boolean;
 }
 
+export interface LimitAnimation {
+    stations: Array<Station>
+    triggerAnimation: boolean;
+}
+
 // max ZH value: 81.99 results in color value of 200, 153, 183 in range of world countries
 
 export class Zurich extends React.Component<Props> {
     render() {
         return (
                 <SquareWrapper>
-                    <VizWrapper >    
+                    <VizWrapper>    
                             <LegendItem style={{position: "absolute", top: "-5vh"}}>↑ Checkpoint over time</LegendItem>            
                         {/* Rosengartenstrasse */}
                             <ValueRange >
@@ -163,58 +168,70 @@ export class Zurich extends React.Component<Props> {
     }
 }
 
-export class Limits extends React.Component<Props> {
+export class Limits extends React.Component<LimitAnimation> {
     render() {
         return (
-                <SquareWrapper>
+                <SquareWrapper style={{position: "absolute"}}>
                     <VizWrapper >    
-                            <LegendItem style={{position: "absolute", top: "-5vh"}}>↑ Checkpoint over time</LegendItem>            
-                        {/* Rosengartenstrasse */}
-                            <ValueRange >
-                            <VizItem>Rosengartenstrasse</VizItem>
-                            {this.props.stations.filter(function (i) {return (i.Station === "Rosengartenstrasse")}).map((station, i) => 
-                            <ValueRangeLimit
-                                key={i}
-                                style={{
-                                    backgroundImage: "url(" + DetailGradientSVG + ")",
-                                    mask: "url(" + ZurichGradientSVG + ")",
-                                    height: ValueRangeHeight / 12, top: (ValueRangeHeight / 12 * i) + 20, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}
-                            >
-                                <VizItemSmall>{station.Month}</VizItemSmall>
-                            </ValueRangeLimit>
-                            )}
-                            </ValueRange>
-
-                        {/* Schimmelstrasse */}
-                        <ValueRange style={{height: ValueRangeHeight, top: 235}}>
-                            <VizItem>Schimmelstrasse</VizItem>
-                            {this.props.stations.filter(function (i) {return (i.Station === "Schimmelstrasse")}).map((station, i) => 
-                            <ValueRangeLimit key={i} style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: (ValueRangeHeight / 12 * i) + 20, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}>
-                            <VizItemSmall>{station.Month}</VizItemSmall>
-                            </ValueRangeLimit>
-                            )}
-                        </ValueRange>
-
-                        {/* Stampfenbachstrasse */}
-                        <ValueRange style={{height: 230, top: 470}}>
-                            <VizItem>Stampfenbachstrasse</VizItem>
-                            {this.props.stations.filter(function (i) {return (i.Station === "Stampfenbachstrasse")}).map((station, i) => 
-                            <ValueRangeLimit key={i} style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: (ValueRangeHeight / 12 * i) + 20, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}>
-                            <VizItemSmall>{station.Month}</VizItemSmall>
-                            </ValueRangeLimit>
-                            )}
-                        </ValueRange>
-                        <LimitValues runAnimation={this.props.Animation}/>
-                    </VizWrapper>
-                    <Legend>
-                        <LegendItem>0</LegendItem>
-                        <LegendItem>⟶ Fine particle emission in 2016 (µg / m²)</LegendItem>
-                        <LegendItem>81.99</LegendItem>
-                    </Legend>                
+                        <LimitValues runAnimation={this.props.triggerAnimation}/>
+                    </VizWrapper>               
                 </SquareWrapper>
         );
     }
 }
+
+// export class Limits extends React.Component<Props> {
+//     render() {
+//         return (
+//                 <SquareWrapper style={{position: "absolute"}}>
+//                     <VizWrapper >    
+//                             <LegendItem style={{position: "absolute", top: "-5vh"}}>↑ Checkpoint over time</LegendItem>            
+//                         {/* Rosengartenstrasse */}
+//                             <ValueRange >
+//                             <VizItem>Rosengartenstrasse</VizItem>
+//                             {this.props.stations.filter(function (i) {return (i.Station === "Rosengartenstrasse")}).map((station, i) => 
+//                             <ValueRangeLimit
+//                                 key={i}
+//                                 style={{
+//                                     backgroundImage: "url(" + DetailGradientSVG + ")",
+//                                     mask: "url(" + ZurichGradientSVG + ")",
+//                                     height: ValueRangeHeight / 12, top: (ValueRangeHeight / 12 * i) + 20, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}
+//                             >
+//                                 <VizItemSmall>{station.Month}</VizItemSmall>
+//                             </ValueRangeLimit>
+//                             )}
+//                             </ValueRange>
+
+//                         {/* Schimmelstrasse */}
+//                         <ValueRange style={{height: ValueRangeHeight, top: 235}}>
+//                             <VizItem>Schimmelstrasse</VizItem>
+//                             {this.props.stations.filter(function (i) {return (i.Station === "Schimmelstrasse")}).map((station, i) => 
+//                             <ValueRangeLimit key={i} style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: (ValueRangeHeight / 12 * i) + 20, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}>
+//                             <VizItemSmall>{station.Month}</VizItemSmall>
+//                             </ValueRangeLimit>
+//                             )}
+//                         </ValueRange>
+
+//                         {/* Stampfenbachstrasse */}
+//                         <ValueRange style={{height: 230, top: 470}}>
+//                             <VizItem>Stampfenbachstrasse</VizItem>
+//                             {this.props.stations.filter(function (i) {return (i.Station === "Stampfenbachstrasse")}).map((station, i) => 
+//                             <ValueRangeLimit key={i} style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: (ValueRangeHeight / 12 * i) + 20, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}>
+//                             <VizItemSmall>{station.Month}</VizItemSmall>
+//                             </ValueRangeLimit>
+//                             )}
+//                         </ValueRange>
+//                         <LimitValues runAnimation={this.props.Animation}/>
+//                     </VizWrapper>
+//                     <Legend>
+//                         <LegendItem>0</LegendItem>
+//                         <LegendItem>⟶ Fine particle emission in 2016 (µg / m²)</LegendItem>
+//                         <LegendItem>81.99</LegendItem>
+//                     </Legend>                
+//                 </SquareWrapper>
+//         );
+//     }
+// }
 
 const LimitIndex = keyframes`
   from, 0% {

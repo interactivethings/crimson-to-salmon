@@ -7,7 +7,7 @@ import { ScatteringBlue, ScatteringPolluted, ScatteringRed } from './components/
 import { Country, TwentyCountries } from './components/Countries';
 import { Initiatives } from './components/Initiatives';
 import { Sun } from './components/Sun';
-import { Station, Switzerland, Zurich, Limits } from './components/Zurich';
+import { Station, Switzerland, Zurich, Limits, LimitValues } from './components/Zurich';
 import { Paragraph, Heading, AirBlue, SunRed, SunYellow, AirBlueLight, SunBlue, AirRedDark } from './materials/materials';
 import { useRef } from "react";
 const { useInView } = require("react-intersection-observer")
@@ -83,7 +83,7 @@ export class Main extends React.Component<{data: Country[], detailMonthly: Stati
             <Chapter6 data={this.props.data}/>
             <Chapter7 />
             <Chapter8 detailMonthly={this.props.detailMonthly}/>
-            <Chapter9 detailMonthly={this.props.detailMonthly}/>
+            {/* <Chapter9 detailMonthly={this.props.detailMonthly}/> */}
             <Chapter10 />
             <Chapter11 />
         </MainRoot>
@@ -305,14 +305,18 @@ const Chapter4 = () => {
         <>
         <Heading>Zurich’s three checkpoints …</Heading>
         <Chapter>
-                <ParagraphArea>
+                <ParagraphArea style={{minHeight: "158vh"}}>
                     <Paragraph>
                     When applying this gradient to the monthly values of the three main measuring stations for <TextHighlighters style={{backgroundColor: AirRedDark}}>fine particles</TextHighlighters> of the city of Zurich, the official limit values are quickly exceeded.
+                    </Paragraph>
+                    <Paragraph style={{marginTop: "118vh"}} ref={target}>
+                    With the limit value for <TextHighlighters style={{backgroundColor: AirRedDark}}>fine particles</TextHighlighters> (PM10) being 20 µg / m3 per year, this plot of the monthly values show, that Zurich’s evening skies can actually be more <TextHighlighters style={{backgroundColor: AirRedDark}}>«crimson»</TextHighlighters> than average data might suggest.
                     </Paragraph>
                 </ParagraphArea>
                 <VisualizationMain>
                     <VisualizationArea ref={target}>
                         {isThingIntersecting && <Zurich Animation={isThingIntersecting} stations={props.detailMonthly} />}
+                        <Limits triggerAnimation={isThingIntersecting} stations={props.detailMonthly} />
                     </VisualizationArea>
                 </VisualizationMain>
             </Chapter>
@@ -323,30 +327,29 @@ const Chapter4 = () => {
 
 // Limit Values
 
-const Chapter9 = (props: {detailMonthly: Array<Station>; }) => {
-    const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
-    const isThingIntersecting = useInView(target);
+// const Chapter9 = (props: {detailMonthly: Array<Station>; }) => {
+//     const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
+//     const isThingIntersecting = useInView(target);
 
-    console.log(target, isThingIntersecting)
+//     console.log(target, isThingIntersecting)
   
-    return (
-        <>
-        <Heading>… call to action!</Heading>
-        <Chapter>
-                <ParagraphArea>
-                    <Paragraph>
-                    With the limit value for <TextHighlighters style={{backgroundColor: AirRedDark}}>fine particles</TextHighlighters> (PM10) being 20 µg / m3 per year, this plot of the monthly values show, that Zurich’s evening skies can actually be more <TextHighlighters style={{backgroundColor: AirRedDark}}>«crimson»</TextHighlighters> than average data might suggest.
-                    </Paragraph>
-                </ParagraphArea>
-                <VisualizationMain>
-                    <VisualizationArea ref={target}>
-                        {isThingIntersecting && <Limits Animation={isThingIntersecting} stations={props.detailMonthly} />}
-                    </VisualizationArea>
-                </VisualizationMain>
-            </Chapter>
-            </>
-    );
-  };
+//     return (
+//         <>
+//         <Heading>… call to action!</Heading>
+//         <Chapter>
+//                 <ParagraphArea>
+//                     <Paragraph>
+//                     With the limit value for <TextHighlighters style={{backgroundColor: AirRedDark}}>fine particles</TextHighlighters> (PM10) being 20 µg / m3 per year, this plot of the monthly values show, that Zurich’s evening skies can actually be more <TextHighlighters style={{backgroundColor: AirRedDark}}>«crimson»</TextHighlighters> than average data might suggest.
+//                     </Paragraph>
+//                 </ParagraphArea>
+//                 <VisualizationMain>
+//                     <VisualizationArea ref={target}>
+//                     </VisualizationArea>
+//                 </VisualizationMain>
+//             </Chapter>
+//             </>
+//     );
+//   };
 
   // Initiatives
 
