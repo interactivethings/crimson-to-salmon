@@ -52,14 +52,14 @@ export const VizWrapper = styled('div')`
 export const Heading = styled('h1')`
     font-size: 2.5rem;
     font-weight: 700;
-    line-height: 120%;
+    line-height: 150%;
     color: ${TextColor};
     margin: 15vh 0 0 0;
 `
 
 export const Paragraph = styled('p')`
     font-size: 1.5rem;
-    line-height: 120%;
+    line-height: 130%;
     color: ${TextColor};
 
     //   @media (max-width: ${small}px)  {
@@ -77,7 +77,7 @@ export const Paragraph = styled('p')`
 
 export const FooterParagraph = styled('p')`
     font-size: 1.5rem;
-    line-height: 120%;
+    line-height: 130%;
     color: ${TextColor};
     margin: 1.2rem 0 0 0;
 
@@ -96,31 +96,31 @@ export const FooterParagraph = styled('p')`
 
 export const LegendLabel = styled('p')`
     font-size: 1em;
-    line-height: 120%;
+    line-height: 130%;
     color: ${LegendLabelColor}
 `
 
 export const LegendItem = styled('p')`
     font-size: 1em;
-    line-height: 120%;
+    line-height: 130%;
     color: ${LegendLabelColor};
 `
 
 export const VizItem = styled('p')`
     font-size: 1em;
-    line-height: 120%;
+    line-height: 130%;
     color: ${VizLabelColor};
 `
 
 export const LegendItemSmall = styled('p')`
     font-size: 0.8em;
-    line-height: 120%;
+    line-height: 130%;
     color: ${LegendLabelColor};
 `
 
 export const VizItemSmall = styled('p')`
     font-size: 0.8em;
-    line-height: 120%;
+    line-height: 130%;
     color: ${VizLabelColor};
     margin: 0 0 0 0.2rem;
 `
@@ -137,7 +137,7 @@ export const IntroHeading = styled('div')`
 export const Intro1 = styled('h1')`
     position: absolute;
     top: 10vh;
-    line-height: 120%;
+    line-height: 130%;
 
     @media (max-width: ${small}px)  {
         left: 10vw;   
@@ -154,7 +154,7 @@ export const Intro1 = styled('h1')`
 
 export const Intro2 = styled('h1')`
     position: absolute;
-    line-height: 120%;
+    line-height: 130%;
     top: 40vh;
     left: 40vw;
 

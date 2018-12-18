@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from '@emotion/styled'
-import { IntroHeading, Intro1, Intro2, AirRedDark, SunRed, AirBlueLight } from 'src/materials/materials';
+import { IntroHeading, Intro1, Intro2, AirRedDark, SunRed, AirBlueLight, MainRed } from 'src/materials/materials';
 import { TextHighlighters } from 'src/Main';
 
 export const IntroWrapper = styled('div')`
@@ -12,13 +12,13 @@ export const IntroWrapper = styled('div')`
 export const BackgroundVideo = styled('video')`
     width: 100vw;
     height: 100vh;
+    background-color: ${MainRed};
     object-fit: cover;
-    overflow-x: hidden;
 `
 
 export const ColorSwatch = styled('div')`
-    width: 5vw;
-    height: 10vh;
+    width: 100px;
+    height: 100px;
     position: absolute;
 `
 
