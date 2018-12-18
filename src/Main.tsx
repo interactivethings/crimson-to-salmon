@@ -8,7 +8,7 @@ import { Country, TwentyCountries } from './components/Countries';
 import { Initiatives } from './components/Initiatives';
 import { Sun } from './components/Sun';
 import { Station, Switzerland, Zurich, Limits, LimitValues } from './components/Zurich';
-import { Paragraph, Heading, AirBlue, SunRed, SunYellow, AirBlueLight, SunBlue, AirRedDark } from './materials/materials';
+import { Paragraph, Heading, AirBlue, SunRed, SunYellow, AirBlueLight, SunBlue, AirRedDark, MainRed } from './materials/materials';
 import { useRef } from "react";
 import { Conclusion } from './components/Footer';
 const { useInView } = require("react-intersection-observer")
@@ -20,6 +20,34 @@ export const MainRoot = styled('div')`
     justify-content: center;
     align-items: center;
     position: relative;
+`
+
+export const MainRootTop = styled('div')`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: rgb(255,85,85); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(255,85,85,0.95) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255,85,85,0.95) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255,85,85,0.95) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5555', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+`
+
+export const MainRootBottom = styled('div')`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: linear-gradient(to top, rgba(255,85,85,0.95), rgba(255,255,255,0));
+
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,85,85,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,85,85,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,85,85,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ff5555',GradientType=0 ); /* IE6-9 */
 `
 
 export const Chapter = styled('section')`
@@ -70,24 +98,46 @@ export const TextHighlighters = styled('span')`
     padding: 0 2px 0 2px;
 `
 
+export const Separator = styled('div')`
+    background-color: ${MainRed};
+`
+
 export class Main extends React.Component<{data: Country[], detailMonthly: Station[]}> {    
   public render() {
     return (
       <>
       <Intro/>
-        <MainRoot>
+        <MainRootTop>
             <Chapter1 />
             <Chapter2 />
+        </MainRootTop>
+        <MainRoot>
             <Chapter3 />
-            <Chapter4 />
-            <Chapter5 />
-            <Chapter6 data={this.props.data}/>
-            <Chapter7 />
-            <Chapter8 detailMonthly={this.props.detailMonthly}/>
-            {/* <Chapter9 detailMonthly={this.props.detailMonthly}/> */}
-            <Chapter10 />
-            <Chapter11 />
         </MainRoot>
+        <MainRoot>
+            <Chapter4 />
+        </MainRoot>
+        <MainRoot>
+            <Chapter5 />
+        </MainRoot>
+        <MainRoot>
+            <Chapter6 data={this.props.data}/>
+        </MainRoot>
+        <MainRoot>
+            <Chapter7 />
+        </MainRoot>
+        <MainRoot>
+            <Chapter8 detailMonthly={this.props.detailMonthly}/>
+        </MainRoot>
+        <MainRoot>
+            {/* <Chapter9 detailMonthly={this.props.detailMonthly}/> */}
+        </MainRoot>
+        <MainRoot>
+            <Chapter10 />
+        </MainRoot>
+        <MainRootBottom>
+            <Chapter11 />
+        </MainRootBottom>
       </>
     );
   }
@@ -387,6 +437,7 @@ const Chapter4 = () => {
   
     return (
         <>
+            
             <Heading>Methodology</Heading>
             <Conclusion ref={target}/>
         </>

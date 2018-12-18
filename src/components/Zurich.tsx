@@ -2,7 +2,7 @@ import * as React from 'react';
 import { VizWrapper, ElementTitle, MainRed, AirBlueLight, VizItemSmall, LegendItem, VizItem } from 'src/materials/materials';
 import { SquareWrapper } from 'src/components/Countries';
 import ZurichGradientSVG  from '../zh_gradient.svg';
-import DetailGradientSVG from '../detail_gradient.svg'
+import DetailGradientSVG from '../detail_gradient.svg';
 import { Legend } from './Legends';
 import styled from '@emotion/styled-base';
 import { scaleLinear } from 'd3-scale';

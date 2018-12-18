@@ -80,7 +80,6 @@ export const FooterParagraph = styled('p')`
     line-height: 120%;
     color: ${TextColor};
     margin: 1.2rem 0 0 0;
-    display: block;
 
     //   @media (max-width: ${small}px)  {
     //       font-size: 1rem;
