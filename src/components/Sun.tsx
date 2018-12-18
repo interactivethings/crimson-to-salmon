@@ -324,8 +324,8 @@ export class Sun extends React.Component<{ runAnimation: boolean }> {
 //
 
 const Rays = keyframes`
-  from, 0% {
-    opacity: 0.7;
+  0% {
+    opacity: 0;
   }
 
   100% {
@@ -341,8 +341,9 @@ export const SunElement = styled('div')`
   border-radius: 17.5px;
   background-color: ${SunYellow};
   animation-name: ${Rays};
-  animation-duration: 3s infinite;
-  animation-transition: ease;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
   animation-delay: ${(props: {delay: number}) => props.delay}ms;
   animation-fill-mode: forwards;
 `
