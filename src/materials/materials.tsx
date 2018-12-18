@@ -75,6 +75,26 @@ export const Paragraph = styled('p')`
     //   };
 `
 
+export const FooterParagraph = styled('p')`
+    font-size: 1.5rem;
+    line-height: 120%;
+    color: ${TextColor};
+    margin: 1.2rem 0 0 0;
+    display: block;
+
+    //   @media (max-width: ${small}px)  {
+    //       font-size: 1rem;
+    //   };
+
+    //   @media (min-width: ${small}px) and (max-width: ${medium}px) {
+    //       font-size: 1.1rem;
+    //   };
+
+    //   @media (min-width: ${medium}px) {
+    //       font-size: 1.2rem;
+    //   };
+`
+
 export const LegendLabel = styled('p')`
     font-size: 1em;
     line-height: 120%;

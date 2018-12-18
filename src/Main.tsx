@@ -10,6 +10,7 @@ import { Sun } from './components/Sun';
 import { Station, Switzerland, Zurich, Limits, LimitValues } from './components/Zurich';
 import { Paragraph, Heading, AirBlue, SunRed, SunYellow, AirBlueLight, SunBlue, AirRedDark } from './materials/materials';
 import { useRef } from "react";
+import { Conclusion } from './components/Footer';
 const { useInView } = require("react-intersection-observer")
 
 
@@ -386,16 +387,8 @@ const Chapter4 = () => {
   
     return (
         <>
-        <Heading>Methodology</Heading>
-        <Chapter ref={target}>
-                    <Paragraph>
-                    Sources / Methodology
-                    This reduction is essential for all of us, as 2050 marks the point of no return for our climate. This means there is no way of reversing or stopping the effects of climate change which brings direct existencial threats to every living being.
-                    </Paragraph>
-                    <Paragraph >
-                    These are the top three initiatives I stumbled upon my research for this project which are adressing climate change very straightforward.
-                    </Paragraph>
-            </Chapter>
-            </>
+            <Heading>Methodology</Heading>
+            <Conclusion ref={target}/>
+        </>
     );
   };
