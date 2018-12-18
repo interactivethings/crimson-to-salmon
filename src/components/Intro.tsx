@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from '@emotion/styled'
-import { IntroHeading, Intro1, Intro2 } from 'src/materials/materials';
-import { small, medium } from 'src/materials/breakpoints';
+import { IntroHeading, Intro1, Intro2, AirRedDark, SunRed, AirBlueLight } from 'src/materials/materials';
+import { TextHighlighters } from 'src/Main';
 
 export const IntroWrapper = styled('div')`
     width: 100vw;
@@ -16,24 +16,10 @@ export const BackgroundVideo = styled('video')`
     overflow-x: hidden;
 `
 
-export const IntroGradient = styled('div')`
+export const ColorSwatch = styled('div')`
+    width: 5vw;
+    height: 10vh;
     position: absolute;
-    top: 20vh;
-    width: 10px;
-    height: 20vh;
-    background-color: black;
-
-    @media (max-width: ${small}px)  {
-        left: 30vw;   
-    };
-        
-    @media (min-width: ${small}px) and (max-width: ${medium}px) {
-        left: 50vw;
-    };
-
-    @media (min-width: ${medium}px) {
-        left: 60vh;
-    };
 `
 
 export class Intro extends React.Component {
@@ -41,13 +27,14 @@ export class Intro extends React.Component {
         return(
             <IntroWrapper>
                 <IntroHeading>
+                    <ColorSwatch style={{top: "75vh", left: "40vw", backgroundColor: AirBlueLight}}/>
+                    <ColorSwatch style={{top: "40vh", left: "10vw", backgroundColor: SunRed}}/>
+                    <ColorSwatch style={{top: "10vh", right: "10vw", backgroundColor: AirRedDark}}/>
                     <Intro1>
-                        From Crimson
+                        From <TextHighlighters style={{backgroundColor: AirRedDark}}>Crimson</TextHighlighters>
                     </Intro1>
-                    <IntroGradient />
-
                     <Intro2>
-                        To Salmon<br></br>
+                        To <TextHighlighters style={{backgroundColor: SunRed}}>Salmon</TextHighlighters><br></br>
                         In<br></br>
                         30 Years
                     </Intro2> 
