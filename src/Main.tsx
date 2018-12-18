@@ -246,11 +246,11 @@ const Chapter4 = () => {
         <>
         <Heading>Color shift of the evening sky</Heading>
         <Chapter>
-                <ParagraphArea style={{minHeight: "182vh"}}>
+                <ParagraphArea>
                     <Paragraph>
                     At sunset, <TextHighlighters style={{backgroundColor: SunYellow}}>sunlight</TextHighlighters> takes a much longer path through the atmosphere. This results in more encounters with <TextHighlighters style={{backgroundColor: AirBlueLight}}>air molecules</TextHighlighters> and thus, more scattering events of the <TextHighlighters style={{backgroundColor: SunBlue}}>blue</TextHighlighters> light. It literally gets «scattered out». 
                     </Paragraph> 
-                     <Paragraph style={{marginTop: "102vh"}}>
+                     <Paragraph style={{marginTop: "1.2rem"}}>
                      Although red light scatters poorly, this long distance leads to its scattering. Due to that, evening light that reaches an observer is noticeably <TextHighlighters style={{backgroundColor: SunRed}}>salmon</TextHighlighters>.
                     </Paragraph>
                 </ParagraphArea>
@@ -276,10 +276,10 @@ const Chapter4 = () => {
         <Chapter>
                 <ParagraphArea style={{minHeight: "182vh"}}>
                     <Paragraph>
-                    The compounds of air vary due to the constant burning of fossils by human kind. This leads to an increased emission of <TextHighlighters style={{backgroundColor: AirRedDark}}>fine particles</TextHighlighters> (PM10) in very small sizes (~10 µm = 0.01 mm) into the air. 
+                    The compounds of air vary due to the constant burning of fossils by human kind. This leads to an increased emission of <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>fine particles</TextHighlighters> (PM10) in very small sizes (~10 µm = 0.01 mm) into the air. 
                     </Paragraph>
                     <Paragraph style={{marginTop: "102vh"}}>
-                    Due to their size an composition, fine particles scatter the same way as natural <TextHighlighters style={{backgroundColor: AirBlue}}>Nitrogen</TextHighlighters> and <TextHighlighters style={{backgroundColor: AirBlue}}>Oxygen</TextHighlighters> would do — they scatter more red light. This leads to an intense <TextHighlighters style={{backgroundColor: AirRedDark}}>crimson</TextHighlighters> evening sky. 
+                    Due to their size an composition, fine particles scatter the same way as natural <TextHighlighters style={{backgroundColor: AirBlue}}>Nitrogen</TextHighlighters> and <TextHighlighters style={{backgroundColor: AirBlue}}>Oxygen</TextHighlighters> would do — they scatter more red light. This leads to an intense <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>crimson</TextHighlighters> evening sky. 
                     </Paragraph>
                 </ParagraphArea>
                 <VisualizationMain>
@@ -303,7 +303,7 @@ const Chapter4 = () => {
         <Chapter>
                 <ParagraphArea style={{minHeight: "158vh"}}>
                     <Paragraph>
-                    Worldwide, the color of the evening sky can look quite different. Here you can see an approximation of that color for 20 different countries around the world. The color is based on the average value of <TextHighlighters style={{backgroundColor: AirRedDark}}>PM10</TextHighlighters> measured in their large economic areas in 2016.
+                    Worldwide, the color of the evening sky can look quite different. Here you can see an approximation of that color for 20 different countries around the world. The color is based on the average value of <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>PM10</TextHighlighters> measured in their large economic areas in 2016.
                     </Paragraph>
                     <Paragraph style={{marginTop: "102vh"}}>
                     Seems like Switzerland is doing pretty good, right?
@@ -330,7 +330,7 @@ const Chapter4 = () => {
         <Chapter>
                 <ParagraphArea>
                     <Paragraph>
-                    More in detail, the minimum and maximum amounts of <TextHighlighters style={{backgroundColor: AirRedDark}}>fine particles</TextHighlighters> measured all across Switzerland creates a gradient of the different colored evening skies for the year 2016.
+                    More in detail, the minimum and maximum amounts of <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>fine particles</TextHighlighters> measured all across Switzerland creates a gradient of the different colored evening skies for the year 2016.
                     </Paragraph>
                 </ParagraphArea>
                 <VisualizationMain>
@@ -358,10 +358,10 @@ const Chapter4 = () => {
         <Chapter>
                 <ParagraphArea style={{minHeight: "158vh"}}>
                     <Paragraph>
-                    When applying this gradient to the monthly values of the three main measuring stations for <TextHighlighters style={{backgroundColor: AirRedDark}}>fine particles</TextHighlighters> of the city of Zurich, the official limit values are quickly exceeded.
+                    When applying this gradient to the monthly values of the three main measuring stations for <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>fine particles</TextHighlighters> of the city of Zurich, the official limit values are quickly exceeded.
                     </Paragraph>
                     <Paragraph style={{marginTop: "118vh"}} ref={target}>
-                    With the limit value for <TextHighlighters style={{backgroundColor: AirRedDark}}>fine particles</TextHighlighters> (PM10) being 20 µg / m3 per year, this plot of the monthly values show, that Zurich’s evening skies can actually be more <TextHighlighters style={{backgroundColor: AirRedDark}}>«crimson»</TextHighlighters> than average data might suggest.
+                    With the limit value for <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>fine particles</TextHighlighters> (PM10) being 20 µg / m3 per year, this plot of the monthly values show, that Zurich’s evening skies can actually be more <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>«crimson»</TextHighlighters> than average data might suggest.
                     </Paragraph>
                 </ParagraphArea>
                 <VisualizationMain>
@@ -419,7 +419,7 @@ const Chapter4 = () => {
                     But not all hope is lost…
                     </Paragraph>
                     <Paragraph style={{marginTop: "50vh"}}>
-                    These are three promising initiatives that are addressing the issue of air pollution and climate change in a straightforward way to reduce air pollution from <TextHighlighters style={{backgroundColor: AirRedDark}}>crimson</TextHighlighters> to <TextHighlighters style={{backgroundColor: SunRed}}>salmon</TextHighlighters> in 30 years.
+                    These are three promising initiatives that are addressing the issue of air pollution and climate change in a straightforward way to reduce air pollution from <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>crimson</TextHighlighters> to <TextHighlighters style={{backgroundColor: SunRed}}>salmon</TextHighlighters> in 30 years.
                     </Paragraph>
                 </ParagraphArea>
                 <VisualizationMain >

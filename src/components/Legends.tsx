@@ -25,7 +25,7 @@ export class GradientBar extends React.Component {
             <LegendScale style={{backgroundImage: "url(" + GradientSVG + ")"}}/>
                 <Legend>
                     <LegendItem>0</LegendItem>
-                    <LegendItem>⟶ Fine particle emission in 2016 (µg / m²)</LegendItem>
+                    <LegendItem>→ Fine particle emission in 2016 (µg / m²)</LegendItem>
                     <LegendItem>292</LegendItem>
                 </Legend>
             </>

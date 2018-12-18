@@ -39,7 +39,7 @@ export class Conclusion extends React.Component {
                     This project was created by me during the last month of my internship at <FooterLink href="https://www.interactivethings.com/">Interactive Things</FooterLink>, a Zurich based design studio for digital products and data visualization. 
                 </FooterParagraph>
                 <FooterParagraph>
-                    For my final project, I wanted to choose data sets which are provided by the Open Data Zurich initiative. It aims to provide public administration data free of charge, machine-readable and available under free license. This potentially enables every citizen to get access to information and as a designer and artist, our work is to make this data even more accessible for others.
+                    For this project, I chose data sets provided by the Open Data Zurich initiative. It aims to provide public administration data free of charge, machine-readable and available under free license. This potentially enables every citizen to get access to information and as a designer and artist, our work is to make this data even more accessible for others.
                 </FooterParagraph>
                 <FooterParagraph>
                     The topic of Umweltschutz, climate change, and sustainability are topics which I have a personal concern. 

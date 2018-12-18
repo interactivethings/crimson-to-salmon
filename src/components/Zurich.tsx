@@ -22,7 +22,7 @@ export class Switzerland extends React.Component {
             
                 <Legend>
                     <LegendItem>6.2</LegendItem>
-                    <LegendItem>⟶ Fine particle emission in 2016 (µg / m²)</LegendItem>
+                    <LegendItem>→ Fine particle emission in 2016 (µg / m²)</LegendItem>
                     <LegendItem>24</LegendItem>
                 </Legend>            
             </SquareWrapper>   
@@ -161,8 +161,8 @@ export class Zurich extends React.Component<Props> {
                     </VizWrapper>
                     <Legend>
                         <LegendItem>0</LegendItem>
-                        <LegendItem>⟶ Fine particle emission in 2016 (µg / m²)</LegendItem>
-                        <LegendItem>81.99</LegendItem>
+                        <LegendItem>→ Fine particle emission in 2016 (µg / m²)</LegendItem>
+                        <LegendItem>82</LegendItem>
                     </Legend>                
                 </SquareWrapper>
         );
