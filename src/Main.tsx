@@ -97,7 +97,6 @@ export const ParagraphArea = styled('div')`
         width: 35%;
         margin: 0 10vh 15vh 0;
         max-height: 700px;
-        min-height: 0;
     };  
 `;
 
@@ -105,8 +104,20 @@ export const VisualizationMain = styled('div')`
     display: flex;
     flex-wrap: no-wrap;
     justify-content: flex-start;
-    position: sticky;
-    top: 20vh;
+    
+
+    @media (max-width: ${small}px)  {
+        
+    };
+
+    @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        
+    };
+
+    @media (min-width: ${medium}px) {
+        position: sticky;
+        top: 20vh;
+    };
 `
 
 export const VisualizationArea = styled('div')`
@@ -183,11 +194,7 @@ export default Main;
 const Chapter1 = () => {
     const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
     const isThingIntersecting = useInView(target);
-    // const inView = useInView(target, {
-    //     /* Optional options */
-    //     threshold: 0.5,
-    //   })
-
+  
     // console.log(target, isThingIntersecting);
   
     return (
