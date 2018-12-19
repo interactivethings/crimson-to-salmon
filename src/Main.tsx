@@ -221,7 +221,7 @@ const Chapter1 = () => {
   const Chapter2 = () => {
     const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
     const isThingIntersecting = useInView(target);
-    
+
     
     return (
         <>
@@ -452,8 +452,7 @@ const Chapter4 = () => {
     const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
   
     return (
-        <>
-            
+        <>  
             <Heading>Methodology</Heading>
             <Conclusion ref={target}/>
         </>
