@@ -4,13 +4,14 @@ import { Intro, IntroText } from './components/Intro';
 import { Air } from './components/Air';
 import styled from '@emotion/styled-base';
 import { ScatteringBlue, ScatteringPolluted, ScatteringRed } from './components/Scattering';
-import { Country, TwentyCountries } from './components/Countries';
+import { Country, TwentyCountries, HighlightSwitzerland } from './components/Countries';
 import { Initiatives } from './components/Initiatives';
 import { Sun } from './components/Sun';
-import { Station, Switzerland, Zurich, Limits, LimitValues } from './components/Zurich';
+import { Station, Switzerland, Zurich, Limits } from './components/Zurich';
 import { Paragraph, Heading, AirBlue, SunRed, SunYellow, AirBlueLight, SunBlue, AirRedDark, MainRed } from './materials/materials';
 import { useRef } from "react";
-import { Conclusion } from './components/Footer';
+import { Conclusion, FooterLink } from './components/Footer';
+import { small, medium } from './materials/breakpoints';
 const { useInView } = require("react-intersection-observer")
 
 
@@ -53,28 +54,70 @@ export const MainRootBottom = styled('div')`
 export const Chapter = styled('section')`
     display: flex;
     flex-direction: row;
-    width: 70%;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin: 15vh 0 20vh 0;
     flex-wrap: wrap;
+    
+    @media (max-width: ${small}px)  {
+        width: 100%; 
+        justify-content: center;
+        margin: 15vh 0 10vh 0;  
+    };
+
+    @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        justify-content: center;
+        width: 90%;
+        margin: 15vh 0 5vh 0;
+    };
+
+    @media (min-width: ${medium}px) {
+        width: 70%;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 15vh 0 20vh 0;
+   };
 `
 
 export const ParagraphArea = styled('div')`
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    width: 35%;
-    margin: 0 10vh 15vh 0;
-    max-height: 700px;
+
+    @media (max-width: ${small}px)  {
+        width: 85%; 
+        justify-content: center;
+        align-items: center;   
+    };
+
+    @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        justify-content: center;
+        align-items: center; 
+        width: 70%;
+    };
+
+    @media (min-width: ${medium}px) {
+        justify-content: flex-start;
+        width: 35%;
+        margin: 0 10vh 15vh 0;
+        max-height: 700px;
+    };  
 `;
 
 export const VisualizationMain = styled('div')`
     display: flex;
     flex-wrap: no-wrap;
     justify-content: flex-start;
-    position: sticky;
-    top: 20vh;
+    
+
+    @media (max-width: ${small}px)  {
+        
+    };
+
+    @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        
+    };
+
+    @media (min-width: ${medium}px) {
+        position: sticky;
+        top: 20vh;
+    };
 `
 
 export const VisualizationArea = styled('div')`
@@ -95,7 +138,7 @@ export const LegendArea = styled('div')`
 
 export const TextHighlighters = styled('span')`
     border-radius: 5px;
-    padding: 0 2px 0 2px;
+    padding: 0 5px 0 5px;
 `
 
 export const Separator = styled('div')`
@@ -151,11 +194,7 @@ export default Main;
 const Chapter1 = () => {
     const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
     const isThingIntersecting = useInView(target);
-    // const inView = useInView(target, {
-    //     /* Optional options */
-    //     threshold: 0.5,
-    //   })
-
+  
     // console.log(target, isThingIntersecting);
   
     return (
@@ -166,7 +205,7 @@ const Chapter1 = () => {
             <Paragraph>
             Air is made up of only five gases: Nitrogen (N₂), Oxygen (O₂),  Argon (Ar), and Carbon Dioxide (CO₂). Several other compounds, such as natural Ozone (O₃), are also present.
             </Paragraph>
-            <Paragraph style={{marginTop: "102vh"}}>
+            <Paragraph style={{marginTop: "90vh"}}>
             Scientists also refer to this pure and natural gas mixture as <TextHighlighters style={{backgroundColor: AirBlue}}>«dry air».</TextHighlighters> 
             </Paragraph>
         </ParagraphArea>
@@ -223,7 +262,7 @@ const Chapter1 = () => {
                     <Paragraph>
                     «Rayleigh scattering» describes the behaviour of moleclues in the atmosphere when interacting with  incident light. This works better for smaller particles compared to the wavelength of the light, as <TextHighlighters style={{backgroundColor: SunBlue}}>shorter</TextHighlighters> wavelengths scatter more effectively than <TextHighlighters style={{backgroundColor: SunRed}}>longer</TextHighlighters> wavelengths.
                     </Paragraph> 
-                    <Paragraph style={{marginTop: "102vh"}}>
+                    <Paragraph style={{marginTop: "88vh"}}>
                     <TextHighlighters style={{backgroundColor: AirBlueLight}}>Air molecules</TextHighlighters> are closer in size to <TextHighlighters style={{backgroundColor: SunBlue}}>short</TextHighlighters> wavelengths of violet and blue light. Therefore, pure air scatters them three times more effectively than it does <TextHighlighters style={{backgroundColor: SunRed}}>red light</TextHighlighters>. This results in the <TextHighlighters style={{backgroundColor: AirBlue}}>blue</TextHighlighters> of the daytime sky.
                     </Paragraph> 
                 </ParagraphArea>
@@ -277,9 +316,9 @@ const Chapter4 = () => {
         <Chapter>
                 <ParagraphArea style={{minHeight: "182vh"}}>
                     <Paragraph>
-                    The compounds of air vary due to the constant burning of fossils by human kind. This leads to an increased emission of <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>fine particles</TextHighlighters> (PM10) in very small sizes (~10 µm = 0.01 mm) into the air. 
+                    The compounds of air vary due to the constant burning of fossils by human kind. This leads to an increased emission of <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>fine particles</TextHighlighters> or «particulate matter» (PM10) in very small sizes (~10 µm = 0.01 mm) into the air. 
                     </Paragraph>
-                    <Paragraph style={{marginTop: "102vh"}}>
+                    <Paragraph style={{marginTop: "88vh"}}>
                     Due to their size an composition, fine particles scatter the same way as natural <TextHighlighters style={{backgroundColor: AirBlue}}>Nitrogen</TextHighlighters> and <TextHighlighters style={{backgroundColor: AirBlue}}>Oxygen</TextHighlighters> would do — they scatter more red light. This leads to an intense <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>crimson</TextHighlighters> evening sky. 
                     </Paragraph>
                 </ParagraphArea>
@@ -297,6 +336,10 @@ const Chapter4 = () => {
 
   const Chapter6 = (props: {data: Array<Country>; }) => {
     const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
+    const isThingIntersecting = useInView(target);
+
+    console.log(target, isThingIntersecting)
+
   
     return (
         <>
@@ -306,13 +349,14 @@ const Chapter4 = () => {
                     <Paragraph>
                     Worldwide, the color of the evening sky can look quite different. Here you can see an approximation of that color for 20 different countries around the world. The color is based on the average value of <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>PM10</TextHighlighters> measured in their large economic areas in 2016.
                     </Paragraph>
-                    <Paragraph style={{marginTop: "102vh"}}>
+                    <Paragraph style={{marginTop: "85vh"}} ref={target}>
                     Seems like Switzerland is doing pretty good, right?
                     </Paragraph>
                 </ParagraphArea>
                 <VisualizationMain>
-                    <VisualizationArea  ref={target}>
+                    <VisualizationArea >
                         <TwentyCountries countries={props.data}/>
+                        {isThingIntersecting && <HighlightSwitzerland runAnimation={isThingIntersecting} />}
                     </VisualizationArea>
                 </VisualizationMain>
             </Chapter>
@@ -335,7 +379,7 @@ const Chapter4 = () => {
                     </Paragraph>
                 </ParagraphArea>
                 <VisualizationMain>
-                    <VisualizationArea ref={target}>
+                    <VisualizationArea>
                         <Switzerland />
                     </VisualizationArea>
                 </VisualizationMain>
@@ -353,8 +397,6 @@ const Chapter4 = () => {
     const isThingIntersecting = useInView(target);
     const limitThingIntersecting = useInView(limitTarget);
 
-
-    console.log(limitTarget, limitThingIntersecting)
   
     return (
         <>
@@ -364,8 +406,8 @@ const Chapter4 = () => {
                     <Paragraph>
                     When applying this gradient to the monthly values of the three main measuring stations for <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>fine particles</TextHighlighters> of the city of Zurich, the official limit values are quickly exceeded.
                     </Paragraph>
-                    <Paragraph style={{marginTop: "118vh"}} ref={limitTarget}>
-                    With the limit value for <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>fine particles</TextHighlighters> (PM10) being 20 µg / m3 per year, this plot of the monthly values show, that Zurich’s evening skies can actually be more <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>«crimson»</TextHighlighters> than average data might suggest.
+                    <Paragraph style={{marginTop: "98vh"}} ref={limitTarget}>
+                    The longterm limit value for <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>fine particles</TextHighlighters> (PM10) being 20 µg / m3 per year, this plot of the monthly values shows that Zurich’s evening skies can actually be more <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>«crimson»</TextHighlighters> than average data might suggest.
                     </Paragraph>
                 </ParagraphArea>
                 <VisualizationMain>
@@ -379,33 +421,6 @@ const Chapter4 = () => {
     );
   };
 
-
-// Limit Values
-
-// const Chapter9 = (props: {detailMonthly: Array<Station>; }) => {
-//     const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
-//     const isThingIntersecting = useInView(target);
-
-//     console.log(target, isThingIntersecting)
-  
-//     return (
-//         <>
-//         <Heading>… call to action!</Heading>
-//         <Chapter>
-//                 <ParagraphArea>
-//                     <Paragraph>
-//                     With the limit value for <TextHighlighters style={{backgroundColor: AirRedDark}}>fine particles</TextHighlighters> (PM10) being 20 µg / m3 per year, this plot of the monthly values show, that Zurich’s evening skies can actually be more <TextHighlighters style={{backgroundColor: AirRedDark}}>«crimson»</TextHighlighters> than average data might suggest.
-//                     </Paragraph>
-//                 </ParagraphArea>
-//                 <VisualizationMain>
-//                     <VisualizationArea ref={target}>
-//                     </VisualizationArea>
-//                 </VisualizationMain>
-//             </Chapter>
-//             </>
-//     );
-//   };
-
   // Initiatives
 
   const Chapter10 = () => {
@@ -417,13 +432,13 @@ const Chapter4 = () => {
         <Chapter>
                 <ParagraphArea style={{minHeight: "180vh"}}>
                     <Paragraph>
-                    The reduction of fine particle emissions is essential for all of us, as the year 2050 marks a point of no return for our climate. This means there is no way of reversing or stopping the effects of climate change, which will bring direct existential threats to every living being.
+                    The reduction of fine particle emissions is essential for all of us, as the year 2035 marks a point of no return for our climate. This means there is no way of reversing or stopping the effects of climate change, which will bring direct existential threats to every living being.
                     </Paragraph>
                     <Paragraph style={{marginTop: "90vh"}}>
                     But not all hope is lost…
                     </Paragraph>
-                    <Paragraph style={{marginTop: "50vh"}}>
-                    These are three promising initiatives that are addressing the issue of air pollution and climate change in a straightforward way to reduce air pollution from <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>crimson</TextHighlighters> to <TextHighlighters style={{backgroundColor: SunRed}}>salmon</TextHighlighters> in 30 years.
+                    <Paragraph style={{marginTop: "25vh"}}>
+                    These are three promising initiatives that are addressing the issue of air pollution and climate change in a straightforward way to reduce air pollution from <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>crimson</TextHighlighters> to <TextHighlighters style={{backgroundColor: SunRed}}>salmon</TextHighlighters> in <FooterLink href="https://interestingengineering.com/climate-change-could-hit-the-point-of-no-return-in-2035-warn-scientists">16 years.</FooterLink>
                     </Paragraph>
                 </ParagraphArea>
                 <VisualizationMain >
