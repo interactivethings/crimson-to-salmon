@@ -52,12 +52,12 @@ export const VizWrapper = styled('div')`
 export const Heading = styled('h1')`
     font-size: 2.5rem;
     font-weight: 700;
-    line-height: 10%;
+    line-height: 130%;
     color: ${TextColor};
 
-    //   @media (max-width: ${small}px)  {
-    //       font-size: 1rem;
-    //   };
+    @media (max-width: ${small}px)  {
+        justify-content: center;
+    };
 
      @media (min-width: ${small}px) and (max-width: ${medium}px) {
         margin: 5vh 0 0 0;
