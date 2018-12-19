@@ -52,7 +52,7 @@ export const VizWrapper = styled('div')`
 export const Heading = styled('h1')`
     font-size: 2.5rem;
     font-weight: 700;
-    line-height: 150%;
+    line-height: 10%;
     color: ${TextColor};
     margin: 15vh 0 0 0;
 `
@@ -181,6 +181,14 @@ export const Intro4 = styled('h1')`
     @media (max-width: ${small}px)  {
        left: 20vw;
     };
+`
+
+export const IntroParagraph = styled('p')`
+    font-size: 2.5rem;
+    line-height: 130%;
+    color: ${TextColor};
+    text-align: center;
+    font-weight: 500;
 `
 
 // World

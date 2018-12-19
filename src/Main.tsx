@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './index.css';
-import { Intro } from './components/Intro';
+import { Intro, IntroText } from './components/Intro';
 import { Air } from './components/Air';
 import styled from '@emotion/styled-base';
 import { ScatteringBlue, ScatteringPolluted, ScatteringRed } from './components/Scattering';
@@ -108,6 +108,7 @@ export class Main extends React.Component<{data: Country[], detailMonthly: Stati
       <>
       <Intro/>
         <MainRootTop>
+            <IntroText />
             <Chapter1 />
             <Chapter2 />
         </MainRootTop>
