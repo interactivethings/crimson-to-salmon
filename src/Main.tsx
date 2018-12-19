@@ -166,7 +166,7 @@ const Chapter1 = () => {
             <Paragraph>
             Air is made up of only five gases: Nitrogen (N₂), Oxygen (O₂),  Argon (Ar), and Carbon Dioxide (CO₂). Several other compounds, such as natural Ozone (O₃), are also present.
             </Paragraph>
-            <Paragraph style={{marginTop: "102vh"}}>
+            <Paragraph style={{marginTop: "90vh"}}>
             Scientists also refer to this pure and natural gas mixture as <TextHighlighters style={{backgroundColor: AirBlue}}>«dry air».</TextHighlighters> 
             </Paragraph>
         </ParagraphArea>
@@ -223,7 +223,7 @@ const Chapter1 = () => {
                     <Paragraph>
                     «Rayleigh scattering» describes the behaviour of moleclues in the atmosphere when interacting with  incident light. This works better for smaller particles compared to the wavelength of the light, as <TextHighlighters style={{backgroundColor: SunBlue}}>shorter</TextHighlighters> wavelengths scatter more effectively than <TextHighlighters style={{backgroundColor: SunRed}}>longer</TextHighlighters> wavelengths.
                     </Paragraph> 
-                    <Paragraph style={{marginTop: "102vh"}}>
+                    <Paragraph style={{marginTop: "88vh"}}>
                     <TextHighlighters style={{backgroundColor: AirBlueLight}}>Air molecules</TextHighlighters> are closer in size to <TextHighlighters style={{backgroundColor: SunBlue}}>short</TextHighlighters> wavelengths of violet and blue light. Therefore, pure air scatters them three times more effectively than it does <TextHighlighters style={{backgroundColor: SunRed}}>red light</TextHighlighters>. This results in the <TextHighlighters style={{backgroundColor: AirBlue}}>blue</TextHighlighters> of the daytime sky.
                     </Paragraph> 
                 </ParagraphArea>
@@ -279,7 +279,7 @@ const Chapter4 = () => {
                     <Paragraph>
                     The compounds of air vary due to the constant burning of fossils by human kind. This leads to an increased emission of <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>fine particles</TextHighlighters> or «particulate matter» (PM10) in very small sizes (~10 µm = 0.01 mm) into the air. 
                     </Paragraph>
-                    <Paragraph style={{marginTop: "102vh"}}>
+                    <Paragraph style={{marginTop: "88vh"}}>
                     Due to their size an composition, fine particles scatter the same way as natural <TextHighlighters style={{backgroundColor: AirBlue}}>Nitrogen</TextHighlighters> and <TextHighlighters style={{backgroundColor: AirBlue}}>Oxygen</TextHighlighters> would do — they scatter more red light. This leads to an intense <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>crimson</TextHighlighters> evening sky. 
                     </Paragraph>
                 </ParagraphArea>
@@ -310,7 +310,7 @@ const Chapter4 = () => {
                     <Paragraph>
                     Worldwide, the color of the evening sky can look quite different. Here you can see an approximation of that color for 20 different countries around the world. The color is based on the average value of <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>PM10</TextHighlighters> measured in their large economic areas in 2016.
                     </Paragraph>
-                    <Paragraph style={{marginTop: "102vh"}} ref={target}>
+                    <Paragraph style={{marginTop: "85vh"}} ref={target}>
                     Seems like Switzerland is doing pretty good, right?
                     </Paragraph>
                 </ParagraphArea>
@@ -367,7 +367,7 @@ const Chapter4 = () => {
                     <Paragraph>
                     When applying this gradient to the monthly values of the three main measuring stations for <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>fine particles</TextHighlighters> of the city of Zurich, the official limit values are quickly exceeded.
                     </Paragraph>
-                    <Paragraph style={{marginTop: "118vh"}} ref={limitTarget}>
+                    <Paragraph style={{marginTop: "98vh"}} ref={limitTarget}>
                     The longterm limit value for <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>fine particles</TextHighlighters> (PM10) being 20 µg / m3 per year, this plot of the monthly values shows that Zurich’s evening skies can actually be more <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>«crimson»</TextHighlighters> than average data might suggest.
                     </Paragraph>
                 </ParagraphArea>
@@ -398,7 +398,7 @@ const Chapter4 = () => {
                     <Paragraph style={{marginTop: "90vh"}}>
                     But not all hope is lost…
                     </Paragraph>
-                    <Paragraph style={{marginTop: "50vh"}}>
+                    <Paragraph style={{marginTop: "22vh"}}>
                     These are three promising initiatives that are addressing the issue of air pollution and climate change in a straightforward way to reduce air pollution from <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>crimson</TextHighlighters> to <TextHighlighters style={{backgroundColor: SunRed}}>salmon</TextHighlighters> in <FooterLink href="https://interestingengineering.com/climate-change-could-hit-the-point-of-no-return-in-2035-warn-scientists">16 years.</FooterLink>
                     </Paragraph>
                 </ParagraphArea>
