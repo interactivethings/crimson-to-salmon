@@ -41,7 +41,7 @@ export class Intro extends React.Component {
                     <Intro2>
                         To <TextHighlighters style={{backgroundColor: SunRed}}>Salmon</TextHighlighters><br></br>
                         In<br></br>
-                        30 Years
+                        16 Years
                     </Intro2> 
                     
                 </IntroHeading>
@@ -66,11 +66,11 @@ export class IntroText extends React.Component {
     render() {
         return(
             <IntroTextWrapper>
-                <IntroParagraph>
-                    Air pollutants are not only main reasons for severe health issues such as asthma or cancer, but also the main cause for global warming. Most of the time, these dangerous molecules are invisible to us. But their chemical properties in combination with their size create color shades when scattering the sun light. This generates a deadly color space for living beings and raises an essential question:<br />
-                    <br />
-                    What can colors in the sky tell us about air pollution?
-                </IntroParagraph>
+            <IntroParagraph>
+                Air pollutants are not only main reasons for severe health issues such as asthma or cancer, but also the main cause for global warming. Most of the time, these dangerous molecules are invisible to us. But their chemical properties in combination with their size create color shades when scattering the sun light. This generates a deadly color space for living beings and raises an essential question:<br />
+                <br />
+                What can colors in the sky tell us about air pollution?
+            </IntroParagraph>
             </IntroTextWrapper>
         );
     }

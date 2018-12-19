@@ -51,8 +51,8 @@ export class Initiatives extends React.Component {
                         <InitiativesElementSmall href="https://www.bloomberg.org/program/environment/climatechallenge/">
                             <InitiativesTitle>02<br></br>American Cities Climate Challenge</InitiativesTitle>
                         </InitiativesElementSmall>
-                        <InitiativesElementSmall href="https://exoplanets.interactivethings.io/">
-                            <InitiativesTitle>03<br></br>Local Initiative By The Citizen of Zurich</InitiativesTitle>
+                        <InitiativesElementSmall href="http://breathelife2030.org/solutions/actions-for-individuals/">
+                            <InitiativesTitle>03<br></br>Actions for Individuals to reduce your contribution and minimize the exposure</InitiativesTitle>
                         </InitiativesElementSmall>
                     </InitiativesElementRight>
                 </InitiativesElement>
