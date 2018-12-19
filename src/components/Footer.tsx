@@ -1,17 +1,42 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
 import { TextColor, MainRed, FooterParagraph, Heading, AirBlue, SunBlue, LegendLabelColor, VizLabelColor } from 'src/materials/materials';
+import { small, medium } from 'src/materials/breakpoints';
 
 export const FooterRoot = styled('div')`
     display: flex;
     flex-direction: column;
     max-width: 800px;
-    margin: 15vh 0 20vh 0;
+
+    @media (max-width: ${small}px)  {
+        width: 80%;
+        margin: 10vh 0 5vh 0;
+      };
+
+     @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        width: 80%;
+        margin: 10vh 0 15vh 0;
+    };
+
+    @media (min-width: ${medium}px) {
+        margin: 15vh 0 20vh 0;
+    };
 `
 
 export const Sources = styled('div')`
-    width: 50%;
     margin: 5rem 0 0 0;
+
+    @media (max-width: ${small}px)  {
+        width: 70%;
+    };
+
+    @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        width: 50%;
+    };
+
+    @media (min-width: ${medium}px) {
+        width: 50%;
+    };
 `
 
 export const FooterHeading = styled('h1')`

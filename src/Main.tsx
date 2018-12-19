@@ -141,10 +141,6 @@ export const TextHighlighters = styled('span')`
     padding: 0 5px 0 5px;
 `
 
-export const Separator = styled('div')`
-    background-color: ${MainRed};
-`
-
 export class Main extends React.Component<{data: Country[], detailMonthly: Station[]}> {    
   public render() {
     return (
@@ -225,6 +221,7 @@ const Chapter1 = () => {
   const Chapter2 = () => {
     const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
     const isThingIntersecting = useInView(target);
+    
     
     return (
         <>

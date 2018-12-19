@@ -111,22 +111,20 @@ export const Paragraph = styled('p')`
 // `
 
 export const FooterParagraph = styled('p')`
-    font-size: 1.5rem;
+    margin: 1.2rem 0 0 0;
     line-height: 130%;
     color: ${TextColor};
-    margin: 1.2rem 0 0 0;
+    font-size: 1.5rem;
 
-    //   @media (max-width: ${small}px)  {
-    //       font-size: 1rem;
-    //   };
+      @media (max-width: ${small}px)  {
+      };
 
-    //   @media (min-width: ${small}px) and (max-width: ${medium}px) {
-    //       font-size: 1.1rem;
-    //   };
+     @media (min-width: ${small}px) and (max-width: ${medium}px) {
+    };
 
-    //   @media (min-width: ${medium}px) {
-    //       font-size: 1.2rem;
-    //   };
+    @media (min-width: ${medium}px) {
+        font-size: 1.5rem;
+    };
 `
 
 export const LegendLabel = styled('p')`
