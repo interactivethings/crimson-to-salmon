@@ -11,6 +11,7 @@ import { Station, Switzerland, Zurich, Limits } from './components/Zurich';
 import { Paragraph, Heading, AirBlue, SunRed, SunYellow, AirBlueLight, SunBlue, AirRedDark, MainRed } from './materials/materials';
 import { useRef } from "react";
 import { Conclusion, FooterLink } from './components/Footer';
+import { small, medium } from './materials/breakpoints';
 const { useInView } = require("react-intersection-observer")
 
 
@@ -53,20 +54,51 @@ export const MainRootBottom = styled('div')`
 export const Chapter = styled('section')`
     display: flex;
     flex-direction: row;
-    width: 70%;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin: 15vh 0 20vh 0;
     flex-wrap: wrap;
+    
+    @media (max-width: ${small}px)  {
+        width: 100%; 
+        justify-content: center;
+        margin: 15vh 0 10vh 0;  
+    };
+
+    @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        justify-content: center;
+        width: 90%;
+        margin: 15vh 0 5vh 0;
+    };
+
+    @media (min-width: ${medium}px) {
+        width: 70%;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 15vh 0 20vh 0;
+   };
 `
 
 export const ParagraphArea = styled('div')`
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    width: 35%;
-    margin: 0 10vh 15vh 0;
-    max-height: 700px;
+
+    @media (max-width: ${small}px)  {
+        width: 85%; 
+        justify-content: center;
+        align-items: center;   
+    };
+
+    @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        justify-content: center;
+        align-items: center; 
+        width: 70%;
+    };
+
+    @media (min-width: ${medium}px) {
+        justify-content: flex-start;
+        width: 35%;
+        margin: 0 10vh 15vh 0;
+        max-height: 700px;
+        min-height: 0;
+    };  
 `;
 
 export const VisualizationMain = styled('div')`
@@ -398,7 +430,7 @@ const Chapter4 = () => {
                     <Paragraph style={{marginTop: "90vh"}}>
                     But not all hope is lost…
                     </Paragraph>
-                    <Paragraph style={{marginTop: "22vh"}}>
+                    <Paragraph style={{marginTop: "25vh"}}>
                     These are three promising initiatives that are addressing the issue of air pollution and climate change in a straightforward way to reduce air pollution from <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>crimson</TextHighlighters> to <TextHighlighters style={{backgroundColor: SunRed}}>salmon</TextHighlighters> in <FooterLink href="https://interestingengineering.com/climate-change-could-hit-the-point-of-no-return-in-2035-warn-scientists">16 years.</FooterLink>
                     </Paragraph>
                 </ParagraphArea>

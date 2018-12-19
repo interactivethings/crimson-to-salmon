@@ -54,26 +54,61 @@ export const Heading = styled('h1')`
     font-weight: 700;
     line-height: 10%;
     color: ${TextColor};
-    margin: 15vh 0 0 0;
-`
-
-export const Paragraph = styled('p')`
-    font-size: 1.5rem;
-    line-height: 130%;
-    color: ${TextColor};
 
     //   @media (max-width: ${small}px)  {
     //       font-size: 1rem;
     //   };
 
-    //   @media (min-width: ${small}px) and (max-width: ${medium}px) {
-    //       font-size: 1.1rem;
-    //   };
+     @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        margin: 5vh 0 0 0;
+        justify-content: center;
+    };
 
-    //   @media (min-width: ${medium}px) {
-    //       font-size: 1.2rem;
-    //   };
+      @media (min-width: ${medium}px) {
+        font-size: 2.5rem;
+        margin: 15vh 0 0 0;
+    };
 `
+
+export const Paragraph = styled('p')`
+    line-height: 130%;
+    color: ${TextColor};
+    font-size: 1.5rem;
+
+      @media (max-width: ${small}px)  {
+        justify-content: center;
+        margin: 1.2rem 0 8vh 0; 
+      };
+
+     @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        justify-content: center;
+        margin: 1.2rem 0 8vh 0; 
+    };
+
+    @media (min-width: ${medium}px) {
+            font-size: 1.5rem;
+    };
+`
+
+// export const Paragraph = styled('p')`
+//     color: ${TextColor};
+
+//     @media (max-width: ${small}px)  {
+//         font-size: 1.5rem;
+//         line-height: 130%;
+//      };
+
+//     @media (min-width: ${small}px) and (max-width: ${medium}px) {
+//         font-size: 1.5rem;
+//         line-height: 130%;
+//         width: 70%; 
+//         justify-content: center;
+//     };
+
+//     //   @media (min-width: ${medium}px) {
+//     //       font-size: 1.2rem;
+//     //   };
+// `
 
 export const FooterParagraph = styled('p')`
     font-size: 1.5rem;
@@ -132,63 +167,69 @@ export const IntroHeading = styled('div')`
     font-weight: 700;
     font-size: 5em;
     color: ${TextColor};
+
+    @media (max-width: ${small}px)  {
+        font-size: 2.8em;    
+    };
+
+    @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        font-size: 4em;  
+    };
 `
 
 export const Intro1 = styled('h1')`
     position: absolute;
-    top: 10vh;
+    top: 10%;
     line-height: 130%;
 
     @media (max-width: ${small}px)  {
-        left: 10vw;   
+        left: 15%;   
     };
         
     @media (min-width: ${small}px) and (max-width: ${medium}px) {
-        left: 20vw;
+        left: 20%;
     };
 
     @media (min-width: ${medium}px) {
-        left: 40vh;
+        left: 30%;
     };
 `
 
 export const Intro2 = styled('h1')`
     position: absolute;
     line-height: 130%;
-    top: 40vh;
-    left: 40vw;
+    top: 40%;
 
     @media (max-width: ${small}px)  {
-        left: 20vw;
+        left: 35%;
     };
-`
 
-export const Intro3 = styled('h1')`
-    position: absolute;
-    top: 45vh;
-    left: 40vw;
+    @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        left: 40%;
+    };
 
-    @media (max-width: ${small}px)  {
-        left: 20vw;
-      };
-`
-
-export const Intro4 = styled('h1')`
-    position: absolute;
-    top: 50vh;
-    left: 40vw;
-
-    @media (max-width: ${small}px)  {
-       left: 20vw;
+    @media (min-width: ${medium}px) {
+        left: 40%;
     };
 `
 
 export const IntroParagraph = styled('p')`
-    font-size: 2.5rem;
     line-height: 130%;
     color: ${TextColor};
     text-align: center;
     font-weight: 500;
+
+    @media (max-width: ${small}px)  {
+        font-size: 1.6em;  
+    };
+
+    @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        font-size: 2em;  
+    };
+
+    @media (min-width: ${medium}px) {
+        font-size: 2.5rem;
+    };
 `
 
 // World
