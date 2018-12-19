@@ -19,38 +19,11 @@ export const SquareWrapper = styled('div')`
     max-width: 700px;
 `
 
-
-// const ValueRangeBars =  => keyframes`
-//     from, 0% {
-//         width: 0;
-//     }
-
-//     100% {
-//         width: ${width}px;
-//     }
-// `
-
-// export const ValueRangeDetail= styled('div')`
-//     position: absolute;
-//     animation: ${(props: { bars: number }) => ValueRangeBars(props.bars)} 2s ease;
-//     `
-
 export const SquareElement = styled('div')`
     flex-basis: 20%;
     height: 175px;
     
 `
-// border: ${(props: {border: number}) => SwissHighlight(props.border)}px;
-
-// const SwissHighlight = (border: number) => keyframes`
-//     from, 70% {
-//         border: 0;
-//     }
-
-//     100% {
-//         border: ${border};
-//     }
-// `;
 
 const SwissHighlight = keyframes`
     from, 0% {
