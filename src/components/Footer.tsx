@@ -85,6 +85,12 @@ export class Conclusion extends React.Component {
                     For the global overview, the data was extracted from the application based on the <FooterLink href="https://www.who.int/airpollution/data/cities/en/">Ambient Air Quality Database</FooterLink> by the <FooterLink href="https://www.who.int/">WHO</FooterLink>. Detailed information about Switzerland and Zurich use a <FooterLink href="https://data.stadt-zuerich.ch/dataset/luftqualitaet-historisierte-messungen">monthly air quality assessment</FooterLink> by the <FooterLink href="https://www.stadt-zuerich.ch/gud/de/index/umwelt_energie.html">City of Zurich, Departement Health and Environment</FooterLink>. This data is provided by <FooterLink href="https://www.stadt-zuerich.ch/portal/de/index/ogd.html">Open Data Zurich</FooterLink>.
                 </FooterParagraph>
                 <FooterParagraph>
+                    Many thanks to <FooterLink href="https://www.linkedin.com/in/stephen-corfidi-7240623b">Stephen Corfidi</FooterLink> who essentially helped me understand the main aspects of scattering and sky colors. Mr. Corfidi is an affiliate of the NOAA <FooterLink href="https://www.noaa.gov/">National Oceanic and Atmospheric Administration</FooterLink>.
+                </FooterParagraph>
+                <FooterParagraph>
+                    Furthermore, thanks to Jörg Sintermann for providing me an understanding of Zurich's specific air quality and monitoring tasks. Mr. Sintermann is the head of <FooterLink href="https://awel.zh.ch/internet/baudirektion/awel/de/ueber_uns/organisation/lufthygiene.html">the monitoring unit</FooterLink> of the Department Air of the <FooterLink href="https://www.zh.ch/internet/de/home.html#news">City of Zurich</FooterLink>. 
+                </FooterParagraph>
+                <FooterParagraph>
                     Personally, the topic of environment protection, climate change, and sustainability are topics which I not only have a great personal concern about but are also important key questions of today's society. 
                 </FooterParagraph>
 

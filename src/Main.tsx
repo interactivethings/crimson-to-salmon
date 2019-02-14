@@ -8,7 +8,7 @@ import { Country, TwentyCountries, HighlightSwitzerland } from './components/Cou
 import { Initiatives } from './components/Initiatives';
 import { Sun } from './components/Sun';
 import { Station, Switzerland, Zurich, Limits } from './components/Zurich';
-import { Paragraph, Heading, AirBlue, SunRed, SunYellow, AirBlueLight, SunBlue, AirRedDark, MainRed } from './materials/materials';
+import { Paragraph, Heading, AirBlue, SunRed, SunYellow, AirBlueLight, SunBlue, AirRedDark, MainRed, ParagraphAir, ParagraphTwo, ParagraphDaytime, ParagraphPolluted, ParagraphGlobal, ParagraphCheckpoints, ParagraphInitiatives, ParagraphInitiativesTwo } from './materials/materials';
 import { useRef } from "react";
 import { Conclusion, FooterLink } from './components/Footer';
 import { small, medium } from './materials/breakpoints';
@@ -59,13 +59,13 @@ export const Chapter = styled('section')`
     @media (max-width: ${small}px)  {
         width: 100%; 
         justify-content: center;
-        margin: 15vh 0 10vh 0;  
+        margin: 6vh 0 5vh 0;  
     };
 
     @media (min-width: ${small}px) and (max-width: ${medium}px) {
         justify-content: center;
         width: 90%;
-        margin: 15vh 0 5vh 0;
+        margin: 6vh 0 5vh 0;
     };
 
     @media (min-width: ${medium}px) {
@@ -83,13 +83,13 @@ export const ParagraphArea = styled('div')`
     @media (max-width: ${small}px)  {
         width: 85%; 
         justify-content: center;
-        align-items: center;   
+        align-items: left; 
     };
 
     @media (min-width: ${small}px) and (max-width: ${medium}px) {
         justify-content: center;
-        align-items: center; 
-        width: 70%;
+        align-items: left; 
+        max-width: 950px;
     };
 
     @media (min-width: ${medium}px) {
@@ -97,6 +97,157 @@ export const ParagraphArea = styled('div')`
         width: 35%;
         margin: 0 10vh 15vh 0;
         max-height: 700px;
+    };  
+`;
+
+export const ParagraphAreaAir = styled('div')`
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: ${small}px)  {
+        width: 85%; 
+        justify-content: center;
+        align-items: left; 
+    };
+
+    @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        justify-content: center;
+        align-items: left; 
+        max-width: 950px;
+    };
+
+    @media (min-width: ${medium}px) {
+        justify-content: flex-start;
+        width: 35%;
+        margin: 0 10vh 15vh 0;
+        max-height: 700px;
+        min-height: 150vh;
+    };  
+`;
+
+export const ParagraphAreaDaytime = styled('div')`
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: ${small}px)  {
+        width: 85%; 
+        justify-content: center;
+        align-items: left; 
+    };
+
+    @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        justify-content: center;
+        align-items: left; 
+        max-width: 950px;
+    };
+
+    @media (min-width: ${medium}px) {
+        justify-content: flex-start;
+        width: 35%;
+        margin: 0 10vh 15vh 0;
+        max-height: 700px;
+        min-height: 186vh;
+    };  
+`;
+
+export const ParagraphAreaPolluted = styled('div')`
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: ${small}px)  {
+        width: 85%; 
+        justify-content: center;
+        align-items: left; 
+    };
+
+    @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        justify-content: center;
+        align-items: left; 
+        max-width: 950px;
+    };
+
+    @media (min-width: ${medium}px) {
+        justify-content: flex-start;
+        width: 35%;
+        margin: 0 10vh 15vh 0;
+        max-height: 700px;
+        min-height: 182vh;
+    };  
+`;
+
+export const ParagraphAreaGlobal = styled('div')`
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: ${small}px)  {
+        width: 85%; 
+        justify-content: center;
+        align-items: left; 
+    };
+
+    @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        justify-content: center;
+        align-items: left; 
+        max-width: 950px;
+    };
+
+    @media (min-width: ${medium}px) {
+        justify-content: flex-start;
+        width: 35%;
+        margin: 0 10vh 15vh 0;
+        max-height: 700px;
+        min-height: 182vh;
+    };  
+`;
+
+export const ParagraphAreaCheckpoints = styled('div')`
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: ${small}px)  {
+        width: 85%; 
+        justify-content: center;
+        align-items: left; 
+    };
+
+    @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        justify-content: center;
+        align-items: left; 
+        max-width: 950px;
+    };
+
+    @media (min-width: ${medium}px) {
+        justify-content: flex-start;
+        width: 35%;
+        margin: 0 10vh 15vh 0;
+        max-height: 700px;
+        min-height: 158vh;
+    };  
+`;
+
+
+export const ParagraphAreaInitiatives = styled('div')`
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: ${small}px)  {
+        width: 85%; 
+        justify-content: center;
+        align-items: left; 
+    };
+
+    @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        justify-content: center;
+        align-items: left; 
+        max-width: 950px;
+    };
+
+    @media (min-width: ${medium}px) {
+        justify-content: flex-start;
+        width: 35%;
+        margin: 0 10vh 15vh 0;
+        max-height: 700px;
+        min-height: 180vh;
     };  
 `;
 
@@ -116,7 +267,7 @@ export const VisualizationMain = styled('div')`
 
     @media (min-width: ${medium}px) {
         position: sticky;
-        top: 20vh;
+        top: 10%;
     };
 `
 
@@ -197,14 +348,14 @@ const Chapter1 = () => {
         <>
         <Heading>Composition of our air</Heading>
         <Chapter>
-        <ParagraphArea style={{ minHeight: "150vh"}}>
+        <ParagraphAreaAir>
             <Paragraph>
-            Air is made up of only five gases: Nitrogen (N₂), Oxygen (O₂),  Argon (Ar), and Carbon Dioxide (CO₂). Several other compounds, such as natural Ozone (O₃), are also present.
+            Air is made up of only five main gases: Nitrogen (N₂), Oxygen (O₂), Argon (Ar), and Carbon Dioxide (CO₂). Several other compounds, such as natural Ozone (O₃), are also present. Additionally, air contains a huge amount of water vapor. 
             </Paragraph>
-            <Paragraph style={{marginTop: "90vh"}}>
+            <ParagraphAir>
             Scientists also refer to this pure and natural gas mixture as <TextHighlighters style={{backgroundColor: AirBlue}}>«dry air».</TextHighlighters> 
-            </Paragraph>
-        </ParagraphArea>
+            </ParagraphAir>
+        </ParagraphAreaAir>
         <VisualizationMain>
             <VisualizationArea ref={target}>
             {isThingIntersecting && <Air runAnimation={isThingIntersecting}/> }
@@ -229,11 +380,11 @@ const Chapter1 = () => {
         <Chapter>      
             <ParagraphArea>
                 <Paragraph>
-                <TextHighlighters style={{backgroundColor: SunYellow}}>Sunlight</TextHighlighters>, on the contrary, is composed of a spectrum of colors, ranging from <TextHighlighters style={{backgroundColor: SunBlue}}>short</TextHighlighters> wavelengths (~300 nm) which are perceived as purplish-blue, to <TextHighlighters style={{backgroundColor: SunRed}}>longer</TextHighlighters>  wavelengths (~700 nm), perceived as red.
+                <TextHighlighters style={{backgroundColor: SunYellow}}>Sunlight</TextHighlighters>, in contrast, is composed of a spectrum of colors, ranging from <TextHighlighters style={{backgroundColor: SunBlue}}>short</TextHighlighters> wavelengths (~300 nm) which are perceived as purplish-blue, to <TextHighlighters style={{backgroundColor: SunRed}}>longer</TextHighlighters>  wavelengths (~700 nm), perceived as red.
                 </Paragraph>
-                <Paragraph style={{marginTop: "1.2rem"}}>
+                <ParagraphTwo>
                     All colors together are perceived as a yellowish white.
-                </Paragraph>
+                </ParagraphTwo>
             </ParagraphArea>
             <VisualizationMain>
                 <VisualizationArea ref={target}>
@@ -255,14 +406,14 @@ const Chapter1 = () => {
             <>
             <Heading>Color of our daytime sky</Heading>
             <Chapter >
-                <ParagraphArea style={{minHeight: "182vh"}}>
+                <ParagraphAreaDaytime>
                     <Paragraph>
                     «Rayleigh scattering» describes the behaviour of moleclues in the atmosphere when interacting with  incident light. This works better for smaller particles compared to the wavelength of the light, as <TextHighlighters style={{backgroundColor: SunBlue}}>shorter</TextHighlighters> wavelengths scatter more effectively than <TextHighlighters style={{backgroundColor: SunRed}}>longer</TextHighlighters> wavelengths.
                     </Paragraph> 
-                    <Paragraph style={{marginTop: "88vh"}}>
-                    <TextHighlighters style={{backgroundColor: AirBlueLight}}>Air molecules</TextHighlighters> are closer in size to <TextHighlighters style={{backgroundColor: SunBlue}}>short</TextHighlighters> wavelengths of violet and blue light. Therefore, pure air scatters them three times more effectively than it does <TextHighlighters style={{backgroundColor: SunRed}}>red light</TextHighlighters>. This results in the <TextHighlighters style={{backgroundColor: AirBlue}}>blue</TextHighlighters> of the daytime sky.
-                    </Paragraph> 
-                </ParagraphArea>
+                    <ParagraphDaytime>
+                    <TextHighlighters style={{backgroundColor: AirBlueLight}}>Air molecules</TextHighlighters> are closer in size to <TextHighlighters style={{backgroundColor: SunBlue}}>short</TextHighlighters> wavelengths of violet and blue light. As a result, pure air scatters blue light three times more effectively than it does <TextHighlighters style={{backgroundColor: SunRed}}>red light</TextHighlighters> — thereby yielding the <TextHighlighters style={{backgroundColor: AirBlue}}>blue</TextHighlighters> of the daytime sky.
+                    </ParagraphDaytime> 
+                </ParagraphAreaDaytime>
                 <VisualizationMain>
                     <VisualizationArea ref={target}>
                         {isThingIntersecting && <ScatteringBlue Animation={isThingIntersecting}/>}
@@ -287,9 +438,9 @@ const Chapter4 = () => {
                     <Paragraph>
                     At sunset, <TextHighlighters style={{backgroundColor: SunYellow}}>sunlight</TextHighlighters> takes a much longer path through the atmosphere. This results in more encounters with <TextHighlighters style={{backgroundColor: AirBlueLight}}>air molecules</TextHighlighters> and thus, more scattering events of the <TextHighlighters style={{backgroundColor: SunBlue}}>blue</TextHighlighters> light. It literally gets «scattered out». 
                     </Paragraph> 
-                     <Paragraph style={{marginTop: "1.2rem"}}>
-                     Although red light scatters poorly, this long distance leads to its scattering. Due to that, evening light that reaches an observer is noticeably <TextHighlighters style={{backgroundColor: SunRed}}>salmon</TextHighlighters>.
-                    </Paragraph>
+                     <ParagraphTwo>
+                     Although red light scatters comparatively poorly, this long distance leads to increased scattering. Due to that, evening light that reaches an observer is noticeably <TextHighlighters style={{backgroundColor: SunRed}}>salmon</TextHighlighters>.
+                    </ParagraphTwo>
                 </ParagraphArea>
                 <VisualizationMain>
                     <VisualizationArea ref={target}>
@@ -311,14 +462,14 @@ const Chapter4 = () => {
         <>
         <Heading>Toxical color enhancement</Heading>
         <Chapter>
-                <ParagraphArea style={{minHeight: "182vh"}}>
+                <ParagraphAreaPolluted>
                     <Paragraph>
-                    The compounds of air vary due to the constant burning of fossils by human kind. This leads to an increased emission of <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>fine particles</TextHighlighters> or «particulate matter» (PM10) in very small sizes (~10 µm = 0.01 mm) into the air. 
+                    The particulate load of the atmosphere varies from place to place due to variations in local pollution sources. While natural sources of particles do exist, human-generated emissions locally can increase the amount of <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>fine particles</TextHighlighters> or «particulate matter» (PM10) of very small sizes (~10 µm = 0.01 mm) in the air. 
                     </Paragraph>
-                    <Paragraph style={{marginTop: "88vh"}}>
-                    Due to their size an composition, fine particles scatter the same way as natural <TextHighlighters style={{backgroundColor: AirBlue}}>Nitrogen</TextHighlighters> and <TextHighlighters style={{backgroundColor: AirBlue}}>Oxygen</TextHighlighters> would do — they scatter more red light. This leads to an intense <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>crimson</TextHighlighters> evening sky. 
-                    </Paragraph>
-                </ParagraphArea>
+                    <ParagraphPolluted>
+                    Due to their size an composition, the fine particles increase the scattering and absorption of light in the atmosphere. This weakens the sunlight, imparting a more <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>crimson</TextHighlighters> color to the evening sky. 
+                    </ParagraphPolluted>
+                </ParagraphAreaPolluted>
                 <VisualizationMain>
                     <VisualizationArea ref={target}>
                         {isThingIntersecting && <ScatteringPolluted Animation={isThingIntersecting}/>}
@@ -342,14 +493,14 @@ const Chapter4 = () => {
         <>
         <Heading>Global evening skies</Heading>
         <Chapter>
-                <ParagraphArea style={{minHeight: "158vh"}}>
+                <ParagraphAreaGlobal>
                     <Paragraph>
                     Worldwide, the color of the evening sky can look quite different. Here you can see an approximation of that color for 20 different countries around the world. The color is based on the average value of <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>PM10</TextHighlighters> measured in their large economic areas in 2016.
                     </Paragraph>
-                    <Paragraph style={{marginTop: "85vh"}} ref={target}>
+                    <ParagraphGlobal ref={target}>
                     Seems like Switzerland is doing pretty good, right?
-                    </Paragraph>
-                </ParagraphArea>
+                    </ParagraphGlobal>
+                </ParagraphAreaGlobal>
                 <VisualizationMain>
                     <VisualizationArea >
                         <TwentyCountries countries={props.data}/>
@@ -371,9 +522,9 @@ const Chapter4 = () => {
         <Heading>Looking at Switzerland</Heading>
         <Chapter>
                 <ParagraphArea>
-                    <Paragraph>
-                    More in detail, the minimum and maximum amounts of <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>fine particles</TextHighlighters> measured all across Switzerland creates a gradient of the different colored evening skies for the year 2016.
-                    </Paragraph>
+                    <ParagraphTwo>
+                More in detail, the minimum and maximum amounts of <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>fine particles</TextHighlighters> measured all across Switzerland creates a gradient of the different colored evening skies for the year 2016.
+                    </ParagraphTwo>
                 </ParagraphArea>
                 <VisualizationMain>
                     <VisualizationArea>
@@ -399,14 +550,14 @@ const Chapter4 = () => {
         <>
         <Heading>Zurich’s three checkpoints …</Heading>
         <Chapter>
-                <ParagraphArea style={{minHeight: "158vh"}}>
+                <ParagraphAreaCheckpoints>
                     <Paragraph>
-                    When applying this gradient to the monthly values of the three main measuring stations for <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>fine particles</TextHighlighters> of the city of Zurich, the official limit values are quickly exceeded.
+                    When applying this gradient to the range of daily values measured over the month at the three main measuring stations for <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>fine particles</TextHighlighters> of the city of Zurich, the official daily limit values are quickly exceeded.
                     </Paragraph>
-                    <Paragraph style={{marginTop: "98vh"}} ref={limitTarget}>
-                    The longterm limit value for <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>fine particles</TextHighlighters> (PM10) being 20 µg / m3 per year, this plot of the monthly values shows that Zurich’s evening skies can actually be more <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>«crimson»</TextHighlighters> than average data might suggest.
-                    </Paragraph>
-                </ParagraphArea>
+                    <ParagraphCheckpoints ref={limitTarget}>
+                    The daily limit value for <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>fine particles</TextHighlighters> (PM10) being 50 µg / m3 per year, this plot of the distribution over the months shows that Zurich’s evening skies can actually be more <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>«crimson»</TextHighlighters> than average data might suggest.
+                    </ParagraphCheckpoints>
+                </ParagraphAreaCheckpoints>
                 <VisualizationMain>
                     <VisualizationArea ref={target}>
                         {isThingIntersecting && <Zurich Animation={isThingIntersecting} stations={props.detailMonthly} />}
@@ -427,17 +578,17 @@ const Chapter4 = () => {
         <>
         <Heading>Improvement initiatives</Heading>
         <Chapter>
-                <ParagraphArea style={{minHeight: "180vh"}}>
+                <ParagraphAreaInitiatives>
                     <Paragraph>
-                    The reduction of fine particle emissions is essential for all of us, as the year 2035 marks a point of no return for our climate. This means there is no way of reversing or stopping the effects of climate change, which will bring direct existential threats to every living being.
+                    The awareness of fine particle emissions is essential for all of us, as many of the processes emitting fine particles also cause greenhouse gases. This contributes to the causes of climate change, whose effects bring direct existential threats to every living being.
                     </Paragraph>
-                    <Paragraph style={{marginTop: "90vh"}}>
-                    But not all hope is lost…
-                    </Paragraph>
-                    <Paragraph style={{marginTop: "25vh"}}>
+                    <ParagraphInitiatives>
+                    But all hope is not lost.
+                    </ParagraphInitiatives>
+                    <ParagraphInitiativesTwo>
                     These are three promising initiatives that are addressing the issue of air pollution and climate change in a straightforward way to reduce air pollution from <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>crimson</TextHighlighters> to <TextHighlighters style={{backgroundColor: SunRed}}>salmon</TextHighlighters> in <FooterLink href="https://interestingengineering.com/climate-change-could-hit-the-point-of-no-return-in-2035-warn-scientists">16 years.</FooterLink>
-                    </Paragraph>
-                </ParagraphArea>
+                    </ParagraphInitiativesTwo>
+                </ParagraphAreaInitiatives>
                 <VisualizationMain >
                     <VisualizationArea ref={target}>
                         <Initiatives />

@@ -261,25 +261,6 @@ export class RedScattering extends React.Component<{ runAnimation: boolean }> {
     }
 }
 
-const PollutedScatter = keyframes`
-    from, 18% {
-        opacity: 0;
-        top: 595px;
-        left: 315px;
-    }
-
-    50% {
-        opacity: 1;
-        top: ${yPosition};
-        left: ${xPosition};
-    }
-
-    100% {
-        opacity: 1;
-        top: ${yPosition};
-        left: ${xPosition};
-        }
-`;
 
 export const ScatterElementPolluted = styled('div')`
     width: 105px;
@@ -287,8 +268,6 @@ export const ScatterElementPolluted = styled('div')`
     border-radius: 0px;
     background-color: ${AirRedDark};
     position: absolute;
-    animation: ${PollutedScatter} ease 8s infinite;
-    animation-fill-mode: forwards;
 ` 
 
 const PollutedRedSky = keyframes`
@@ -346,16 +325,16 @@ export class PollutedScattering extends React.Component<{ runAnimation: boolean}
 
         return(
             <>  
+                {pollutedElements.map((pollutedElement, i) =>
+                <ScatterElementPolluted key={i} style={{left: pollutedElement.xPos, top: pollutedElement.yPos}}/>
+                )}
+
                 {blueElements.map((blueElement, i) =>
                 <ScatterElementBlueForRed key={i} style={{left: blueElement.xPos, top: blueElement.yPos, animationPlayState: this.props.runAnimation ? 'running' : 'paused' }}/>
                 )}
 
                 {redElements.map((redElement, i) =>
                 <ScatterElementRed key={i} style={{left: redElement.xPos, top: redElement.yPos, animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
-                )}
-
-                {pollutedElements.map((pollutedElement, i) =>
-                <ScatterElementPolluted key={i} style={{left: pollutedElement.xPos, top: pollutedElement.yPos, animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
                 )}
                 <AirElement style={{top: 595, left: 315}}/>
             </>
@@ -409,8 +388,8 @@ export class ScatteringPolluted extends React.Component<Props> {
         return(
             <VizWrapper style={{marginBottom: "30vh"}}>
                 <SquareWrapper>
-                    <SunRayLong runAnimation={this.props.Animation}/>
                     <PollutedScattering runAnimation={this.props.Animation}/>
+                    <SunRayLong runAnimation={this.props.Animation}/>
                     <PollutedSky runAnimation={this.props.Animation}/>
                     <DistanceLegendElement style={{top: "-5vh", color: LegendLabelColor}}>Travel distance<br></br>of Sun rays<br></br>↓</DistanceLegendElement>
                     <DistanceLegendElement style={{top: 315 }}>12.00 AM:<br></br>short distance</DistanceLegendElement>

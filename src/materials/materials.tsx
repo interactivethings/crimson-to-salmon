@@ -57,11 +57,12 @@ export const Heading = styled('h1')`
 
     @media (max-width: ${small}px)  {
         justify-content: center;
+        margin: 15vh 0 0 0;
     };
 
      @media (min-width: ${small}px) and (max-width: ${medium}px) {
-        margin: 5vh 0 0 0;
         justify-content: center;
+        margin: 15vh 0 0 0;
     };
 
       @media (min-width: ${medium}px) {
@@ -77,38 +78,171 @@ export const Paragraph = styled('p')`
 
       @media (max-width: ${small}px)  {
         justify-content: center;
-        margin: 1.2rem 0 8vh 0; 
       };
 
      @media (min-width: ${small}px) and (max-width: ${medium}px) {
         justify-content: center;
-        margin: 1.2rem 0 8vh 0; 
     };
 
     @media (min-width: ${medium}px) {
-            font-size: 1.5rem;
+        font-size: 1.5rem;
     };
 `
 
-// export const Paragraph = styled('p')`
-//     color: ${TextColor};
+export const ParagraphTwo = styled('p')`
+    line-height: 130%;
+    color: ${TextColor};
+    font-size: 1.5rem;
+    margin: 1.2rem 0 15vh 0;
+`
 
-//     @media (max-width: ${small}px)  {
-//         font-size: 1.5rem;
-//         line-height: 130%;
-//      };
 
-//     @media (min-width: ${small}px) and (max-width: ${medium}px) {
-//         font-size: 1.5rem;
-//         line-height: 130%;
-//         width: 70%; 
-//         justify-content: center;
-//     };
+export const ParagraphAir = styled('p')`
+    line-height: 130%;
+    color: ${TextColor};
+    font-size: 1.5rem;
 
-//     //   @media (min-width: ${medium}px) {
-//     //       font-size: 1.2rem;
-//     //   };
-// `
+      @media (max-width: ${small}px)  {
+        justify-content: center;
+        margin: 1.2rem 0 15vh 0; 
+      };
+
+     @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        justify-content: center;
+        margin: 1.2rem 0 15vh 0; 
+    };
+
+    @media (min-width: ${medium}px) {
+        font-size: 1.5rem;
+        margin: 71vh 0 0 0;
+    };
+`
+
+export const ParagraphDaytime = styled('p')`
+    line-height: 130%;
+    color: ${TextColor};
+    font-size: 1.5rem;
+
+      @media (max-width: ${small}px)  {
+        justify-content: center;
+        margin: 1.2rem 0 15vh 0; 
+      };
+
+     @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        justify-content: center;
+        margin: 1.2rem 0 15vh 0; 
+    };
+
+    @media (min-width: ${medium}px) {
+        font-size: 1.5rem;
+        margin: 70vh 0 0 0;
+    };
+`
+
+export const ParagraphPolluted = styled('p')`
+    line-height: 130%;
+    color: ${TextColor};
+    font-size: 1.5rem;
+
+      @media (max-width: ${small}px)  {
+        justify-content: center;
+        margin: 1.2rem 0 15vh 0; 
+      };
+
+     @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        justify-content: center;
+        margin: 1.2rem 0 15vh 0; 
+    };
+
+    @media (min-width: ${medium}px) {
+        font-size: 1.5rem;
+        margin: 71vh 0 0 0;
+    };
+`
+
+export const ParagraphGlobal = styled('p')`
+    line-height: 130%;
+    color: ${TextColor};
+    font-size: 1.5rem;
+
+      @media (max-width: ${small}px)  {
+        justify-content: center;
+        margin: 1.2rem 0 15vh 0; 
+      };
+
+     @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        justify-content: center;
+        margin: 1.2rem 0 15vh 0; 
+    };
+
+    @media (min-width: ${medium}px) {
+        font-size: 1.5rem;
+        margin: 90vh 0 0 0;
+    };
+`
+
+export const ParagraphCheckpoints = styled('p')`
+    line-height: 130%;
+    color: ${TextColor};
+    font-size: 1.5rem;
+
+      @media (max-width: ${small}px)  {
+        justify-content: center;
+        margin: 1.2rem 0 15vh 0; 
+      };
+
+     @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        justify-content: center;
+        margin: 1.2rem 0 15vh 0; 
+    };
+
+    @media (min-width: ${medium}px) {
+        font-size: 1.5rem;
+        margin: 75vh 0 0 0;
+    };
+`
+
+export const ParagraphInitiatives = styled('p')`
+    line-height: 130%;
+    color: ${TextColor};
+    font-size: 1.5rem;
+
+      @media (max-width: ${small}px)  {
+        justify-content: center;
+        margin: 1.2rem 0 0 0; 
+      };
+
+     @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        justify-content: center;
+        margin: 1.2rem 0 0 0; 
+    };
+
+    @media (min-width: ${medium}px) {
+        font-size: 1.5rem;
+        margin: 97vh 0 0 0;
+    };
+`
+
+export const ParagraphInitiativesTwo = styled('p')`
+    line-height: 130%;
+    color: ${TextColor};
+    font-size: 1.5rem;
+
+      @media (max-width: ${small}px)  {
+        justify-content: center;
+        margin: 1.2rem 0 15vh 0; 
+      };
+
+     @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        justify-content: center;
+        margin: 1.2rem 0 15vh 0; 
+    };
+
+    @media (min-width: ${medium}px) {
+        font-size: 1.5rem;
+        margin: 25vh 0 0 0;
+    };
+`
 
 export const FooterParagraph = styled('p')`
     margin: 1.2rem 0 0 0;

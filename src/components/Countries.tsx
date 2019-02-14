@@ -5,14 +5,15 @@ import { interpolateRgb } from 'd3-interpolate';
 import { ElementTitle, ElementSubtitle, TextColor } from 'src/materials/materials';
 import { GradientBar } from './Legends';
 import { keyframes } from '@emotion/core';
+import { small, medium } from 'src/materials/breakpoints';
 
 const colorCountries = scaleLinear()
     // .domain([min(detail => c.PM10) as number, max(countries => c.PM10) as number ])
     .domain([0, 292])
     .range(['#B2D5FF', '#9B0000'] as any)
     .interpolate(interpolateRgb as any) as any;
-    console.log(colorCountries(0))
-
+/*     console.log(colorCountries(0))
+ */
 export const SquareWrapper = styled('div')`
     flex-wrap: wrap;
     display: flex;
@@ -49,6 +50,18 @@ export const SquareElementHighlight = styled('div')`
     animation-name: ${SwissHighlight};
     animation-duration: 8s;
     animation-iteration-count: infinite;
+
+    @media (max-width: ${small}px)  {
+        animation-iteration-count: 0;
+        animation-duration: 0s;
+        opacity: 0;
+      };
+
+     @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        animation-iteration-count: 0;
+        animation-duration: 0s;
+        opacity: 0;
+    };
 `
 
 export type Country = {Country: string, City: string, PM10: number}

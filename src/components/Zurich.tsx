@@ -50,32 +50,6 @@ export const ValueRange = styled('div')`
 //     .domain([0, 292])
 //     .rangeRound([1, 700] as any)
 
-
-// export class ZurichGradient extends React.Component {
-//     render() {
-//         return (
-//                 <SquareWrapper>
-//                     <VizWrapper style={{mask: "url(" + ZurichGradientSVG + ")"}}>                
-//                         {/* Rosengartenstrasse */}
-//                         <ValueRange style={{backgroundImage: "url(" + ZurichGradientSVG + ")", top: 0, left: size(3.56), width: size(81.99 - 3.56)}}/>
-
-//                         {/* Schimmelstrasse */}
-//                         <ValueRange style={{backgroundImage: "url(" + ZurichGradientSVG + ")", top: 235, left: size(1.94), width: size(66.27 - 1.94)}}/>
-
-//                         {/* Stampfenbachstrasse */}
-//                         <ValueRange style={{backgroundImage: "url(" + ZurichGradientSVG + ")", top: 470, left: size(3.38), width: size(56 - 3.38)}}/>
-//                         <LimitValues />
-//                     </VizWrapper>
-//                     <Legend>
-//                         <LegendItem>0</LegendItem>
-//                         <LegendItem>⟶ PM 10 per Year (µg / m²)</LegendItem>
-//                         <LegendItem>292</LegendItem>
-//                     </Legend>                
-//                 </SquareWrapper>
-//         );
-//     }
-// }
-
 const ValueRangeHeight = 209;
 
 
@@ -83,7 +57,8 @@ const sizeMonthly = scaleLinear()
     .domain([0, 81.99])
     .rangeRound([1, 700] as any)
 
-
+/* console.log(sizeMonthly(50));
+ */
 const ValueRangeBars = (width: number) => keyframes`
     from, 0% {
         width: 0;
@@ -180,59 +155,6 @@ export class Limits extends React.Component<LimitAnimation> {
     }
 }
 
-// export class Limits extends React.Component<Props> {
-//     render() {
-//         return (
-//                 <SquareWrapper style={{position: "absolute"}}>
-//                     <VizWrapper >    
-//                             <LegendItem style={{position: "absolute", top: "-5vh"}}>↑ Checkpoint over time</LegendItem>            
-//                         {/* Rosengartenstrasse */}
-//                             <ValueRange >
-//                             <VizItem>Rosengartenstrasse</VizItem>
-//                             {this.props.stations.filter(function (i) {return (i.Station === "Rosengartenstrasse")}).map((station, i) => 
-//                             <ValueRangeLimit
-//                                 key={i}
-//                                 style={{
-//                                     backgroundImage: "url(" + DetailGradientSVG + ")",
-//                                     mask: "url(" + ZurichGradientSVG + ")",
-//                                     height: ValueRangeHeight / 12, top: (ValueRangeHeight / 12 * i) + 20, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}
-//                             >
-//                                 <VizItemSmall>{station.Month}</VizItemSmall>
-//                             </ValueRangeLimit>
-//                             )}
-//                             </ValueRange>
-
-//                         {/* Schimmelstrasse */}
-//                         <ValueRange style={{height: ValueRangeHeight, top: 235}}>
-//                             <VizItem>Schimmelstrasse</VizItem>
-//                             {this.props.stations.filter(function (i) {return (i.Station === "Schimmelstrasse")}).map((station, i) => 
-//                             <ValueRangeLimit key={i} style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: (ValueRangeHeight / 12 * i) + 20, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}>
-//                             <VizItemSmall>{station.Month}</VizItemSmall>
-//                             </ValueRangeLimit>
-//                             )}
-//                         </ValueRange>
-
-//                         {/* Stampfenbachstrasse */}
-//                         <ValueRange style={{height: 230, top: 470}}>
-//                             <VizItem>Stampfenbachstrasse</VizItem>
-//                             {this.props.stations.filter(function (i) {return (i.Station === "Stampfenbachstrasse")}).map((station, i) => 
-//                             <ValueRangeLimit key={i} style={{backgroundImage: "url(" + DetailGradientSVG + ")", mask: "url(" + ZurichGradientSVG + ")", height: ValueRangeHeight / 12, top: (ValueRangeHeight / 12 * i) + 20, left: sizeMonthly(station.Min), width: sizeMonthly((station.Max - station.Min))}}>
-//                             <VizItemSmall>{station.Month}</VizItemSmall>
-//                             </ValueRangeLimit>
-//                             )}
-//                         </ValueRange>
-//                         <LimitValues runAnimation={this.props.Animation}/>
-//                     </VizWrapper>
-//                     <Legend>
-//                         <LegendItem>0</LegendItem>
-//                         <LegendItem>⟶ Fine particle emission in 2016 (µg / m²)</LegendItem>
-//                         <LegendItem>81.99</LegendItem>
-//                     </Legend>                
-//                 </SquareWrapper>
-//         );
-//     }
-// }
-
 const LimitIndex = keyframes`
     0% {
     left: 700px;
@@ -240,7 +162,7 @@ const LimitIndex = keyframes`
   }
 
   30% {
-    left: 333px;
+    left: 427px;
     opacity: 1;
   }
 `;
@@ -251,15 +173,19 @@ export const LimitIndicator = styled('div')`
     width: 5px;
     background-color: black;
     animation-name: ${LimitIndex};
-    animation-duration: 10s;
+    animation-duration: 8s;
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
     `
 
 const LimitAreas = keyframes`
-    from, 80% {
+    from, 20% {
       opacity: 0;
     }
+
+    80% {
+        opacity: 0.3;
+      }
   
     100% {
       opacity: 0.3;
@@ -274,7 +200,7 @@ export const LimitAreaLeft = styled('div')`
     left: 0;
     background-color: ${AirBlueLight};
     opacity: 0;
-    animation: ${LimitAreas} 10s ease infinite;
+    animation: ${LimitAreas} 8s ease infinite;
 `
 
 export const LimitAreaRight = styled('div')`
@@ -284,16 +210,16 @@ export const LimitAreaRight = styled('div')`
     left: 0;
     background-color: ${MainRed};
     opacity: 0;
-    animation: ${LimitAreas} 10s ease infinite;
+    animation: ${LimitAreas} 8s ease infinite;
 `
 
 export class LimitValues extends React.Component<{ runAnimation: boolean }> {
     render() {
         return(
             <>
-            <LimitAreaLeft style={{width: sizeMonthly(20), animationPlayState: this.props.runAnimation ? 'running' : 'paused' }}/>
-            <LimitAreaRight style={{left: sizeMonthly(20), width: sizeMonthly(61.99), animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
-            <LimitIndicator style={{left: sizeMonthly(20), animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
+            <LimitAreaLeft style={{width: sizeMonthly(50), animationPlayState: this.props.runAnimation ? 'running' : 'paused' }}/>
+            <LimitAreaRight style={{left: sizeMonthly(50), width: sizeMonthly(32), animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
+            <LimitIndicator style={{left: sizeMonthly(50), animationPlayState: this.props.runAnimation ? 'running' : 'paused'}}/>
             </>
         );
     }

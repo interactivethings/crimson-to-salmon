@@ -128,11 +128,12 @@ export const IntroTextWrapper = styled('section')`
      @media (min-width: ${small}px) and (max-width: ${medium}px) {
         height: 90vh;
         width: 75%;
+        max-width: 950px;
     };
 
       @media (min-width: ${medium}px) {
         width: 50%;
-        height: 75vh;   
+        height: 145vh;   
     };
 `
 
@@ -141,7 +142,7 @@ export class IntroText extends React.Component {
         return(
             <IntroTextWrapper>
             <IntroParagraph>
-                Air pollutants are not only main reasons for severe health issues such as asthma or cancer, but also the main cause for global warming. Most of the time, these dangerous molecules are invisible to us. But their chemical properties in combination with their size create color shades when scattering the sun light. This generates a deadly color space for living beings and raises an essential question:<br />
+                Air pollutants, specifically small-sized fine particles, are not only a significant component behind severe health issues such as asthma or cancer, but also can contribute to global warming. Much of the time, dangerousair pollution particles are invisible to us. But their chemical properties in combination with their size can alter sky color when they scatter sun light. This generates a deadly color space for living beings and raises an essential question:<br />
                 <br />
                 What can colors in the sky tell us about air pollution?
             </IntroParagraph>
