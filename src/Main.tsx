@@ -8,7 +8,7 @@ import { Country, TwentyCountries, HighlightSwitzerland } from './components/Cou
 import { Initiatives } from './components/Initiatives';
 import { Sun } from './components/Sun';
 import { Station, Switzerland, Zurich, Limits } from './components/Zurich';
-import { Paragraph, Heading, AirBlue, SunRed, SunYellow, AirBlueLight, SunBlue, AirRedDark, MainRed, ParagraphAir, ParagraphTwo, ParagraphDaytime, ParagraphPolluted, ParagraphGlobal, ParagraphCheckpoints, ParagraphInitiatives, ParagraphInitiativesTwo } from './materials/materials';
+import { Paragraph, Heading, AirBlue, SunRed, SunYellow, AirBlueLight, SunBlue, AirRedDark, MainRed, ParagraphAir, ParagraphTwo, ParagraphDaytime, ParagraphPolluted, ParagraphGlobal, ParagraphCheckpoints, ParagraphInitiatives, ParagraphInitiativesTwo, IntroHeading, Intro1 } from './materials/materials';
 import { useRef } from "react";
 import { Conclusion, FooterLink } from './components/Footer';
 import { small, medium } from './materials/breakpoints';
@@ -292,10 +292,49 @@ export const TextHighlighters = styled('span')`
     padding: 0 5px 0 5px;
 `
 
+// use conditional rendering for this snippet. render component Main based on screen size. if smaller than medium, then render this, nothing else.
+
+export const MobileView = styled('div')`
+    @media (max-width: ${small}px)  {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(255, 85, 85, 0.95);
+        width: 100vw;
+        height: 100vh;
+        font-family: 'IBM Plex Sans';
+        font-weight: 700;
+        font-size: 2.8em;
+        line-height: 120%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        z-index: 99;
+    };
+
+    @media (min-width: ${small}px) and (max-width: ${medium}px) {
+        display: none;
+    };
+
+    @media (min-width: ${medium}px) {
+        display: none;
+    };
+`
+
+export const MobileFallback = styled('p')`
+    max-width: 75%;
+`
+
 export class Main extends React.Component<{data: Country[], detailMonthly: Station[]}> {    
   public render() {
     return (
       <>
+        <MobileView>
+                <MobileFallback>
+                    Please view From Crimson To Salmon on a bigger screen for the best experience.  
+                </MobileFallback>
+        </MobileView>
       <Intro/>
         <MainRootTop>
             <IntroText />
@@ -321,7 +360,6 @@ export class Main extends React.Component<{data: Country[], detailMonthly: Stati
             <Chapter8 detailMonthly={this.props.detailMonthly}/>
         </MainRoot>
         <MainRoot>
-            {/* <Chapter9 detailMonthly={this.props.detailMonthly}/> */}
         </MainRoot>
         <MainRoot>
             <Chapter10 />
@@ -331,7 +369,7 @@ export class Main extends React.Component<{data: Country[], detailMonthly: Stati
         </MainRootBottom>
       </>
     );
-  }
+    } 
 }
 
 export default Main;
@@ -341,8 +379,6 @@ export default Main;
 const Chapter1 = () => {
     const target = useRef(null);  // We need a ref to our "target" or our child-to-watch,
     const isThingIntersecting = useInView(target);
-  
-    // console.log(target, isThingIntersecting);
   
     return (
         <>
