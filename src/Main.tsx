@@ -332,7 +332,7 @@ export class Main extends React.Component<{data: Country[], detailMonthly: Stati
       <>
         <MobileView>
                 <MobileFallback>
-                    Please view From Crimson To Salmon on a bigger screen for the best experience.  
+                    Please view «From Crimson To Salmon» on a bigger screen for the best experience.  
                 </MobileFallback>
         </MobileView>
       <Intro/>
