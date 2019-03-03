@@ -104,9 +104,9 @@ export class Intro extends React.Component {
                     </Intro2> 
                     
                 </IntroHeading>
-                <BackgroundVideo autoPlay loop>
+                {/* <BackgroundVideo autoPlay loop>
                    <source src="/tctsity_bg_video.mp4"></source>
-                </BackgroundVideo>
+                </BackgroundVideo> */}
                 
             </IntroWrapper>
         );
