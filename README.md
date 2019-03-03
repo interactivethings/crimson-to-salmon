@@ -12,7 +12,7 @@ To start the project, run `yarn start` to start a development server at `localho
 
 ## Development 
 
-For development, [Create React App](https://github.com/facebookincubator/create-react-app) in combination with TypeScript was used.
+For development, [Create React App](https://github.com/facebookincubator/create-react-app) in combination with [TypeScript](https://www.typescriptlang.org/) was used.
 
 
 ## Thanks
