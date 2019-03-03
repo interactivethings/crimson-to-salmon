@@ -100,9 +100,7 @@ export class Intro extends React.Component {
                         From <TextHighlighters style={{backgroundColor: AirRedDark}}>Crimson</TextHighlighters>
                     </Intro1>
                     <Intro2>
-                        To <TextHighlighters style={{backgroundColor: SunRed}}>Salmon</TextHighlighters><br></br>
-                        In<br></br>
-                        16 Years
+                        To<br></br><TextHighlighters style={{backgroundColor: SunRed}}>Salmon</TextHighlighters>
                     </Intro2> 
                     
                 </IntroHeading>
@@ -142,7 +140,7 @@ export class IntroText extends React.Component {
         return(
             <IntroTextWrapper>
             <IntroParagraph>
-                Air pollutants, specifically small-sized fine particles, are not only a significant component behind severe health issues such as asthma or cancer, but also can contribute to global warming. Much of the time, dangerousair pollution particles are invisible to us. But their chemical properties in combination with their size can alter sky color when they scatter sun light. This generates a deadly color space for living beings and raises an essential question:<br />
+                Air pollutants, specifically small-sized fine particles, are not only a significant component behind severe health issues such as asthma or cancer, but also can contribute to global warming. Much of the time, dangerous air pollution particles are invisible to us. But their chemical properties in combination with their size can alter sky color when they scatter sun light. This generates a deadly color space for living beings and raises an essential question:<br />
                 <br />
                 What can colors in the sky tell us about air pollution?
             </IntroParagraph>

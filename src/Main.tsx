@@ -439,7 +439,7 @@ const Chapter4 = () => {
                     At sunset, <TextHighlighters style={{backgroundColor: SunYellow}}>sunlight</TextHighlighters> takes a much longer path through the atmosphere. This results in more encounters with <TextHighlighters style={{backgroundColor: AirBlueLight}}>air molecules</TextHighlighters> and thus, more scattering events of the <TextHighlighters style={{backgroundColor: SunBlue}}>blue</TextHighlighters> light. It literally gets «scattered out». 
                     </Paragraph> 
                      <ParagraphTwo>
-                     Although red light scatters comparatively poorly, this long distance leads to increased scattering. Due to that, evening light that reaches an observer is noticeably <TextHighlighters style={{backgroundColor: SunRed}}>salmon</TextHighlighters>.
+                     Although red light scatters comparatively poorly, this long distance leads to increased scattering. Due to that, evening light that reaches an observer is noticeably <TextHighlighters style={{backgroundColor: SunRed}}>salmon.</TextHighlighters>
                     </ParagraphTwo>
                 </ParagraphArea>
                 <VisualizationMain>
@@ -523,7 +523,7 @@ const Chapter4 = () => {
         <Chapter>
                 <ParagraphArea>
                     <ParagraphTwo>
-                More in detail, the minimum and maximum amounts of <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>fine particles</TextHighlighters> measured all across Switzerland creates a gradient of the different colored evening skies for the year 2016.
+                More in detail, the minimum and maximum amounts of <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>fine particles</TextHighlighters> measured all across Switzerland create a gradient of the different colored evening skies for the year 2016.
                     </ParagraphTwo>
                 </ParagraphArea>
                 <VisualizationMain>
@@ -586,7 +586,7 @@ const Chapter4 = () => {
                     But all hope is not lost.
                     </ParagraphInitiatives>
                     <ParagraphInitiativesTwo>
-                    These are three promising initiatives that are addressing the issue of air pollution and climate change in a straightforward way to reduce air pollution from <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>crimson</TextHighlighters> to <TextHighlighters style={{backgroundColor: SunRed}}>salmon</TextHighlighters> in <FooterLink href="https://interestingengineering.com/climate-change-could-hit-the-point-of-no-return-in-2035-warn-scientists">16 years.</FooterLink>
+                    These are three promising initiatives that are addressing the issue of air pollution and climate change in a straightforward way to reduce air pollution from <TextHighlighters style={{backgroundColor: AirRedDark, color: "white"}}>crimson</TextHighlighters> to <TextHighlighters style={{backgroundColor: SunRed}}>salmon</TextHighlighters> in the coming years.
                     </ParagraphInitiativesTwo>
                 </ParagraphAreaInitiatives>
                 <VisualizationMain >
