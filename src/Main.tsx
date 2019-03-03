@@ -304,7 +304,7 @@ export const MobileView = styled('div')`
         height: 100vh;
         font-family: 'IBM Plex Sans';
         font-weight: 700;
-        font-size: 2.8em;
+        font-size: 2.5em;
         line-height: 120%;
         display: flex;
         flex-direction: row;
