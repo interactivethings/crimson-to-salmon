@@ -1,8 +1,8 @@
 ## About
 
-This project dives into the topic of air pollution and it's correlation with sky colors, thereby finding an alternate way to illustrate the complex topics of particle scattering, air pollution and its governmental limit values.
+«From Crimson To Salmon» dives into the topic of air pollution and it's correlation with sky colors, thereby finding an alternate way to illustrate the complex topics of particle scattering, air pollution and its governmental limit values.
 
-«From Crimson To Salmon» was created by [Nadine Prigann](http://nadineprigann.de/) in December 2018, at that time Interaction Design intern at the Zurich-based design studio [Interactive Things](https://www.interactivethings.com/). 
+ This project was created by [Nadine Prigann](http://nadineprigann.de/) in December 2018, at that time Interaction Design intern at the Zurich-based design studio [Interactive Things](https://www.interactivethings.com/). 
 
 
 ## Start
