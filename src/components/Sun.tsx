@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { VizWrapper, SunRed, SunOrange, SunYellow, SunGreen, SunIndigo, SunBlue, SunPurple, LegendLabelColor } from 'src/materials/materials';
+import { VizWrapper, SunRed, SunOrange, SunYellow, SunGreen, SunIndigo, SunBlue, SunPurple, LegendLabelColor } from '../materials/materials';
 import styled from '@emotion/styled-base';
 import { keyframes } from '@emotion/core';
 import { SquareWrapper } from './Countries';

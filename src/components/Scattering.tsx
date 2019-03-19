@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from '@emotion/styled-base';
 import { keyframes } from '@emotion/core';
-import { VizWrapper, AirRedDark, SunBlue, SunRed, LegendLabelColor } from 'src/materials/materials';
+import { VizWrapper, AirRedDark, SunBlue, SunRed, LegendLabelColor } from '../materials/materials';
 import { SquareWrapper } from './Countries';
 import { SunRayShort, SunRayLong } from './Sun';
 import { AirElement } from './Air';

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from '@emotion/styled-base';
-import { SunBlue, SunRed, SunYellow, LegendItem, AirBlue, AirRedDark, LegendLabelColor } from 'src/materials/materials';
+import { SunBlue, SunRed, SunYellow, LegendItem, AirBlue, AirRedDark, LegendLabelColor } from '../materials/materials';
 import GradientSVG from '../zh_gradient.svg';
 
 export const Legend = styled('div')`

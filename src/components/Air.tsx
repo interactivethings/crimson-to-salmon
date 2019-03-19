@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/core';
-import { AirBlueLight, ElementTitle, VizWrapper, AirBlue } from 'src/materials/materials';
+import { AirBlueLight, ElementTitle, VizWrapper, AirBlue } from '../materials/materials';
 
 // wrapping all into overall div
 

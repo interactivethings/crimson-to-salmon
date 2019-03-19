@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
-import { TextColor, MainRed, FooterParagraph, Heading, AirBlue, SunBlue, LegendLabelColor, VizLabelColor } from 'src/materials/materials';
-import { small, medium } from 'src/materials/breakpoints';
+import { TextColor, MainRed, FooterParagraph, Heading, AirBlue, SunBlue, LegendLabelColor, VizLabelColor } from '../materials/materials';
+import { small, medium } from '../materials/breakpoints';
 
 export const FooterRoot = styled('div')`
     display: flex;

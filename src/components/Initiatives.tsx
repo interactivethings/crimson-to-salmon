@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from '@emotion/styled-base';
-import { InitiativesTitle, MainRed } from 'src/materials/materials';
+import { InitiativesTitle, MainRed } from '../materials/materials';
 
 export const InitiativesElement = styled('div')`
     display: flex;

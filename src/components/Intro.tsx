@@ -1,8 +1,8 @@
 import * as React from 'react';
 import styled from '@emotion/styled'
-import { IntroHeading, Intro1, Intro2, AirRedDark, SunRed, AirBlueLight, MainRed, IntroParagraph } from 'src/materials/materials';
-import { TextHighlighters } from 'src/Main';
-import { small, medium } from 'src/materials/breakpoints';
+import { IntroHeading, Intro1, Intro2, AirRedDark, SunRed, AirBlueLight, MainRed, IntroParagraph } from '../materials/materials';
+import { TextHighlighters } from '../Main';
+import { small, medium } from '../materials/breakpoints';
 
 export const IntroWrapper = styled('div')`
     width: 100vw;

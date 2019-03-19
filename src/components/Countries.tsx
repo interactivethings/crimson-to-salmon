@@ -2,10 +2,10 @@ import * as React from 'react'
 import styled from '@emotion/styled'
 import { scaleLinear } from 'd3-scale';
 import { interpolateRgb } from 'd3-interpolate';
-import { ElementTitle, ElementSubtitle, TextColor } from 'src/materials/materials';
+import { ElementTitle, ElementSubtitle, TextColor } from '../materials/materials';
 import { GradientBar } from './Legends';
 import { keyframes } from '@emotion/core';
-import { small, medium } from 'src/materials/breakpoints';
+import { small, medium } from '../materials/breakpoints';
 
 const colorCountries = scaleLinear()
     // .domain([min(detail => c.PM10) as number, max(countries => c.PM10) as number ])
