@@ -23,7 +23,7 @@
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.8.4",
     "react-hook-intersection-observer": "^0.1.0",
-    "react-intersection-observer": "^6.3.1",
+    "react-intersection-observer": "^8.22.3",
     "react-scripts": "^2.1.8",
     "scrollama": "^1.4.4"
   },
