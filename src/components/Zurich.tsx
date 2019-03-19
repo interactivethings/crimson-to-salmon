@@ -12,7 +12,7 @@ import { SquareWrapper } from "../components/Countries";
 import ZurichGradientSVG from "../zh_gradient.svg";
 import DetailGradientSVG from "../detail_gradient.svg";
 import { Legend } from "./Legends";
-import styled from "@emotion/styled-base";
+import styled from "@emotion/styled";
 import { scaleLinear } from "d3-scale";
 import { keyframes } from "@emotion/core";
 

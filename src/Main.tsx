@@ -2,7 +2,7 @@ import * as React from "react";
 import "./index.css";
 import { Intro, IntroText } from "./components/Intro";
 import { Air } from "./components/Air";
-import styled from "@emotion/styled-base";
+import styled from "@emotion/styled";
 import {
   ScatteringBlue,
   ScatteringPolluted,

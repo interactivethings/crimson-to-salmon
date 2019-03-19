@@ -10,7 +10,7 @@ import {
   SunPurple,
   LegendLabelColor
 } from "../materials/materials";
-import styled from "@emotion/styled-base";
+import styled from "@emotion/styled";
 import { keyframes } from "@emotion/core";
 import { SquareWrapper } from "./Countries";
 import "d3-transition";

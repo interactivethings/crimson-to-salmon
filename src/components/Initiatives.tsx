@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled from "@emotion/styled-base";
+import styled from "@emotion/styled";
 import { InitiativesTitle, MainRed } from "../materials/materials";
 
 export const InitiativesElement = styled("div")`

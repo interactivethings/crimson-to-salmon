@@ -1,4 +1,4 @@
-import styled from "@emotion/styled-base";
+import styled from "@emotion/styled";
 import { small, medium } from "./breakpoints";
 
 // UI Colors
