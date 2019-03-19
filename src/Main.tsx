@@ -25,7 +25,6 @@ import {
   AirBlueLight,
   SunBlue,
   AirRedDark,
-  MainRed,
   ParagraphAir,
   ParagraphTwo,
   ParagraphDaytime,
@@ -33,12 +32,9 @@ import {
   ParagraphGlobal,
   ParagraphCheckpoints,
   ParagraphInitiatives,
-  ParagraphInitiativesTwo,
-  IntroHeading,
-  Intro1
+  ParagraphInitiativesTwo
 } from "./materials/materials";
-import { useRef } from "react";
-import { Conclusion, FooterLink } from "./components/Footer";
+import { Conclusion } from "./components/Footer";
 import { small, medium } from "./materials/breakpoints";
 import { useInView } from "react-intersection-observer";
 
@@ -692,8 +688,6 @@ const Chapter6 = (props: { data: Array<Country> }) => {
 // Switzerland
 
 const Chapter7 = () => {
-  const target = useRef(null); // We need a ref to our "target" or our child-to-watch,
-
   return (
     <>
       <Heading>Looking at Switzerland</Heading>
@@ -783,8 +777,6 @@ const Chapter8 = (props: { detailMonthly: Array<Station> }) => {
 // Initiatives
 
 const Chapter10 = () => {
-  const target = useRef(null); // We need a ref to our "target" or our child-to-watch,
-
   return (
     <>
       <Heading>Improvement initiatives</Heading>
@@ -815,7 +807,7 @@ const Chapter10 = () => {
           </ParagraphInitiativesTwo>
         </ParagraphAreaInitiatives>
         <VisualizationMain>
-          <VisualizationArea ref={target}>
+          <VisualizationArea>
             <Initiatives />
           </VisualizationArea>
         </VisualizationMain>
@@ -825,12 +817,10 @@ const Chapter10 = () => {
 };
 
 const Chapter11 = () => {
-  const target = useRef(null); // We need a ref to our "target" or our child-to-watch,
-
   return (
     <>
       <Heading>Methodology</Heading>
-      <Conclusion ref={target} />
+      <Conclusion />
     </>
   );
 };
