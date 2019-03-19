@@ -20,9 +20,9 @@
     "gymnast": "^16.0.1",
     "install": "^0.12.2",
     "intersection-observer": "^0.5.1",
-    "react": "^16.7.0-alpha.2",
+    "react": "^16.8.4",
     "react-addons-css-transition-group": "^15.6.2",
-    "react-dom": "^16.7.0-alpha.2",
+    "react-dom": "^16.8.4",
     "react-hook-intersection-observer": "^0.1.0",
     "react-intersection-observer": "^6.3.1",
     "react-scripts-ts": "3.1.0",
@@ -38,8 +38,8 @@
     "@types/d3-array": "^1.2.4",
     "@types/jest": "^23.3.10",
     "@types/node": "^10.12.10",
-    "@types/react": "^16.7.8",
-    "@types/react-dom": "^16.0.11",
+    "@types/react": "^16.8.8",
+    "@types/react-dom": "^16.8.2",
     "typescript": "^3.1.6"
   }
 }
