@@ -8,7 +8,6 @@ import { Station } from "./components/Zurich";
 // DANGER ZONE: types may not match
 const data: Country[] = require("./data/countries.json");
 const detailMonthly: Station[] = require("./data/monthlyValues.json");
-console.log(detailMonthly);
 
 ReactDOM.render(
   <Main data={data} detailMonthly={detailMonthly} />,
