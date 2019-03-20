@@ -618,7 +618,7 @@ const Chapter5 = () => {
 
   return (
     <>
-      <Heading>Toxical color enhancement</Heading>
+      <Heading>Toxic color enhancement</Heading>
       <Chapter>
         <ParagraphAreaPolluted>
           <Paragraph>
