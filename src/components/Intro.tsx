@@ -161,7 +161,7 @@ export class IntroText extends React.Component {
           cancer, but also can contribute to global warming. Much of the time,
           dangerous air pollution particles are invisible to us. But their
           chemical properties in combination with their size can alter sky color
-          when they scatter sun light. This generates a deadly color space for
+          when they scatter sunlight. This generates a deadly color space for
           living beings and raises an essential question:
           <br />
           <br />
