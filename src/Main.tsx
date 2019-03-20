@@ -758,7 +758,7 @@ const Chapter8 = (props: { detailMonthly: Array<Station> }) => {
             >
               fine particles
             </TextHighlighters>{" "}
-            (PM10) being 50 µg / m3 per year, this plot of the distribution over
+            (PM10) being 50 µg / m³ per year, this plot of the distribution over
             the months shows that Zurich’s evening skies can actually be more{" "}
             <TextHighlighters
               style={{ backgroundColor: AirRedDark, color: "white" }}
