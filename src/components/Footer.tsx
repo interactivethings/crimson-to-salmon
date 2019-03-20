@@ -88,8 +88,10 @@ export class Conclusion extends React.Component {
         <FooterHeading>Methodology</FooterHeading>
         <FooterParagraph>
           This project was created by{" "}
-          <FooterLink href="http://nadineprigann.de/">me</FooterLink> during the
-          last month of my internship at{" "}
+          <FooterLink href="http://nadineprigann.de/">
+            Nadine Prigann
+          </FooterLink>{" "}
+          during the last month of her internship at{" "}
           <FooterLink href="https://www.interactivethings.com/">
             Interactive Things
           </FooterLink>
