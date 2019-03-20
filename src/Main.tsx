@@ -26,7 +26,6 @@ import {
   SunBlue,
   AirRedDark,
   ParagraphAir,
-  ParagraphTwo,
   ParagraphDaytime,
   ParagraphPolluted,
   ParagraphGlobal,
@@ -106,11 +105,11 @@ export const Chapter = styled("section")`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin: 6vh 0 5vh 0;
 
   @media (max-width: ${small}px) {
     width: 100%;
     justify-content: center;
-    margin: 6vh 0 5vh 0;
   }
 
   @media (min-width: ${small}px) and (max-width: ${medium}px) {
@@ -123,7 +122,7 @@ export const Chapter = styled("section")`
     width: 70%;
     justify-content: space-between;
     align-items: flex-start;
-    margin: 15vh 0 20vh 0;
+    margin: 10vh 0;
   }
 `;
 
@@ -301,27 +300,48 @@ export const ParagraphAreaInitiatives = styled("div")`
   }
 `;
 
-export const VisualizationMain = styled("div")`
+export const VisualizationMain = styled("div", { label: "VisualizationMain" })`
+  box-sizing: border-box;
   display: flex;
-  flex-wrap: no-wrap;
-  justify-content: flex-start;
-
+  justify-content: center;
+  align-items: center;
+  padding: 10vh 0;
+  min-height: 80vh;
+  width: 100%;
   @media (max-width: ${small}px) {
   }
 
-  @media (min-width: ${small}px) and (max-width: ${medium}px) {
+  @media (min-width: ${small}px) {
   }
 
   @media (min-width: ${medium}px) {
+    width: 700px;
+    min-height: auto;
+    padding: 0;
     position: sticky;
     top: 10%;
   }
 `;
 
-export const VisualizationArea = styled("div")`
+export const VisualizationArea = styled("div", { label: "VisualizationArea" })`
   display: flex;
   width: 700px;
   max-width: 700px;
+  min-height: 80vh;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.5);
+  position: absolute;
+  @media (min-width: ${small}px) {
+    transform: scale(1);
+    min-height: 80vh;
+  }
+
+  @media (min-width: ${medium}px) {
+    position: relative;
+    min-height: 80vh;
+    align-items: flex-start;
+  }
 `;
 
 export const LegendArea = styled("div")`
@@ -380,12 +400,6 @@ export class Main extends React.Component<{
   public render() {
     return (
       <>
-        <MobileView>
-          <MobileFallback>
-            Please view «From Crimson To Salmon» on a bigger screen for the best
-            experience.
-          </MobileFallback>
-        </MobileView>
         <Intro />
         <MainRootTop>
           <IntroText />
@@ -481,9 +495,9 @@ const Chapter2 = () => {
             </TextHighlighters>{" "}
             wavelengths (~700 nm), perceived as red.
           </Paragraph>
-          <ParagraphTwo>
+          <Paragraph>
             All colors together are perceived as a yellowish white.
-          </ParagraphTwo>
+          </Paragraph>
         </ParagraphArea>
         <VisualizationMain>
           <VisualizationArea ref={target}>
@@ -576,14 +590,14 @@ const Chapter4 = () => {
             </TextHighlighters>{" "}
             light. It literally gets «scattered out».
           </Paragraph>
-          <ParagraphTwo>
+          <Paragraph>
             Although red light scatters comparatively poorly, this long distance
             leads to increased scattering. Due to that, evening light that
             reaches an observer is noticeably{" "}
             <TextHighlighters style={{ backgroundColor: SunRed }}>
               salmon.
             </TextHighlighters>
-          </ParagraphTwo>
+          </Paragraph>
         </ParagraphArea>
         <VisualizationMain>
           <VisualizationArea ref={target}>
@@ -693,7 +707,7 @@ const Chapter7 = () => {
       <Heading>Looking at Switzerland</Heading>
       <Chapter>
         <ParagraphArea>
-          <ParagraphTwo>
+          <Paragraph>
             More in detail, the minimum and maximum amounts of{" "}
             <TextHighlighters
               style={{ backgroundColor: AirRedDark, color: "white" }}
@@ -702,7 +716,7 @@ const Chapter7 = () => {
             </TextHighlighters>{" "}
             measured all across Switzerland create a gradient of the different
             colored evening skies for the year 2016.
-          </ParagraphTwo>
+          </Paragraph>
         </ParagraphArea>
         <VisualizationMain>
           <VisualizationArea>

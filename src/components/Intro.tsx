@@ -111,7 +111,8 @@ export class Intro extends React.Component {
             </TextHighlighters>
           </Intro1>
           <Intro2>
-            To<br />
+            To
+            <br />
             <TextHighlighters style={{ backgroundColor: SunRed }}>
               Salmon
             </TextHighlighters>
@@ -134,7 +135,8 @@ export const IntroTextWrapper = styled("section")`
 
   @media (max-width: ${small}px) {
     width: 80%;
-    height: 70vh;
+    min-height: 100vh;
+    margin: 15vh 0;
   }
 
   @media (min-width: ${small}px) and (max-width: ${medium}px) {

@@ -53,20 +53,22 @@ export const Heading = styled("h1")`
   font-weight: 700;
   line-height: 130%;
   color: ${TextColor};
+  text-align: center;
 
   @media (max-width: ${small}px) {
     justify-content: center;
-    margin: 15vh 0 0 0;
+    width: 85%;
   }
 
   @media (min-width: ${small}px) and (max-width: ${medium}px) {
     justify-content: center;
-    margin: 15vh 0 0 0;
+    max-width: 950px;
   }
 
   @media (min-width: ${medium}px) {
     font-size: 2.5rem;
     margin: 15vh 0 0 0;
+    width: 35%;
   }
 `;
 
@@ -74,25 +76,11 @@ export const Paragraph = styled("p")`
   line-height: 130%;
   color: ${TextColor};
   font-size: 1.5rem;
+  margin: 1.2rem 0 0 0;
 
-  @media (max-width: ${small}px) {
-    justify-content: center;
+  &:first-of-type {
+    margin: 0;
   }
-
-  @media (min-width: ${small}px) and (max-width: ${medium}px) {
-    justify-content: center;
-  }
-
-  @media (min-width: ${medium}px) {
-    font-size: 1.5rem;
-  }
-`;
-
-export const ParagraphTwo = styled("p")`
-  line-height: 130%;
-  color: ${TextColor};
-  font-size: 1.5rem;
-  margin: 1.2rem 0 15vh 0;
 `;
 
 export const ParagraphAir = styled("p")`
