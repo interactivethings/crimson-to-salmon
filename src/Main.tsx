@@ -305,7 +305,7 @@ export const VisualizationMain = styled("div", { label: "VisualizationMain" })`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10vh 0;
+  margin: 15vh 0;
   min-height: 80vh;
   width: 100%;
   @media (max-width: ${small}px) {
@@ -318,6 +318,7 @@ export const VisualizationMain = styled("div", { label: "VisualizationMain" })`
     width: 700px;
     min-height: auto;
     padding: 0;
+    margin: 0;
     position: sticky;
     top: 10%;
   }
